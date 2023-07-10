@@ -1,11 +1,16 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import { Oswald } from 'next/font/google'
+import NavBar from './components/navbar'
 
-const inter = Inter({ subsets: ['latin'] })
-
+const font = Oswald({ subsets: ['latin'] })
 export default function Home() {
+
+
+
   return (
-    <main className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`} >
+    <main className={`flex min-h-full min-w-full ${font.className}`} >
+      <div className='absolute bg-dark-base w-full h-full'>
+        <NavBar />
+      </div>
     </main>
   )
 }
