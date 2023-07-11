@@ -1,15 +1,12 @@
-import { Oswald } from "next/font/google";
-import NavBar from "./components/navbar";
-
-const font = Oswald({ subsets: ["latin"] });
 export default function Home() {
   return (
-    <div>
-      <main
-        className={`min-h-screen w-screen items-stretch dark:bg-dark-base ${font.className}`}
-      >
-        <NavBar />
-      </main>
+    <div className="flex flex-1 items-center justify-center">
+      <div className="flex rounded px-[20%] py-[10%] drop-shadow-lg dark:bg-dark-surface0">
+        <div className="grid grid-cols-2">
+          <h1 className="text-4xl font-thin">Harrison Cook</h1>
+          <image></image>
+        </div>
+      </div>
     </div>
   );
 }
