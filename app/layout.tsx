@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <main className="flex h-screen w-screen flex-col items-stretch dark:bg-dark-base">
+        <main className="flex h-screen w-screen flex-col items-stretch bg-light-base dark:bg-dark-base">
           <NavBar />
           {children}
         </main>
