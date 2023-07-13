@@ -5,11 +5,8 @@ export default function NavBar() {
     "flex text-2xl font-thin px-4 hover:text-light-green dark:hover:text-dark-green";
 
   return (
-    <nav className="sticky top-0 z-50 flex h-[5vh] w-screen items-center bg-light-surface0 px-[10%] dark:bg-dark-surface0">
-      <div className="">
-        <h1>HC</h1>
-      </div>
-      <div className="flex flex-1 items-center justify-end">
+    <nav className="fixed top-0 z-50 flex h-[5vh] w-screen items-center px-[10%]">
+      <div className="flex flex-1 items-center justify-center">
         <Link href="/about" className={linkClassName}>
           About
         </Link>
