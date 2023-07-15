@@ -1,7 +1,7 @@
+import NavBar from "@/components/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
-import NavBar from "./components/navbar";
 
 const font = Oswald({ subsets: ["latin"] });
 
