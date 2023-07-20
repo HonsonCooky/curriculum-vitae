@@ -1,4 +1,4 @@
-import NavBar from "@/components/navbar";
+import NavBar from "@/components/navbar/navbar-lg";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
@@ -21,7 +21,9 @@ export default function RootLayout({
         className={`text-light-text dark:text-dark-text  ${font.className}`}
       >
         <main className="flex h-screen w-screen flex-col items-stretch bg-light-base dark:bg-dark-base">
-          <NavBar />
+          <div className="invisible lg:visible">
+            <NavBar />
+          </div>
           {children}
         </main>
       </body>
