@@ -17,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body
+        className={`text-light-text dark:text-dark-text  ${font.className}`}
+      >
         <main className="flex h-screen w-screen flex-col items-stretch bg-light-base dark:bg-dark-base">
           <NavBar />
           {children}
