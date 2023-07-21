@@ -1,5 +1,4 @@
 import tailwindcss from "@/tailwind.config";
-import { cache } from "react";
 import { z } from "zod";
 
 const tailwindThemeSchema = z.object({
@@ -42,10 +41,6 @@ const tailwindSchema = z.object({
   }),
 });
 
-let cached: z.infer<typeof tailwindSchema> | undefined;
-export default function TailwindColors() {
-  if (!cached) {
-    cached = tailwindSchema.parse(tailwindcss);
-  }
-  return cached.theme.extend.colors;
-}
+console.log("here");
+const TailWindColors = tailwindSchema.parse(tailwindcss);
+export default TailWindColors;

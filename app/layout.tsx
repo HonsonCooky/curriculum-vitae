@@ -1,7 +1,7 @@
-import NavBar from "@/components/navbar/navbar-lg";
-import "./globals.css";
 import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
+import NavBarLg from "./_components/navbar/navbar-lg";
+import "./globals.css";
 
 const font = Oswald({ subsets: ["latin"] });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
       >
         <main className="flex h-screen w-screen flex-col items-stretch bg-light-base dark:bg-dark-base">
           <div className="invisible lg:visible">
-            <NavBar />
+            <NavBarLg />
           </div>
           {children}
         </main>

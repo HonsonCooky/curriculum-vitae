@@ -1,9 +1,9 @@
-import HcIcon from "@/assets/hc-icon";
+import HcIcon from "@/app/_assets/hc-icon";
 import Link from "next/link";
 import DownloadCsvButton from "./download-csv-btn";
 import NavLink from "./nav-link";
 
-export default function NavBar() {
+export default function NavBarLg() {
   const divider = <div className="text-light-text dark:text-dark-text">|</div>;
 
   return (
