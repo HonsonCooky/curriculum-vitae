@@ -43,9 +43,9 @@ const tailwindSchema = z.object({
 });
 
 let cached: z.infer<typeof tailwindSchema> | undefined;
-export default function getColors() {
+export default function TailwindColors() {
   if (!cached) {
     cached = tailwindSchema.parse(tailwindcss);
   }
-  return cached;
+  return cached.theme.extend.colors;
 }
