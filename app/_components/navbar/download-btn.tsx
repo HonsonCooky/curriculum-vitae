@@ -2,7 +2,7 @@
 
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
-export default function DownloadCsvButton() {
+export default function DownloadBtn() {
   async function download() {
     const response = await fetch("HarrisonCooksCV.pdf");
     const blob = await response.blob();
@@ -19,7 +19,7 @@ export default function DownloadCsvButton() {
         {/* TEXT */}
         <div className="h-full w-full text-light-text dark:text-dark-text hover:text-light-crust hover:dark:text-dark-crust">
           {/* ALIGNMENT */}
-          <div className=" h-full w-full  inline-flex items-center py-2 px-4 ">
+          <div className=" h-full w-full  inline-flex items-center py-2 px-4">
             <ArrowDownTrayIcon
               className={`h-6 mr-2 stroke-2`}
             ></ArrowDownTrayIcon>
