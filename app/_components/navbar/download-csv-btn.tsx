@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+
 export default function DownloadCsvButton() {
   async function download() {
     const response = await fetch("HarrisonCooksCV.pdf");
@@ -8,15 +10,23 @@ export default function DownloadCsvButton() {
   }
 
   return (
-    <button onClick={download} className="inline-flex items-center">
-      <svg
-        className="m-2 w-2 fill-light-text dark:fill-dark-text"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 20 20"
-      >
-        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-      </svg>
-      <span className="text-2xl font-thin">Download CV.pdf</span>
+    <button
+      className="bg-light-overlay0 hover:bg-light-mauve dark:bg-dark-overlay0 hover:dark:bg-dark-mauve rounded"
+      onClick={download}
+    >
+      {/* STROKE */}
+      <div className="h-full w-full stroke-light-text dark:stroke-dark-text hover:stroke-light-crust hover:dark:stroke-dark-crust">
+        {/* TEXT */}
+        <div className="h-full w-full text-light-text dark:text-dark-text hover:text-light-crust hover:dark:text-dark-crust">
+          {/* ALIGNMENT */}
+          <div className=" h-full w-full  inline-flex items-center py-2 px-4 ">
+            <ArrowDownTrayIcon
+              className={`h-6 mr-2 stroke-2`}
+            ></ArrowDownTrayIcon>
+            <span className="text-2xl">Download CV</span>
+          </div>
+        </div>
+      </div>
     </button>
   );
 }

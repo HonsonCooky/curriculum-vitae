@@ -11,7 +11,7 @@ export default function NavLink(params: { href: string }) {
   return (
     <Link
       href={params.href}
-      className="flex px-4 text-3xl font-thin hover:text-light-green dark:hover:text-dark-green"
+      className="flex px-4 text-3xl font-thin hover:text-light-mauve dark:hover:text-dark-mauve"
     >
       {capitalizedRef()}
     </Link>
