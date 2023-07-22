@@ -6,6 +6,11 @@ export default function Home() {
           Harrison Cook
         </h1>
         <h2>Software Engineer</h2>
+        <p>
+          Haere Mai! Hello! Welcome to the humble HTTP home of a happily
+          hardworking developer. hearty heat hatched Hooked? Heed high for
+          hyperlinks.
+        </p>
       </div>
     </div>
   );
