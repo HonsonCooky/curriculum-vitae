@@ -20,7 +20,7 @@ export default function RootLayout({
       <body
         className={`text-light-text dark:text-dark-text  ${font.className}`}
       >
-        <main className="flex h-screen w-screen flex-col items-stretch bg-light-base dark:bg-dark-base">
+        <main className="flex min-h-screen min-w-screen flex-col items-stretch bg-light-base dark:bg-dark-base">
           <div className="invisible lg:visible">
             <NavBar />
           </div>
