@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { z } from "zod";
 
 const paramsPosSchema = z.object({
@@ -21,6 +20,7 @@ export default function ProficiencyProfile(params: { params: paramsType }) {
 
   return (
     <motion.div
+      key={parameters.imgRef}
       initial={{
         left: parameters.left.start,
         top: parameters.top.start,
@@ -41,12 +41,12 @@ export default function ProficiencyProfile(params: { params: paramsType }) {
         restDelta: 0.005,
         bounceDamping: 8,
       }}
-      className={`absolute h-28 w-28 overflow-clip rounded-full dark:nm-flat-dark-base`}
+      className="absolute -translate-x-[50%] -translate-y-[50%] overflow-clip rounded-full  nm-flat-light-base dark:nm-flat-dark-base"
     >
-      <Image
+      <img
+        className="h-24 w-24 rounded-full object-contain p-2"
         src={`/${parameters.imgRef}-logo.png`}
         alt={parameters.imgRef}
-        fill
       />
     </motion.div>
   );
