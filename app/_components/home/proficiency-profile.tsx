@@ -15,6 +15,7 @@ const paramsScheme = z.object({
 export type paramsType = z.infer<typeof paramsScheme>;
 
 let delay = 0.1;
+const increment = 0.1;
 export default function ProficiencyProfile(params: { params: paramsType }) {
   const parameters = params.params;
 
@@ -34,17 +35,17 @@ export default function ProficiencyProfile(params: { params: paramsType }) {
       transition={{
         type: "inertia",
         velocity: 400,
-        delay: (delay += 0.1),
+        delay: (delay += increment),
         min: 0,
         max: 100,
         bounceStiffness: 300,
         restDelta: 0.005,
         bounceDamping: 8,
       }}
-      className="absolute -translate-x-[50%] -translate-y-[50%] overflow-clip rounded-full  nm-flat-light-base dark:nm-flat-dark-base"
+      className="absolute -translate-x-[50%] -translate-y-[50%] overflow-clip rounded-full  nm-concave-light-base dark:nm-concave-dark-base"
     >
       <img
-        className="h-24 w-24 rounded-full object-contain p-2"
+        className="block h-24 w-24 rounded-full object-contain p-2"
         src={`/${parameters.imgRef}-logo.png`}
         alt={parameters.imgRef}
       />
