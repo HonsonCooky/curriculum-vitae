@@ -7,16 +7,13 @@ export default function WelcomeMsg() {
   const alliteration =
     "Welcome to the humble HTTP home of happily hardworking " +
     " Harrison. A heuristic hands-on happening, hosting hearty heat" +
-    " hatched from his head. Hooked? Heed high for hyperlinks." +
-    "\n\n\n\n";
+    " hatched from his head. Hooked? Heed high for hyperlinks.\n\n";
 
   const translation =
-    "I’m so glad you’re here. My name is Harrison, and I’m a" +
-    " passionate Software Engineer. I created this website to share" +
-    " my story and connect with others who share similar interests." +
-    " Please feel free to explore my site and learn more about me." +
-    " If you have any questions or just want to say Kia Ora, don’t" +
-    " hesitate to reach out. Thank you for stopping by!";
+    "I created this website to share a little about me and to" +
+    " connect with others who share similar interests. If you have" +
+    " any questions or just want to say Kia Ora, don’t hesitate" +
+    " to reach out. Thank you for stopping by!";
 
   return (
     <div>
