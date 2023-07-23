@@ -44,7 +44,7 @@ export default function ProficiencyProfile(params: { params: paramsType }) {
         restDelta: 0.005,
         bounceDamping: 8,
       }}
-      className="absolute -translate-x-[50%] -translate-y-[50%] overflow-clip rounded-full  nm-concave-light-base dark:nm-concave-dark-base"
+      className="absolute -translate-x-[50%] -translate-y-[50%] overflow-clip rounded-full  nm-flat-light-base dark:nm-flat-dark-base"
     >
       <img
         className="block h-24 w-24 rounded-full object-contain p-2"

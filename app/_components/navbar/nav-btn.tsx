@@ -16,9 +16,9 @@ export default function NavBtn(params: { href: string }) {
     <Link
       aria-selected={pathname.startsWith(params.href)}
       href={params.href}
-      className="nm-flat-light-base dark:nm-flat-dark-base rounded aria-selected:nm-inset-light-base aria-selected:dark:nm-inset-dark-base mx-2"
+      className="mx-2 rounded nm-flat-light-base aria-selected:nm-inset-light-base dark:nm-flat-dark-base aria-selected:dark:nm-inset-dark-base"
     >
-      <div className="text-3xl py-2 px-4 font-thin hover:text-light-mauve dark:hover:text-dark-mauve">
+      <div className="px-4 py-2 text-3xl hover:text-light-mauve dark:hover:text-dark-mauve">
         {capitalizedRef()}
       </div>
     </Link>

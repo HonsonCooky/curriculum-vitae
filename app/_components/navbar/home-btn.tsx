@@ -13,7 +13,7 @@ export default function HomeBtn() {
       href="/"
       aria-selected={pathname == "/"}
     >
-      <div className="inline-flex h-full fill-light-text p-4 hover:fill-light-mauve dark:fill-dark-text hover:dark:fill-dark-mauve">
+      <div className="inline-flex h-full translate-x-1 fill-light-text p-4 hover:fill-light-mauve dark:fill-dark-text hover:dark:fill-dark-mauve">
         <HcIcon />
       </div>
     </Link>

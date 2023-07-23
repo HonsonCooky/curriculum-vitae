@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Oswald } from "next/font/google";
+import { Fira_Sans } from "next/font/google";
 import NavBar from "./_components/navbar/navbar";
 import "./globals.css";
 
-const font = Oswald({ subsets: ["latin"] });
+const font = Fira_Sans({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "About | Harrion Cook",
@@ -20,7 +24,7 @@ export default function RootLayout({
       <body
         className={`text-light-text dark:text-dark-text  ${font.className}`}
       >
-        <main className="flex min-h-screen min-w-screen flex-col items-stretch overflow-clip bg-light-base dark:bg-dark-base">
+        <main className="min-w-screen flex min-h-screen flex-col items-stretch overflow-clip bg-light-base dark:bg-dark-base">
           <div className="invisible xl:visible">
             <NavBar />
           </div>

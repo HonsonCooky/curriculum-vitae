@@ -7,7 +7,7 @@ export default function WelcomeMsg() {
   const alliteration =
     "Welcome to the humble HTTP home of happily hardworking " +
     " Harrison. A heuristic hands-on happening, hosting hearty heat" +
-    " hatched from his head. Hooked? Heed high for hyperlinks.\n\n";
+    " hatched from his head. Hooked? Heed high for hyperlinks.\n";
 
   const translation =
     "I created this website to share a little about me and to" +
@@ -17,7 +17,7 @@ export default function WelcomeMsg() {
 
   return (
     <div>
-      <p className="mb-2 w-[30rem] whitespace-pre-wrap text-justify text-2xl font-thin">
+      <p className="mb-2 w-[30rem] whitespace-pre-wrap text-justify text-2xl">
         {useAlliteration ? alliteration : translation}
       </p>
       <div className="flex w-full items-end justify-end">
