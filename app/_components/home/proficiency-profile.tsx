@@ -14,10 +14,12 @@ const paramsScheme = z.object({
 
 export type paramsType = z.infer<typeof paramsScheme>;
 
-let delay = 0.1;
+let delay = 0.5;
+let count = -1;
 const increment = 0.1;
 export default function ProficiencyProfile(params: { params: paramsType }) {
   const parameters = params.params;
+  delay += (count++ % 2) * increment;
 
   return (
     <motion.div
@@ -35,7 +37,7 @@ export default function ProficiencyProfile(params: { params: paramsType }) {
       transition={{
         type: "inertia",
         velocity: 400,
-        delay: (delay += increment),
+        delay: delay,
         min: 0,
         max: 100,
         bounceStiffness: 300,
