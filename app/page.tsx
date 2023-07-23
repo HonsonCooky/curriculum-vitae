@@ -1,20 +1,18 @@
+import WelcomeMsg from "./_components/welcome-msg";
+
 export default function Home() {
   return (
     <div className="flex flex-1 items-center justify-center">
-      <div className="flex flex-col items-center w-max rounded-2xl p-20 lg:nm-flat-light-base lg:dark:nm-flat-dark-base">
-        <h1 className="text-light-lavender dark:text-dark-lavender font-bold text-6xl mb-2">
+      <div className="flex flex-col rounded-2xl p-20 lg:nm-flat-light-base lg:dark:nm-flat-dark-base">
+        <h1 className="mb-2 text-6xl font-bold text-light-mauve dark:text-dark-lavender">
           Harrison Cook
         </h1>
-        <h2 className="text-3xl mb-10">Software Engineer</h2>
-        <p className="w-96 text-2xl font-thin text-justify">
-          <span className="text-light-blue dark:text-dark-blue">
-            Haere Mai!{" "}
-          </span>{" "}
-          Hello! Welcome to the humble HTTP home of a happily hardworking{" "}
-          developer.
-          <br /> A heuristic hands-on happening, hosting hearty heat hatched
-          from his head. Hooked? Heed high for hyperlinks .
+        <h2 className="mb-10 text-3xl">Software Engineer</h2>
+        <p className="w-full text-start text-2xl font-normal text-light-green dark:text-dark-green">
+          Haere Mai!{" "}
+          <span className="text-light-peach dark:text-dark-peach">Hello!</span>
         </p>
+        <WelcomeMsg />
       </div>
     </div>
   );
