@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { z } from "zod";
 
 const paramsPosSchema = z.object({
@@ -44,13 +45,23 @@ export default function ProficiencyProfile(params: { params: paramsType }) {
         restDelta: 0.005,
         bounceDamping: 8,
       }}
-      className="absolute -translate-x-[50%] -translate-y-[50%] overflow-clip rounded-full  nm-flat-light-base dark:nm-flat-dark-base"
+      className="group absolute -translate-x-[50%] -translate-y-[50%]  rounded-full nm-flat-light-base dark:nm-flat-dark-base"
     >
-      <img
-        className="block h-24 w-24 rounded-full object-contain p-2"
+      <Image
+        className="block h-24 w-24 overflow-clip rounded-full object-contain p-2 group-hover:h-28 group-hover:w-28"
         src={`/${parameters.imgRef}-logo.png`}
         alt={parameters.imgRef}
+        height={100}
+        width={100}
       />
+      <div className="invisible absolute -bottom-2 w-full rounded px-1 text-center nm-flat-light-base group-hover:visible dark:nm-flat-dark-base">
+        {parameters.imgRef.charAt(0).toUpperCase() +
+          parameters.imgRef
+            .slice(1)
+            .toLowerCase()
+            .replace("script", "Script")
+            .replace("sharp", "# | DotNet")}
+      </div>
     </motion.div>
   );
 }

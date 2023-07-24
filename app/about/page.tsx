@@ -10,20 +10,35 @@ export default function About() {
       <div className="mr-20 flex flex-1 flex-col rounded-2xl p-10 nm-inset-light-base dark:nm-inset-dark-base">
         <p className="mb-4 text-xl font-light">
           Hey! I'm Harrison. The following page outlines a small portion of my
-          background. I would like to preface that this is{" "}
-          <span className="text-light-red dark:text-dark-red">not</span> a guide
-          on how get where I've landed, rather a description of where I've been
-          and who I am.
+          background.
         </p>
         <p className="text-2xl font-bold">History:</p>
-        <p className="text-xl font-light">
+        <p className="whitespace-pre-wrap text-xl font-light">
           Born and raised in a small town... is a played out narrative that
           captures no ones attention. I was born into a{" "}
           <span className="text-light-peach dark:text-dark-peach">
             singing cult!
           </span>{" "}
-          Not really, but friends have certainly pointed out the potential.
+          A.k.a. a musically oriented family. For a majority of my youth, I was
+          involed with music and theatre; Performing on a local and national
+          level in bands, choirs, and theatre productions. It wasn't until my
+          penultimate year at secondary school (when I took a digital technology
+          course), that I was introduced to programming. Uncovering this hidden
+          passion, I pursued the endless dompamine chase of programmatically
+          solving problems. After four years at University, I graduated with a:
+          <br />
+          <br />
         </p>
+        <code className="text-xl">
+          Bachelors of Engineering (First Class Honors).
+          <br />
+          - Majoring in Software Engineering,
+          <br />
+          - With a specialization in Networked Applications,
+          <br />
+          - Accreddited by the Washington Accord,
+          <br />
+        </code>
       </div>
     </div>
   );
