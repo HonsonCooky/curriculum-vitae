@@ -2,16 +2,16 @@
 
 import { createRef } from "react";
 
-export default function GeneratePair(params: {
-  className?: React.ComponentProps<"div">["className"];
-  title: string;
-}) {
+export default function generatePair(
+  title: string,
+  className?: React.ComponentProps<"div">["className"]
+) {
   const ref = createRef<HTMLParagraphElement>();
   return {
     ref,
     component: (
-      <p className={params.className} ref={ref}>
-        {params.title}
+      <p className={className} ref={ref}>
+        {title}
       </p>
     ),
   };
