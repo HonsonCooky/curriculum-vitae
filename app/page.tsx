@@ -3,15 +3,14 @@ import WelcomeMsg from "./_components/home/welcome-msg";
 import { proficiencies } from "./_utils/proficiency-list";
 
 export default function Home() {
-
   return (
     <div className="flex flex-1 items-center justify-center">
-      <div className="invisible absolute h-full w-full overflow-clip xl:visible">
+      <div className="invisible flex-1 overflow-clip xl:visible">
         {proficiencies.map((prof) => (
           <ProficiencyProfile params={prof} />
         ))}
       </div>
-      <div className="z-10 flex flex-col rounded-2xl p-20 lg:nm-flat-light-base lg:dark:nm-flat-dark-base">
+      <div className="absolute z-10 flex flex-col rounded-2xl p-20 lg:nm-flat-light-base lg:dark:nm-flat-dark-base">
         <h1 className="mb-2 text-6xl font-bold text-light-mauve dark:text-dark-lavender">
           Harrison Cook
         </h1>

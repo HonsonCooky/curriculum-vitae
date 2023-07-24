@@ -9,7 +9,7 @@ export default function HomeBtn() {
 
   return (
     <Link
-      className="inline-flex h-full overflow-clip rounded-full nm-flat-light-base aria-selected:nm-inset-light-base dark:nm-flat-dark-base aria-selected:dark:nm-inset-dark-base"
+      className="inline-flex h-full overflow-clip rounded-full nm-flat-light-mantle aria-selected:nm-inset-light-mantle dark:nm-flat-dark-mantle aria-selected:dark:nm-inset-dark-mantle"
       href="/"
       aria-selected={pathname == "/"}
     >

@@ -25,9 +25,7 @@ export default function RootLayout({
         className={`text-light-text dark:text-dark-text  ${font.className}`}
       >
         <main className="min-w-screen flex min-h-screen flex-col items-stretch overflow-clip bg-light-base dark:bg-dark-base">
-          <div className="invisible xl:visible">
-            <NavBar />
-          </div>
+          <NavBar />
           {children}
         </main>
       </body>
