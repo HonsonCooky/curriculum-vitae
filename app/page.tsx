@@ -3,6 +3,7 @@ import WelcomeMsg from "./_components/home/welcome-msg";
 import { proficiencies } from "./_utils/proficiency-list";
 
 export default function Home() {
+
   return (
     <div className="flex flex-1 items-center justify-center">
       <div className="invisible absolute h-full w-full overflow-clip xl:visible">
