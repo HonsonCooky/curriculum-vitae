@@ -7,7 +7,7 @@ export default function Home() {
     <div className="flex flex-1 items-center justify-center">
       <div className="invisible flex-1 overflow-clip xl:visible">
         {proficiencies.map((prof) => (
-          <ProficiencyProfile params={prof} />
+          <ProficiencyProfile params={prof} key={prof.imgRef} />
         ))}
       </div>
       <div className="absolute z-10 flex flex-col rounded-2xl p-20 lg:nm-flat-light-base lg:dark:nm-flat-dark-base">
