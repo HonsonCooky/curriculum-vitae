@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Fira_Sans } from "next/font/google";
-import NavBar from "./_components/navbar/navbar";
+import Navigation from "./_components/navbar/navbar";
 import "./globals.css";
 
 const font = Fira_Sans({
@@ -25,7 +25,7 @@ export default function RootLayout({
         className={`text-light-text dark:text-dark-text  ${font.className}`}
       >
         <main className="min-w-screen flex min-h-screen flex-col items-stretch overflow-clip bg-light-base dark:bg-dark-base">
-          <NavBar />
+          <Navigation />
           {children}
         </main>
       </body>
