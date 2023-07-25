@@ -22,7 +22,6 @@ const variants = {
 
 export const MenuItem = (params: { page: { title: string; href: string } }) => {
   const pathname = usePathname();
-  console.log(pathname != "/");
 
   return (
     <Link href={params.page.href}>

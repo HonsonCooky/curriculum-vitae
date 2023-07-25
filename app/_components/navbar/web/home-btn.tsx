@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 export default function HomeBtn() {
   const pathname = usePathname();
-  console.log();
 
   return (
     <Link

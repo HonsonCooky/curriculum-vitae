@@ -37,7 +37,7 @@ const sidebar: Variants = {
     padding: 4,
     height: 50,
     width: 50,
-    borderRadius: "50%",
+    borderRadius: "30%",
     transition: {
       delay: 0.5,
       ease: "linear",

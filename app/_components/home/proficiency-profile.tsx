@@ -48,7 +48,7 @@ export default function ProficiencyProfile(params: { params: paramsType }) {
       className="group absolute -translate-x-[50%] -translate-y-[50%]  rounded-full nm-flat-light-base dark:nm-flat-dark-base"
     >
       <Image
-        className="block h-24 w-24 overflow-clip rounded-full object-contain p-2 group-hover:h-28 group-hover:w-28"
+        className="block h-10 w-10 overflow-clip rounded-full object-contain p-2 group-hover:w-28 xl:h-24 xl:w-24 xl:group-hover:h-28"
         src={`/${parameters.imgRef}-logo.png`}
         alt={parameters.imgRef}
         height={100}
