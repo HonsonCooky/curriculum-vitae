@@ -27,19 +27,14 @@ export const MenuItem = (params: { page: { title: string; href: string } }) => {
     <Link href={params.page.href}>
       <motion.li
         variants={variants}
-        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
+        aria-selected={
+          (pathname.startsWith(params.page.href) && params.page.href != "/") ||
+          pathname == params.page.href
+        }
+        className="p-2 text-2xl text-light-text aria-selected:text-light-mauve dark:text-dark-text aria-selected:dark:text-dark-mauve"
       >
-        <h6
-          aria-selected={
-            (pathname.startsWith(params.page.href) &&
-              params.page.href != "/") ||
-            pathname == params.page.href
-          }
-          className="p-2 text-2xl text-light-text aria-selected:text-light-mauve dark:text-dark-text aria-selected:dark:text-dark-mauve"
-        >
-          {params.page.title}
-        </h6>
+        {params.page.title}
       </motion.li>
     </Link>
   );

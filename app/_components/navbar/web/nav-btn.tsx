@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -13,14 +14,14 @@ export default function NavBtn(params: { href: string }) {
   const pathname = usePathname();
 
   return (
-    <Link
-      aria-selected={pathname.startsWith(params.href)}
-      href={params.href}
-      className="mx-2 rounded nm-flat-light-base aria-selected:nm-inset-light-base dark:nm-flat-dark-base aria-selected:dark:nm-inset-dark-base"
-    >
-      <div className="px-4 py-2 text-2xl hover:text-light-mauve dark:hover:text-dark-mauve">
+    <Link href={params.href}>
+      <motion.div
+        aria-selected={pathname.startsWith(params.href)}
+        whileTap={{ scale: 0.9 }}
+        className=" mx-2 rounded px-4 py-2 text-2xl nm-flat-light-base hover:text-light-mauve aria-selected:nm-inset-light-base dark:nm-flat-dark-base dark:hover:text-dark-mauve aria-selected:dark:nm-inset-dark-base"
+      >
         {title()}
-      </div>
+      </motion.div>
     </Link>
   );
 }
