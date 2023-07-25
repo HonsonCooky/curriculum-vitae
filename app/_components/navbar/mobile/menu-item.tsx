@@ -36,7 +36,7 @@ export const MenuItem = (params: { page: { title: string; href: string } }) => {
               params.page.href != "/") ||
             pathname == params.page.href
           }
-          className="m-2 text-2xl text-light-text aria-selected:text-light-mauve dark:text-dark-text aria-selected:dark:text-dark-mauve"
+          className="p-2 text-2xl text-light-text aria-selected:text-light-mauve dark:text-dark-text aria-selected:dark:text-dark-mauve"
         >
           {params.page.title}
         </h6>

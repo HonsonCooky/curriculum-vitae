@@ -27,7 +27,6 @@ const sidebar: Variants = {
     transition: {
       type: "spring",
       bounce: 0.1,
-      restDelta: 0.005,
       damping: 8,
     },
   },
@@ -63,14 +62,12 @@ export const NavMenu = (params: {
       className={`fixed left-0 top-0 z-50 h-full ${params.className}`}
     >
       <motion.div
-        className="relative top-0 p-6 nm-flat-light-base dark:nm-flat-dark-base"
+        className="relative top-0 p-6 nm-flat-light-base-xs dark:nm-flat-dark-base-xs"
         layout
         variants={sidebar}
         onClick={() => toggleOpen()}
       >
-        <div
-          className={`max-h-[50px] max-w-[50px] flex-1 stroke-light-text stroke-2 hover:stroke-light-mauve dark:stroke-dark-text hover:dark:stroke-dark-mauve`}
-        >
+        <div className="max-h-[50px] max-w-[50px] flex-1 stroke-light-text stroke-2 hover:stroke-light-mauve dark:stroke-dark-text hover:dark:stroke-dark-mauve">
           <MenuIcon />
         </div>
         <Navigation pages={params.pages} />
