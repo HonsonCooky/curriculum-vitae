@@ -11,12 +11,17 @@ const variants = {
   },
 };
 
-export const Navigation = () => (
+function title(href: string) {
+  const name = href.replaceAll("/", "");
+  const firstChar = name.charAt(0).toUpperCase();
+  const rest = name.slice(1).toLowerCase();
+  return firstChar + rest;
+}
+export const Navigation = (params: { pages: string[] }) => (
   <motion.ul variants={variants}>
-    {itemIds.map((i) => (
-      <MenuItem i={i} key={i} />
+    <MenuItem page={{ href: "/", title: "Home" }} key={"Home"} />
+    {params.pages.map((href) => (
+      <MenuItem page={{ href: href, title: title(href) }} key={href} />
     ))}
   </motion.ul>
 );
-
-const itemIds = [0, 1, 2, 3, 4];

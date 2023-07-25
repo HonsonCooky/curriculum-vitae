@@ -10,7 +10,7 @@ export default function Home() {
           <ProficiencyProfile params={prof} key={prof.imgRef} />
         ))}
       </div>
-      <div className="absolute z-10 flex flex-col rounded-2xl p-20 lg:nm-flat-light-base lg:dark:nm-flat-dark-base">
+      <div className="absolute z-10 flex flex-col rounded-2xl p-20 xl:nm-flat-light-base xl:dark:nm-flat-dark-base">
         <h1 className="mb-2 text-6xl font-bold text-light-mauve dark:text-dark-lavender">
           Harrison Cook
         </h1>

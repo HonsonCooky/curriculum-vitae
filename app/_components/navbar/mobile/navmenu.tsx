@@ -22,7 +22,7 @@ const sidebar: Variants = {
     left: 0,
     padding: pos,
     height: "100%",
-    width: "25vw",
+    width: "60vw",
     borderRadius: "2%",
     transition: {
       type: "spring",
@@ -34,7 +34,7 @@ const sidebar: Variants = {
   closed: {
     top: pos,
     left: pos,
-    padding: 0,
+    padding: 4,
     height: 50,
     width: 50,
     borderRadius: "50%",
@@ -60,10 +60,10 @@ export const NavMenu = (params: {
       animate={isOpen ? "open" : "closed"}
       custom={height}
       ref={containerRef}
-      className={`fixed z-50 h-full w-72 ${params.className}`}
+      className={`fixed left-0 top-0 z-50 h-full ${params.className}`}
     >
       <motion.div
-        className="relative w-full p-2 nm-flat-light-base dark:nm-flat-dark-base"
+        className="relative top-0 p-6 nm-flat-light-base dark:nm-flat-dark-base"
         layout
         variants={sidebar}
         onClick={() => toggleOpen()}
@@ -73,7 +73,7 @@ export const NavMenu = (params: {
         >
           <MenuIcon />
         </div>
-        <Navigation />
+        <Navigation pages={params.pages} />
       </motion.div>
     </motion.nav>
   );

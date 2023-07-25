@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const variants = {
   open: {
@@ -18,18 +20,28 @@ const variants = {
   },
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
+export const MenuItem = (params: { page: { title: string; href: string } }) => {
+  const pathname = usePathname();
+  console.log(pathname != "/");
 
-export const MenuItem = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
   return (
-    <motion.li
-      variants={variants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <div className="icon-placeholder" style={style} />
-      <div className="text-placeholder" style={style} />
-    </motion.li>
+    <Link href={params.page.href}>
+      <motion.li
+        variants={variants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <h6
+          aria-selected={
+            (pathname.startsWith(params.page.href) &&
+              params.page.href != "/") ||
+            pathname == params.page.href
+          }
+          className="m-2 text-2xl text-light-text aria-selected:text-light-mauve dark:text-dark-text aria-selected:dark:text-dark-mauve"
+        >
+          {params.page.title}
+        </h6>
+      </motion.li>
+    </Link>
   );
 };
