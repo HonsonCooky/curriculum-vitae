@@ -17,13 +17,13 @@ export default function WelcomeMsg() {
 
   return (
     <div>
-      <p className="mb-2 whitespace-pre-wrap text-sm xl:text-2xl">
+      <p className="mb-2 whitespace-pre-wrap text-justify text-sm xl:text-[2.5vh] xl:leading-[2.5vh]">
         {useAlliteration ? alliteration : translation}
       </p>
       <div className="flex w-full items-end justify-end">
         <button
           onClick={() => setUseAlliteration(!useAlliteration)}
-          className="text-sm text-light-blue underline dark:text-dark-blue xl:text-2xl"
+          className="text-sm text-light-blue underline dark:text-dark-blue xl:text-[2vh]"
         >
           Translate Alliteration
         </button>
