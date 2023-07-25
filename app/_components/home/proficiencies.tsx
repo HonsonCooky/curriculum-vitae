@@ -91,7 +91,12 @@ export default function Proficiencies() {
   const webProficiencies = proficienciesWeb;
   const mobileProficiences = proficienciesMobile;
   return (
-    <motion.div variants={container} initial="hidden" animate="show">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="fixed h-screen w-screen overflow-clip"
+    >
       <Proficiency params={webProficiencies} className="hidden xl:flex" />
       <Proficiency params={mobileProficiences} className="flex xl:hidden" />
     </motion.div>
