@@ -11,7 +11,7 @@ const sidebar: Variants = {
     left: 0,
     padding: pos,
     height: "100%",
-    width: "60vw",
+    width: "max(30vh,30vw)",
     borderRadius: "0 4vh 4vh 0",
     transition: {
       type: "spring",

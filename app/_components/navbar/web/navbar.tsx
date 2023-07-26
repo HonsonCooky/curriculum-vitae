@@ -7,7 +7,7 @@ export default function NavBar(params: {
 }) {
   return (
     <div
-      className={`fixed top-0 z-50 h-[7vw] w-screen items-end px-[10vw] py-[1vh] ${params.className}`}
+      className={`fixed top-0 z-50 h-[12vh] w-screen items-end px-[10vw] py-[1vh] ${params.className}`}
     >
       <HomeBtn />
       <div className="mb-[1vh] flex flex-1 items-end justify-end">

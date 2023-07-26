@@ -12,7 +12,7 @@ export default function HomeBtn() {
       <motion.div
         aria-selected={pathname == "/"}
         whileTap={{ scale: 0.9 }}
-        className=" inline-flex h-full overflow-clip rounded-full fill-light-text p-[2vh] nm-flat-light-base-sm hover:fill-light-mauve aria-selected:nm-inset-light-base-sm dark:fill-dark-text dark:nm-flat-dark-base-sm hover:dark:fill-dark-mauve aria-selected:dark:nm-inset-dark-base-sm"
+        className="inline-flex h-full overflow-clip rounded-full fill-light-text p-[2vh] nm-flat-light-base-sm hover:fill-light-mauve aria-selected:nm-inset-light-base-sm dark:fill-dark-text dark:nm-flat-dark-base-sm hover:dark:fill-dark-mauve aria-selected:dark:nm-inset-dark-base-sm"
       >
         <HcIcon />
       </motion.div>
