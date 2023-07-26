@@ -5,19 +5,13 @@ export default function WelcomeMsg() {
   const [useAlliteration, setUseAlliteration] = useState(true);
 
   const alliteration =
-    "Welcome to the humble HTTP home of happily hardworking " +
-    " Harrison. A heuristic hands-on happening, hosting hearty heat" +
-    " hatched from his head. Hooked? Heed high for hyperlinks.";
-
+    "Here hosts the humble HTTP home of happily hard-working Harrison. A heuristic hands-on happening, harbouring hearty heat hatched from his head. Hooked? Heed high for hyperlinks.";
   const translation =
-    "I created this website to share a little about me and to" +
-    " connect with others who share similar interests. If you have" +
-    " any questions or just want to say Kia Ora, don’t hesitate" +
-    " to reach out. Thank you for stopping by!";
+    "I created this website to share a little about me and to connect with others who share similar interests. If you have any questions or just want to say kia ora, don’t hesitate to reach out. Thank you for stopping by!";
 
   return (
     <div>
-      <p className="mb-2 whitespace-pre-wrap text-sm xl:text-[2.1vh] xl:leading-[2vh]">
+      <p className="mb-2 whitespace-pre-wrap text-sm xl:text-[2.1vh] xl:leading-[2.5vh]">
         {useAlliteration ? alliteration : translation}
       </p>
       <div className="flex w-full items-end justify-end">
@@ -25,7 +19,9 @@ export default function WelcomeMsg() {
           onClick={() => setUseAlliteration(!useAlliteration)}
           className="text-sm text-light-blue underline dark:text-dark-blue xl:text-[2vh]"
         >
-          Translate Alliteration
+          {useAlliteration
+            ? "Translate Alliteration"
+            : "Alliterate this message!"}
         </button>
       </div>
     </div>
