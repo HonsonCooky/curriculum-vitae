@@ -7,5 +7,5 @@ export default function About() {
       href: "#history",
     },
   ];
-  return <div className="flex h-full flex-col xl:flex-row"></div>;
+  return <div className="flex h-full flex-col lg:flex-row"></div>;
 }

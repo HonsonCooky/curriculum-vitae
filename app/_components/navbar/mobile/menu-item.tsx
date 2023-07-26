@@ -32,7 +32,7 @@ export const MenuItem = (params: { page: { title: string; href: string } }) => {
           (pathname.startsWith(params.page.href) && params.page.href != "/") ||
           pathname == params.page.href
         }
-        className="p-2 text-2xl text-light-text aria-selected:text-light-mauve dark:text-dark-text aria-selected:dark:text-dark-mauve"
+        className="flex p-[2vw] text-[3vh] text-light-text aria-selected:text-light-mauve dark:text-dark-text aria-selected:dark:text-dark-mauve"
       >
         {params.page.title}
       </motion.li>

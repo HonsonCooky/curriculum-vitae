@@ -67,7 +67,7 @@ function Proficiency(params: {
           className="group absolute -translate-x-[50%] -translate-y-[50%]  rounded-full nm-flat-light-base-sm dark:nm-flat-dark-base-sm"
         >
           <Image
-            className="xl block h-[7vh] w-[7vh] overflow-clip rounded-full object-contain p-[0.5vh] xl:h-[10vh] xl:w-[10vh] xl:group-hover:h-[12vh] xl:group-hover:w-[12vh] xl:group-hover:nm-flat-light-base xl:group-hover:dark:nm-flat-dark-base"
+            className="block h-[max(7vh,8vw)] w-[max(7vh,8vw)] overflow-clip rounded-full object-contain p-[max(0.5vh,0.5vw)] lg:h-[10vh] lg:w-[10vh] lg:group-hover:h-[12vh] lg:group-hover:w-[12vh] lg:group-hover:nm-flat-light-base lg:group-hover:dark:nm-flat-dark-base"
             src={`/${content.imgRef}-logo.png`}
             alt={content.imgRef}
             height={100}
@@ -97,8 +97,8 @@ export default function Proficiencies() {
       animate="show"
       className="fixed h-screen w-screen overflow-clip"
     >
-      <Proficiency params={webProficiencies} className="hidden xl:flex" />
-      <Proficiency params={mobileProficiences} className="flex xl:hidden" />
+      <Proficiency params={webProficiencies} className="hidden lg:flex" />
+      <Proficiency params={mobileProficiences} className="flex lg:hidden" />
     </motion.div>
   );
 }

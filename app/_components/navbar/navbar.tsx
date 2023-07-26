@@ -7,10 +7,10 @@ export default function Navigation() {
   return (
     <nav>
       {/* WEB */}
-      <NavBar className="hidden xl:flex" pages={pages} />
+      <NavBar className="hidden lg:flex" pages={pages} />
 
       {/* MOBILE */}
-      <NavMenu className="flex xl:hidden" pages={pages} />
+      <NavMenu className="flex lg:hidden" pages={pages} />
     </nav>
   );
 }
