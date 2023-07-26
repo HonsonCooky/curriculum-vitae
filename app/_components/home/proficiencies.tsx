@@ -67,7 +67,7 @@ function Proficiency(params: {
           className="group absolute -translate-x-[50%] -translate-y-[50%]  rounded-full nm-flat-light-base-sm dark:nm-flat-dark-base-sm"
         >
           <Image
-            className="xl block h-16 w-16 overflow-clip rounded-full object-contain p-[1vh] xl:h-[10vh] xl:w-[10vh] xl:group-hover:h-[12vh] xl:group-hover:w-[12vh] xl:group-hover:nm-flat-light-base xl:group-hover:dark:nm-flat-dark-base"
+            className="xl block h-[7vh] w-[7vh] overflow-clip rounded-full object-contain p-[0.5vh] xl:h-[10vh] xl:w-[10vh] xl:group-hover:h-[12vh] xl:group-hover:w-[12vh] xl:group-hover:nm-flat-light-base xl:group-hover:dark:nm-flat-dark-base"
             src={`/${content.imgRef}-logo.png`}
             alt={content.imgRef}
             height={100}
