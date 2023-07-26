@@ -64,16 +64,16 @@ function Proficiency(params: {
         <motion.div
           key={content.imgRef}
           variants={child(content)}
-          className="group absolute -translate-x-[50%] -translate-y-[50%]  rounded-full nm-flat-light-base dark:nm-flat-dark-base"
+          className="group absolute -translate-x-[50%] -translate-y-[50%]  rounded-full nm-flat-light-base-sm dark:nm-flat-dark-base-sm"
         >
           <Image
-            className="block h-16 w-16 overflow-clip rounded-full object-contain p-[1vh] group-hover:w-28 xl:h-[12vh] xl:w-[12vh] xl:group-hover:h-28"
+            className="xl block h-16 w-16 overflow-clip rounded-full object-contain p-[1vh] xl:h-[10vh] xl:w-[10vh] xl:group-hover:h-[12vh] xl:group-hover:w-[12vh] xl:group-hover:nm-flat-light-base"
             src={`/${content.imgRef}-logo.png`}
             alt={content.imgRef}
             height={100}
             width={100}
           />
-          <div className="invisible absolute -bottom-2 w-full rounded px-1 text-center nm-flat-light-base group-hover:visible dark:nm-flat-dark-base">
+          <div className="invisible absolute -bottom-[2vh] w-full rounded px-[0.1vh] text-center text-[2vh] nm-flat-light-base-sm group-hover:visible dark:nm-flat-dark-base-sm">
             {content.imgRef.charAt(0).toUpperCase() +
               content.imgRef
                 .slice(1)

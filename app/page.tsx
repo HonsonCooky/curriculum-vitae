@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="flex flex-1 xl:items-center xl:justify-center">
       <Proficiencies />
-      <div className="z-10 flex flex-col rounded-2xl px-10 py-32 xl:mx-[32vw] xl:p-[5vw] xl:nm-flat-light-base xl:dark:nm-flat-dark-base">
+      <div className="z-10 flex flex-col rounded-2xl px-10 py-32 xl:mx-[32vw] xl:p-[4vw] xl:nm-flat-light-base xl:dark:nm-flat-dark-base">
         <h1 className="text-2xl font-bold text-light-mauve dark:text-dark-lavender xl:mb-2 xl:text-[6vh] xl:leading-[6.1vh]">
           Harrison Cook
         </h1>
