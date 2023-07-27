@@ -34,7 +34,8 @@
     "prettier": "2.8.8",
     "prettier-plugin-organize-attributes": "^1.0.0",
     "prettier-plugin-organize-imports": "^3.2.3",
-    "prettier-plugin-tailwindcss": "0.3.0"
+    "prettier-plugin-tailwindcss": "0.3.0",
+    "prisma": "^5.0.0"
   },
   "pnpm": {
     "overrides": {
