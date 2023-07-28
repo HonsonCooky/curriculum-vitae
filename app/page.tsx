@@ -1,4 +1,4 @@
-import Proficiencies from "./_components/proficiencies";
+import Proficiencies from "./_components/proficiencies/proficiencies";
 import WelcomeMsg from "./_components/welcome-msg";
 
 export default function Home() {

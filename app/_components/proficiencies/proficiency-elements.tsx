@@ -1,6 +1,3 @@
-"use client";
-import { proficienciesMobile } from "@/app/_utils/proficiency-list-mobile";
-import { proficienciesWeb } from "@/app/_utils/proficiency-list-web";
 import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import { z } from "zod";
@@ -15,16 +12,6 @@ const paramSchema = z.object({
   top: paramPosSchema,
 });
 const paramsSchema = paramSchema.array();
-
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-    },
-  },
-};
 
 const child = (content: paramType): Variants => {
   return {
@@ -53,7 +40,7 @@ const child = (content: paramType): Variants => {
 export type paramsType = z.infer<typeof paramsSchema>;
 export type paramType = z.infer<typeof paramSchema>;
 
-function Proficiency(params: {
+export function ProficiencyElements(params: {
   params: paramsType;
   className?: React.ComponentProps<"div">["className"];
 }) {
@@ -84,21 +71,5 @@ function Proficiency(params: {
         </motion.div>
       ))}
     </div>
-  );
-}
-
-export default function Proficiencies() {
-  const webProficiencies = proficienciesWeb;
-  const mobileProficiences = proficienciesMobile;
-  return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="fixed h-screen w-screen overflow-clip"
-    >
-      <Proficiency params={webProficiencies} className="hidden lg:flex" />
-      <Proficiency params={mobileProficiences} className="flex lg:hidden" />
-    </motion.div>
   );
 }

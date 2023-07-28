@@ -1,5 +1,5 @@
 "use client";
-import MenuIcon from "@/app/_dynamic-assets/menu-icon";
+import MenuIcon from "@/app/_icons/menu-icon";
 import { Variants, motion, useCycle } from "framer-motion";
 import { NavBtns } from "./nav-btns";
 

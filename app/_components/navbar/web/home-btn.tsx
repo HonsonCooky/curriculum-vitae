@@ -1,5 +1,5 @@
 "use client";
-import HcIcon from "@/app/_dynamic-assets/hc-icon";
+import HcIcon from "@/app/_icons/hc-icon";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
