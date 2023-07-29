@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Fira_Sans } from "next/font/google";
 import { Suspense } from "react";
-import Navigation from "./_components/navbar/navbar";
+import Navigation from "./_components/navbar/nav";
 import "./globals.css";
 import Loading from "./loading";
 

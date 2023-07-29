@@ -3,7 +3,7 @@ import SectionDescription from "./_components/section-desc";
 export default function Blogs() {
   return (
     <div className="flex flex-1 flex-col items-center lg:justify-center">
-      <ChatBubbleLeftEllipsisIcon className="fixed left-[5vw] top-[20vh] hidden h-[min(20vh,20vw)] lg:flex" />
+      <ChatBubbleLeftEllipsisIcon className="fixed left-[2vw] top-[20vh] hidden h-[min(20vh,20vw)] lg:flex" />
       <h1 className="mb-2 mt-[4vh] text-[10vh] font-bold leading-[10vh] text-light-maroon dark:text-dark-maroon">
         Blogs
       </h1>
@@ -22,7 +22,7 @@ export default function Blogs() {
           topic. I'm always open to new ideas, and would love to have mine
           challenged.
         </p>
-        <div className="rounded-2xl bg-light-crust px-[5vw] py-[1vh] text-light-crust dark:bg-dark-peach dark:text-dark-base">
+        <div className="rounded-2xl bg-light-peach px-[5vw] py-[1vh] text-light-crust dark:bg-dark-peach dark:text-dark-base">
           <p className="text-[2vh] font-light">
             <span className="font-bold">Note:</span> Comment sections may be
             moderated and altered to ensure conversations are digestable (and
