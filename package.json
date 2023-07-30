@@ -12,14 +12,14 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@prisma/client": "5.0.0",
-    "@types/lodash": "^4.14.195",
+    "@types/lodash": "^4.14.196",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
-    "framer-motion": "^10.13.0",
+    "framer-motion": "^10.15.0",
     "lodash": "^4.17.21",
     "next": "13.4.9",
     "postcss": "8.4.25",
@@ -31,7 +31,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-prettier": "^8.9.0",
     "prettier": "2.8.8",
     "prettier-plugin-organize-attributes": "^1.0.0",
     "prettier-plugin-organize-imports": "^3.2.3",

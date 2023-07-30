@@ -9,19 +9,25 @@ datasource db {
 }
 
 model Post {
-  id       Int       @id @default(autoincrement())
+  id       String    @id @default(uuid())
+  content  String    @db.Text()
   tags     Tag[]
   comments Comment[]
 }
 
 model Comment {
-  id     Int   @id
-  Post   Post? @relation(fields: [postId], references: [id]) // A comment can have one post
-  postId Int?
+  id      String  @id @default(uuid())
+  content String  @db.Text()
+  postId  String?
+  post    Post?   @relation(fields: [postId], references: [id])
+
+  @@index([postId])
 }
 
 model Tag {
-  name   String @id
-  Post   Post?  @relation(fields: [postId], references: [id])
-  postId Int?
+  name   String  @id @default(uuid())
+  postId String?
+  Post   Post?   @relation(fields: [postId], references: [id])
+
+  @@index([postId])
 }
