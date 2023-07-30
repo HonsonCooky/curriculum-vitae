@@ -12,6 +12,7 @@ export default function SectionDescription(params: {
     <Link href={params.href}>
       <motion.div
         whileTap={{ scale: 0.9 }}
+        whileFocus={{ scale: 1.0 }}
         whileHover={{ scale: 1.1 }}
         className="mx-[0.5vw] rounded-[0.7vh] px-[2vh] py-[1vh]  nm-flat-light-base hover:text-light-mauve dark:nm-flat-dark-base dark:hover:text-dark-mauve"
       >
