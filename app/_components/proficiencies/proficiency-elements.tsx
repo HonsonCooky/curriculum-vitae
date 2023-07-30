@@ -51,16 +51,16 @@ export function ProficiencyElements(params: {
         <motion.div
           key={content.imgRef}
           variants={child(content)}
-          className="group absolute -translate-x-[50%] -translate-y-[50%]  rounded-full nm-flat-light-base-sm dark:nm-flat-dark-base-sm"
+          className="group absolute -translate-x-[50%] -translate-y-[50%] rounded-full nm-flat-light-base-sm hover:z-10 dark:nm-flat-dark-base-sm"
         >
           <Image
-            className="z-0 block h-[max(10vh,5vw)] w-[max(10vh,5vw)] overflow-clip rounded-full object-contain p-[max(1vh,0.5vw)] group-hover:z-10 group-hover:h-[max(8vh,7vw)] group-hover:w-[max(8vh,7vw)]"
+            className="block h-[max(10vh,4vw)] w-[max(10vh,4vw)] overflow-clip rounded-full object-contain p-[max(1vh,0.5vw)] group-hover:h-[max(11vh,6vw)] group-hover:w-[max(11vh,6vw)]"
             src={`/${content.imgRef}-logo.png`}
             alt={content.imgRef}
             height={100}
             width={100}
           />
-          <div className="invisible absolute -bottom-[2vh] z-0 w-full rounded px-[0.1vh] text-center text-[2vh] nm-flat-light-base-sm group-hover:visible group-hover:z-10 dark:nm-flat-dark-base-sm">
+          <div className="invisible absolute w-full -translate-y-[80%] rounded px-[0.1vh] text-center text-[max(2vh,1vw,10px)] nm-flat-light-base-sm group-hover:visible group-hover:z-10 dark:nm-flat-dark-base-sm">
             {content.imgRef.charAt(0).toUpperCase() +
               content.imgRef
                 .slice(1)
