@@ -1,4 +1,5 @@
 import ChatBubbleLeftEllipsisIcon from "@heroicons/react/24/outline/ChatBubbleLeftEllipsisIcon";
+import BlogTags from "./_components/blog-tags";
 import BlogTitle from "./_components/blog-title";
 export default function BlogsHome() {
   return (
@@ -14,7 +15,7 @@ export default function BlogsHome() {
           specific set of experiences. Posts are more akin to that of a journal
           entry; A casual documenation of my thoughts. In anticipation of
           alternative views, an anonymous comment section is provided on each
-          topic. I'm always open to new ideas, and would love to have mine
+          topic. I&apos;m always open to new ideas, and would love to have mine
           challenged.
         </p>
         <div className="rounded px-[2vw] py-[1vh] nm-flat-light-base dark:nm-flat-dark-base">
@@ -27,6 +28,7 @@ export default function BlogsHome() {
           </p>
         </div>
       </div>
+      <BlogTags />
     </div>
   );
 }
