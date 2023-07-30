@@ -9,10 +9,12 @@ datasource db {
 }
 
 model Post {
-  id       String    @id @default(uuid())
-  content  String    @db.Text()
-  tags     Tag[]
-  comments Comment[]
+  id          String    @id @default(uuid())
+  title       String    @db.TinyText()
+  description String    @db.TinyText()
+  content     String    @db.Text()
+  tags        Tag[]
+  comments    Comment[]
 }
 
 model Comment {
@@ -25,9 +27,10 @@ model Comment {
 }
 
 model Tag {
-  name   String  @id @default(uuid())
-  postId String?
-  Post   Post?   @relation(fields: [postId], references: [id])
+  name        String  @id @default(uuid())
+  description String
+  postId      String?
+  Post        Post?   @relation(fields: [postId], references: [id])
 
   @@index([postId])
 }

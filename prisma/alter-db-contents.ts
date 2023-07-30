@@ -31,9 +31,16 @@ async function _formatTags(tags: Tag[]) {
     .join(", ");
 }
 
-async function processCreateBlog(content: Buffer, tags?: Tag[]) {
+async function processCreateBlog(
+  content: Buffer,
+  title: string,
+  desc: string,
+  tags?: Tag[]
+) {
   await prisma.post.create({
     data: {
+      title: title,
+      description: desc,
       content: content.toString(),
       tags: {
         connect: tags,
@@ -64,10 +71,22 @@ async function processDeleteBlog(id: string) {
   });
 }
 
-async function processCreateTag(name: string) {
+async function processCreateTag(name: string, desc: string) {
   await prisma.tag.create({
     data: {
       name: name,
+      description: desc,
+    },
+  });
+}
+
+async function processUpdateTag(name: string, newDesc: string) {
+  await prisma.tag.update({
+    where: {
+      name: name,
+    },
+    data: {
+      description: newDesc,
     },
   });
 }
@@ -86,18 +105,21 @@ async function processCreate(answer: string) {
       console.log(`Creating Blog`);
       const path = await _ask("Content Path: ");
       const content = readFileSync(path);
+      const postTitle = await _ask("Post Title: ");
+      const postDesc = await _ask("Post Description: ");
       const tags = await prisma.tag.findMany();
       const tagStr = await _formatTags(tags);
       const tagAns = await _ask(`Select Tag: (${tagStr}): `);
       const blogTags = tags.filter((tag) =>
         tagAns.toLowerCase().includes(tag.name.toLowerCase())
       );
-      await processCreateBlog(content, blogTags);
+      await processCreateBlog(content, postTitle, postDesc, blogTags);
       break;
     case "t":
       console.log(`Creating Tag`);
       const name = await _ask("Tag Name: ");
-      await processCreateTag(name);
+      const tagDesc = await _ask("Tag Description: ");
+      await processCreateTag(name, tagDesc);
       break;
     default:
       throw Error(`${answer} is not a valid input`);
@@ -120,9 +142,10 @@ async function processUpdate(answer: string) {
       await processUpdateBlog(id, content, blogTags);
       break;
     case "t":
-      throw Error(
-        "Tags can't be updated. Delete an existing one and make another"
-      );
+      console.log(`Updating Tag: ${id}`);
+      const tagDesc = await _ask("Tag Description: ");
+      await processUpdateTag(id, tagDesc);
+      break;
     default:
       throw Error(`${answer} is not a valid input`);
   }

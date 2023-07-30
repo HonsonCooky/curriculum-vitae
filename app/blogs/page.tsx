@@ -1,6 +1,5 @@
 import ChatBubbleLeftEllipsisIcon from "@heroicons/react/24/outline/ChatBubbleLeftEllipsisIcon";
 import BlogTitle from "./_components/blog-title";
-import SectionDescription from "./_components/section-desc";
 export default function BlogsHome() {
   return (
     <div className="flex flex-1 flex-col items-center lg:justify-center">
@@ -27,23 +26,6 @@ export default function BlogsHome() {
             conversations are digestable.
           </p>
         </div>
-      </div>
-      <div className="flex w-full flex-col items-center justify-evenly px-[10vw] py-[2vh] lg:flex-row">
-        <SectionDescription
-          title="Life & Style"
-          description="The world encapsulating the programming"
-          href="/blogs/sections/life-and-style"
-        />
-        <SectionDescription
-          title="Programming"
-          description="Lines of code, and alternative thinkings"
-          href="/blogs/sections/programming"
-        />
-        <SectionDescription
-          title="Business | Hobbies"
-          description="Understanding the effect of your code"
-          href="/blogs/sections/business-and-hobbies"
-        />
       </div>
     </div>
   );
