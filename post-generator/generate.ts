@@ -57,7 +57,9 @@ async function processUpdateBlog(id: string, content: Buffer, tags?: Tag[]) {
     data: {
       content: content.toString(),
       tags: {
-        connect: tags,
+        connect: tags?.map((tag) => {
+          return { name: tag.name };
+        }),
       },
     },
   });
@@ -103,16 +105,16 @@ async function processCreate(answer: string) {
   switch (answer.charAt(0).toLowerCase()) {
     case "b":
       console.log(`Creating Blog`);
-      const path = await _ask("Content Path: ");
-      const content = readFileSync(path);
+      const content = readFileSync("./post-generator/content.html");
       const postTitle = await _ask("Post Title: ");
       const postDesc = await _ask("Post Description: ");
       const tags = await prisma.tag.findMany();
       const tagStr = await _formatTags(tags);
       const tagAns = await _ask(`Select Tag: (${tagStr}): `);
       const blogTags = tags.filter((tag) =>
-        tagAns.toLowerCase().includes(tag.name.toLowerCase())
+        tag.name.toLowerCase().includes(tagAns.toLowerCase())
       );
+      console.log(`Blog Tags: ${JSON.stringify(blogTags)}`);
       await processCreateBlog(content, postTitle, postDesc, blogTags);
       break;
     case "t":
@@ -131,14 +133,14 @@ async function processUpdate(answer: string) {
   switch (answer.charAt(0).toLowerCase()) {
     case "b":
       console.log(`Updating Blog: ${id}`);
-      const path = await _ask("New Content Path: ");
-      const content = readFileSync(path);
+      const content = readFileSync("./post-generator/content.html");
       const tags = await prisma.tag.findMany();
       const tagStr = await _formatTags(tags);
       const tagAns = await _ask(`Select New Tags: (${tagStr}): `);
       const blogTags = tags.filter((tag) =>
-        tagAns.toLowerCase().includes(tag.name.toLowerCase())
+        tag.name.toLowerCase().includes(tagAns.toLowerCase())
       );
+      console.log(`Blog Tags: ${JSON.stringify(blogTags)}`);
       await processUpdateBlog(id, content, blogTags);
       break;
     case "t":

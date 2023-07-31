@@ -103,7 +103,9 @@ function processUpdateBlog(id, content, tags) {
                         data: {
                             content: content.toString(),
                             tags: {
-                                connect: tags,
+                                connect: tags === null || tags === void 0 ? void 0 : tags.map(function (tag) {
+                                    return { name: tag.name };
+                                }),
                             },
                         },
                     })];
@@ -184,65 +186,63 @@ function processDeleteTag(name) {
 }
 function processCreate(answer) {
     return __awaiter(this, void 0, void 0, function () {
-        var _a, path, content, postTitle, postDesc, tags, tagStr, tagAns_1, blogTags, name_1, tagDesc;
+        var _a, content, postTitle, postDesc, tags, tagStr, tagAns_1, blogTags, name_1, tagDesc;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     _a = answer.charAt(0).toLowerCase();
                     switch (_a) {
                         case "b": return [3 /*break*/, 1];
-                        case "t": return [3 /*break*/, 9];
+                        case "t": return [3 /*break*/, 8];
                     }
-                    return [3 /*break*/, 13];
+                    return [3 /*break*/, 12];
                 case 1:
                     console.log("Creating Blog");
-                    return [4 /*yield*/, _ask("Content Path: ")];
-                case 2:
-                    path = _b.sent();
-                    content = (0, fs_1.readFileSync)(path);
+                    content = (0, fs_1.readFileSync)("./post-generator/content.html");
                     return [4 /*yield*/, _ask("Post Title: ")];
-                case 3:
+                case 2:
                     postTitle = _b.sent();
                     return [4 /*yield*/, _ask("Post Description: ")];
-                case 4:
+                case 3:
                     postDesc = _b.sent();
                     return [4 /*yield*/, prisma.tag.findMany()];
-                case 5:
+                case 4:
                     tags = _b.sent();
                     return [4 /*yield*/, _formatTags(tags)];
-                case 6:
+                case 5:
                     tagStr = _b.sent();
                     return [4 /*yield*/, _ask("Select Tag: (".concat(tagStr, "): "))];
-                case 7:
+                case 6:
                     tagAns_1 = _b.sent();
                     blogTags = tags.filter(function (tag) {
-                        return tagAns_1.toLowerCase().includes(tag.name.toLowerCase());
+                        return tag.name.toLowerCase().includes(tagAns_1.toLowerCase());
                     });
+                    console.log("Blog Tags: ".concat(JSON.stringify(blogTags)));
                     return [4 /*yield*/, processCreateBlog(content, postTitle, postDesc, blogTags)];
-                case 8:
+                case 7:
                     _b.sent();
-                    return [3 /*break*/, 14];
-                case 9:
+                    return [3 /*break*/, 13];
+                case 8:
                     console.log("Creating Tag");
                     return [4 /*yield*/, _ask("Tag Name: ")];
-                case 10:
+                case 9:
                     name_1 = _b.sent();
                     return [4 /*yield*/, _ask("Tag Description: ")];
-                case 11:
+                case 10:
                     tagDesc = _b.sent();
                     return [4 /*yield*/, processCreateTag(name_1, tagDesc)];
-                case 12:
+                case 11:
                     _b.sent();
-                    return [3 /*break*/, 14];
-                case 13: throw Error("".concat(answer, " is not a valid input"));
-                case 14: return [2 /*return*/];
+                    return [3 /*break*/, 13];
+                case 12: throw Error("".concat(answer, " is not a valid input"));
+                case 13: return [2 /*return*/];
             }
         });
     });
 }
 function processUpdate(answer) {
     return __awaiter(this, void 0, void 0, function () {
-        var id, _a, path, content, tags, tagStr, tagAns_2, blogTags, tagDesc;
+        var id, _a, content, tags, tagStr, tagAns_2, blogTags, tagDesc;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0: return [4 /*yield*/, _ask("Identifier: ")];
@@ -251,42 +251,40 @@ function processUpdate(answer) {
                     _a = answer.charAt(0).toLowerCase();
                     switch (_a) {
                         case "b": return [3 /*break*/, 2];
-                        case "t": return [3 /*break*/, 8];
+                        case "t": return [3 /*break*/, 7];
                     }
-                    return [3 /*break*/, 11];
+                    return [3 /*break*/, 10];
                 case 2:
                     console.log("Updating Blog: ".concat(id));
-                    return [4 /*yield*/, _ask("New Content Path: ")];
-                case 3:
-                    path = _b.sent();
-                    content = (0, fs_1.readFileSync)(path);
+                    content = (0, fs_1.readFileSync)("./post-generator/content.html");
                     return [4 /*yield*/, prisma.tag.findMany()];
-                case 4:
+                case 3:
                     tags = _b.sent();
                     return [4 /*yield*/, _formatTags(tags)];
-                case 5:
+                case 4:
                     tagStr = _b.sent();
                     return [4 /*yield*/, _ask("Select New Tags: (".concat(tagStr, "): "))];
-                case 6:
+                case 5:
                     tagAns_2 = _b.sent();
                     blogTags = tags.filter(function (tag) {
-                        return tagAns_2.toLowerCase().includes(tag.name.toLowerCase());
+                        return tag.name.toLowerCase().includes(tagAns_2.toLowerCase());
                     });
+                    console.log("Blog Tags: ".concat(JSON.stringify(blogTags)));
                     return [4 /*yield*/, processUpdateBlog(id, content, blogTags)];
-                case 7:
+                case 6:
                     _b.sent();
-                    return [3 /*break*/, 12];
-                case 8:
+                    return [3 /*break*/, 11];
+                case 7:
                     console.log("Updating Tag: ".concat(id));
                     return [4 /*yield*/, _ask("Tag Description: ")];
-                case 9:
+                case 8:
                     tagDesc = _b.sent();
                     return [4 /*yield*/, processUpdateTag(id, tagDesc)];
-                case 10:
+                case 9:
                     _b.sent();
-                    return [3 /*break*/, 12];
-                case 11: throw Error("".concat(answer, " is not a valid input"));
-                case 12: return [2 /*return*/];
+                    return [3 /*break*/, 11];
+                case 10: throw Error("".concat(answer, " is not a valid input"));
+                case 11: return [2 /*return*/];
             }
         });
     });

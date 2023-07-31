@@ -7,8 +7,10 @@ export default function BlogTag(params: {
   chassName?: React.ComponentProps<"div">["className"];
   tag: Tag;
 }) {
+  const uri = encodeURI(params.tag.name);
+  const href = `/blogs/${uri}`;
   return (
-    <Link href={`/blogs/${encodeURI(params.tag.name)}`}>
+    <Link href={href}>
       <motion.div
         whileTap={{ scale: 0.9 }}
         whileFocus={{ scale: 1.0 }}
