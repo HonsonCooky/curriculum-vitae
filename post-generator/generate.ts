@@ -1,10 +1,9 @@
 /**
- * For the purpose of this Website, the only person uploading blogs is me. Thus, I don't need a full UI with
- * authentication for generating content. Rather, I generate the document locally, and upload it to my DB by running
- * this script. The script has functionality for CRUD functionality.
+ * The content of this file WOULD be used in the website, however, seeing as I am the only generator of posts, I've
+ * built this functionality separate, to enable me to create, update, and delete Posts and Tags.
  */
 
-import { PrismaClient, Tag } from "@prisma/client";
+import { Post, PrismaClient, Tag } from "@prisma/client";
 import { readFileSync } from "fs";
 import * as readline from "readline";
 const prisma = new PrismaClient();
@@ -14,161 +13,132 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-async function _ask(question: string) {
+/**
+ * Ask a CLI question.
+ */
+async function _ask(question: string, backup: string = "") {
   return new Promise<string>((resolve) =>
-    rl.question(question, (answer) => resolve(answer))
+    rl.question(question, (answer) =>
+      resolve(answer.length > 0 ? answer : backup)
+    )
   );
 }
 
-async function _formatTags(tags: Tag[]) {
-  return tags
-    .map(
-      (tag) =>
-        `[${tag.name.charAt(0).toUpperCase()}]${tag.name
-          .slice(1)
-          .toLowerCase()}`
-    )
-    .join(", ");
+/**
+ * Generate the contents for a Tag.
+ */
+async function generateTag() {
+  const name = await _ask("Tag Name: ");
+  const description = await _ask("Tag Description: ");
+  return {
+    name,
+    description,
+  };
 }
 
-async function processCreateBlog(
-  content: Buffer,
-  title: string,
-  desc: string,
-  tags?: Tag[]
-) {
-  await prisma.post.create({
-    data: {
-      title: title,
-      description: desc,
-      content: content.toString(),
-      tags: {
-        connect: tags,
-      },
-    },
-  });
+/**
+ * Create or Update a posts contents.
+ */
+async function getPostContent(prevPost?: Post) {
+  if (prevPost) {
+    const ans = await _ask("Update Content? [y/n]: ");
+    if (ans.toLowerCase() == "y") return prevPost.content;
+  }
+  return readFileSync("./post-generator/content.html").toString();
 }
 
-async function processUpdateBlog(id: string, content: Buffer, tags?: Tag[]) {
-  await prisma.post.update({
-    where: {
-      id: id,
-    },
-    data: {
-      content: content.toString(),
-      tags: {
-        connect: tags?.map((tag) => {
-          return { name: tag.name };
-        }),
-      },
-    },
-  });
+/**
+ * Create or Update a posts tags.
+ */
+async function getPostTags(prevTags?: Tag[]) {
+  let tags = [];
+  if (prevTags) {
+    const ans = await _ask("Use Previous Tags? [y/n]: ");
+    if (ans.toLowerCase() == "y") return (tags = prevTags);
+  }
+  while ((await _ask("Add Tag? [y/n] ")).toLowerCase() == "y")
+    tags.push(await generateTag());
+  return tags;
 }
 
-async function processDeleteBlog(id: string) {
-  await prisma.post.delete({
-    where: {
-      id: id,
-    },
-  });
+/**
+ * Generate the contents for a new Post.
+ */
+async function generatePost(prevPost?: { post: Post; tags: Tag[] }) {
+  const title = await _ask("Blog Title: ", prevPost?.post.title);
+  const description = await _ask(
+    "Blog Description: ",
+    prevPost?.post.description
+  );
+  const content = await getPostContent(prevPost?.post);
+  const tags = await getPostTags(prevPost?.tags);
+  return { title, description, content, tags };
 }
 
-async function processCreateTag(name: string, desc: string) {
-  await prisma.tag.create({
-    data: {
-      name: name,
-      description: desc,
-    },
-  });
-}
-
-async function processUpdateTag(name: string, newDesc: string) {
-  await prisma.tag.update({
-    where: {
-      name: name,
-    },
-    data: {
-      description: newDesc,
-    },
-  });
-}
-
-async function processDeleteTag(name: string) {
-  await prisma.tag.delete({
-    where: {
-      name: name,
-    },
-  });
-}
-
+/**
+ * Create a new Post or Tag with prisma
+ */
 async function processCreate(answer: string) {
   switch (answer.charAt(0).toLowerCase()) {
     case "b":
-      console.log(`Creating Blog`);
-      const content = readFileSync("./post-generator/content.html");
-      const postTitle = await _ask("Post Title: ");
-      const postDesc = await _ask("Post Description: ");
-      const tags = await prisma.tag.findMany();
-      const tagStr = await _formatTags(tags);
-      const tagAns = await _ask(`Select Tag: (${tagStr}): `);
-      const blogTags = tags.filter((tag) =>
-        tag.name.toLowerCase().includes(tagAns.toLowerCase())
-      );
-      console.log(`Blog Tags: ${JSON.stringify(blogTags)}`);
-      await processCreateBlog(content, postTitle, postDesc, blogTags);
+      const post = await generatePost();
+      await prisma.post.create({
+        data: {
+          title: post.title,
+          description: post.description,
+          date: new Date(),
+          content: post.content,
+          tags: {
+            connectOrCreate: post.tags.map((tag) => ({
+              where: { name: tag.name },
+              create: tag,
+            })),
+          },
+        },
+      });
       break;
     case "t":
-      console.log(`Creating Tag`);
-      const name = await _ask("Tag Name: ");
-      const tagDesc = await _ask("Tag Description: ");
-      await processCreateTag(name, tagDesc);
+      const tag = await generateTag();
+      await prisma.tag.create({ data: tag });
       break;
     default:
       throw Error(`${answer} is not a valid input`);
   }
 }
 
+/**
+ * Update a new Post or Tag with prisma
+ */
 async function processUpdate(answer: string) {
   const id = await _ask("Identifier: ");
   switch (answer.charAt(0).toLowerCase()) {
     case "b":
-      console.log(`Updating Blog: ${id}`);
-      const content = readFileSync("./post-generator/content.html");
-      const tags = await prisma.tag.findMany();
-      const tagStr = await _formatTags(tags);
-      const tagAns = await _ask(`Select New Tags: (${tagStr}): `);
-      const blogTags = tags.filter((tag) =>
-        tag.name.toLowerCase().includes(tagAns.toLowerCase())
-      );
-      console.log(`Blog Tags: ${JSON.stringify(blogTags)}`);
-      await processUpdateBlog(id, content, blogTags);
       break;
     case "t":
-      console.log(`Updating Tag: ${id}`);
-      const tagDesc = await _ask("Tag Description: ");
-      await processUpdateTag(id, tagDesc);
       break;
     default:
       throw Error(`${answer} is not a valid input`);
   }
 }
 
+/**
+ * Delete a new Post or Tag with prisma
+ */
 async function processDelete(answer: string) {
   const id = await _ask("Identifier: ");
   switch (answer.charAt(0).toLowerCase()) {
     case "b":
-      console.log(`Deleting Blog: ${id}`);
-      await processDeleteBlog(id);
       break;
     case "t":
-      console.log(`Deleting Tag: ${id}`);
-      await processDeleteTag(id);
       break;
     default:
       throw Error(`${answer} is not a valid input`);
   }
 }
 
+/**
+ * Start basic line of questioning for CRUD applications
+ */
 async function processRequest(answer: string) {
   const type = await _ask("[B]log or [T]ag: ");
   switch (answer.charAt(0).toLowerCase()) {

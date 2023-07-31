@@ -8,29 +8,32 @@ datasource db {
   relationMode = "prisma"
 }
 
+// Visual Aid
+// Post -> TagsOnPosts <- Tag
+// Post -> Comment
+
 model Post {
   id          String    @id @default(uuid())
   title       String    @db.TinyText()
   description String    @db.TinyText()
+  date        DateTime  @db.Timestamp()
   content     String    @db.Text()
   tags        Tag[]
   comments    Comment[]
 }
 
-model Comment {
-  id      String  @id @default(uuid())
-  content String  @db.Text()
-  postId  String?
-  post    Post?   @relation(fields: [postId], references: [id])
-
-  @@index([postId])
+model Tag {
+  name        String @id @default(uuid())
+  description String
+  posts       Post[]
 }
 
-model Tag {
-  name        String  @id @default(uuid())
-  description String
-  postId      String?
-  Post        Post?   @relation(fields: [postId], references: [id])
+model Comment {
+  id      String   @id @default(uuid())
+  date    DateTime @db.Timestamp()
+  content String   @db.Text()
+  postId  String?
+  post    Post?    @relation(fields: [postId], references: [id])
 
   @@index([postId])
 }

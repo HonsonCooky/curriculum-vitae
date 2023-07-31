@@ -1,8 +1,7 @@
 "use strict";
 /**
- * For the purpose of this Website, the only person uploading blogs is me. Thus, I don't need a full UI with
- * authentication for generating content. Rather, I generate the document locally, and upload it to my DB by running
- * this script. The script has functionality for CRUD functionality.
+ * The content of this file WOULD be used in the website, however, seeing as I am the only generator of posts, I've
+ * built this functionality separate, to enable me to create, update, and delete Posts and Tags.
  */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -49,278 +48,218 @@ var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
-function _ask(question) {
+/**
+ * Ask a CLI question.
+ */
+function _ask(question, backup) {
+    if (backup === void 0) { backup = ""; }
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             return [2 /*return*/, new Promise(function (resolve) {
-                    return rl.question(question, function (answer) { return resolve(answer); });
+                    return rl.question(question, function (answer) {
+                        return resolve(answer.length > 0 ? answer : backup);
+                    });
                 })];
         });
     });
 }
-function _formatTags(tags) {
+/**
+ * Generate the contents for a Tag.
+ */
+function generateTag() {
     return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            return [2 /*return*/, tags
-                    .map(function (tag) {
-                    return "[".concat(tag.name.charAt(0).toUpperCase(), "]").concat(tag.name
-                        .slice(1)
-                        .toLowerCase());
-                })
-                    .join(", ")];
-        });
-    });
-}
-function processCreateBlog(content, title, desc, tags) {
-    return __awaiter(this, void 0, void 0, function () {
+        var name, description;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, prisma.post.create({
-                        data: {
-                            title: title,
-                            description: desc,
-                            content: content.toString(),
-                            tags: {
-                                connect: tags,
-                            },
-                        },
-                    })];
+                case 0: return [4 /*yield*/, _ask("Tag Name: ")];
                 case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function processUpdateBlog(id, content, tags) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, prisma.post.update({
-                        where: {
-                            id: id,
-                        },
-                        data: {
-                            content: content.toString(),
-                            tags: {
-                                connect: tags === null || tags === void 0 ? void 0 : tags.map(function (tag) {
-                                    return { name: tag.name };
-                                }),
-                            },
-                        },
-                    })];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function processDeleteBlog(id) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, prisma.post.delete({
-                        where: {
-                            id: id,
-                        },
-                    })];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-function processCreateTag(name, desc) {
-    return __awaiter(this, void 0, void 0, function () {
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, prisma.tag.create({
-                        data: {
+                    name = _a.sent();
+                    return [4 /*yield*/, _ask("Tag Description: ")];
+                case 2:
+                    description = _a.sent();
+                    return [2 /*return*/, {
                             name: name,
-                            description: desc,
-                        },
-                    })];
-                case 1:
-                    _a.sent();
-                    return [2 /*return*/];
+                            description: description,
+                        }];
             }
         });
     });
 }
-function processUpdateTag(name, newDesc) {
+/**
+ * Create or Update a posts contents.
+ */
+function getPostContent(prevPost) {
     return __awaiter(this, void 0, void 0, function () {
+        var ans;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, prisma.tag.update({
-                        where: {
-                            name: name,
-                        },
-                        data: {
-                            description: newDesc,
-                        },
-                    })];
+                case 0:
+                    if (!prevPost) return [3 /*break*/, 2];
+                    return [4 /*yield*/, _ask("Update Content? [y/n]: ")];
                 case 1:
-                    _a.sent();
-                    return [2 /*return*/];
+                    ans = _a.sent();
+                    if (ans.toLowerCase() == "y")
+                        return [2 /*return*/, prevPost.content];
+                    _a.label = 2;
+                case 2: return [2 /*return*/, (0, fs_1.readFileSync)("./post-generator/content.html").toString()];
             }
         });
     });
 }
-function processDeleteTag(name) {
+/**
+ * Create or Update a posts tags.
+ */
+function getPostTags(prevTags) {
     return __awaiter(this, void 0, void 0, function () {
+        var tags, ans, _a, _b;
+        return __generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    tags = [];
+                    if (!prevTags) return [3 /*break*/, 2];
+                    return [4 /*yield*/, _ask("Use Previous Tags? [y/n]: ")];
+                case 1:
+                    ans = _c.sent();
+                    if (ans.toLowerCase() == "y")
+                        return [2 /*return*/, (tags = prevTags)];
+                    _c.label = 2;
+                case 2: return [4 /*yield*/, _ask("Add Tag? [y/n] ")];
+                case 3:
+                    if (!((_c.sent()).toLowerCase() == "y")) return [3 /*break*/, 5];
+                    _b = (_a = tags).push;
+                    return [4 /*yield*/, generateTag()];
+                case 4:
+                    _b.apply(_a, [_c.sent()]);
+                    return [3 /*break*/, 2];
+                case 5: return [2 /*return*/, tags];
+            }
+        });
+    });
+}
+/**
+ * Generate the contents for a new Post.
+ */
+function generatePost(prevPost) {
+    return __awaiter(this, void 0, void 0, function () {
+        var title, description, content, tags;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, prisma.tag.delete({
-                        where: {
-                            name: name,
-                        },
-                    })];
+                case 0: return [4 /*yield*/, _ask("Blog Title: ", prevPost === null || prevPost === void 0 ? void 0 : prevPost.post.title)];
                 case 1:
-                    _a.sent();
-                    return [2 /*return*/];
+                    title = _a.sent();
+                    return [4 /*yield*/, _ask("Blog Description: ", prevPost === null || prevPost === void 0 ? void 0 : prevPost.post.description)];
+                case 2:
+                    description = _a.sent();
+                    return [4 /*yield*/, getPostContent(prevPost === null || prevPost === void 0 ? void 0 : prevPost.post)];
+                case 3:
+                    content = _a.sent();
+                    return [4 /*yield*/, getPostTags(prevPost === null || prevPost === void 0 ? void 0 : prevPost.tags)];
+                case 4:
+                    tags = _a.sent();
+                    return [2 /*return*/, { title: title, description: description, content: content, tags: tags }];
             }
         });
     });
 }
+/**
+ * Create a new Post or Tag with prisma
+ */
 function processCreate(answer) {
     return __awaiter(this, void 0, void 0, function () {
-        var _a, content, postTitle, postDesc, tags, tagStr, tagAns_1, blogTags, name_1, tagDesc;
+        var _a, post, tag;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     _a = answer.charAt(0).toLowerCase();
                     switch (_a) {
                         case "b": return [3 /*break*/, 1];
-                        case "t": return [3 /*break*/, 8];
-                    }
-                    return [3 /*break*/, 12];
-                case 1:
-                    console.log("Creating Blog");
-                    content = (0, fs_1.readFileSync)("./post-generator/content.html");
-                    return [4 /*yield*/, _ask("Post Title: ")];
-                case 2:
-                    postTitle = _b.sent();
-                    return [4 /*yield*/, _ask("Post Description: ")];
-                case 3:
-                    postDesc = _b.sent();
-                    return [4 /*yield*/, prisma.tag.findMany()];
-                case 4:
-                    tags = _b.sent();
-                    return [4 /*yield*/, _formatTags(tags)];
-                case 5:
-                    tagStr = _b.sent();
-                    return [4 /*yield*/, _ask("Select Tag: (".concat(tagStr, "): "))];
-                case 6:
-                    tagAns_1 = _b.sent();
-                    blogTags = tags.filter(function (tag) {
-                        return tag.name.toLowerCase().includes(tagAns_1.toLowerCase());
-                    });
-                    console.log("Blog Tags: ".concat(JSON.stringify(blogTags)));
-                    return [4 /*yield*/, processCreateBlog(content, postTitle, postDesc, blogTags)];
-                case 7:
-                    _b.sent();
-                    return [3 /*break*/, 13];
-                case 8:
-                    console.log("Creating Tag");
-                    return [4 /*yield*/, _ask("Tag Name: ")];
-                case 9:
-                    name_1 = _b.sent();
-                    return [4 /*yield*/, _ask("Tag Description: ")];
-                case 10:
-                    tagDesc = _b.sent();
-                    return [4 /*yield*/, processCreateTag(name_1, tagDesc)];
-                case 11:
-                    _b.sent();
-                    return [3 /*break*/, 13];
-                case 12: throw Error("".concat(answer, " is not a valid input"));
-                case 13: return [2 /*return*/];
-            }
-        });
-    });
-}
-function processUpdate(answer) {
-    return __awaiter(this, void 0, void 0, function () {
-        var id, _a, content, tags, tagStr, tagAns_2, blogTags, tagDesc;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0: return [4 /*yield*/, _ask("Identifier: ")];
-                case 1:
-                    id = _b.sent();
-                    _a = answer.charAt(0).toLowerCase();
-                    switch (_a) {
-                        case "b": return [3 /*break*/, 2];
-                        case "t": return [3 /*break*/, 7];
-                    }
-                    return [3 /*break*/, 10];
-                case 2:
-                    console.log("Updating Blog: ".concat(id));
-                    content = (0, fs_1.readFileSync)("./post-generator/content.html");
-                    return [4 /*yield*/, prisma.tag.findMany()];
-                case 3:
-                    tags = _b.sent();
-                    return [4 /*yield*/, _formatTags(tags)];
-                case 4:
-                    tagStr = _b.sent();
-                    return [4 /*yield*/, _ask("Select New Tags: (".concat(tagStr, "): "))];
-                case 5:
-                    tagAns_2 = _b.sent();
-                    blogTags = tags.filter(function (tag) {
-                        return tag.name.toLowerCase().includes(tagAns_2.toLowerCase());
-                    });
-                    console.log("Blog Tags: ".concat(JSON.stringify(blogTags)));
-                    return [4 /*yield*/, processUpdateBlog(id, content, blogTags)];
-                case 6:
-                    _b.sent();
-                    return [3 /*break*/, 11];
-                case 7:
-                    console.log("Updating Tag: ".concat(id));
-                    return [4 /*yield*/, _ask("Tag Description: ")];
-                case 8:
-                    tagDesc = _b.sent();
-                    return [4 /*yield*/, processUpdateTag(id, tagDesc)];
-                case 9:
-                    _b.sent();
-                    return [3 /*break*/, 11];
-                case 10: throw Error("".concat(answer, " is not a valid input"));
-                case 11: return [2 /*return*/];
-            }
-        });
-    });
-}
-function processDelete(answer) {
-    return __awaiter(this, void 0, void 0, function () {
-        var id, _a;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0: return [4 /*yield*/, _ask("Identifier: ")];
-                case 1:
-                    id = _b.sent();
-                    _a = answer.charAt(0).toLowerCase();
-                    switch (_a) {
-                        case "b": return [3 /*break*/, 2];
                         case "t": return [3 /*break*/, 4];
                     }
-                    return [3 /*break*/, 6];
+                    return [3 /*break*/, 7];
+                case 1: return [4 /*yield*/, generatePost()];
                 case 2:
-                    console.log("Deleting Blog: ".concat(id));
-                    return [4 /*yield*/, processDeleteBlog(id)];
+                    post = _b.sent();
+                    return [4 /*yield*/, prisma.post.create({
+                            data: {
+                                title: post.title,
+                                description: post.description,
+                                date: new Date(),
+                                content: post.content,
+                                tags: {
+                                    connectOrCreate: post.tags.map(function (tag) { return ({
+                                        where: { name: tag.name },
+                                        create: tag,
+                                    }); }),
+                                },
+                            },
+                        })];
                 case 3:
                     _b.sent();
-                    return [3 /*break*/, 7];
-                case 4:
-                    console.log("Deleting Tag: ".concat(id));
-                    return [4 /*yield*/, processDeleteTag(id)];
+                    return [3 /*break*/, 8];
+                case 4: return [4 /*yield*/, generateTag()];
                 case 5:
+                    tag = _b.sent();
+                    return [4 /*yield*/, prisma.tag.create({ data: tag })];
+                case 6:
                     _b.sent();
-                    return [3 /*break*/, 7];
-                case 6: throw Error("".concat(answer, " is not a valid input"));
-                case 7: return [2 /*return*/];
+                    return [3 /*break*/, 8];
+                case 7: throw Error("".concat(answer, " is not a valid input"));
+                case 8: return [2 /*return*/];
             }
         });
     });
 }
+/**
+ * Update a new Post or Tag with prisma
+ */
+function processUpdate(answer) {
+    return __awaiter(this, void 0, void 0, function () {
+        var id;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, _ask("Identifier: ")];
+                case 1:
+                    id = _a.sent();
+                    switch (answer.charAt(0).toLowerCase()) {
+                        case "b":
+                            break;
+                        case "t":
+                            break;
+                        default:
+                            throw Error("".concat(answer, " is not a valid input"));
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+/**
+ * Delete a new Post or Tag with prisma
+ */
+function processDelete(answer) {
+    return __awaiter(this, void 0, void 0, function () {
+        var id;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, _ask("Identifier: ")];
+                case 1:
+                    id = _a.sent();
+                    switch (answer.charAt(0).toLowerCase()) {
+                        case "b":
+                            break;
+                        case "t":
+                            break;
+                        default:
+                            throw Error("".concat(answer, " is not a valid input"));
+                    }
+                    return [2 /*return*/];
+            }
+        });
+    });
+}
+/**
+ * Start basic line of questioning for CRUD applications
+ */
 function processRequest(answer) {
     return __awaiter(this, void 0, void 0, function () {
         var type, _a;
