@@ -3,7 +3,7 @@
  * built this functionality separate, to enable me to create, update, and delete Posts and Tags.
  */
 
-import { Post, PrismaClient, Tag } from "@prisma/client";
+import { PrismaClient } from "@prisma/client";
 import { readFileSync } from "fs";
 import * as readline from "readline";
 const prisma = new PrismaClient();
@@ -16,80 +16,61 @@ const rl = readline.createInterface({
 /**
  * Ask a CLI question.
  */
-async function _ask(question: string, backup: string = "") {
+async function _ask(question: string) {
   return new Promise<string>((resolve) =>
-    rl.question(question, (answer) =>
-      resolve(answer.length > 0 ? answer : backup)
-    )
+    rl.question(question, (answer) => resolve(answer))
   );
 }
 
-/**
- * Generate the contents for a Tag.
- */
-async function generateTag() {
+async function processTag(crud: string) {
+  var id = await _ask("Tag Id: ");
   const name = await _ask("Tag Name: ");
   const description = await _ask("Tag Description: ");
-  return {
-    name,
-    description,
+  switch (crud.toLowerCase()) {
+    case "c":
+      await prisma.tag.create({ data: { name, description } });
+      break;
+    case "u":
+      await prisma.tag.update({
+        where: { id: id },
+        data: { name, description },
+      });
+      break;
+    case "d":
+      await prisma.tag.update({
+        where: { id: id },
+        data: { posts: { set: [] } },
+      });
+      await prisma.tag.delete({ where: { id: id } });
+      break;
+    default:
+      throw Error(`'${crud}' is not a CRUD command`);
+  }
+}
+
+async function processPost(crud: string) {
+  var id = await _ask("Post Id: ");
+  const data = {
+    title: await _ask("Post Title: "),
+    description: await _ask("Post Description: "),
+    content: readFileSync("./post-generator/content.html").toString(),
+    date: new Date(),
   };
-}
 
-/**
- * Create or Update a posts contents.
- */
-async function getPostContent(prevPost?: Post) {
-  if (prevPost) {
-    const ans = await _ask("Update Content? [y/n]: ");
-    if (ans.toLowerCase() == "y") return prevPost.content;
-  }
-  return readFileSync("./post-generator/content.html").toString();
-}
-
-/**
- * Create or Update a posts tags.
- */
-async function getPostTags(prevTags?: Tag[]) {
   let tags = [];
-  if (prevTags) {
-    const ans = await _ask("Use Previous Tags? [y/n]: ");
-    if (ans.toLowerCase() == "y") return (tags = prevTags);
-  }
-  while ((await _ask("Add Tag? [y/n] ")).toLowerCase() == "y")
-    tags.push(await generateTag());
-  return tags;
-}
+  while ((await _ask("Add Tag [y/n]: ")).toLowerCase() == "y")
+    tags.push({
+      name: await _ask("Tag Name: "),
+      description: await _ask("Tag Description: "),
+    });
 
-/**
- * Generate the contents for a new Post.
- */
-async function generatePost(prevPost?: { post: Post; tags: Tag[] }) {
-  const title = await _ask("Blog Title: ", prevPost?.post.title);
-  const description = await _ask(
-    "Blog Description: ",
-    prevPost?.post.description
-  );
-  const content = await getPostContent(prevPost?.post);
-  const tags = await getPostTags(prevPost?.tags);
-  return { title, description, content, tags };
-}
-
-/**
- * Create a new Post or Tag with prisma
- */
-async function processCreate(answer: string) {
-  switch (answer.charAt(0).toLowerCase()) {
-    case "b":
-      const post = await generatePost();
+  switch (crud.toLowerCase()) {
+    case "c":
       await prisma.post.create({
         data: {
-          title: post.title,
-          description: post.description,
-          date: new Date(),
-          content: post.content,
+          ...data,
           tags: {
-            connectOrCreate: post.tags.map((tag) => ({
+            connectOrCreate: tags.map((tag) => ({
               where: { name: tag.name },
               create: tag,
             })),
@@ -97,69 +78,56 @@ async function processCreate(answer: string) {
         },
       });
       break;
-    case "t":
-      const tag = await generateTag();
-      await prisma.tag.create({ data: tag });
-      break;
-    default:
-      throw Error(`${answer} is not a valid input`);
-  }
-}
-
-/**
- * Update a new Post or Tag with prisma
- */
-async function processUpdate(answer: string) {
-  const id = await _ask("Identifier: ");
-  switch (answer.charAt(0).toLowerCase()) {
-    case "b":
-      break;
-    case "t":
-      break;
-    default:
-      throw Error(`${answer} is not a valid input`);
-  }
-}
-
-/**
- * Delete a new Post or Tag with prisma
- */
-async function processDelete(answer: string) {
-  const id = await _ask("Identifier: ");
-  switch (answer.charAt(0).toLowerCase()) {
-    case "b":
-      break;
-    case "t":
-      break;
-    default:
-      throw Error(`${answer} is not a valid input`);
-  }
-}
-
-/**
- * Start basic line of questioning for CRUD applications
- */
-async function processRequest(answer: string) {
-  const type = await _ask("[B]log or [T]ag: ");
-  switch (answer.charAt(0).toLowerCase()) {
-    case "c":
-      await processCreate(type);
-      break;
     case "u":
-      await processUpdate(type);
+      await prisma.post.update({
+        where: { id: id },
+        data: {
+          title: data.title || undefined,
+          description: data.description || undefined,
+          content:
+            (await _ask("Override Content [y/n]: ")).toLowerCase() == "y"
+              ? data.content || undefined
+              : undefined,
+          date: new Date(),
+          tags:
+            (await _ask("Override Tags [y/n]: ")).toLowerCase() == "y"
+              ? {
+                  connectOrCreate: tags.map((tag) => ({
+                    where: { name: tag.name },
+                    create: tag,
+                  })),
+                }
+              : undefined,
+        },
+      });
       break;
     case "d":
-      await processDelete(type);
+      await prisma.post.update({
+        where: { id: id },
+        data: { tags: { set: [] } },
+      });
+      await prisma.post.delete({ where: { id: id } });
       break;
     default:
-      throw Error(`${answer} is not a valid input`);
+      throw Error(`'${crud}' is not a CRUD command`);
   }
-  rl.close();
 }
 
 async function main() {
-  const req = await _ask("[C]reate, [U]pdate, or [D]elete?: ");
-  await processRequest(req);
+  const crud = await _ask("[C]reate, [U]pdate or [D]elete: ");
+  const type = await _ask("[P]ost or [T]ag: ");
+
+  switch (type.toLowerCase()) {
+    case "p":
+      await processPost(crud);
+      break;
+    case "t":
+      await processTag(crud);
+      break;
+    default:
+      throw Error(`'${type}' is not a valid data type`);
+  }
+  rl.close();
 }
 
 main();

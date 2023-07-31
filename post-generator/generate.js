@@ -3,6 +3,17 @@
  * The content of this file WOULD be used in the website, however, seeing as I am the only generator of posts, I've
  * built this functionality separate, to enable me to create, update, and delete Posts and Tags.
  */
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -51,261 +62,189 @@ var rl = readline.createInterface({
 /**
  * Ask a CLI question.
  */
-function _ask(question, backup) {
-    if (backup === void 0) { backup = ""; }
+function _ask(question) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             return [2 /*return*/, new Promise(function (resolve) {
-                    return rl.question(question, function (answer) {
-                        return resolve(answer.length > 0 ? answer : backup);
-                    });
+                    return rl.question(question, function (answer) { return resolve(answer); });
                 })];
         });
     });
 }
-/**
- * Generate the contents for a Tag.
- */
-function generateTag() {
+function processTag(crud) {
     return __awaiter(this, void 0, void 0, function () {
-        var name, description;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, _ask("Tag Name: ")];
+        var id, name, description, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, _ask("Tag Id: ")];
                 case 1:
-                    name = _a.sent();
+                    id = _b.sent();
+                    return [4 /*yield*/, _ask("Tag Name: ")];
+                case 2:
+                    name = _b.sent();
                     return [4 /*yield*/, _ask("Tag Description: ")];
-                case 2:
-                    description = _a.sent();
-                    return [2 /*return*/, {
-                            name: name,
-                            description: description,
-                        }];
-            }
-        });
-    });
-}
-/**
- * Create or Update a posts contents.
- */
-function getPostContent(prevPost) {
-    return __awaiter(this, void 0, void 0, function () {
-        var ans;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    if (!prevPost) return [3 /*break*/, 2];
-                    return [4 /*yield*/, _ask("Update Content? [y/n]: ")];
-                case 1:
-                    ans = _a.sent();
-                    if (ans.toLowerCase() == "y")
-                        return [2 /*return*/, prevPost.content];
-                    _a.label = 2;
-                case 2: return [2 /*return*/, (0, fs_1.readFileSync)("./post-generator/content.html").toString()];
-            }
-        });
-    });
-}
-/**
- * Create or Update a posts tags.
- */
-function getPostTags(prevTags) {
-    return __awaiter(this, void 0, void 0, function () {
-        var tags, ans, _a, _b;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
-                case 0:
-                    tags = [];
-                    if (!prevTags) return [3 /*break*/, 2];
-                    return [4 /*yield*/, _ask("Use Previous Tags? [y/n]: ")];
-                case 1:
-                    ans = _c.sent();
-                    if (ans.toLowerCase() == "y")
-                        return [2 /*return*/, (tags = prevTags)];
-                    _c.label = 2;
-                case 2: return [4 /*yield*/, _ask("Add Tag? [y/n] ")];
                 case 3:
-                    if (!((_c.sent()).toLowerCase() == "y")) return [3 /*break*/, 5];
-                    _b = (_a = tags).push;
-                    return [4 /*yield*/, generateTag()];
-                case 4:
-                    _b.apply(_a, [_c.sent()]);
-                    return [3 /*break*/, 2];
-                case 5: return [2 /*return*/, tags];
-            }
-        });
-    });
-}
-/**
- * Generate the contents for a new Post.
- */
-function generatePost(prevPost) {
-    return __awaiter(this, void 0, void 0, function () {
-        var title, description, content, tags;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, _ask("Blog Title: ", prevPost === null || prevPost === void 0 ? void 0 : prevPost.post.title)];
-                case 1:
-                    title = _a.sent();
-                    return [4 /*yield*/, _ask("Blog Description: ", prevPost === null || prevPost === void 0 ? void 0 : prevPost.post.description)];
-                case 2:
-                    description = _a.sent();
-                    return [4 /*yield*/, getPostContent(prevPost === null || prevPost === void 0 ? void 0 : prevPost.post)];
-                case 3:
-                    content = _a.sent();
-                    return [4 /*yield*/, getPostTags(prevPost === null || prevPost === void 0 ? void 0 : prevPost.tags)];
-                case 4:
-                    tags = _a.sent();
-                    return [2 /*return*/, { title: title, description: description, content: content, tags: tags }];
-            }
-        });
-    });
-}
-/**
- * Create a new Post or Tag with prisma
- */
-function processCreate(answer) {
-    return __awaiter(this, void 0, void 0, function () {
-        var _a, post, tag;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0:
-                    _a = answer.charAt(0).toLowerCase();
+                    description = _b.sent();
+                    _a = crud.toLowerCase();
                     switch (_a) {
-                        case "b": return [3 /*break*/, 1];
-                        case "t": return [3 /*break*/, 4];
+                        case "c": return [3 /*break*/, 4];
+                        case "u": return [3 /*break*/, 6];
+                        case "d": return [3 /*break*/, 8];
                     }
-                    return [3 /*break*/, 7];
-                case 1: return [4 /*yield*/, generatePost()];
-                case 2:
-                    post = _b.sent();
-                    return [4 /*yield*/, prisma.post.create({
-                            data: {
-                                title: post.title,
-                                description: post.description,
-                                date: new Date(),
-                                content: post.content,
-                                tags: {
-                                    connectOrCreate: post.tags.map(function (tag) { return ({
-                                        where: { name: tag.name },
-                                        create: tag,
-                                    }); }),
-                                },
-                            },
-                        })];
-                case 3:
-                    _b.sent();
-                    return [3 /*break*/, 8];
-                case 4: return [4 /*yield*/, generateTag()];
-                case 5:
-                    tag = _b.sent();
-                    return [4 /*yield*/, prisma.tag.create({ data: tag })];
-                case 6:
-                    _b.sent();
-                    return [3 /*break*/, 8];
-                case 7: throw Error("".concat(answer, " is not a valid input"));
-                case 8: return [2 /*return*/];
-            }
-        });
-    });
-}
-/**
- * Update a new Post or Tag with prisma
- */
-function processUpdate(answer) {
-    return __awaiter(this, void 0, void 0, function () {
-        var id;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, _ask("Identifier: ")];
-                case 1:
-                    id = _a.sent();
-                    switch (answer.charAt(0).toLowerCase()) {
-                        case "b":
-                            break;
-                        case "t":
-                            break;
-                        default:
-                            throw Error("".concat(answer, " is not a valid input"));
-                    }
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-/**
- * Delete a new Post or Tag with prisma
- */
-function processDelete(answer) {
-    return __awaiter(this, void 0, void 0, function () {
-        var id;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, _ask("Identifier: ")];
-                case 1:
-                    id = _a.sent();
-                    switch (answer.charAt(0).toLowerCase()) {
-                        case "b":
-                            break;
-                        case "t":
-                            break;
-                        default:
-                            throw Error("".concat(answer, " is not a valid input"));
-                    }
-                    return [2 /*return*/];
-            }
-        });
-    });
-}
-/**
- * Start basic line of questioning for CRUD applications
- */
-function processRequest(answer) {
-    return __awaiter(this, void 0, void 0, function () {
-        var type, _a;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0: return [4 /*yield*/, _ask("[B]log or [T]ag: ")];
-                case 1:
-                    type = _b.sent();
-                    _a = answer.charAt(0).toLowerCase();
-                    switch (_a) {
-                        case "c": return [3 /*break*/, 2];
-                        case "u": return [3 /*break*/, 4];
-                        case "d": return [3 /*break*/, 6];
-                    }
-                    return [3 /*break*/, 8];
-                case 2: return [4 /*yield*/, processCreate(type)];
-                case 3:
-                    _b.sent();
-                    return [3 /*break*/, 9];
-                case 4: return [4 /*yield*/, processUpdate(type)];
+                    return [3 /*break*/, 11];
+                case 4: return [4 /*yield*/, prisma.tag.create({ data: { name: name, description: description } })];
                 case 5:
                     _b.sent();
-                    return [3 /*break*/, 9];
-                case 6: return [4 /*yield*/, processDelete(type)];
+                    return [3 /*break*/, 12];
+                case 6: return [4 /*yield*/, prisma.tag.update({
+                        where: { id: id },
+                        data: { name: name, description: description },
+                    })];
                 case 7:
                     _b.sent();
-                    return [3 /*break*/, 9];
-                case 8: throw Error("".concat(answer, " is not a valid input"));
+                    return [3 /*break*/, 12];
+                case 8: return [4 /*yield*/, prisma.tag.update({
+                        where: { id: id },
+                        data: { posts: { set: [] } },
+                    })];
                 case 9:
-                    rl.close();
-                    return [2 /*return*/];
+                    _b.sent();
+                    return [4 /*yield*/, prisma.tag.delete({ where: { id: id } })];
+                case 10:
+                    _b.sent();
+                    return [3 /*break*/, 12];
+                case 11: throw Error("'".concat(crud, "' is not a CRUD command"));
+                case 12: return [2 /*return*/];
+            }
+        });
+    });
+}
+function processPost(crud) {
+    return __awaiter(this, void 0, void 0, function () {
+        var id, data, tags, _a, _b, _c, _d, _e;
+        var _f, _g, _h, _j;
+        return __generator(this, function (_k) {
+            switch (_k.label) {
+                case 0: return [4 /*yield*/, _ask("Post Id: ")];
+                case 1:
+                    id = _k.sent();
+                    _f = {};
+                    return [4 /*yield*/, _ask("Post Title: ")];
+                case 2:
+                    _f.title = _k.sent();
+                    return [4 /*yield*/, _ask("Post Description: ")];
+                case 3:
+                    data = (_f.description = _k.sent(),
+                        _f.content = (0, fs_1.readFileSync)("./post-generator/content.html").toString(),
+                        _f.date = new Date(),
+                        _f);
+                    tags = [];
+                    _k.label = 4;
+                case 4: return [4 /*yield*/, _ask("Add Tag [y/n]: ")];
+                case 5:
+                    if (!((_k.sent()).toLowerCase() == "y")) return [3 /*break*/, 8];
+                    _b = (_a = tags).push;
+                    _g = {};
+                    return [4 /*yield*/, _ask("Tag Name: ")];
+                case 6:
+                    _g.name = _k.sent();
+                    return [4 /*yield*/, _ask("Tag Description: ")];
+                case 7:
+                    _b.apply(_a, [(_g.description = _k.sent(),
+                            _g)]);
+                    return [3 /*break*/, 4];
+                case 8:
+                    _c = crud.toLowerCase();
+                    switch (_c) {
+                        case "c": return [3 /*break*/, 9];
+                        case "u": return [3 /*break*/, 11];
+                        case "d": return [3 /*break*/, 15];
+                    }
+                    return [3 /*break*/, 18];
+                case 9: return [4 /*yield*/, prisma.post.create({
+                        data: __assign(__assign({}, data), { tags: {
+                                connectOrCreate: tags.map(function (tag) { return ({
+                                    where: { name: tag.name },
+                                    create: tag,
+                                }); }),
+                            } }),
+                    })];
+                case 10:
+                    _k.sent();
+                    return [3 /*break*/, 19];
+                case 11:
+                    _e = (_d = prisma.post).update;
+                    _h = {
+                        where: { id: id }
+                    };
+                    _j = {
+                        title: data.title || undefined,
+                        description: data.description || undefined
+                    };
+                    return [4 /*yield*/, _ask("Override Content [y/n]: ")];
+                case 12:
+                    _j.content = (_k.sent()).toLowerCase() == "y"
+                        ? data.content || undefined
+                        : undefined,
+                        _j.date = new Date();
+                    return [4 /*yield*/, _ask("Override Tags [y/n]: ")];
+                case 13: return [4 /*yield*/, _e.apply(_d, [(_h.data = (_j.tags = (_k.sent()).toLowerCase() == "y"
+                            ? {
+                                connectOrCreate: tags.map(function (tag) { return ({
+                                    where: { name: tag.name },
+                                    create: tag,
+                                }); }),
+                            }
+                            : undefined,
+                            _j),
+                            _h)])];
+                case 14:
+                    _k.sent();
+                    return [3 /*break*/, 19];
+                case 15: return [4 /*yield*/, prisma.post.update({
+                        where: { id: id },
+                        data: { tags: { set: [] } },
+                    })];
+                case 16:
+                    _k.sent();
+                    return [4 /*yield*/, prisma.post.delete({ where: { id: id } })];
+                case 17:
+                    _k.sent();
+                    return [3 /*break*/, 19];
+                case 18: throw Error("'".concat(crud, "' is not a CRUD command"));
+                case 19: return [2 /*return*/];
             }
         });
     });
 }
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var req;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, _ask("[C]reate, [U]pdate, or [D]elete?: ")];
+        var crud, type, _a;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0: return [4 /*yield*/, _ask("[C]reate, [U]pdate or [D]elete: ")];
                 case 1:
-                    req = _a.sent();
-                    return [4 /*yield*/, processRequest(req)];
+                    crud = _b.sent();
+                    return [4 /*yield*/, _ask("[P]ost or [T]ag: ")];
                 case 2:
-                    _a.sent();
+                    type = _b.sent();
+                    _a = type.toLowerCase();
+                    switch (_a) {
+                        case "p": return [3 /*break*/, 3];
+                        case "t": return [3 /*break*/, 5];
+                    }
+                    return [3 /*break*/, 7];
+                case 3: return [4 /*yield*/, processPost(crud)];
+                case 4:
+                    _b.sent();
+                    return [3 /*break*/, 8];
+                case 5: return [4 /*yield*/, processTag(crud)];
+                case 6:
+                    _b.sent();
+                    return [3 /*break*/, 8];
+                case 7: throw Error("'".concat(type, "' is not a valid data type"));
+                case 8:
+                    rl.close();
                     return [2 /*return*/];
             }
         });

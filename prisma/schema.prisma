@@ -23,7 +23,8 @@ model Post {
 }
 
 model Tag {
-  name        String @id @default(uuid())
+  id          String @id @default(uuid())
+  name        String @unique
   description String
   posts       Post[]
 }

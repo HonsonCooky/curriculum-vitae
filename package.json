@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "pnpm prettier --write .",
-    "prisma-update": "pnpm exec prisma db push && pnpm exec prisma generate",
+    "prisma": "pnpm exec prisma db push && pnpm exec prisma generate",
     "post": "pnpm exec tsc ./post-generator/generate.ts && node ./post-generator/generate.js"
   },
   "dependencies": {
