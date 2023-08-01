@@ -12,22 +12,22 @@ export default function TagPage() {
   getTags()
     .then((tags) => tags.filter((tag) => tag.id == id)[0])
     .then((tag) => {
-      console.log("set tag", tag);
-
       setTag(tag);
     })
-    .catch((e) => {
-      console.log(e);
+    .catch((_) => {
       setTag({ name: "Server Loading Error" } as any);
     });
   console.log(tag);
 
   return (
-    <div className="mt-[20vh] flex flex-1 justify-center">
+    <div className="mt-[20vh] flex flex-1 items-baseline justify-center">
       <h1 className="mb-2 text-[max(10vh,5vw)] font-bold leading-[max(10vh,5vw)] text-light-maroon dark:text-dark-maroon">
-        <LoadingDots />
+        {tag ? (
+          tag.name
+        ) : (
+          <LoadingDots className="bg-light-maroon dark:bg-dark-maroon" />
+        )}
       </h1>
     </div>
   );
 }
-// {tag ? tag.name : "..."}
