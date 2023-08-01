@@ -1,14 +1,20 @@
 import ChatBubbleLeftEllipsisIcon from "@heroicons/react/24/outline/ChatBubbleLeftEllipsisIcon";
 import { getTags } from "../_utils/prisma";
 import BlogTag from "./_components/blog-tag";
-import BlogTitle from "./_components/blog-title";
 
 export default async function BlogHome() {
   const tags = await getTags();
   return (
     <div className="flex flex-1 flex-col items-center lg:justify-center">
       <ChatBubbleLeftEllipsisIcon className="fixed left-[2vw] top-[20vh] hidden h-[min(20vh,20vw)] lg:flex" />
-      <BlogTitle />
+      <div className="mb-[4vh] flex flex-row items-end">
+        <h1 className="text-[max(6vh,4vw)] font-bold leading-[max(6vh,4vw)] text-light-maroon dark:text-dark-maroon">
+          Blogs
+        </h1>
+        <h2 className="pl-[max(3vh,2vw)] text-[max(3vh,2vw)] leading-[max(3vh,1.5vw)]">
+          Ideas Worth Ignoring
+        </h2>
+      </div>
       <div className="mb-[5vh] w-[60vw]">
         <p className="mb-[4vh] text-justify text-[max(2vh,1vw)] font-light">
           <span className="font-bold text-light-red dark:text-dark-red">
@@ -31,7 +37,9 @@ export default async function BlogHome() {
           </p>
         </div>
       </div>
-      <h3 className="w-[60vw] py-[3vh] text-[3vh] font-bold">Explore Tags:</h3>
+      <h3 className="w-[60vw] py-[3vh] text-[max(3vh,2vw)] font-bold">
+        Explore Tags:
+      </h3>
       <div className="flex w-[60vw] flex-wrap rounded px-[1vw] py-[2vh] nm-inset-light-base-sm dark:nm-inset-dark-base-sm">
         {tags.map((tag) => (
           <BlogTag tag={tag} key={tag.id} />
