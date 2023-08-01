@@ -1,12 +1,15 @@
 import ChatBubbleLeftEllipsisIcon from "@heroicons/react/24/outline/ChatBubbleLeftEllipsisIcon";
-import BlogTags from "./_components/blog-tags";
+import { getTags } from "../_utils/prisma";
+import BlogTag from "./_components/blog-tag";
 import BlogTitle from "./_components/blog-title";
-export default function BlogsHome() {
+
+export default async function BlogHome() {
+  const tags = await getTags();
   return (
     <div className="flex flex-1 flex-col items-center lg:justify-center">
       <ChatBubbleLeftEllipsisIcon className="fixed left-[2vw] top-[20vh] hidden h-[min(20vh,20vw)] lg:flex" />
       <BlogTitle />
-      <div className="mx-[20vw] mb-[5vh]">
+      <div className="mb-[5vh] w-[60vw]">
         <p className="mb-[4vh] text-justify text-[max(2vh,1vw)] font-light">
           <span className="font-bold text-light-red dark:text-dark-red">
             Warning:
@@ -28,7 +31,12 @@ export default function BlogsHome() {
           </p>
         </div>
       </div>
-      <BlogTags />
+      <h3 className="w-[60vw] py-[3vh] text-[3vh] font-bold">Explore Tags:</h3>
+      <div className="flex w-[60vw] flex-wrap rounded px-[1vw] py-[2vh] nm-inset-light-base-sm dark:nm-inset-dark-base-sm">
+        {tags.map((tag) => (
+          <BlogTag tag={tag} key={tag.id} />
+        ))}
+      </div>
     </div>
   );
 }
