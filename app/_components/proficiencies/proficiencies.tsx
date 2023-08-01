@@ -22,7 +22,7 @@ export default function Proficiencies() {
       variants={container}
       initial="hidden"
       animate="show"
-      className="fixed h-screen w-screen overflow-clip"
+      className="fixed h-screen w-screen overflow-clip lg:z-0"
     >
       <ProficiencyElements
         params={webProficiencies}

@@ -7,7 +7,7 @@ export default function BlogTag(params: {
   chassName?: React.ComponentProps<"div">["className"];
   tag: Tag;
 }) {
-  const uri = encodeURI(params.tag.id);
+  const uri = encodeURI(params.tag.name);
   const href = `/blogs/${uri}`;
   return (
     <Link href={href}>
