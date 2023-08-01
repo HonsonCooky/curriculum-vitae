@@ -5,9 +5,9 @@ import BlogTag from "./_components/blog-tag";
 export default async function BlogHome() {
   const tags = await getTags();
   return (
-    <div className="flex flex-1 flex-col items-center lg:justify-center">
+    <div className="flex flex-1 flex-col items-center justify-center overflow-auto">
       <ChatBubbleLeftEllipsisIcon className="fixed left-[2vw] top-[20vh] hidden h-[min(20vh,20vw)] lg:flex" />
-      <div className="mb-[4vh] flex flex-row items-end">
+      <div className="mb-[2vh] flex flex-col items-center lg:mb-[10vh] lg:flex-row lg:items-baseline">
         <h1 className="text-[max(6vh,4vw)] font-bold leading-[max(6vh,4vw)] text-light-maroon dark:text-dark-maroon">
           Blogs
         </h1>
@@ -15,7 +15,7 @@ export default async function BlogHome() {
           Ideas Worth Ignoring
         </h2>
       </div>
-      <div className="mb-[5vh] w-[60vw]">
+      <div className="mb-[5vh] w-[80vw] lg:w-[60vw]">
         <p className="mb-[4vh] text-justify text-[max(2vh,1vw)] font-light">
           <span className="font-bold text-light-red dark:text-dark-red">
             Warning:
@@ -37,10 +37,10 @@ export default async function BlogHome() {
           </p>
         </div>
       </div>
-      <h3 className="w-[60vw] py-[3vh] text-[max(3vh,2vw)] font-bold">
+      <h3 className="mt-[1vh] text-[max(3vh,2vw)] font-bold lg:w-[60vw] lg:py-[3vh]">
         Explore Tags:
       </h3>
-      <div className="flex w-[60vw] flex-wrap rounded px-[1vw] py-[2vh] nm-inset-light-base-sm dark:nm-inset-dark-base-sm">
+      <div className="flex flex-wrap justify-center rounded px-[1vw] py-[2vh] lg:w-[60vw] lg:justify-start lg:nm-inset-light-base-sm lg:dark:nm-inset-dark-base-sm">
         {tags.map((tag) => (
           <BlogTag tag={tag} key={tag.id} />
         ))}
