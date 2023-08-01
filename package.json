@@ -9,7 +9,7 @@
     "lint": "next lint",
     "format": "pnpm prettier --write .",
     "prisma": "pnpm exec prisma db push && pnpm exec prisma generate",
-    "post": "pnpm exec tsc ./post-generator/generate.ts && node ./post-generator/generate.js"
+    "post": "pnpm exec tsc ./src/generate.ts && node ./src/generate.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
