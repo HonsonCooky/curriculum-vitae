@@ -1,8 +1,11 @@
-import { PrismaClient } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
-const prisma = new PrismaClient();
+import { prisma } from "../prisma";
 
 export async function GET(_: NextRequest) {
-  const tags = await prisma.tag.findMany();
-  return NextResponse.json(tags);
+  try {
+    const tags = await prisma.tag.findMany();
+    return NextResponse.json(tags, { status: 200 });
+  } catch (e) {
+    return NextResponse.json(e, { status: 500 });
+  }
 }

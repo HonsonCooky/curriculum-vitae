@@ -17,7 +17,6 @@ export default function TagPage() {
     .catch((_) => {
       setTag({ name: "Server Loading Error" } as any);
     });
-  console.log(tag);
 
   return (
     <div className="mt-[20vh] flex flex-1 items-baseline justify-center">
