@@ -15,13 +15,13 @@ export default function NavBtn(params: { href: string }) {
 
   return (
     <Link href={params.href}>
-      <div className="h-full w-full px-[0.5vw]">
+      <div className="px-[0.5vw]">
         <motion.div
           aria-selected={pathname.startsWith(params.href)}
           whileTap={{ scale: 0.9 }}
           whileFocus={{ scale: 1.0 }}
           whileHover={{ scale: pathname.startsWith(params.href) ? 1.0 : 1.1 }}
-          className="rounded-[0.7vh] px-[2vh] py-[1vh] text-[max(2.5vh,1vw)] nm-flat-light-base-xs hover:text-light-mauve aria-selected:nm-inset-light-base-sm dark:nm-flat-dark-base-sm dark:hover:text-dark-mauve aria-selected:dark:nm-inset-dark-base-sm"
+          className="rounded-[1vh] px-[2vh] py-[1vh] text-[max(2.7vh,1vw)] nm-flat-light-base-xs hover:text-light-mauve aria-selected:nm-inset-light-base-sm dark:nm-flat-dark-base-sm dark:hover:text-dark-mauve aria-selected:dark:nm-inset-dark-base-sm"
         >
           {title()}
         </motion.div>
