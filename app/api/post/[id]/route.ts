@@ -9,16 +9,8 @@ export async function GET(req: NextRequest) {
     const id = searchParamUuidSchema.parse(
       req.nextUrl.pathname.split("/").at(-1)
     );
-    const tags = await prisma.post.findMany({
-      where: { tags: { some: { id: id } } },
-      select: {
-        id: true,
-        title: true,
-        description: true,
-        date: true,
-      },
-    });
-    return NextResponse.json(tags, { status: 200 });
+    const post = await prisma.post.findFirstOrThrow({ where: { id: id } });
+    return NextResponse.json(post, { status: 200 });
   } catch (e: any) {
     let status = 500;
     if (e instanceof z.ZodError) {

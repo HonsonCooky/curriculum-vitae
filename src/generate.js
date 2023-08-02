@@ -135,7 +135,7 @@ function processPost(crud) {
                     return [4 /*yield*/, _ask("Post Description: ")];
                 case 3:
                     data = (_f.description = _k.sent(),
-                        _f.content = (0, fs_1.readFileSync)("./post-generator/content.html").toString(),
+                        _f.content = (0, fs_1.readFileSync)("./src/content.html").toString(),
                         _f.date = new Date(),
                         _f);
                     tags = [];

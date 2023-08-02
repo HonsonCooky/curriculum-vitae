@@ -9,11 +9,14 @@ export async function getTags() {
 
 export async function getPosts(tagId: string) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/posts/${tagId}`,
-    {
-      method: "GET",
-      body: JSON.stringify({ id: tagId }),
-    }
+    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/posts/${tagId}`
   ).then((res) => (res.ok ? res.json() : ["Oh no"]));
   return PostSchema.array().parse(res);
+}
+
+export async function getPost(postId: string) {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/post/${postId}`
+  ).then((res) => (res.ok ? res.json() : ["Oh no"]));
+  return PostSchema.parse(res);
 }
