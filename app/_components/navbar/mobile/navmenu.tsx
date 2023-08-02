@@ -4,7 +4,7 @@ import { Variants, motion, useCycle } from "framer-motion";
 import { NavBtns } from "./nav-btns";
 
 const pos = "4vh";
-const size = "7vh";
+const size = "6vh";
 const sidebar: Variants = {
   open: {
     top: 0,

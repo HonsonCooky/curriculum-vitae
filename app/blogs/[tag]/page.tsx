@@ -28,7 +28,7 @@ export default function TagPage() {
   return (
     <div className="flex flex-1 flex-col items-center pt-[5vh] lg:h-screen lg:overflow-clip lg:pt-[20vh]">
       <CurrencyDollarIcon className="fixed left-[2vw] top-[20vh] hidden h-[min(20vh,20vw)] lg:flex" />
-      <h1 className="mb-[6vh] px-[5vw] text-right text-[max(6vh,4vw)] font-bold leading-[max(6vh,4vw)] text-light-maroon dark:text-dark-maroon lg:text-center">
+      <h1 className="mb-[6vh] pl-[10vh] pr-[10vw] text-right text-[max(6vh,4vw)] font-bold leading-[max(6vh,4vw)] text-light-maroon dark:text-dark-maroon lg:px-0 lg:text-center">
         {tag.name}{" "}
       </h1>
       <PostList tagId={tag.id} posts={posts} />
