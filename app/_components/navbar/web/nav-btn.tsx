@@ -21,7 +21,7 @@ export default function NavBtn(params: { href: string }) {
           whileTap={{ scale: 0.9 }}
           whileFocus={{ scale: 1.0 }}
           whileHover={{ scale: pathname.startsWith(params.href) ? 1.0 : 1.1 }}
-          className="rounded-[1vh] px-[2vh] py-[1vh] text-[max(2.7vh,1vw)] nm-flat-light-base-xs hover:text-light-mauve aria-selected:nm-inset-light-base-sm dark:nm-flat-dark-base-sm dark:hover:text-dark-mauve aria-selected:dark:nm-inset-dark-base-sm"
+          className="rounded px-[2vh] py-[1vh] font-mono text-[min(3vh,3vw)] nm-flat-light-base-sm hover:text-light-mauve aria-selected:nm-inset-light-base-sm dark:nm-flat-dark-base-sm dark:hover:text-dark-mauve aria-selected:dark:nm-inset-dark-base-sm"
         >
           {title()}
         </motion.div>

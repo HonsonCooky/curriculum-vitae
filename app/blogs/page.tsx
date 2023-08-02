@@ -16,7 +16,7 @@ export default async function BlogHome() {
         </h2>
       </div>
       <div className="mb-[5vh] w-[80vw] lg:w-[60vw]">
-        <p className="mb-[4vh] text-justify text-[max(2vh,1vw)] font-light">
+        <p className="mb-[4vh] text-justify text-[max(2.2vh,1vw)] font-light leading-[max(2.5vh,1vw)]">
           <span className="font-bold text-light-red dark:text-dark-red">
             Warning:
           </span>{" "}

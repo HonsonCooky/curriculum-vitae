@@ -7,9 +7,11 @@ export default function NavBar(params: {
 }) {
   return (
     <div
-      className={`fixed top-0 z-50 h-[max(12vh,4vw)] w-screen items-end px-[10vw] py-[1vh] ${params.className}`}
+      className={`fixed top-0 z-50 h-[min(15vh,15vw)] w-screen items-end px-[10vw] py-[1vh] ${params.className}`}
     >
-      <HomeBtn />
+      <div className="mb-[1vh] flex flex-1 items-end justify-start">
+        <HomeBtn />
+      </div>
       <div className="mb-[1vh] flex flex-1 items-end justify-end">
         {params.pages.map((href) => (
           <NavBtn key={href} href={href} />

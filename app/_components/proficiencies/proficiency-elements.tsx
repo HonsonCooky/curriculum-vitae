@@ -54,13 +54,13 @@ export function ProficiencyElements(params: {
           className="group absolute -translate-x-[50%] -translate-y-[50%] rounded-full nm-flat-light-base-sm hover:z-10 dark:nm-flat-dark-base-sm"
         >
           <Image
-            className="block h-[max(10vh,4vw)] w-[max(10vh,4vw)] overflow-clip rounded-full object-contain p-[max(1vh,0.5vw)] group-hover:h-[max(11vh,6vw)] group-hover:w-[max(11vh,6vw)]"
+            className="block h-[min(10vh,10vw)] w-[min(10vh,10vw)] overflow-clip rounded-full object-contain p-[min(1vh,1vw)] group-hover:h-[min(12vh,12vw)] group-hover:w-[min(12vh,12vw)]"
             src={`/${content.imgRef}-logo.png`}
             alt={content.imgRef}
             height={100}
             width={100}
           />
-          <div className="invisible absolute w-full -translate-y-[80%] rounded px-[0.1vh] text-center text-[max(2vh,1vw)] nm-flat-light-base-sm group-hover:visible group-hover:z-10 dark:nm-flat-dark-base-sm">
+          <div className="invisible absolute w-full -translate-y-[80%] rounded px-[0.1vh] text-center text-[min(2vh,2vw)] nm-flat-light-base-sm group-hover:visible group-hover:z-10 dark:nm-flat-dark-base-sm">
             {content.imgRef.charAt(0).toUpperCase() +
               content.imgRef
                 .slice(1)

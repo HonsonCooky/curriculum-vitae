@@ -4,51 +4,51 @@ export const proficienciesWeb: paramsType = [
   {
     imgRef: "terraform",
     left: { start: "0%", end: "20%" },
-    top: { start: "30%", end: "25%" },
+    top: { start: "40%", end: "30%" },
   },
   {
     imgRef: "csharp",
     left: { start: "100%", end: "80%" },
-    top: { start: "30%", end: "25%" },
+    top: { start: "40%", end: "30%" },
   },
   {
     imgRef: "javascript",
     left: { start: "0%", end: "10%" },
-    top: { start: "42%", end: "37%" },
+    top: { start: "40%", end: "42%" },
   },
   {
     imgRef: "typescript",
     left: { start: "100%", end: "90%" },
-    top: { start: "42%", end: "37%" },
+    top: { start: "40%", end: "42%" },
   },
   {
     imgRef: "lua",
     left: { start: "0%", end: "17%" },
-    top: { start: "50%", end: "50%" },
+    top: { start: "55%", end: "55%" },
   },
   {
     imgRef: "rust",
     left: { start: "100%", end: "83%" },
-    top: { start: "50%", end: "50%" },
+    top: { start: "55%", end: "55%" },
   },
   {
     imgRef: "react",
     left: { start: "0%", end: "10%" },
-    top: { start: "57%", end: "62%" },
+    top: { start: "65%", end: "67%" },
   },
   {
     imgRef: "neovim",
     left: { start: "100%", end: "90%" },
-    top: { start: "57%", end: "62%" },
+    top: { start: "65%", end: "67%" },
   },
   {
     imgRef: "azure",
     left: { start: "0%", end: "20%" },
-    top: { start: "70%", end: "75%" },
+    top: { start: "65%", end: "80%" },
   },
   {
     imgRef: "workflow",
     left: { start: "100%", end: "80%" },
-    top: { start: "70%", end: "75%" },
+    top: { start: "65%", end: "80%" },
   },
 ];
