@@ -6,7 +6,7 @@ import { CurrencyDollarIcon } from "@heroicons/react/24/outline";
 import { Post, Tag } from "@prisma/client";
 import { useParams } from "next/navigation";
 import { useState } from "react";
-import PostList from "./_components/post-list";
+import PostList from "./post-list";
 
 export default function TagPage() {
   const [tag, setTag] = useState<Tag | undefined>(undefined);
@@ -26,9 +26,9 @@ export default function TagPage() {
 
   if (!(tag && posts)) return <Loading />;
   return (
-    <div className="mt-[20vh] flex flex-1 flex-col items-center">
+    <div className="flex flex-1 flex-col items-center pt-[5vh] lg:h-screen lg:overflow-clip lg:pt-[20vh]">
       <CurrencyDollarIcon className="fixed left-[2vw] top-[20vh] hidden h-[min(20vh,20vw)] lg:flex" />
-      <h1 className="text-[max(6vh,4vw)] font-bold leading-[max(6vh,4vw)] text-light-maroon dark:text-dark-maroon">
+      <h1 className="mb-[6vh] px-[5vw] text-right text-[max(6vh,4vw)] font-bold leading-[max(6vh,4vw)] text-light-maroon dark:text-dark-maroon lg:text-center">
         {tag.name}{" "}
       </h1>
       <PostList tagId={tag.id} posts={posts} />

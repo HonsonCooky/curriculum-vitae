@@ -27,7 +27,7 @@ export default async function BlogHome() {
           topic. I&apos;m always open to new ideas, and would love to have mine
           challenged.
         </p>
-        <div className="rounded px-[2vw] py-[1vh] nm-flat-light-base dark:nm-flat-dark-base">
+        <div className="rounded px-[2vw] py-[1vh] text-justify nm-flat-light-base dark:nm-flat-dark-base">
           <p className="text-[max(2vh,1vw)] font-light">
             <span className="font-bold text-light-peach dark:text-dark-peach">
               Note:
