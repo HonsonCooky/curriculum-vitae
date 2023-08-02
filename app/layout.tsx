@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={`bg-light-base text-light-text dark:bg-dark-base dark:text-dark-text ${font.className}`}
       >
-        <main className="flex h-screen w-screen ">
+        <main className="flex h-screen w-screen flex-col">
           <Navigation />
           <Suspense fallback={<Loading />} />
           {children}

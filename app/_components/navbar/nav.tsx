@@ -5,7 +5,7 @@ export default function Navigation() {
 
   return (
     <nav>
-      <NavBar className="flex" pages={pages} />
+      <NavBar className="z-50 flex" pages={pages} />
     </nav>
   );
 }

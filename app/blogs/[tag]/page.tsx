@@ -26,9 +26,9 @@ export default function TagPage() {
 
   if (!(tag && posts)) return <Loading />;
   return (
-    <div className="flex flex-1 flex-col items-center pt-[5vh] lg:h-screen lg:overflow-clip lg:pt-[20vh]">
-      <CurrencyDollarIcon className="fixed left-[2vw] top-[20vh] hidden h-[min(20vh,20vw)] lg:flex" />
-      <h1 className="mb-[6vh] pl-[10vh] pr-[10vw] text-right text-[max(6vh,4vw)] font-bold leading-[max(6vh,4vw)] text-light-maroon dark:text-dark-maroon lg:px-0 lg:text-center">
+    <div className="flex h-screen flex-1 flex-col items-center overflow-clip pt-[20vh]">
+      <CurrencyDollarIcon className="fixed left-[2vw] top-[20vh] flex h-[min(20vh,20vw)]" />
+      <h1 className="mb-[6vh] px-0 pl-[10vh] pr-[10vw] text-center text-[max(6vh,4vw)] font-bold text-light-maroon dark:text-dark-maroon">
         {tag.name}{" "}
       </h1>
       <PostList tagId={tag.id} posts={posts} />

@@ -16,12 +16,7 @@ const container: Variants = {
 export default function Proficiencies() {
   const webProficiencies = proficienciesWeb;
   return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="fixed z-0 h-screen w-screen overflow-clip"
-    >
+    <motion.div variants={container} initial="hidden" animate="show">
       <ProficiencyElements params={webProficiencies} className="flex" />
     </motion.div>
   );

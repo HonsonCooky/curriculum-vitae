@@ -5,18 +5,18 @@ import BlogTag from "./_components/blog-tag";
 export default async function BlogHome() {
   const tags = await getTags();
   return (
-    <div className="flex flex-1 flex-col items-center justify-center overflow-auto">
-      <ChatBubbleLeftEllipsisIcon className="fixed left-[2vw] top-[20vh] hidden h-[min(20vh,20vw)] lg:flex" />
-      <div className="mb-[2vh] flex flex-col items-center lg:mb-[10vh] lg:flex-row lg:items-baseline">
-        <h1 className="text-[max(6vh,4vw)] font-bold leading-[max(6vh,4vw)] text-light-maroon dark:text-dark-maroon">
-          Blogs
-        </h1>
-        <h2 className="pl-[max(3vh,2vw)] text-[max(3vh,2vw)] leading-[max(3vh,1.5vw)]">
-          Ideas Worth Ignoring
-        </h2>
-      </div>
-      <div className="mb-[5vh] w-[80vw] lg:w-[60vw]">
-        <p className="mb-[4vh] text-justify text-[max(2.2vh,1vw)] font-light leading-[max(2.5vh,1vw)]">
+    <div className="flex flex-1 flex-col items-center">
+      <ChatBubbleLeftEllipsisIcon className="fixed left-[min(10vh,10vw)] top-[min(20vh,20vw)] h-[min(20vh,20vw)]" />
+      <div className="w-[50vw]">
+        <div className="flex flex-col">
+          <h1 className="text-[min(8vh,8vw)] font-bold text-light-mauve dark:text-dark-lavender">
+            Blogs
+          </h1>
+          <h2 className="mb-[min(4vh,4vw)] text-[min(4vh,4vw)]">
+            Ideas Worth Ignoring
+          </h2>
+        </div>
+        <p className="mb-[min(2vh,2vw)] text-justify text-[min(2.4vh,2.4vw)] font-light">
           <span className="font-bold text-light-red dark:text-dark-red">
             Warning:
           </span>{" "}
@@ -27,23 +27,21 @@ export default async function BlogHome() {
           topic. I&apos;m always open to new ideas, and would love to have mine
           challenged.
         </p>
-        <div className="rounded px-[2vw] py-[1vh] text-justify nm-flat-light-base dark:nm-flat-dark-base">
-          <p className="text-[max(2vh,1vw)] font-light">
-            <span className="font-bold text-light-peach dark:text-dark-peach">
-              Note:
-            </span>{" "}
-            Comment sections may be moderated and altered to ensure
-            conversations are digestable.
-          </p>
+        <p className="mb-[min(4vh,4vw)] text-[min(2vh,2vw)] font-light">
+          <span className="font-bold text-light-peach dark:text-dark-peach">
+            Note:
+          </span>{" "}
+          Comment sections may be moderated and altered to ensure conversations
+          are digestable.
+        </p>
+        <h3 className="mb-[min(3vh,3vw)] text-[min(3vh,3vw)] font-bold">
+          Explore Tags:
+        </h3>
+        <div className="flex flex-wrap justify-start rounded px-[1vw] py-[2vh] nm-inset-light-base-sm dark:nm-inset-dark-base-sm">
+          {tags.map((tag) => (
+            <BlogTag tag={tag} key={tag.id} />
+          ))}
         </div>
-      </div>
-      <h3 className="mt-[1vh] text-[max(3vh,2vw)] font-bold lg:w-[60vw] lg:py-[3vh]">
-        Explore Tags:
-      </h3>
-      <div className="flex flex-wrap justify-center rounded px-[1vw] py-[2vh] lg:w-[60vw] lg:justify-start lg:nm-inset-light-base-sm lg:dark:nm-inset-dark-base-sm">
-        {tags.map((tag) => (
-          <BlogTag tag={tag} key={tag.id} />
-        ))}
       </div>
     </div>
   );
