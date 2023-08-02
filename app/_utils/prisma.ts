@@ -1,4 +1,4 @@
-import { TagSchema } from "@/prisma/generated/zod";
+import { PostSchema, TagSchema } from "@/prisma/generated/zod";
 
 export async function getTags() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/tags`).then(
@@ -8,9 +8,12 @@ export async function getTags() {
 }
 
 export async function getPosts(tagId: string) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/posts`, {
-    method: "GET",
-    body: JSON.stringify({ id: tagId }),
-  }).then((res) => (res.ok ? res.json() : ["Oh no"]));
-  return TagSchema.array().parse(res);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/posts/${tagId}`,
+    {
+      method: "GET",
+      body: JSON.stringify({ id: tagId }),
+    }
+  ).then((res) => (res.ok ? res.json() : ["Oh no"]));
+  return PostSchema.array().parse(res);
 }
