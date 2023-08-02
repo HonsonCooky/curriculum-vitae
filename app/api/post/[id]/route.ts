@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
     const id = searchParamUuidSchema.parse(
       req.nextUrl.pathname.split("/").at(-1)
     );
-    const post = await prisma.post.findFirstOrThrow({ where: { id: id } });
+    const post = await prisma.post.findUnique({ where: { id: id } });
     return NextResponse.json(post, { status: 200 });
   } catch (e: any) {
     let status = 500;

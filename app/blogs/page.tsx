@@ -1,5 +1,5 @@
 import ChatBubbleLeftEllipsisIcon from "@heroicons/react/24/outline/ChatBubbleLeftEllipsisIcon";
-import { getTags } from "../_utils/prisma";
+import { getTags } from "../_utils/api-calls";
 import BlogTag from "./_components/blog-tag";
 
 export default async function BlogHome() {
