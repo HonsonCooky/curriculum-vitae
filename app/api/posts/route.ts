@@ -1,6 +1,6 @@
+import { prisma } from "";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "../prisma";
 
 const IdSchema = z.string().uuid().nonempty();
 
