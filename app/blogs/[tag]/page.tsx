@@ -26,12 +26,21 @@ export default function TagPage() {
 
   if (!(tag && posts)) return <Loading />;
   return (
-    <div className="flex h-screen flex-1 flex-col items-center overflow-clip pt-[20vh]">
-      <CurrencyDollarIcon className="fixed left-[2vw] top-[20vh] flex h-[min(20vh,20vw)]" />
-      <h1 className="mb-[6vh] px-0 pl-[10vh] pr-[10vw] text-center text-[max(6vh,4vw)] font-bold text-light-maroon dark:text-dark-maroon">
-        {tag.name}{" "}
-      </h1>
-      <PostList tagId={tag.id} posts={posts} />
+    <div className="flex flex-1 flex-col items-center">
+      <CurrencyDollarIcon className="fixed left-[min(10vh,10vw)] top-[min(20vh,20vw)] h-[min(20vh,20vw)]" />
+      <div className="w-[50vw]">
+        <div className="flex flex-col">
+          <h1 className="text-[min(8vh,8vw)] font-bold text-light-mauve dark:text-dark-lavender">
+            {tag.name}
+          </h1>
+          <h2 className="mb-[min(4vh,4vw)] text-[min(4vh,4vw)]">
+            {tag.description}
+          </h2>
+        </div>
+        <div className="flex max-h-[60vh]">
+          <PostList tagId={tag.id} posts={posts} />
+        </div>
+      </div>
     </div>
   );
 }
