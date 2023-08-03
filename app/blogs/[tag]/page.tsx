@@ -12,6 +12,10 @@ export default function TagPage() {
   const [tag, setTag] = useState<Tag | undefined>(undefined);
   const [posts, setPosts] = useState<Post[] | undefined>(undefined);
   const id = useParams().tag;
+  const tagFallBack = {
+    name: "Server Error",
+    description: "This tag may no longer be valid",
+  } as Tag;
 
   if (!posts)
     getPosts(id)
@@ -20,9 +24,9 @@ export default function TagPage() {
 
   if (!tag)
     getTags()
-      .then((tags) => tags.filter((tag) => tag.id == id)[0])
-      .then((tag) => setTag(tag))
-      .catch((_) => setTag({ name: "Server Loading Error" } as any));
+      .then((tags) => tags?.filter((tag) => tag.id == id)[0])
+      .then((tag) => setTag(tag ?? tagFallBack))
+      .catch((_) => setTag(tagFallBack));
 
   if (!(tag && posts)) return <Loading />;
   return (

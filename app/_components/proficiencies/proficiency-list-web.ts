@@ -8,7 +8,7 @@ export const proficienciesWeb: paramsType = [
   },
   {
     imgRef: "csharp",
-    left: { start: "100%", end: "80%" },
+    left: { start: "90%", end: "80%" },
     top: { start: "40%", end: "30%" },
   },
   {
@@ -18,7 +18,7 @@ export const proficienciesWeb: paramsType = [
   },
   {
     imgRef: "typescript",
-    left: { start: "100%", end: "90%" },
+    left: { start: "90%", end: "90%" },
     top: { start: "40%", end: "42%" },
   },
   {
@@ -28,7 +28,7 @@ export const proficienciesWeb: paramsType = [
   },
   {
     imgRef: "rust",
-    left: { start: "100%", end: "83%" },
+    left: { start: "90%", end: "83%" },
     top: { start: "55%", end: "55%" },
   },
   {
@@ -38,7 +38,7 @@ export const proficienciesWeb: paramsType = [
   },
   {
     imgRef: "neovim",
-    left: { start: "100%", end: "90%" },
+    left: { start: "90%", end: "90%" },
     top: { start: "65%", end: "67%" },
   },
   {
@@ -48,7 +48,7 @@ export const proficienciesWeb: paramsType = [
   },
   {
     imgRef: "workflow",
-    left: { start: "100%", end: "80%" },
+    left: { start: "90%", end: "80%" },
     top: { start: "65%", end: "80%" },
   },
 ];
