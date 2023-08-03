@@ -12,7 +12,7 @@ export default async function BlogHome() {
           <h1 className="text-[min(8vh,8vw)] font-bold text-light-mauve dark:text-dark-lavender">
             Blogs
           </h1>
-          <h2 className="mb-[min(4vh,4vw)] text-[min(4vh,4vw)]">
+          <h2 className="mb-[min(15vh,15vw)] text-[min(4vh,4vw)]">
             Ideas Worth Ignoring
           </h2>
         </div>
@@ -28,7 +28,7 @@ export default async function BlogHome() {
           challenged.
         </p>
         <p className="mb-[min(4vh,4vw)] text-[min(2vh,2vw)] font-light">
-          <span className="font-bold text-light-peach dark:text-dark-peach">
+          <span className="text-[min(2.4vh,2.4vw)] font-bold italic text-light-sky dark:text-dark-sky">
             Note:
           </span>{" "}
           Comment sections may be moderated and altered to ensure conversations
