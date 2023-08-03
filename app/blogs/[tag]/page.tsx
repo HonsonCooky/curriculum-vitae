@@ -6,7 +6,7 @@ import { CurrencyDollarIcon } from "@heroicons/react/24/outline";
 import { Post, Tag } from "@prisma/client";
 import { useParams } from "next/navigation";
 import { useState } from "react";
-import PostList from "./post-list";
+import PostTag from "./_components/post-tag";
 
 export default function TagPage() {
   const [tag, setTag] = useState<Tag | undefined>(undefined);
@@ -42,7 +42,11 @@ export default function TagPage() {
           </h2>
         </div>
         <div className="flex max-h-[60vh]">
-          <PostList tagId={tag.id} posts={posts} />
+          <div className="mb-[5vh] w-[60vw] flex-1 overflow-y-auto overflow-x-clip rounded-[2vh] px-[min(6vh,6vw)] pt-[min(2vh,2vw)] nm-inset-light-base dark:nm-inset-dark-base">
+            {posts.map((post) => (
+              <PostTag tag={tag} post={post} key={post.id} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
