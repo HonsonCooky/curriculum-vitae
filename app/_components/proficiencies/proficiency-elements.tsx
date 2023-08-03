@@ -2,14 +2,10 @@ import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 import { z } from "zod";
 
-const paramPosSchema = z.object({
-  start: z.union([z.string(), z.number()]),
-  end: z.union([z.string(), z.number()]),
-});
 const paramSchema = z.object({
   imgRef: z.string(),
-  left: paramPosSchema,
-  top: paramPosSchema,
+  left: z.string(),
+  top: z.string(),
 });
 const paramsSchema = paramSchema.array();
 
@@ -17,21 +13,26 @@ const child = (content: paramType): Variants => {
   return {
     hidden: {
       opacity: 0,
-      left: content.left.start,
-      top: content.top.start,
+      left: content.left,
+      top: content.top,
+      scale: 0,
+      translateX: "-50%",
+      translateY: "-50%",
     },
     show: {
       opacity: 1,
-      left: content.left.end,
-      top: content.top.end,
+      left: content.left,
+      top: content.top,
+      translateX: "-50%",
+      translateY: "-50%",
+      scale: 1,
       transition: {
-        type: "inertia",
-        velocity: 400,
-        min: 0,
-        max: 100,
-        bounceStiffness: 300,
+        type: "spring",
+        bounce: 0.75,
         restDelta: 0.005,
-        bounceDamping: 8,
+        mass: 0.5,
+        velocity: 25,
+        damping: 5,
       },
     },
   };
@@ -51,7 +52,7 @@ export function ProficiencyElements(params: {
         <motion.div
           key={content.imgRef}
           variants={child(content)}
-          className="group absolute -translate-x-[50%] -translate-y-[50%] rounded-full nm-flat-light-base-sm hover:z-10 dark:nm-flat-dark-base-sm"
+          className="group absolute rounded-full nm-flat-light-base-sm hover:z-10 dark:nm-flat-dark-base-sm"
         >
           <Image
             className="block h-[min(10vh,10vw)] w-[min(10vh,10vw)] overflow-clip rounded-full object-contain p-[min(1vh,1vw)] group-hover:h-[min(12vh,12vw)] group-hover:w-[min(12vh,12vw)]"
