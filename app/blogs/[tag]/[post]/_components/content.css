@@ -1,0 +1,36 @@
+@media (prefers-color-scheme: light) {
+  .content > h1 {
+    color: red;
+    font-size: calc(min(2vh, 2vw));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .content > h1 {
+    color: #eba0ac;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: min(6vh, 6vw);
+  }
+  .content > h2 {
+    color: #f9e2af;
+    font-weight: bold;
+    font-size: min(5.5vh, 5.5vw);
+    text-align: center;
+  }
+  .content > h3 {
+    color: #a6e3a1;
+    font-weight: bold;
+    font-size: min(5vh, 5vw);
+    text-align: center;
+  }
+  .content > h4 {
+    color: #74c7ec;
+    font-weight: bold;
+    font-size: min(3vh, 3vw);
+    text-align: center;
+  }
+  .content > p {
+    font-size: min(2.4vh, 2.4vw);
+  }
+}
