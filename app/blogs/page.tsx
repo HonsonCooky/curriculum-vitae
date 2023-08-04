@@ -26,8 +26,7 @@ export default async function BlogHome() {
             each topic. I&apos;m always open to new ideas, and would love to
             have mine challenged.
             <br />
-            <br />
-            <span className="text-[min(2.4vh,2.4vw)] font-bold italic text-light-sky dark:text-dark-sky">
+            <span className="text-[min(2.4vh,2.4vw)] text-light-yellow dark:text-dark-yellow">
               Note:
             </span>{" "}
             Comment sections may be moderated and altered to ensure

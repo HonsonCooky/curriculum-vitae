@@ -8,9 +8,10 @@ import { useParams } from "next/navigation";
 import { useState } from "react";
 import PostTag from "./_components/post-tag";
 
+export type PostTag = Omit<Post, "content">;
 export default function TagPage() {
   const [tag, setTag] = useState<Tag | undefined>(undefined);
-  const [posts, setPosts] = useState<Post[] | undefined>(undefined);
+  const [posts, setPosts] = useState<PostTag[] | undefined>(undefined);
   const id = useParams().tag;
   const tagFallBack = {
     name: "Server Error",

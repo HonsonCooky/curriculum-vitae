@@ -53,7 +53,7 @@ async function processPost(crud: string) {
   const data = {
     title: await _ask("Post Title: "),
     description: await _ask("Post Description: "),
-    content: readFileSync("./src/content.html").toString(),
+    content: readFileSync("./src/content.md"),
     date: new Date(),
   };
 
@@ -92,11 +92,11 @@ async function processPost(crud: string) {
           tags:
             (await _ask("Override Tags [y/n]: ")).toLowerCase() == "y"
               ? {
-                connectOrCreate: tags.map((tag) => ({
-                  where: { name: tag.name },
-                  create: tag,
-                })),
-              }
+                  connectOrCreate: tags.map((tag) => ({
+                    where: { name: tag.name },
+                    create: tag,
+                  })),
+                }
               : undefined,
         },
       });

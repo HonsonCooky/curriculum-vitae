@@ -21,7 +21,7 @@ model Post {
   title       String    @db.TinyText()
   description String    @db.TinyText()
   date        DateTime  @db.Timestamp()
-  content     String    @db.Text()
+  content     Bytes     @db.MediumBlob()
   tags        Tag[]
   comments    Comment[]
 }

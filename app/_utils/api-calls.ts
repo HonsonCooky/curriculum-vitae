@@ -13,7 +13,10 @@ export async function getPosts(tagId: string) {
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/posts/${tagId}`,
     { next: { revalidate: 0 } }
   );
-  if (res.ok) return await res.json();
+  if (res.ok)
+    return PostSchema.partial({ content: true })
+      .array()
+      .parse(await res.json());
   return undefined;
 }
 
@@ -22,6 +25,10 @@ export async function getPost(postId: string) {
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/post/${postId}`,
     { next: { revalidate: 0 } }
   );
-  if (res.ok) return PostSchema.parse(await res.json());
+  if (res.ok) {
+    const post = await res.json();
+    post.content = Buffer.from(post.content);
+    return PostSchema.parse(post);
+  }
   return undefined;
 }
