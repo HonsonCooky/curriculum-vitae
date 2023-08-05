@@ -14,7 +14,7 @@ export default async function BlogHome() {
           </h1>
           <h2 className="text-[min(4vh,4vw)]">Ideas Worth Ignoring</h2>
         </div>
-        <div className="flex h-[60vh] flex-col justify-evenly">
+        <div className="flex h-[50vh] flex-col justify-evenly">
           <p className="text-justify text-[min(2.4vh,2.4vw)] font-light">
             <span className="font-bold text-light-red dark:text-dark-red">
               Warning:
@@ -33,10 +33,11 @@ export default async function BlogHome() {
             conversations are digestable.
           </p>
           <div>
-            <h3 className="text-[min(3vh,3vw)] font-bold">
-              Exploration Topics:
-            </h3>
-            <div className="flex flex-wrap justify-start rounded px-[1vw] py-[2vh] nm-inset-light-base dark:nm-inset-dark-base">
+            <h3 className="text-[min(3vh,3vw)] font-bold">Explore Topics:</h3>
+            <p className="mb-[min(2vh,2vw)]">
+              *Select a tag to see posts that relate to this topic*
+            </p>
+            <div className="flex flex-wrap justify-start gap-[min(2vh,2vw)]">
               {tags
                 ? tags.map((tag) => <BlogTag tag={tag} key={tag.id} />)
                 : "Unable to retrieve tags"}
