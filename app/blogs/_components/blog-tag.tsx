@@ -14,10 +14,10 @@ export default function BlogTag(params: {
       <motion.div
         whileTap={{ scale: 0.9 }}
         whileFocus={{ scale: 1.0 }}
-        whileHover={{ scale: 1.1 }}
-        className="mx-[1vw] my-[0.7vh] flex flex-row items-center rounded-full px-[2vh] py-[1vh] nm-flat-light-base hover:text-light-mauve dark:nm-flat-dark-base dark:hover:text-dark-mauve"
+        whileHover={{ scale: 1.05 }}
+        className="mx-[0.5vw] my-[0.7vh] flex flex-row items-center rounded-full px-[2vh] py-[1vh] nm-flat-light-base hover:text-light-mauve dark:nm-flat-dark-base dark:hover:text-dark-mauve"
       >
-        <h3 className="font-mono text-[max(1.9vh,0.9vw)]">{params.tag.name}</h3>
+        <h3 className="text-[max(1.9vh,0.9vw)]">{params.tag.name}</h3>
       </motion.div>
     </Link>
   );

@@ -1,5 +1,5 @@
 "use client";
-import HcIcon from "@/app/_icons/hc-icon";
+import HcIcon from "@/app/_components/hc-icon";
 import { getPost } from "@/app/_utils/api-calls";
 import Loading from "@/app/loading";
 import { Post } from "@prisma/client";
@@ -25,8 +25,8 @@ export default function PostPage() {
 
   if (!post) return <Loading />;
   return (
-    <div className="flex flex-1 justify-center pt-[5vh]">
-      <div className="flex h-[75vh] w-[80vw] flex-col overflow-y-auto overflow-x-clip rounded-[2vh] px-[min(6vh,6vw)] pt-[min(2vh,2vw)] nm-inset-light-base dark:nm-inset-dark-base">
+    <div className="flex w-screen flex-col items-center">
+      <div className="flex w-[50vw] flex-col py-[min(10vh,10vw)]">
         <h1 className="mb-[min(1vh,1vw)] text-center text-[min(7vh,7vw)] font-bold leading-[min(9vh,9vw)] text-light-mauve dark:text-dark-lavender">
           {post.title}.
         </h1>
