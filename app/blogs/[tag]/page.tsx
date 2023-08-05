@@ -7,17 +7,14 @@ import { Post, Tag } from "@prisma/client";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import GridTitle from "./_components/grid-title";
-import PostTag from "./_components/post-tag";
+import PostsList from "./_components/posts-list";
 import { SortStateSchema, SortStateType } from "./_components/sort-arrows";
 
-export type PostTag = Omit<Post, "content">;
+export type PostTagType = Omit<Post, "content">;
 export default function TagPage() {
   const [tag, setTag] = useState<Tag | undefined>(undefined);
-  const [posts, setPosts] = useState<PostTag[] | undefined>(undefined);
+  const [posts, setPosts] = useState<PostTagType[] | undefined>(undefined);
   const [nameSort, setNameSort] = useState<SortStateType>(
-    SortStateSchema.enum.none
-  );
-  const [descSort, setDescSort] = useState<SortStateType>(
     SortStateSchema.enum.none
   );
   const [dateSort, setDateSort] = useState<SortStateType>(
@@ -54,31 +51,31 @@ export default function TagPage() {
             {tag.description}
           </h2>
         </div>
-        <div className="group mb-[min(2vh,2vw)] grid grid-cols-12  items-center gap-0 rounded  py-[min(1vh,1vw)] text-[min(2vh,2vw)] font-light">
+        <div className="group mb-[min(2vh,2vw)] grid grid-cols-12  items-center gap-[2vh] rounded  py-[min(1vh,1vw)] text-[min(2vh,2vw)] font-light">
           <GridTitle
             colSpan={3}
             title="Name"
-            state={nameSort}
-            setState={setNameSort}
+            sortable={{
+              state: nameSort,
+              setState: setNameSort,
+            }}
           />
-          <GridTitle
-            colSpan={7}
-            title="Description"
-            state={descSort}
-            setState={setDescSort}
-          />
+          <GridTitle colSpan={7} title="Description" />
           <GridTitle
             colSpan={2}
             title="Date"
-            state={dateSort}
-            setState={setDateSort}
+            sortable={{
+              state: dateSort,
+              setState: setDateSort,
+            }}
           />
         </div>
-        <div className="flex max-h-[60vh] flex-col">
-          {posts.map((post) => (
-            <PostTag tag={tag} post={post} key={post.id} />
-          ))}
-        </div>
+        <PostsList
+          tag={tag}
+          posts={posts}
+          nameState={nameSort}
+          dateState={dateSort}
+        />
       </div>
     </div>
   );
