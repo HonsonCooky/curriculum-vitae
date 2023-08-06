@@ -25,18 +25,18 @@ export default function PostPage() {
 
   if (!post) return <Loading />;
   return (
-    <div className="flex w-screen flex-col items-center">
-      <div className="flex w-[50vw] flex-col py-[min(10vh,10vw)]">
-        <h1 className="mb-[min(1vh,1vw)] text-center text-[min(7vh,7vw)] font-bold leading-[min(9vh,9vw)] text-light-mauve dark:text-dark-lavender">
-          {post.title}.
+    <div className="flex w-screen flex-col items-center break-words">
+      <div className="flex w-[65vw] flex-col py-[min(10vh,10vw)]">
+        <h1 className="mb-[min(1vh,1vw)] text-center text-8xl font-bold text-light-mauve dark:text-dark-lavender">
+          {post.title}
         </h1>
-        <h2 className="mb-[min(2vh,2vw)] text-center text-[min(4vh,4vw)]">
-          {post.description}.
+        <h2 className="mb-[min(2vh,2vw)] text-center text-4xl">
+          {post.description}
         </h2>
-        <div className="mb-[min(4vh,4vw)] flex flex-row items-center">
-          <div className="h-[0.5vh] w-full rounded-full bg-light-crust dark:bg-dark-crust" />
-          <HcIcon className="mx-[min(2vh,2vw)] h-[10vh]" />
-          <div className="h-[0.5vh] w-full rounded-full bg-light-crust dark:bg-dark-crust" />
+        <div className="flex flex-row items-center">
+          <div className="h-[0.35rem] w-full rounded-full bg-light-overlay2 dark:bg-dark-overlay2" />
+          <HcIcon className="mx-[min(2vh,2vw)] h-[10rem] fill-light-overlay2 dark:fill-dark-overlay2" />
+          <div className="h-[0.35rem] w-full rounded-full bg-light-overlay2 dark:bg-dark-overlay2" />
         </div>
         <ContentHtml content={content} />
       </div>

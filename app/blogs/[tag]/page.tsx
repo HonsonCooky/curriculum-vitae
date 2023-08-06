@@ -18,7 +18,7 @@ export default function TagPage() {
     SortStateSchema.enum.none
   );
   const [dateSort, setDateSort] = useState<SortStateType>(
-    SortStateSchema.enum.none
+    SortStateSchema.enum.descend
   );
 
   const id = useParams().tag;
@@ -40,29 +40,27 @@ export default function TagPage() {
 
   if (!(tag && posts)) return <Loading />;
   return (
-    <div className="flex flex-1 flex-col items-center">
+    <div className="flex flex-1 flex-col items-center break-words">
       <CurrencyDollarIcon className="fixed left-[min(10vh,10vw)] top-[min(20vh,20vw)] h-[min(20vh,20vw)]" />
       <div className="w-[50vw] pt-[min(2vh,2vw)]">
         <div className="flex flex-col">
-          <h1 className="text-[min(8vh,8vw)] font-bold text-light-mauve dark:text-dark-lavender">
+          <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">
             {tag.name}
           </h1>
-          <h2 className="mb-[min(4vh,4vw)] text-[min(4vh,4vw)]">
-            {tag.description}
-          </h2>
+          <h2 className="mb-[min(4vh,4vw)] text-6xl">{tag.description}</h2>
         </div>
-        <div className="group mb-[min(2vh,2vw)] grid grid-cols-12  items-center gap-[2vh] rounded  py-[min(1vh,1vw)] text-[min(2vh,2vw)] font-light">
+        <div className="group mb-[min(2vh,2vw)] grid auto-rows-[1fr] grid-cols-4 items-center rounded text-2xl font-light">
           <GridTitle
-            colSpan={3}
+            colSpan={1}
             title="Name"
             sortable={{
               state: nameSort,
               setState: setNameSort,
             }}
           />
-          <GridTitle colSpan={7} title="Description" />
+          <GridTitle colSpan={2} title="Description" />
           <GridTitle
-            colSpan={2}
+            colSpan={1}
             title="Date"
             sortable={{
               state: dateSort,

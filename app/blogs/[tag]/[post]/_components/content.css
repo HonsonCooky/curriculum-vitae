@@ -2,13 +2,14 @@
   .content > h1 {
     color: #e64553;
     font-weight: bold;
-    text-decoration: underline;
-    font-size: min(6vh, 6vw);
+    font-size: 3.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
   .content > h2 {
     color: #df8e1d;
     font-weight: bold;
-    font-size: min(5.5vh, 5.5vw);
+    font-size: 3rem;
   }
   .content > h3 {
     color: #40a02b;
@@ -29,26 +30,28 @@
   .content > h1 {
     color: #eba0ac;
     font-weight: bold;
-    text-decoration: underline;
-    font-size: min(6vh, 6vw);
-    margin-bottom: 2vh;
+    font-size: 5rem;
+    margin-top: 2rem;
   }
   .content > h2 {
     color: #f9e2af;
     font-weight: bold;
-    font-size: min(5.5vh, 5.5vw);
+    font-size: 4rem;
+    margin-top: 1.5rem;
   }
   .content > h3 {
     color: #a6e3a1;
     font-weight: bold;
-    font-size: min(5vh, 5vw);
+    font-size: 3rem;
+    margin-top: 1rem;
   }
   .content > h4 {
     color: #74c7ec;
     font-weight: bold;
-    font-size: min(3vh, 3vw);
+    font-size: 2.5rem;
+    margin-top: 1rem;
   }
   .content > p {
-    font-size: min(2.4vh, 2.4vw);
+    font-size: 1.5rem;
   }
 }

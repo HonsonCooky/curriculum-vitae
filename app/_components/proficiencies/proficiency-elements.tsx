@@ -52,7 +52,7 @@ export function ProficiencyElements(params: {
         <motion.div
           key={content.imgRef}
           variants={child(content)}
-          className="group absolute rounded-full nm-flat-light-base-sm hover:z-10 dark:nm-flat-dark-base-sm"
+          className="group fixed rounded-full nm-flat-light-base-sm hover:z-10 dark:nm-flat-dark-base-sm"
         >
           <Image
             className="block h-[min(10vh,10vw)] w-[min(10vh,10vw)] overflow-clip rounded-full object-contain p-[min(1vh,1vw)] group-hover:h-[min(12vh,12vw)] group-hover:w-[min(12vh,12vw)]"

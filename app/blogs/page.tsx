@@ -7,15 +7,15 @@ export default async function BlogHome() {
   return (
     <div className="flex flex-1 flex-col items-center">
       <ChatBubbleLeftEllipsisIcon className="fixed left-[min(10vh,10vw)] top-[min(20vh,20vw)] h-[min(20vh,20vw)]" />
-      <div className="w-[50vw]">
-        <div className="flex flex-col  pt-[min(2vh,2vw)]">
-          <h1 className="text-[min(8vh,8vw)] font-bold text-light-mauve dark:text-dark-lavender">
+      <div className="w-[50vw] break-words">
+        <div className="flex flex-col py-[min(2vh,2vw)]">
+          <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">
             Blogs
           </h1>
-          <h2 className="text-[min(4vh,4vw)]">Ideas Worth Ignoring</h2>
+          <h2 className="text-6xl">Ideas Worth Ignoring</h2>
         </div>
-        <div className="flex h-[50vh] flex-col justify-evenly">
-          <p className="text-justify text-[min(2.4vh,2.4vw)] font-light">
+        <div className="flex flex-col">
+          <p className="py-[min(4vh,4vw)] text-justify text-2xl font-light">
             <span className="font-bold text-light-red dark:text-dark-red">
               Warning:
             </span>{" "}
@@ -26,15 +26,15 @@ export default async function BlogHome() {
             each topic. I&apos;m always open to new ideas, and would love to
             have mine challenged.
             <br />
-            <span className="text-[min(2.4vh,2.4vw)] text-light-yellow dark:text-dark-yellow">
+            <span className="text-light-yellow dark:text-dark-yellow">
               Note:
             </span>{" "}
             Comment sections may be moderated and altered to ensure
             conversations are digestable.
           </p>
-          <div>
-            <h3 className="text-[min(3vh,3vw)] font-bold">Explore Topics:</h3>
-            <p className="mb-[min(2vh,2vw)]">
+          <div className="py-[min(4vh,4vw)]">
+            <h3 className="text-4xl font-bold">Explore Topics:</h3>
+            <p className="mb-[min(2vh,2vw)] text-2xl font-light">
               *Select a tag to see posts that relate to this topic*
             </p>
             <div className="flex flex-wrap justify-start gap-[min(2vh,2vw)]">
