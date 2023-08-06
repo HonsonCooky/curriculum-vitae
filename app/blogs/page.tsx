@@ -1,4 +1,3 @@
-import ChatBubbleLeftEllipsisIcon from "@heroicons/react/24/outline/ChatBubbleLeftEllipsisIcon";
 import { getTags } from "../_utils/api-calls";
 import BlogTag from "./_components/blog-tag";
 
@@ -6,7 +5,6 @@ export default async function BlogHome() {
   const tags = await getTags();
   return (
     <div className="flex flex-1 flex-col items-center">
-      <ChatBubbleLeftEllipsisIcon className="fixed left-[min(10vh,10vw)] top-[min(20vh,20vw)] h-[min(20vh,20vw)]" />
       <div className="w-[50vw] break-words">
         <div className="flex flex-col py-[min(2vh,2vw)]">
           <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">

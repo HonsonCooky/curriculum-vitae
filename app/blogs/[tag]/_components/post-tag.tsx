@@ -18,7 +18,7 @@ export default function PostTag(params: { tag: Tag; post: PostTagType }) {
         }}
         className="group mb-[min(2vh,2vw)] grid grid-cols-4 items-center gap-[min(2vh,2vw)] rounded  py-[min(1vh,1vw)] text-base nm-flat-light-base hover:text-light-mauve dark:nm-flat-dark-base dark:hover:text-dark-mauve"
       >
-        <h3 className="col-span-1 break-all px-[min(2vh,2vw)] text-left font-bold">
+        <h3 className="col-span-1 break-words px-[min(2vh,2vw)] text-left font-bold">
           {params.post.title}
         </h3>
         <h3 className="col-span-2 break-words px-[min(2vh,2vw)] text-left">

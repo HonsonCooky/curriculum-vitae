@@ -1,8 +1,8 @@
 "use client";
 
+import BackBtn from "@/app/_components/back-btn";
 import { getPosts, getTags } from "@/app/_utils/api-calls";
 import Loading from "@/app/loading";
-import { CurrencyDollarIcon } from "@heroicons/react/24/outline";
 import { Post, Tag } from "@prisma/client";
 import { useParams } from "next/navigation";
 import { useState } from "react";
@@ -41,7 +41,7 @@ export default function TagPage() {
   if (!(tag && posts)) return <Loading />;
   return (
     <div className="flex flex-1 flex-col items-center break-words">
-      <CurrencyDollarIcon className="fixed left-[min(10vh,10vw)] top-[min(20vh,20vw)] h-[min(20vh,20vw)]" />
+      <BackBtn />
       <div className="w-[50vw] pt-[min(2vh,2vw)]">
         <div className="flex flex-col">
           <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">
