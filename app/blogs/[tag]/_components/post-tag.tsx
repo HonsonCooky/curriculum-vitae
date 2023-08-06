@@ -10,12 +10,11 @@ export default function PostTag(params: { tag: Tag; post: PostTagType }) {
       <motion.li
         whileTap={{ scale: 0.9 }}
         whileFocus={{ scale: 1.0 }}
-        whileHover={{ scale: 1.05 }}
         layout
         transition={{
           type: "spring",
           damping: 25,
-          stiffness: 120,
+          duration: 0.2,
         }}
         className="group mb-[min(2vh,2vw)] grid grid-cols-4 items-center gap-[min(2vh,2vw)] rounded  py-[min(1vh,1vw)] text-base nm-flat-light-base hover:text-light-mauve dark:nm-flat-dark-base dark:hover:text-dark-mauve"
       >

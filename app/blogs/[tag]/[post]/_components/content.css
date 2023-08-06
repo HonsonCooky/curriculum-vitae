@@ -2,27 +2,30 @@
   .content > h1 {
     color: #e64553;
     font-weight: bold;
-    font-size: 3.5rem;
+    font-size: 5rem;
     margin-top: 2rem;
-    margin-bottom: 2rem;
   }
   .content > h2 {
     color: #df8e1d;
     font-weight: bold;
-    font-size: 3rem;
+    font-size: 4rem;
+    margin-top: 1.5rem;
   }
   .content > h3 {
     color: #40a02b;
     font-weight: bold;
-    font-size: min(5vh, 5vw);
+    font-size: 3rem;
+    margin-top: 1rem;
   }
   .content > h4 {
     color: #209fb5;
     font-weight: bold;
-    font-size: min(3vh, 3vw);
+    font-size: 2.5rem;
+    margin-top: 1rem;
   }
   .content > p {
-    font-size: min(2.4vh, 2.4vw);
+    font-size: 1.5rem;
+    font-weight: 300;
   }
 }
 
@@ -53,5 +56,6 @@
   }
   .content > p {
     font-size: 1.5rem;
+    font-weight: 300;
   }
 }
