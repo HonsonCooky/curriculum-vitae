@@ -10,6 +10,7 @@ import { useState } from "react";
 import { remark } from "remark";
 import html from "remark-html";
 import ContentHtml from "./_components/content";
+import UserComment from "./_components/user-comment";
 
 export default function PostPage() {
   const [post, setPost] = useState<Post | undefined>(undefined);
@@ -43,6 +44,7 @@ export default function PostPage() {
           <div className="h-[0.35rem] w-full rounded-full bg-light-overlay2 dark:bg-dark-overlay2" />
         </div>
         <ContentHtml content={content} />
+        <UserComment />
       </div>
     </div>
   );

@@ -30,7 +30,8 @@ export default function GridTitle(params: {
   if (!params.sortable)
     return (
       <div
-        className={`col-span-${params.colSpan} flex h-full flex-row items-center justify-between border-r-2 border-r-light-overlay2 px-[min(2vh,2vw)] dark:border-r-dark-overlay2`}
+        className={`col-span-${params.colSpan} flex h-full flex-row items-center justify-between border-r-2 
+        border-r-light-overlay2 px-[min(2vh,2vw)] dark:border-r-dark-overlay2`}
       >
         <h3 className="select-none break-all">{params.title}</h3>
       </div>
@@ -39,7 +40,9 @@ export default function GridTitle(params: {
   return (
     <a
       onClick={toggleSort}
-      className={`col-span-${params.colSpan} flex h-full flex-row items-center justify-between border-r-2 border-r-light-overlay2 px-[min(2vh,2vw)] hover:text-light-mauve dark:border-r-dark-overlay2 dark:hover:text-dark-mauve`}
+      className={`col-span-${params.colSpan} flex h-full flex-row items-center justify-between border-r-2 
+      border-r-light-overlay2 px-[min(2vh,2vw)] hover:text-light-mauve dark:border-r-dark-overlay2 
+      dark:hover:text-dark-mauve`}
     >
       <h3 className="select-none break-all">{params.title}</h3>
       <SortArrows

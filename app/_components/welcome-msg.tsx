@@ -5,9 +5,11 @@ export default function WelcomeMsg() {
   const [useAlliteration, setUseAlliteration] = useState(true);
 
   const alliteration =
-    "Here hosts the humble HTTP home of happily hard-working Harrison. A heuristic hands-on happening, harbouring hearty heat hatched from his head. Hooked? Heed high for hyperlinks.";
+    "Here hosts the humble HTTP home of happily hard-working Harrison. A heuristic hands-on happening, harbouring " +
+    "hearty heat hatched from his head. Hooked? Heed high for hyperlinks.";
   const translation =
-    "I created this website to share a little about me and to connect with others who share similar interests. If you have any questions or just want to say Kia Ora, don’t hesitate to reach out. Thank you for stopping by!";
+    "I created this website to share a little about me and to connect with others who share similar interests. If you " +
+    "have any questions or just want to say Kia Ora, don’t hesitate to reach out. Thank you for stopping by!";
 
   return (
     <div>
@@ -17,7 +19,8 @@ export default function WelcomeMsg() {
       <div className="flex w-full items-end justify-end">
         <button
           onClick={() => setUseAlliteration(!useAlliteration)}
-          className="rounded-lg p-[min(1vh,1vw)] text-2xl text-light-mauve nm-flat-light-base-sm hover:scale-[1.05] dark:text-dark-mauve dark:nm-flat-dark-base-sm"
+          className="rounded-lg p-[min(1vh,1vw)] text-2xl nm-flat-light-base-sm hover:scale-[1.05] hover:text-light-mauve 
+          dark:nm-flat-dark-base-sm dark:hover:text-dark-mauve"
         >
           {useAlliteration
             ? "Translate Alliteration"

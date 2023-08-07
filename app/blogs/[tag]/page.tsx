@@ -51,7 +51,10 @@ export default function TagPage() {
           </h1>
           <h2 className="mb-[min(4vh,4vw)] text-6xl">{tag.description}</h2>
         </div>
-        <div className="group mb-[min(2vh,2vw)] grid auto-rows-[1fr] grid-cols-4 items-center rounded text-2xl font-light">
+        <div
+          className="group mb-[min(2vh,2vw)] grid auto-rows-[1fr] grid-cols-4 items-center rounded text-2xl 
+          font-light"
+        >
           <GridTitle
             colSpan={1}
             title="Name"

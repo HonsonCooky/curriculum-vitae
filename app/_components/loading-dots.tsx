@@ -7,7 +7,8 @@ function Dot(params: {
 }) {
   return (
     <motion.div
-      className={`mx-[0.2vw] h-[max(1vh,0.2vw)] w-[max(1vh,0.2vw)] rounded-full bg-light-text dark:bg-dark-text ${params.className}`}
+      className={`mx-[0.2vw] h-[max(1vh,0.2vw)] w-[max(1vh,0.2vw)] rounded-full bg-light-text dark:bg-dark-text 
+        ${params.className}`}
       initial={{
         y: 0,
       }}

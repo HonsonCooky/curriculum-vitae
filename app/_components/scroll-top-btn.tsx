@@ -42,8 +42,14 @@ export default function ScrollToTopButton() {
       animate={controls}
       onClick={scrollToTop}
     >
-      <div className="group flex w-min translate-x-[-50%] flex-row items-center rounded-full p-[min(1vh,1vw)] nm-flat-light-base hover:scale-[1.1] dark:nm-flat-dark-base">
-        <ArrowUpIcon className="h-[2.5rem] stroke-light-text group-hover:stroke-light-mauve dark:stroke-dark-text dark:group-hover:stroke-dark-mauve" />
+      <div
+        className="group flex w-min translate-x-[-50%] flex-row items-center rounded-full p-[min(1vh,1vw)] 
+        nm-flat-light-base hover:scale-[1.1] dark:nm-flat-dark-base"
+      >
+        <ArrowUpIcon
+          className="h-[2.5rem] stroke-light-text group-hover:stroke-light-mauve dark:stroke-dark-text 
+          dark:group-hover:stroke-dark-mauve"
+        />
       </div>
     </motion.button>
   );

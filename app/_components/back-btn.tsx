@@ -9,8 +9,14 @@ export default function BackBtn() {
       onClick={router.back}
       className=" sticky top-[min(10vh,10vw)] flex w-full px-[min(10vh,10vw)]"
     >
-      <div className="group flex w-min translate-x-[-50%] flex-row items-center rounded-full p-[min(1vh,1vw)] nm-flat-light-base hover:scale-[1.1] dark:nm-flat-dark-base">
-        <ArrowSmallLeftIcon className="h-[2.5rem] stroke-light-text group-hover:stroke-light-mauve dark:stroke-dark-text dark:group-hover:stroke-dark-mauve" />
+      <div
+        className="group flex w-min translate-x-[-50%] flex-row items-center rounded-full p-[min(1vh,1vw)] 
+        nm-flat-light-base hover:scale-[1.1] dark:nm-flat-dark-base"
+      >
+        <ArrowSmallLeftIcon
+          className="h-[2.5rem] stroke-light-text group-hover:stroke-light-mauve dark:stroke-dark-text 
+          dark:group-hover:stroke-dark-mauve"
+        />
       </div>
     </div>
   );
