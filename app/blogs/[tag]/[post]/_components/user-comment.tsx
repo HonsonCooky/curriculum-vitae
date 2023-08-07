@@ -15,14 +15,9 @@ export default function UserComment() {
     }
   }, [textAreaRef, value]);
 
-  const handleChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const val = evt.target?.value;
-    setValue(val);
-  };
-
   return (
     <div
-      className="sticky bottom-[min(2vh,2vw)] flex max-h-[30vh] w-[50vw] flex-col self-center rounded-xl 
+      className="sticky bottom-[min(2vh,2vw)] flex max-h-[30vh] w-[55vw] flex-col self-center rounded-xl 
       px-[min(4vh,4vw)] py-[min(2vh,2vw)] nm-flat-light-base dark:nm-flat-dark-base"
     >
       <div className="flex w-full justify-between">
@@ -33,13 +28,13 @@ export default function UserComment() {
       </div>
       <textarea
         id="review-text"
-        onChange={handleChange}
+        onChange={(e) => setValue(e.target.value)}
         placeholder="Let me know your thoughts..."
         ref={textAreaRef}
         rows={1}
         value={value}
-        className={`resize-none rounded-xl border-2 border-light-sapphire px-[min(2vh,2vw)] py-[min(1vh,1vw)] 
-        text-xl font-light nm-inset-light-base dark:border-dark-sapphire dark:nm-inset-dark-base`}
+        className="flex resize-none items-center rounded-xl border-2 border-light-sapphire px-[min(2vh,2vw)] 
+        py-[min(1vh,1vw)] text-xl font-light nm-inset-light-base dark:border-dark-sapphire dark:nm-inset-dark-base"
       />
     </div>
   );
