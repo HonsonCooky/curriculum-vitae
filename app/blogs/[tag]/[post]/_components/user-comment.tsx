@@ -1,10 +1,19 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function UserComment() {
   const [value, setValue] = useState("");
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const maxTextLength = 65_535;
+
+  useEffect(() => {
+    const curTextArea = textAreaRef.current;
+    if (curTextArea) {
+      curTextArea.style.height = "0px";
+      const scrollHeight = curTextArea.scrollHeight;
+      curTextArea.style.height = "calc(min(1vh,1vw) + " + scrollHeight + "px)";
+    }
+  }, [textAreaRef, value]);
 
   const handleChange = (evt: React.ChangeEvent<HTMLTextAreaElement>) => {
     const val = evt.target?.value;
