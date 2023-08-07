@@ -1,6 +1,7 @@
 "use client";
 
 import BackBtn from "@/app/_components/back-btn";
+import ScrollToTopButton from "@/app/_components/scroll-top-btn";
 import { getPosts, getTags } from "@/app/_utils/api-calls";
 import Loading from "@/app/loading";
 import { Post, Tag } from "@prisma/client";
@@ -42,6 +43,7 @@ export default function TagPage() {
   return (
     <div className="flex flex-1 flex-col items-center break-words">
       <BackBtn />
+      <ScrollToTopButton />
       <div className="w-[50vw] pt-[min(2vh,2vw)]">
         <div className="flex flex-col">
           <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">
