@@ -44,6 +44,7 @@ export default function PostPage() {
           <div className="h-[0.35rem] w-full rounded-full bg-light-overlay2 dark:bg-dark-overlay2" />
         </div>
         <ContentHtml content={content} />
+        <div className="h-[min(10vh,10vw)]" />
         <UserComment />
       </div>
     </div>

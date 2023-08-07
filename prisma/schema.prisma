@@ -36,7 +36,8 @@ model Tag {
 model Comment {
   id      String   @id @default(uuid())
   date    DateTime @db.Timestamp()
-  content String   @db.Text()
+  content Bytes    @db.MediumBlob()
+  alias   String?  @db.TinyText()
   postId  String?
   post    Post?    @relation(fields: [postId], references: [id])
 

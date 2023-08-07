@@ -1,10 +1,15 @@
 "use client";
+import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import { Comment, Post } from "@prisma/client";
+import { parseInt } from "lodash";
 import { useEffect, useRef, useState } from "react";
 
-export default function UserComment() {
+export default function UserComment(params: { post: Post }) {
   const [value, setValue] = useState("");
+  const [alias, setAlias] = useState("");
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
-  const maxTextLength = 65_535;
+  const maxContentLength = parseInt(`${65_535 / 2}`);
+  const maxAliasLength = parseInt(`${256 / 2}`);
 
   useEffect(() => {
     const curTextArea = textAreaRef.current;
@@ -15,15 +20,27 @@ export default function UserComment() {
     }
   }, [textAreaRef, value]);
 
+  async function sendComment() {
+    const comment: Omit<Comment, "id"> = {
+      date: new Date(),
+      content: Buffer.from(value),
+      postId: params.post.id,
+      alias: alias ? alias : null,
+    };
+  }
+
   return (
     <div
-      className="sticky bottom-[min(2vh,2vw)] flex max-h-[30vh] w-[55vw] flex-col self-center rounded-xl 
+      className="sticky bottom-[min(2vh,2vw)] flex w-[55vw] flex-col self-center break-all rounded-xl 
       px-[min(4vh,4vw)] py-[min(2vh,2vw)] nm-flat-light-base dark:nm-flat-dark-base"
     >
       <div className="flex w-full justify-between">
         <label className="mb-[min(1vh,1vw)] text-2xl">Comment:</label>
+        <label className="mb-[min(1vh,1vw)] text-xl font-light italic text-light-overlay2 dark:text-dark-overlay2">
+          markdown compatable
+        </label>
         <label className="mb-[min(1vh,1vw)] text-2xl">
-          {value.length}/{maxTextLength}
+          {value.length}/{maxContentLength}
         </label>
       </div>
       <textarea
@@ -33,9 +50,28 @@ export default function UserComment() {
         ref={textAreaRef}
         rows={1}
         value={value}
-        className="flex resize-none items-center rounded-xl border-2 border-light-sapphire px-[min(2vh,2vw)] 
-        py-[min(1vh,1vw)] text-xl font-light nm-inset-light-base dark:border-dark-sapphire dark:nm-inset-dark-base"
+        className="mb-[min(2vh,2vw)] flex max-h-[20rem] flex-grow resize-none  items-center rounded-xl border-2 
+        border-light-sapphire px-[min(2vh,2vw)] pb-[min(0.5vh,0.5vw)] pt-[min(1vh,1vw)] text-xl font-light 
+        nm-inset-light-base dark:border-dark-sapphire dark:nm-inset-dark-base"
       />
+      <div className="flex flex-row items-end justify-end">
+        <input
+          onChange={(e) => setAlias(e.target.value)}
+          value={alias}
+          placeholder="Signature (Optional)"
+          className="flex w-min resize-none items-center rounded-xl border-2 border-light-blue 
+          px-[min(2vh,2vw)] pb-[min(0.5vh,0.5vw)] pt-[min(1vh,1vw)] text-lg font-light nm-inset-light-base 
+          dark:border-dark-blue dark:nm-inset-dark-base"
+        />
+        <a
+          className="mb-[min(0.5vh,0.5vw)] ml-[min(1vh,1vw)] flex flex-row items-center rounded-full p-[min(0.5vh,0.5vw)] 
+          nm-flat-light-base hover:scale-[1.05] dark:nm-flat-dark-base"
+          onClick={sendComment}
+        >
+          <h4 className="select-none px-[min(1vh,1vw)] text-xl">Send</h4>
+          <PaperAirplaneIcon className=" h-[1.25rem] " />
+        </a>
+      </div>
     </div>
   );
 }
