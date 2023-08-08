@@ -2,11 +2,13 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Comment, Post } from "@prisma/client";
 import { parseInt } from "lodash";
-import { useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 
 export default function UserComment(params: { post: Post }) {
-  const [value, setValue] = useState("");
+  const [comment, setComment] = useState("");
+  const [errComment, setErrComment] = useState<string | undefined>(undefined);
   const [alias, setAlias] = useState("");
+  const [errAlias, setErrAlias] = useState<string | undefined>(undefined);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const maxContentLength = parseInt(`${65_535 / 2}`);
   const maxAliasLength = parseInt(`${256 / 2}`);
@@ -18,12 +20,34 @@ export default function UserComment(params: { post: Post }) {
       const scrollHeight = curTextArea.scrollHeight;
       curTextArea.style.height = "calc(min(1vh,1vw) + " + scrollHeight + "px)";
     }
-  }, [textAreaRef, value]);
+  }, [textAreaRef, comment]);
+
+  function updateComment(e: ChangeEvent<HTMLTextAreaElement>) {
+    if (e.target.value.length > maxContentLength) {
+      setErrComment("Comment Too Long");
+      return;
+    }
+    if (errComment) setErrComment(undefined);
+    setComment(e.target.value);
+  }
+
+  function updateAlias(e: ChangeEvent<HTMLInputElement>) {
+    if (e.target.value.length > maxAliasLength) {
+      setErrAlias("Alias Too Long");
+      return;
+    }
+    if (errComment) setErrAlias(undefined);
+    setAlias(e.target.value);
+  }
 
   async function sendComment() {
-    const comment: Omit<Comment, "id"> = {
+    if (comment.length == 0) {
+      setErrComment("Missing Comment");
+      return;
+    }
+    const cmtObj: Omit<Comment, "id"> = {
       date: new Date(),
-      content: Buffer.from(value),
+      content: Buffer.from(comment),
       postId: params.post.id,
       alias: alias ? alias : null,
     };
@@ -40,23 +64,37 @@ export default function UserComment(params: { post: Post }) {
           markdown compatable
         </label>
         <label className="mb-[min(1vh,1vw)] text-2xl">
-          {value.length}/{maxContentLength}
+          {comment.length}/{maxContentLength}
         </label>
       </div>
       <textarea
         id="review-text"
-        onChange={(e) => setValue(e.target.value)}
+        onChange={updateComment}
         placeholder="Let me know your thoughts..."
         ref={textAreaRef}
         rows={1}
-        value={value}
-        className="mb-[min(2vh,2vw)] flex max-h-[20rem] flex-grow resize-none  items-center rounded-xl border-2 
+        value={comment}
+        className="mb-[min(2vh,2vw)] flex max-h-[15rem] flex-grow resize-none  items-center rounded-xl border-2 
         border-light-sapphire px-[min(2vh,2vw)] pb-[min(0.5vh,0.5vw)] pt-[min(1vh,1vw)] text-xl font-light 
         nm-inset-light-base dark:border-dark-sapphire dark:nm-inset-dark-base"
       />
       <div className="flex flex-row items-end justify-end">
+        <div className="flex h-full flex-1 items-center font-bold text-light-red dark:text-dark-red">
+          <label
+            aria-hidden={errComment ? true : false}
+            className="px-[min(2vh,2vw)] aria-hidden:flex"
+          >
+            {errComment}
+          </label>
+          <label
+            aria-hidden={errAlias ? true : false}
+            className="px-[min(2vh,2vw)] aria-hidden:flex"
+          >
+            {errAlias}
+          </label>
+        </div>
         <input
-          onChange={(e) => setAlias(e.target.value)}
+          onChange={updateAlias}
           value={alias}
           placeholder="Signature (Optional)"
           className="flex w-min resize-none items-center rounded-xl border-2 border-light-blue 

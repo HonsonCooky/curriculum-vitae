@@ -45,7 +45,7 @@ export default function PostPage() {
         </div>
         <ContentHtml content={content} />
         <div className="h-[min(10vh,10vw)]" />
-        <UserComment />
+        <UserComment post={post} />
       </div>
     </div>
   );
