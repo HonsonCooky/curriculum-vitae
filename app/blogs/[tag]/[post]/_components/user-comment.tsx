@@ -5,7 +5,9 @@ import { Comment, Post } from "@prisma/client";
 import { parseInt } from "lodash";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 
+const randomName = generateRandomName();
 export default function UserComment(params: { post: Post }) {
+  const [isSticky, setIsSticky] = useState(true);
   const [comment, setComment] = useState("");
   const [errComment, setErrComment] = useState<string | undefined>(undefined);
   const [alias, setAlias] = useState("");
@@ -13,7 +15,6 @@ export default function UserComment(params: { post: Post }) {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const maxContentLength = parseInt(`${65_535 / 2}`);
   const maxAliasLength = parseInt(`${256 / 2}`);
-  const randomName = generateRandomName();
 
   useEffect(() => {
     const curTextArea = textAreaRef.current;
@@ -57,8 +58,9 @@ export default function UserComment(params: { post: Post }) {
 
   return (
     <div
+      data-sticky={isSticky}
       className="bottom-[min(2vh,2vw)] flex w-[50vw] flex-col self-center break-all rounded-xl px-[min(4vh,4vw)] 
-      py-[min(2vh,2vw)] nm-flat-light-base dark:nm-flat-dark-base 2xl:sticky"
+      py-[min(2vh,2vw)] nm-flat-light-base data-[sticky=true]:sticky dark:nm-flat-dark-base"
     >
       <div className="w-full"></div>
       <div className="flex w-full justify-between">
