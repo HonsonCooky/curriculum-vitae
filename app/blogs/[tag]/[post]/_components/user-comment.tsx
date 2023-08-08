@@ -1,4 +1,5 @@
 "use client";
+import { generateRandomName } from "@/app/_utils/random-name-gen";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Comment, Post } from "@prisma/client";
 import { parseInt } from "lodash";
@@ -12,6 +13,7 @@ export default function UserComment(params: { post: Post }) {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const maxContentLength = parseInt(`${65_535 / 2}`);
   const maxAliasLength = parseInt(`${256 / 2}`);
+  const randomName = generateRandomName();
 
   useEffect(() => {
     const curTextArea = textAreaRef.current;
@@ -49,15 +51,16 @@ export default function UserComment(params: { post: Post }) {
       date: new Date(),
       content: Buffer.from(comment),
       postId: params.post.id,
-      alias: alias ? alias : null,
+      alias: alias ? alias : randomName,
     };
   }
 
   return (
     <div
-      className="sticky bottom-[min(2vh,2vw)] flex w-[55vw] flex-col self-center break-all rounded-xl 
-      px-[min(4vh,4vw)] py-[min(2vh,2vw)] nm-flat-light-base dark:nm-flat-dark-base"
+      className="bottom-[min(2vh,2vw)] flex w-[50vw] flex-col self-center break-all rounded-xl px-[min(4vh,4vw)] 
+      py-[min(2vh,2vw)] nm-flat-light-base dark:nm-flat-dark-base 2xl:sticky"
     >
+      <div className="w-full"></div>
       <div className="flex w-full justify-between">
         <label className="mb-[min(1vh,1vw)] text-2xl">Comment:</label>
         <label className="mb-[min(1vh,1vw)] text-xl font-light italic text-light-overlay2 dark:text-dark-overlay2">
@@ -68,17 +71,16 @@ export default function UserComment(params: { post: Post }) {
         </label>
       </div>
       <textarea
-        id="review-text"
+        id="comment"
         onChange={updateComment}
         placeholder="Let me know your thoughts..."
         ref={textAreaRef}
         rows={1}
         value={comment}
-        className="mb-[min(2vh,2vw)] flex max-h-[15rem] flex-grow resize-none  items-center rounded-xl border-2 
-        border-light-sapphire px-[min(2vh,2vw)] pb-[min(0.5vh,0.5vw)] pt-[min(1vh,1vw)] text-xl font-light 
-        nm-inset-light-base dark:border-dark-sapphire dark:nm-inset-dark-base"
+        className="mb-[min(2vh,2vw)] flex max-h-[15rem] flex-grow resize-none items-center rounded-xl px-[min(2vh,2vw)] 
+        pt-[min(1vh,1vw)] text-xl font-light nm-inset-light-base-sm dark:nm-inset-dark-base-sm"
       />
-      <div className="flex flex-row items-end justify-end">
+      <div className="flex flex-row items-center justify-end">
         <div className="flex h-full flex-1 items-center font-bold text-light-red dark:text-dark-red">
           <label
             aria-hidden={errComment ? true : false}
@@ -93,22 +95,32 @@ export default function UserComment(params: { post: Post }) {
             {errAlias}
           </label>
         </div>
-        <input
-          onChange={updateAlias}
-          value={alias}
-          placeholder="Signature (Optional)"
-          className="flex w-min resize-none items-center rounded-xl border-2 border-light-blue 
-          px-[min(2vh,2vw)] pb-[min(0.5vh,0.5vw)] pt-[min(1vh,1vw)] text-lg font-light nm-inset-light-base 
-          dark:border-dark-blue dark:nm-inset-dark-base"
-        />
-        <a
-          className="mb-[min(0.5vh,0.5vw)] ml-[min(1vh,1vw)] flex flex-row items-center rounded-full p-[min(0.5vh,0.5vw)] 
-          nm-flat-light-base hover:scale-[1.05] dark:nm-flat-dark-base"
-          onClick={sendComment}
-        >
-          <h4 className="select-none px-[min(1vh,1vw)] text-xl">Send</h4>
-          <PaperAirplaneIcon className=" h-[1.25rem] " />
-        </a>
+        <label className="mr-[min(1vh,1vw)] text-2xl">Alias:</label>
+        <div className="flex flex-row items-center justify-end">
+          <input
+            onChange={updateAlias}
+            value={alias}
+            placeholder={`${randomName}`}
+            className="flex w-[12vw] items-center rounded-lg px-[min(2vh,2vw)] py-[min(0.5vh,0.5vw)] text-lg font-light 
+            nm-inset-light-base-sm dark:nm-inset-dark-base-sm"
+          />
+          <a
+            className="group ml-[min(1vh,1vw)] flex flex-row items-center rounded-xl p-[min(0.5vh,0.5vw)] 
+            nm-flat-light-base-sm hover:scale-[1.05] dark:nm-flat-dark-base-sm"
+            onClick={sendComment}
+          >
+            <h4
+              className="select-none px-[min(1vh,1vw)] text-xl group-hover:text-light-mauve 
+              dark:group-hover:text-dark-mauve"
+            >
+              Send
+            </h4>
+            <PaperAirplaneIcon
+              className="h-[1.25rem] pr-[min(1vh,1vw)] group-hover:stroke-light-mauve 
+              dark:group-hover:stroke-dark-mauve"
+            />
+          </a>
+        </div>
       </div>
     </div>
   );
