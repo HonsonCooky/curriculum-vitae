@@ -6,9 +6,10 @@ import { getPost } from "@/app/_utils/api-calls";
 import Loading from "@/app/loading";
 import { Post } from "@prisma/client";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { remark } from "remark";
 import html from "remark-html";
+import Comments from "./_components/comments";
 import ContentHtml from "./_components/content";
 import UserComment from "./_components/user-comment";
 
@@ -17,14 +18,16 @@ export default function PostPage() {
   const [content, setContent] = useState<any | undefined>(undefined);
   const id = useParams().post;
 
-  if (!post)
-    getPost(id).then(async (post) => {
-      if (post?.content) {
-        const content = await remark().use(html).process(post.content);
-        setContent(content.toString());
-      }
-      setPost(post);
-    });
+  useEffect(() => {
+    if (!post)
+      getPost(id).then(async (post) => {
+        if (post?.content) {
+          const content = await remark().use(html).process(post.content);
+          setContent(content.toString());
+        }
+        setPost(post);
+      });
+  });
 
   if (!post) return <Loading />;
   return (
@@ -46,6 +49,7 @@ export default function PostPage() {
         <ContentHtml content={content} />
         <div className="h-[min(10vh,10vw)]" />
         <UserComment post={post} />
+        <Comments post={post} />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { getPosts, getTags } from "@/app/_utils/api-calls";
 import Loading from "@/app/loading";
 import { Post, Tag } from "@prisma/client";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GridTitle from "./_components/grid-title";
 import PostsList from "./_components/posts-list";
 import { SortStateSchema, SortStateType } from "./_components/sort-arrows";
@@ -28,16 +28,18 @@ export default function TagPage() {
     description: "This tag may no longer be valid",
   } as Tag;
 
-  if (!posts)
-    getPosts(id)
-      .then((posts) => setPosts(posts))
-      .catch((_) => setPosts([]));
+  useEffect(() => {
+    if (!posts)
+      getPosts(id)
+        .then((posts) => setPosts(posts))
+        .catch((_) => setPosts([]));
 
-  if (!tag)
-    getTags()
-      .then((tags) => tags?.filter((tag) => tag.id == id)[0])
-      .then((tag) => setTag(tag ?? tagFallBack))
-      .catch((_) => setTag(tagFallBack));
+    if (!tag)
+      getTags()
+        .then((tags) => tags?.filter((tag) => tag.id == id)[0])
+        .then((tag) => setTag(tag ?? tagFallBack))
+        .catch((_) => setTag(tagFallBack));
+  });
 
   if (!(tag && posts)) return <Loading />;
   return (
