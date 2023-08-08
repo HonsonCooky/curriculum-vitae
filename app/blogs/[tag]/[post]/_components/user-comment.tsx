@@ -1,13 +1,17 @@
 "use client";
 import { generateRandomName } from "@/app/_utils/random-name-gen";
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import {
+  LockClosedIcon,
+  LockOpenIcon,
+  PaperAirplaneIcon,
+} from "@heroicons/react/24/outline";
 import { Comment, Post } from "@prisma/client";
+import { Variants, motion, useCycle } from "framer-motion";
 import { parseInt } from "lodash";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 
 const randomName = generateRandomName();
 export default function UserComment(params: { post: Post }) {
-  const [isSticky, setIsSticky] = useState(true);
   const [comment, setComment] = useState("");
   const [errComment, setErrComment] = useState<string | undefined>(undefined);
   const [alias, setAlias] = useState("");
@@ -15,6 +19,7 @@ export default function UserComment(params: { post: Post }) {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const maxContentLength = parseInt(`${65_535 / 2}`);
   const maxAliasLength = parseInt(`${256 / 2}`);
+  const [isStuck, toggleStuck] = useCycle(true, false);
 
   useEffect(() => {
     const curTextArea = textAreaRef.current;
@@ -56,13 +61,49 @@ export default function UserComment(params: { post: Post }) {
     };
   }
 
+  const variants: Variants = {
+    stuck: {
+      position: "sticky",
+      bottom: "min(2vh,2vw)",
+      transition: {
+        ease: "linear",
+        layout: {
+          duration: 1,
+        },
+      },
+    },
+    unstuck: {
+      position: "static",
+      transition: {
+        ease: "linear",
+        layout: {
+          duration: 1,
+        },
+      },
+    },
+  };
+
   return (
-    <div
-      data-sticky={isSticky}
-      className="bottom-[min(2vh,2vw)] flex w-[50vw] flex-col self-center break-all rounded-xl px-[min(4vh,4vw)] 
-      py-[min(2vh,2vw)] nm-flat-light-base data-[sticky=true]:sticky dark:nm-flat-dark-base"
+    <motion.div
+      layout="position"
+      animate={isStuck ? "stuck" : "unstuck"}
+      variants={variants}
+      className="flex w-[50vw] flex-col self-center break-all rounded-xl px-[min(4vh,4vw)] pb-[min(2vh,2vw)] 
+      pt-[min(1vh,1vw)] nm-flat-light-base dark:nm-flat-dark-base"
     >
-      <div className="w-full"></div>
+      <div
+        className="group mb-[min(1vh,1vw)] flex w-full justify-end"
+        onClick={() => toggleStuck()}
+      >
+        <LockOpenIcon
+          data-stuck={isStuck}
+          className="hidden h-[1.25rem] group-hover:stroke-light-mauve data-[stuck=true]:flex dark:group-hover:stroke-dark-mauve"
+        />
+        <LockClosedIcon
+          data-stuck={isStuck}
+          className="hidden h-[1.25rem] group-hover:stroke-light-mauve data-[stuck=false]:flex dark:group-hover:stroke-dark-mauve"
+        />
+      </div>
       <div className="flex w-full justify-between">
         <label className="mb-[min(1vh,1vw)] text-2xl">Comment:</label>
         <label className="mb-[min(1vh,1vw)] text-xl font-light italic text-light-overlay2 dark:text-dark-overlay2">
@@ -124,6 +165,6 @@ export default function UserComment(params: { post: Post }) {
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
