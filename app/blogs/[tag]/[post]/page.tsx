@@ -14,7 +14,6 @@ export default async function PostPage({
   params: { post: string };
 }) {
   const postObj = await getPost(post);
-  console.log(JSON.stringify(postObj));
   if (!postObj) return <Loading />;
   const content = await remark().use(html).process(postObj.content);
 

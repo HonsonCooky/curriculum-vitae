@@ -14,7 +14,7 @@ export default function SortArrows(params: {
     : SortStateSchema.enum.none;
   const mode =
     window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
+      window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
 
