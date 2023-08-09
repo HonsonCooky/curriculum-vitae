@@ -11,7 +11,7 @@ export default function Comments(params: { comments: Comment[] | undefined }) {
         return (
           <div
             key={comment.id}
-            className="my-[min(2vh,2vw)] rounded-xl px-[min(4vh,4vw)] py-[min(2vh,2vw)] nm-flat-light-base dark:nm-flat-dark-base"
+            className="my-[min(2vh,2vw)] break-all rounded-xl px-[min(4vh,4vw)] py-[min(2vh,2vw)] nm-flat-light-base dark:nm-flat-dark-base"
           >
             <div className="flex w-full justify-between">
               <h1 className="text-2xl">{comment.alias}:</h1>
