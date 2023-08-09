@@ -1,5 +1,4 @@
 "use client";
-import { postComment } from "@/app/_utils/api-calls";
 import { generateRandomName } from "@/app/_utils/random-name-gen";
 import {
   ChevronDownIcon,
@@ -9,12 +8,9 @@ import {
 import { Variants, motion, useCycle } from "framer-motion";
 import { parseInt } from "lodash";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
-import { CustomComment } from "../page";
 
-const randomName = generateRandomName();
 export default function UserComment(params: {
-  postId: string;
-  addComment: (comment: CustomComment) => void;
+  handleCommentPost: (comment: string, alias: string) => Promise<void>;
 }) {
   const [comment, setComment] = useState("");
   const [errComment, setErrComment] = useState<string | undefined>(undefined);
@@ -24,14 +20,17 @@ export default function UserComment(params: {
   const maxContentLength = parseInt(`${65_535 / 2}`);
   const maxAliasLength = parseInt(`${256 / 2}`);
   const [isStuck, toggleStuck] = useCycle(true, false);
+  const [randomName, setRandomName] = useState("");
 
   useEffect(() => {
+    if (!randomName) setRandomName(generateRandomName());
     const curTextArea = textAreaRef.current;
     if (curTextArea) {
       curTextArea.style.height = "0px";
       const scrollHeight = curTextArea.scrollHeight;
       curTextArea.style.height = "calc(min(1vh,1vw) + " + scrollHeight + "px)";
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [textAreaRef, comment]);
 
   function updateComment(e: ChangeEvent<HTMLTextAreaElement>) {
@@ -57,20 +56,16 @@ export default function UserComment(params: {
       setErrComment("Missing Comment");
       return;
     }
-    const commentObj: CustomComment = {
-      date: new Date(),
-      content: Buffer.from(comment),
-      postId: params.postId,
-      alias: alias ? alias : randomName,
-    };
-    const res = await postComment(commentObj);
 
-    if (res.ok) {
+    try {
+      await params.handleCommentPost(
+        comment,
+        alias.length > 0 ? alias : randomName
+      );
       setComment("");
-      params.addComment(commentObj);
-      return;
+    } catch (e) {
+      setErrComment("Unable to send comment at this time");
     }
-    setErrComment("Unable to send comment at this time");
   }
 
   const variants: Variants = {
