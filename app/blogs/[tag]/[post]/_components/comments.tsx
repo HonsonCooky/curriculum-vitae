@@ -1,19 +1,10 @@
-import { getComments } from "@/app/_utils/api-calls";
-import { Comment, Post } from "@prisma/client";
-import { useEffect, useState } from "react";
+import { Comment } from "@prisma/client";
 import CommentContent from "./comment-content";
 
-export default function Comment(params: { post: Post }) {
-  const [comments, setComments] = useState<Comment[] | undefined>(undefined);
-
-  useEffect(() => {
-    if (!comments)
-      getComments(params.post.id).then((comments) => setComments(comments));
-  });
-
+export default function Comments(params: { comments: Comment[] | undefined }) {
   return (
-    <div className="mt-[min(10vh,10vw)]">
-      {comments?.map(async (comment) => {
+    <div className="mt-[min(5vh,5vw)]">
+      {params.comments?.map(async (comment) => {
         return (
           <div
             key={comment.id}

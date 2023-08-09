@@ -1,17 +1,21 @@
 "use client";
+import { postComment } from "@/app/_utils/api-calls";
 import { generateRandomName } from "@/app/_utils/random-name-gen";
 import {
+  ChevronDownIcon,
   LockClosedIcon,
-  LockOpenIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/24/outline";
-import { Comment, Post } from "@prisma/client";
+import { Post } from "@prisma/client";
 import { Variants, motion, useCycle } from "framer-motion";
 import { parseInt } from "lodash";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 
 const randomName = generateRandomName();
-export default function UserComment(params: { post: Post }) {
+export default function UserComment(params: {
+  post: Post;
+  refresh: VoidFunction;
+}) {
   const [comment, setComment] = useState("");
   const [errComment, setErrComment] = useState<string | undefined>(undefined);
   const [alias, setAlias] = useState("");
@@ -53,12 +57,19 @@ export default function UserComment(params: { post: Post }) {
       setErrComment("Missing Comment");
       return;
     }
-    const cmtObj: Omit<Comment, "id"> = {
+    const res = await postComment({
       date: new Date(),
       content: Buffer.from(comment),
       postId: params.post.id,
       alias: alias ? alias : randomName,
-    };
+    });
+
+    if (res.ok) {
+      setComment("");
+      params.refresh();
+      return;
+    }
+    setErrComment("Unable to send comment at this time");
   }
 
   const variants: Variants = {
@@ -95,7 +106,7 @@ export default function UserComment(params: { post: Post }) {
         className="group mb-[min(1vh,1vw)] flex w-full justify-end"
         onClick={() => toggleStuck()}
       >
-        <LockOpenIcon
+        <ChevronDownIcon
           data-stuck={isStuck}
           className="hidden h-[1.25rem] group-hover:stroke-light-mauve data-[stuck=true]:flex dark:group-hover:stroke-dark-mauve"
         />

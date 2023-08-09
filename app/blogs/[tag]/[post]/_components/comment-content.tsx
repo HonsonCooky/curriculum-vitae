@@ -3,6 +3,7 @@ import { Comment } from "@prisma/client";
 import { useEffect, useState } from "react";
 import { remark } from "remark";
 import html from "remark-html";
+import "./comment.css";
 
 export default function CommentContent(params: { comment: Comment }) {
   const [content, setContent] = useState<any | undefined>(undefined);
@@ -17,7 +18,7 @@ export default function CommentContent(params: { comment: Comment }) {
 
   return (
     <div
-      className="content mb-[min(2vh,2vw)]"
+      className="comment mb-[min(2vh,2vw)] ml-[min(2vh,2vw)]"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );
