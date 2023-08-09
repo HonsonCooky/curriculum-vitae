@@ -17,9 +17,6 @@ export default function CommentSection(params: { post: Post }) {
     getComments(params.post.id).then((comments) => setComments(comments));
   }
 
-  if (!comments) {
-    return <div />;
-  }
   return [
     <UserComment post={params.post} key="UserComment" refresh={refresh} />,
     <Comments comments={comments} key="Comments" />,
