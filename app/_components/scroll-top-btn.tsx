@@ -32,7 +32,8 @@ export default function ScrollToTopButton() {
         controls.start("hide");
       }
     });
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <motion.button

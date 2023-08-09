@@ -6,15 +6,15 @@ import {
   LockClosedIcon,
   PaperAirplaneIcon,
 } from "@heroicons/react/24/outline";
-import { Post } from "@prisma/client";
 import { Variants, motion, useCycle } from "framer-motion";
 import { parseInt } from "lodash";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { CustomComment } from "../page";
 
 const randomName = generateRandomName();
 export default function UserComment(params: {
-  post: Post;
-  refresh: VoidFunction;
+  postId: string;
+  addComment: (comment: CustomComment) => void;
 }) {
   const [comment, setComment] = useState("");
   const [errComment, setErrComment] = useState<string | undefined>(undefined);
@@ -57,16 +57,17 @@ export default function UserComment(params: {
       setErrComment("Missing Comment");
       return;
     }
-    const res = await postComment({
+    const commentObj: CustomComment = {
       date: new Date(),
       content: Buffer.from(comment),
-      postId: params.post.id,
+      postId: params.postId,
       alias: alias ? alias : randomName,
-    });
+    };
+    const res = await postComment(commentObj);
 
     if (res.ok) {
       setComment("");
-      params.refresh();
+      params.addComment(commentObj);
       return;
     }
     setErrComment("Unable to send comment at this time");
@@ -154,7 +155,7 @@ export default function UserComment(params: {
           <input
             onChange={updateAlias}
             value={alias}
-            placeholder={`${randomName}`}
+            placeholder={randomName}
             className="flex w-[12vw] items-center rounded-lg px-[min(2vh,2vw)] py-[min(0.5vh,0.5vw)] text-lg font-light 
             nm-inset-light-base-sm dark:nm-inset-dark-base-sm"
           />

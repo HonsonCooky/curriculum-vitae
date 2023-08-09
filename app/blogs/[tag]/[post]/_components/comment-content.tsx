@@ -14,7 +14,8 @@ export default function CommentContent(params: { comment: Comment }) {
         .use(html)
         .process(params.comment.content)
         .then((content) => setContent(content.toString()));
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div

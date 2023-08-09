@@ -39,7 +39,8 @@ export default function TagPage() {
         .then((tags) => tags?.filter((tag) => tag.id == id)[0])
         .then((tag) => setTag(tag ?? tagFallBack))
         .catch((_) => setTag(tagFallBack));
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!(tag && posts)) return <Loading />;
   return (

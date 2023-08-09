@@ -1,22 +1,53 @@
+"use client";
 import BackBtn from "@/app/_components/back-btn";
 import HcIcon from "@/app/_components/hc-icon";
 import ScrollToTopButton from "@/app/_components/scroll-top-btn";
-import { getPost } from "@/app/_utils/api-calls";
+import { getComments, getPost, postComment } from "@/app/_utils/api-calls";
 import Loading from "@/app/loading";
+import { Comment, Post } from "@prisma/client";
+import { useEffect, useState } from "react";
 import { remark } from "remark";
 import html from "remark-html";
 import CommentSection from "./_components/comment-section";
 import ContentHtml from "./_components/content";
 
-export default async function PostPage({
+("use strict");
+
+export type CustomComment = Omit<Comment, "id">;
+export default function PostPage({
   params: { post },
 }: {
   params: { post: string };
 }) {
-  const postObj = await getPost(post);
-  if (!postObj) return <Loading />;
-  const content = await remark().use(html).process(postObj.content);
+  const [postObj, setPostObj] = useState<Post | undefined>();
+  const [content, setContent] = useState<string | undefined>();
+  const [comments, setComents] = useState<Comment[] | undefined>();
 
+  useEffect(() => {
+    getPost(post).then(async (postObj) => {
+      if (!postObj) throw Error("Unable to retrieve post content");
+      const content = await remark().use(html).process(postObj.content);
+      const comments = await getComments(postObj.id);
+      setPostObj(postObj);
+      setContent(content.toString());
+      setComents(comments);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  async function addComment(comment: CustomComment) {
+    const res = await postComment(comment);
+    if (!res.ok) throw Error("Unable to comment at this time");
+    setComents([
+      ...(comments ?? []),
+      {
+        id: Date.now().toString(),
+        ...comment,
+      },
+    ]);
+  }
+
+  if (!postObj || !content || !comments) return <Loading />;
   return (
     <div className="flex flex-col items-center break-words">
       <BackBtn />
@@ -35,7 +66,11 @@ export default async function PostPage({
         </div>
         <ContentHtml content={content.toString()} />
         <div className="h-[min(10vh,10vw)]" />
-        <CommentSection post={postObj} />
+        <CommentSection
+          post={postObj}
+          comments={comments}
+          addComment={addComment}
+        />
       </div>
     </div>
   );

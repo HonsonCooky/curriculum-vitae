@@ -1,12 +1,13 @@
+"use client";
 import { Comment } from "@prisma/client";
 import CommentContent from "./comment-content";
 
-export default function Comments(params: { comments: Comment[] | undefined }) {
+export default function Comments(params: { comments: Comment[] }) {
   const comments = params.comments?.sort(
     (a, b) => b.date.getTime() - a.date.getTime()
   );
   return (
-    <div className="mt-[min(5vh,5vw)]">
+    <div className="mt-[min(5vh,5vw)] flex w-[50vw] flex-col self-center ">
       {comments?.map(async (comment) => {
         return (
           <div
