@@ -1,15 +1,22 @@
+import { NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
-import { prisma, toErrorRes } from "../globals";
+import { prisma, rateLimit, toErrorRes } from "../globals";
 
-const memCache = new Map<string, Date>();
+const limiter = rateLimit({
+  interval: 10 * 60 * 1000, // 10 minutes
+  uniqueTokenPerInterval: 500, // Max 500 users per second
+});
 
-export async function POST(req: NextRequest) {
+export async function POST(req: NextRequest, res: NextApiResponse) {
   try {
+    await limiter.check(res, 3, "CACHE_TOKEN");
+    console.log("here");
     const body = await req.json();
     body.content = Buffer.from(body.content);
     await prisma.comment.create({ data: body });
     return NextResponse.json("Comment sent", { status: 200 });
   } catch (e: any) {
+    console.log(JSON.stringify(e));
     return NextResponse.json(toErrorRes(e), { status: 500 });
   }
 }
