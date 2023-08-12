@@ -26,8 +26,6 @@ export default function ScrollToTopButton() {
 
   useEffect(() => {
     return scrollYProgress.on("change", (latestValue) => {
-      console.log(latestValue);
-
       if (latestValue > 0.2 && latestValue < 1) {
         controls.start("show");
       } else {

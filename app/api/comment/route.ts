@@ -10,13 +10,11 @@ const limiter = rateLimit({
 export async function POST(req: NextRequest, res: NextApiResponse) {
   try {
     await limiter.check(res, 3, "CACHE_TOKEN");
-    console.log("here");
     const body = await req.json();
     body.content = Buffer.from(body.content);
     await prisma.comment.create({ data: body });
     return NextResponse.json("Comment sent", { status: 200 });
   } catch (e: any) {
-    console.log(JSON.stringify(e));
     return NextResponse.json(toErrorRes(e), { status: 500 });
   }
 }
