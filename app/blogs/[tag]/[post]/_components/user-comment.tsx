@@ -47,7 +47,7 @@ export default function UserComment(params: {
       setErrAlias("Alias Too Long");
       return;
     }
-    if (errComment) setErrAlias(undefined);
+    if (errAlias) setErrAlias(undefined);
     setAlias(e.target.value);
   }
 
@@ -62,9 +62,13 @@ export default function UserComment(params: {
         comment,
         alias.length > 0 ? alias : randomName
       );
+      if (errComment) setErrComment(undefined);
+      if (errAlias) setErrAlias(undefined);
       setComment("");
     } catch (e) {
-      setErrComment("Unable to send comment at this time");
+      setErrComment(
+        (e as any).message ?? "Unable to send comment at this time"
+      );
     }
   }
 

@@ -7,7 +7,6 @@ import {
   PrismaClientValidationError,
 } from "@prisma/client/runtime/library";
 import { LRUCache } from "lru-cache";
-import type { NextApiResponse } from "next";
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
@@ -36,7 +35,7 @@ export function rateLimit(options?: {
   });
 
   return {
-    check: (res: NextApiResponse, limit: number, token: string) =>
+    check: (limit: number, token: string) =>
       new Promise<void>((resolve, reject) => {
         const tokenCount = (tokenCache.get(token) as number[]) || [0];
         if (tokenCount[0] === 0) {
@@ -46,7 +45,9 @@ export function rateLimit(options?: {
 
         const currentUsage = tokenCount[0];
         const isRateLimited = currentUsage >= limit;
-        isRateLimited ? reject({ message: "Limit Exceeded" }) : resolve();
+        isRateLimited
+          ? reject({ message: "Limit Exceeded: Come back in 10 minutes" })
+          : resolve();
       }),
   };
 }

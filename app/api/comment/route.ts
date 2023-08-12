@@ -9,7 +9,7 @@ const limiter = rateLimit({
 
 export async function POST(req: NextRequest, res: NextApiResponse) {
   try {
-    await limiter.check(res, 3, "CACHE_TOKEN");
+    await limiter.check(3, "CACHE_TOKEN");
     const body = await req.json();
     body.content = Buffer.from(body.content);
     await prisma.comment.create({ data: body });

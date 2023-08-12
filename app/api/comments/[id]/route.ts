@@ -13,6 +13,10 @@ export async function GET(req: NextRequest) {
       where: {
         postId: id,
       },
+      take: 20,
+      orderBy: {
+        date: "desc",
+      },
     });
     return NextResponse.json(comments, { status: 200 });
   } catch (e: any) {
