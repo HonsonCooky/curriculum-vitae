@@ -1,5 +1,6 @@
 import { CommentSchema, PostSchema, TagSchema } from "@/prisma/generated/zod";
 import { Comment } from "@prisma/client";
+import { PaginationType } from "../api/comments/[id]/route";
 
 const revalidationTime = 3600;
 
@@ -10,9 +11,9 @@ async function processError(res: Response, e: unknown) {
   return { message };
 }
 
-export async function getTags(force?: boolean) {
+export async function getTags() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/tags`, {
-    next: { revalidate: force ? 0 : revalidationTime },
+    next: { revalidate: revalidationTime },
   });
 
   try {
@@ -22,10 +23,10 @@ export async function getTags(force?: boolean) {
   }
 }
 
-export async function getPosts(tagId: string, force?: boolean) {
+export async function getPosts(tagId: string) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/posts/${tagId}`,
-    { next: { revalidate: force ? 0 : revalidationTime } }
+    { next: { revalidate: revalidationTime } }
   );
 
   try {
@@ -37,10 +38,10 @@ export async function getPosts(tagId: string, force?: boolean) {
   }
 }
 
-export async function getPost(postId: string, force?: boolean) {
+export async function getPost(postId: string) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/post/${postId}`,
-    { next: { revalidate: force ? 0 : revalidationTime } }
+    { next: { revalidate: revalidationTime } }
   );
 
   try {
@@ -52,10 +53,15 @@ export async function getPost(postId: string, force?: boolean) {
   }
 }
 
-export async function getComments(postId: string, force?: boolean) {
+export async function getComments(postId: string, pagination?: PaginationType) {
+  const pagi: PaginationType = pagination ?? { skip: 0, take: 20 };
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_ENDPOINT}/comments/${postId}`,
-    { next: { revalidate: force ? 0 : revalidationTime } }
+    {
+      method: "POST",
+      body: JSON.stringify(pagi),
+      next: { revalidate: revalidationTime },
+    }
   );
 
   try {
@@ -69,14 +75,11 @@ export async function getComments(postId: string, force?: boolean) {
   }
 }
 
-export async function postComment(
-  comment: Omit<Comment, "id">,
-  force?: boolean
-) {
+export async function postComment(comment: Omit<Comment, "id">) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/comment`, {
     method: "POST",
     body: JSON.stringify(comment),
-    next: { revalidate: force ? 0 : revalidationTime },
+    next: { revalidate: revalidationTime },
   });
 
   try {

@@ -3,17 +3,24 @@ import { z } from "zod";
 import { prisma, toErrorRes } from "../../globals";
 
 const searchParamUuidSchema = z.string().uuid().nonempty();
+export const PaginationSchema = z.object({
+  skip: z.number(),
+  take: z.number(),
+});
+export type PaginationType = z.infer<typeof PaginationSchema>;
 
-export async function GET(req: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
     const id = searchParamUuidSchema.parse(
       req.nextUrl.pathname.split("/").at(-1)
     );
+    const body = PaginationSchema.parse(await req.json());
     const comments = await prisma.comment.findMany({
       where: {
         postId: id,
       },
-      take: 20,
+      skip: body.skip,
+      take: body.take,
       orderBy: {
         date: "desc",
       },

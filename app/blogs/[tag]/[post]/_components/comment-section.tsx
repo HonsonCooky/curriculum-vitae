@@ -9,7 +9,7 @@ export default function CommentSection(params: { postId: string }) {
   const [comments, setComments] = useState<Comment[] | undefined>(undefined);
 
   useEffect(() => {
-    getComments(params.postId, true).then((comments) => setComments(comments));
+    getComments(params.postId).then((comments) => setComments(comments));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
