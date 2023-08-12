@@ -22,12 +22,25 @@ const MemoizedItem = memo((params: { comment: Comment }) => (
   </li>
 ));
 
-export default function Comments(params: { comments: Comment[] | undefined }) {
+export default function Comments(params: {
+  comments: Comment[] | undefined;
+  loadMore: () => Promise<void>;
+  hasMore: boolean;
+}) {
+  console.log(params.hasMore);
+
   return (
     <ul className="mt-[min(4vh,4vw)] flex w-[50vw] flex-col self-center">
       {params.comments?.map((comment) => (
         <MemoizedItem comment={comment} key={comment.id} />
       ))}
+      <button
+        data-more={params.hasMore}
+        onClick={params.loadMore}
+        className="text-xl font-bold hover:scale-[1.05] hover:text-light-mauve data-[more=false]:hidden dark:hover:text-dark-mauve"
+      >
+        Load More...
+      </button>
     </ul>
   );
 }
