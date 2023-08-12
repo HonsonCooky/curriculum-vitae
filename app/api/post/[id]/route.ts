@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { prisma } from "../../prisma";
+import { prisma, toErrorRes } from "../../globals";
 
 const searchParamUuidSchema = z.string().uuid().nonempty();
 
@@ -12,13 +12,6 @@ export async function GET(req: NextRequest) {
     const post = await prisma.post.findUnique({ where: { id: id } });
     return NextResponse.json(post, { status: 200 });
   } catch (e: any) {
-    let status = 500;
-    if (e instanceof z.ZodError) {
-      e = e.issues;
-      status = 400;
-    } else {
-      e = e.toString();
-    }
-    return NextResponse.json(e, { status });
+    return NextResponse.json(toErrorRes(e), { status: 500 });
   }
 }

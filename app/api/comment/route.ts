@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "../prisma";
+import { prisma, toErrorRes } from "../globals";
+
+const memCache = new Map<string, Date>();
 
 export async function POST(req: NextRequest) {
   try {
@@ -8,7 +10,6 @@ export async function POST(req: NextRequest) {
     await prisma.comment.create({ data: body });
     return NextResponse.json("Comment sent", { status: 200 });
   } catch (e: any) {
-    let status = 500;
-    return NextResponse.json(e, { status });
+    return NextResponse.json(toErrorRes(e), { status: 500 });
   }
 }
