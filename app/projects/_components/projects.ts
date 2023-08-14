@@ -27,11 +27,20 @@ export const projects: Project[] = [
   {
     title: "Neovim Config",
     tags: [ProjectTag.SOFTWARE, ProjectTag.PROBLEM_SOLUTION],
+    links: [
+      { title: "GitHub", href: "https://github.com/HonsonCooky/cookie-nvim" },
+    ],
     description: "Neovim has become my full time IDE of choice. ",
   },
   {
     title: "Next.js CV Website",
     tags: [ProjectTag.SOFTWARE, ProjectTag.FOR_FUN],
+    links: [
+      {
+        title: "GitHub",
+        href: "https://github.com/HonsonCooky/curriculum-vitae",
+      },
+    ],
     description: "This website!",
   },
 ];

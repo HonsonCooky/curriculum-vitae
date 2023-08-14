@@ -1,5 +1,4 @@
-import ProjectTile from "./_components/project-tile";
-import { projects } from "./_components/projects";
+import ProjectList from "./_components/projects-list";
 
 export default function Projects() {
   return (
@@ -34,11 +33,8 @@ export default function Projects() {
           <p className="mb-[min(4vh,4vw)] text-justify text-2xl font-light">
             Behold the projects of some developer guy.
           </p>
+          <ProjectList />
         </div>
-
-        {projects.map((project) => (
-          <ProjectTile key={project.title} project={project} />
-        ))}
       </div>
     </div>
   );
