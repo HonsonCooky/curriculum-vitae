@@ -1,3 +1,6 @@
+import ProjectTile from "./_components/project-tile";
+import { projects } from "./_components/projects";
+
 export default function Projects() {
   return (
     <div className="flex flex-1 flex-col items-center">
@@ -29,9 +32,13 @@ export default function Projects() {
             Step into my office, no need to be shy.
           </p>
           <p className="mb-[min(4vh,4vw)] text-justify text-2xl font-light">
-            Behold the projects of an some developer guy.
+            Behold the projects of some developer guy.
           </p>
         </div>
+
+        {projects.map((project) => (
+          <ProjectTile key={project.title} project={project} />
+        ))}
       </div>
     </div>
   );
