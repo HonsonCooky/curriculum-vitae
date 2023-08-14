@@ -31,7 +31,7 @@ export default async function BlogHome() {
             conversations are digestable.
           </p>
           <div className="py-[min(4vh,4vw)]">
-            <h3 className="text-4xl font-bold">Explore Topics:</h3>
+            <h3 className="text-4xl font-bold">Explore By Topic:</h3>
             <p className="mb-[min(2vh,2vw)] text-2xl font-light">
               *Select a tag to see posts that relate to this topic*
             </p>

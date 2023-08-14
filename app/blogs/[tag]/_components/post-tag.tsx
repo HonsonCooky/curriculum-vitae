@@ -8,16 +8,11 @@ export default function PostTag(params: { tag: Tag; post: PostTagType }) {
   return (
     <Link href={`/blogs/${params.tag.id}/${params.post.id}`}>
       <motion.li
-        whileTap={{ scale: 0.9 }}
+        whileTap={{ scale: 0.95 }}
         whileFocus={{ scale: 1.0 }}
         layout
-        transition={{
-          type: "spring",
-          damping: 25,
-          duration: 0.2,
-        }}
         className="group mb-[min(2vh,2vw)] grid grid-cols-4 items-center gap-[min(2vh,2vw)] rounded  py-[min(1vh,1vw)] 
-        text-base nm-flat-light-base hover:text-light-mauve dark:nm-flat-dark-base dark:hover:text-dark-mauve"
+        text-xl hover:text-light-mauve dark:hover:text-dark-mauve"
       >
         <h3 className="col-span-1 break-words px-[min(2vh,2vw)] text-left font-bold">
           {params.post.title}
