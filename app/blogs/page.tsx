@@ -5,7 +5,7 @@ export default async function BlogHome() {
   const tags = await getTags();
   return (
     <div className="flex flex-1 flex-col items-center">
-      <div className="w-[50vw] break-words">
+      <div className="w-[65vw] break-words">
         <div className="flex flex-col py-[min(2vh,2vw)]">
           <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">
             Blogs

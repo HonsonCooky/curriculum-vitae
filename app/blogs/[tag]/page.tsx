@@ -47,7 +47,7 @@ export default function TagPage() {
     <div className="flex flex-1 flex-col items-center break-words">
       <BackBtn />
       <ScrollToTopButton />
-      <div className="w-[50vw] pt-[min(2vh,2vw)]">
+      <div className="w-[65vw] pt-[min(2vh,2vw)]">
         <div className="flex flex-col">
           <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">
             {tag.name}
