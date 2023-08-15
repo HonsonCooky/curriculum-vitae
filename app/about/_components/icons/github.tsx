@@ -8,8 +8,8 @@ export default function GitHubIcon(params: {
       className={params.className}
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="
         M 48.854 0 
         C 21.839 0 0 22 0 49.217 

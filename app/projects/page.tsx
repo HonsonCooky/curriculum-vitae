@@ -1,10 +1,8 @@
-import ScrollToTopButton from "../_components/scroll-top-btn";
 import ProjectList from "./_components/projects-list";
 
 export default function Projects() {
   return (
     <div className="flex flex-1 flex-col items-center">
-      <ScrollToTopButton />
       <div className="w-[65vw] break-words">
         <div className="flex flex-col py-[min(2vh,2vw)]">
           <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">

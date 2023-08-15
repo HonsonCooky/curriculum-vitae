@@ -1,6 +1,5 @@
 import BackBtn from "@/app/_components/back-btn";
 import HcIcon from "@/app/_components/hc-icon";
-import ScrollToTopButton from "@/app/_components/scroll-top-btn";
 import { getPost } from "@/app/_utils/api-calls";
 import { Comment } from "@prisma/client";
 import { remark } from "remark";
@@ -24,7 +23,6 @@ export default async function PostPage({
   return (
     <div className="flex flex-col items-center break-words">
       <BackBtn />
-      <ScrollToTopButton />
       <div className="flex w-[65vw] flex-col pb-[min(8vh,8vw)]">
         <h1 className="mb-[min(1vh,1vw)] text-center text-8xl font-bold text-light-mauve dark:text-dark-lavender">
           {postObj.title}

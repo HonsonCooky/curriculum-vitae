@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fira_Sans } from "next/font/google";
 import { Suspense } from "react";
 import Navigation from "./_components/navbar/nav";
+import ScrollToTopButton from "./_components/scroll-top-btn";
 import "./globals.css";
 import Loading from "./loading";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
           <Navigation />
           <Suspense fallback={<Loading />} />
           {children}
+          <ScrollToTopButton />
         </main>
       </body>
     </html>
