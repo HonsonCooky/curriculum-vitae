@@ -1,7 +1,7 @@
 import NavBar from "./web/navbar";
 
 export default function Navigation() {
-  const pages = ["/about", "/projects", "/blogs", "/links"];
+  const pages = ["/about", "/projects", "/blogs"];
 
   return (
     <nav>
