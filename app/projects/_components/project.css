@@ -1,0 +1,25 @@
+@media (prefers-color-scheme: light) {
+  .project > p {
+    font-size: 1.125rem;
+    font-weight: 300;
+    margin-top: min(2vh, 2vw);
+    text-align: justify;
+  }
+  .project > p > a {
+    color: #1e66f5;
+    text-decoration: underline;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .project > p {
+    font-size: 1.125rem;
+    font-weight: 300;
+    margin-top: min(2vh, 2vw);
+    text-align: justify;
+  }
+  .project > p > a {
+    color: #89b4fa;
+    text-decoration: underline;
+  }
+}

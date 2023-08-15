@@ -25,8 +25,10 @@ export default function ScrollToTopButton() {
   const controls = useAnimationControls();
 
   useEffect(() => {
+    let initValue: number | undefined = undefined;
     return scrollYProgress.on("change", (latestValue) => {
-      if (latestValue > 0.2 && latestValue < 1) {
+      if (!initValue) initValue = latestValue;
+      if (latestValue > 0.1 && initValue != 1) {
         controls.start("show");
       } else {
         controls.start("hide");
