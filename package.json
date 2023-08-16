@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "devNoCache": "pwsh -c \"rm -r -fo .next\" && pnpm dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",

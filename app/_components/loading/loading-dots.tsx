@@ -4,11 +4,17 @@ import { Suspense } from "react";
 
 function Dot(params: {
   times: number[];
+  dotSize?: string;
   className?: React.ComponentProps<"div">["className"];
 }) {
+  const size = params.dotSize ?? "max(1vh,0.2vw)";
   return (
     <motion.div
-      className={`mx-[0.2vw] h-[max(1vh,0.2vw)] w-[max(1vh,0.2vw)] rounded-full bg-light-text dark:bg-dark-text 
+      style={{
+        height: size,
+        width: size,
+      }}
+      className={`rounded-full bg-light-text dark:bg-dark-text 
         ${params.className}`}
       initial={{
         y: 0,
@@ -29,13 +35,26 @@ function Dot(params: {
 
 export default function LoadingDots(params: {
   className?: React.ComponentProps<"div">["className"];
+  dotSize?: string;
 }) {
   return (
     <Suspense fallback={<span>...</span>}>
-      <motion.div layout className="flex flex-row">
-        <Dot times={[0, 0.2, 0.4, 0.6]} className={params.className} />
-        <Dot times={[0.1, 0.3, 0.5, 0.7]} className={params.className} />
-        <Dot times={[0.2, 0.4, 0.6, 0.8]} className={params.className} />
+      <motion.div layout className="flex flex-row gap-2">
+        <Dot
+          times={[0, 0.2, 0.4, 0.6]}
+          className={params.className}
+          dotSize={params.dotSize}
+        />
+        <Dot
+          times={[0.1, 0.3, 0.5, 0.7]}
+          className={params.className}
+          dotSize={params.dotSize}
+        />
+        <Dot
+          times={[0.2, 0.4, 0.6, 0.8]}
+          className={params.className}
+          dotSize={params.dotSize}
+        />
       </motion.div>
     </Suspense>
   );
