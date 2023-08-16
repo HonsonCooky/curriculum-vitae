@@ -33,14 +33,6 @@ export default function EducationSection() {
           </li>
         </ul>
       </ul>
-      <p className="mt-[min(4vh,4vw)] text-justify text-lg font-light">
-        <span className=" text-light-yellow dark:text-dark-yellow">Note:</span>{" "}
-        The importance of an educational background heavily varies within this
-        industry. I understand that the significance of these achievements is
-        contextual, however, my educational journey is one I&apos;ve poured a
-        lot of time and effort into. I take great pride in these
-        accomplishments.
-      </p>
     </div>
   );
 }

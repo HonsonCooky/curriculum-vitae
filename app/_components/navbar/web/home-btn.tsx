@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import HcIcon from "../../hc-icon";
+import HcIcon from "./hc-icon";
 
 export default function HomeBtn() {
   const pathname = usePathname();
@@ -16,7 +16,7 @@ export default function HomeBtn() {
         whileHover={{ scale: pathname == "/" ? 1.0 : 1.05 }}
         className="flex items-center fill-light-text  hover:fill-light-mauve dark:fill-dark-text hover:dark:fill-dark-mauve"
       >
-        <HcIcon className="h-[min(8vh,8vw)]" />
+        <HcIcon className="h-[7rem]" />
       </motion.div>
     </Link>
   );

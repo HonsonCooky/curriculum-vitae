@@ -6,13 +6,11 @@ export default function NavBar(params: {
   className?: React.ComponentProps<"div">["className"];
 }) {
   return (
-    <div
-      className={`h-[min(15vh,15vw)] w-full items-end px-[10vw] py-[1vh] ${params.className}`}
-    >
-      <div className="mb-[1vh] flex flex-1 items-end justify-start">
+    <div className={`h-[min(15vh,15vw)] w-full px-[10vw] ${params.className}`}>
+      <div className="flex items-center justify-start">
         <HomeBtn />
       </div>
-      <div className="mb-[1vh] flex flex-1 items-end justify-end">
+      <div className="flex h-[70%] flex-1 items-center justify-end gap-8">
         {params.pages.map((href) => (
           <NavBtn key={href} href={href} />
         ))}

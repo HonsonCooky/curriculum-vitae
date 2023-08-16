@@ -1,5 +1,5 @@
 import BackBtn from "@/app/_components/back-btn";
-import HcIcon from "@/app/_components/hc-icon";
+import HcIcon from "@/app/_components/navbar/web/hc-icon";
 import { getPost } from "@/app/_utils/api-calls";
 import { Comment } from "@prisma/client";
 import { remark } from "remark";

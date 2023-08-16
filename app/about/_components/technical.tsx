@@ -66,6 +66,13 @@ export default function TechnicalSection() {
             professional and personal experience.
           </li>
         </ul>
+        <li>Vue.js:</li>
+        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+          <li>
+            <span className=" text-light-red dark:text-dark-red">Limited</span>{" "}
+            professional and personal experience.
+          </li>
+        </ul>
         <li>Rust:</li>
         <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
           <li>
@@ -74,14 +81,36 @@ export default function TechnicalSection() {
           </li>
         </ul>
       </ul>
-      <p className="mt-[min(4vh,4vw)] text-justify text-lg font-light">
-        <span className=" text-light-yellow dark:text-dark-yellow">Note:</span>{" "}
-        The list above is not exhaustive. It&apos;s a rough approximation of my
-        literacy in technologies I&apos;m comfortable using. My breadth of
-        experience reaches beyond the scope of this list [Java, Ruby, F#, ...].
-        They are unlisted here, as my knowledge in these areas is likely
-        outdated.
-      </p>
+
+      <ul className="my-[min(4vh,4vw)] list-inside list-disc text-2xl font-light">
+        <li className="font-bold">Additonal Experience:</li>
+        <p className="pl-[min(3.5vh,3.5vw)] text-lg font-normal">
+          <span className=" text-light-yellow dark:text-dark-yellow">
+            Moderate
+          </span>{" "}
+          experience that is possibly outdated (+2 years since active use).
+        </p>
+        <ul className="grid list-inside  list-disc grid-cols-4 pl-[min(5vh,5vw)] text-xl">
+          {/*C*/}
+          <li className="col-span-1 font-bold">C, C++:</li>
+          <p className="col-span-3"> Educational and Personal</p>
+          {/*JAVA*/}
+          <li className="col-span-1 font-bold">Java:</li>
+          <p className="col-span-3"> Educational and Personal</p>
+          {/*RN*/}
+          <li className="col-span-1 font-bold">React-Native:</li>
+          <p className="col-span-3"> Educational and Personal</p>
+          {/*F#*/}
+          <li className="col-span-1 font-bold">F#:</li>
+          <p className="col-span-3"> Educational</p>
+          {/*RUBY*/}
+          <li className="col-span-1 font-bold">Ruby:</li>
+          <p className="col-span-3"> Educational</p>
+          {/*RUBY*/}
+          <li className="col-span-1 font-bold">Flutter, Dart:</li>
+          <p className="col-span-3"> Personal</p>
+        </ul>
+      </ul>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 import { Variants, motion, useCycle } from "framer-motion";
-import MenuIcon from "../../menu-icon";
+import MenuIcon from "./menu-icon";
 import { NavBtns } from "./nav-btns";
 
 const pos = "4vh";
