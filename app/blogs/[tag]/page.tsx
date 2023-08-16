@@ -2,7 +2,6 @@
 
 import BackBtn from "@/app/_components/back-btn";
 import { getPosts, getTags } from "@/app/_utils/api-calls";
-import Loading from "@/app/loading";
 import { Post, Tag } from "@prisma/client";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -41,7 +40,6 @@ export default function TagPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!(tag && posts)) return <Loading />;
   return (
     <div className="flex flex-1 flex-col items-center break-words">
       <BackBtn />

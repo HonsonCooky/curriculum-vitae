@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import { Fira_Sans } from "next/font/google";
-import { Suspense } from "react";
 import Navigation from "./_components/navbar/nav";
 import ScrollToTopButton from "./_components/scroll-top-btn";
 import "./globals.css";
-import Loading from "./loading";
 
 const font = Fira_Sans({
   subsets: ["latin"],
@@ -29,7 +27,6 @@ export default function RootLayout({
       >
         <main className="flex h-screen w-[100%] flex-col">
           <Navigation />
-          <Suspense fallback={<Loading />} />
           {children}
           <ScrollToTopButton />
         </main>

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { Suspense } from "react";
 
 function Dot(params: {
   times: number[];
@@ -30,10 +31,12 @@ export default function LoadingDots(params: {
   className?: React.ComponentProps<"div">["className"];
 }) {
   return (
-    <motion.div layout className="flex flex-row">
-      <Dot times={[0, 0.2, 0.4, 0.6]} className={params.className} />
-      <Dot times={[0.1, 0.3, 0.5, 0.7]} className={params.className} />
-      <Dot times={[0.2, 0.4, 0.6, 0.8]} className={params.className} />
-    </motion.div>
+    <Suspense fallback={<span>...</span>}>
+      <motion.div layout className="flex flex-row">
+        <Dot times={[0, 0.2, 0.4, 0.6]} className={params.className} />
+        <Dot times={[0.1, 0.3, 0.5, 0.7]} className={params.className} />
+        <Dot times={[0.2, 0.4, 0.6, 0.8]} className={params.className} />
+      </motion.div>
+    </Suspense>
   );
 }
