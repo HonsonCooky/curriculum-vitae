@@ -19,7 +19,7 @@ export default function NavBtn(params: { href: string }) {
         aria-selected={pathname.startsWith(params.href)}
         whileTap={{ scale: 0.9 }}
         whileFocus={{ scale: 1.0 }}
-        whileHover={{ scale: pathname.startsWith(params.href) ? 1.0 : 1.05 }}
+        whileHover={{ scale: pathname.startsWith(params.href) ? 1.0 : 1.1 }}
         className="flex h-full items-end rounded-b-lg px-[2vh] text-4xl font-light nm-flat-light-base-xs 
           hover:text-light-mauve aria-selected:nm-inset-light-base-sm dark:nm-flat-dark-base-xs 
           dark:hover:text-dark-mauve aria-selected:dark:nm-inset-dark-base-sm"
