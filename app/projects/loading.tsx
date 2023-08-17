@@ -1,5 +1,5 @@
-import LoadingPage from "../_components/loading/loading-page";
+import LoadingPage from "@/app/_components/loading/loading-page";
 
-export default function LoadingAboutPage() {
+export default function LoadingProjectsPage() {
   return <LoadingPage />;
 }

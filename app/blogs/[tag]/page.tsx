@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import GridTitle from "./_components/grid-title";
 import PostsList from "./_components/posts-list";
 import { SortStateSchema, SortStateType } from "./_components/sort-arrows";
+import LoadingTagPage from "./loading";
 
 export type PostTagType = Omit<Post, "content">;
 export default function TagPage() {
@@ -40,6 +41,7 @@ export default function TagPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  if (!(tag && posts)) return <LoadingTagPage />;
   return (
     <div className="flex flex-1 flex-col items-center break-words">
       <BackBtn />
