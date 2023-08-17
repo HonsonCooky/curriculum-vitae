@@ -20,7 +20,7 @@ function Dot(params: {
         y: 0,
       }}
       animate={{
-        y: [0, 10, -10, 0],
+        y: ["0%", "40%", "-40%", "0%"],
       }}
       transition={{
         duration: 1,

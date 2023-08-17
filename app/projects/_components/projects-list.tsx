@@ -1,22 +1,18 @@
+import Loading from "@/app/_components/loading/loading";
 import { QrCodeIcon } from "@heroicons/react/24/outline";
-import { remark } from "remark";
-import html from "remark-html";
+import { Suspense } from "react";
+import ProjectContent from "./project-content";
 import ProjectLinks from "./project-links";
 import ProjectTags from "./project-tags";
 import "./project.css";
 import { projects } from "./projects";
 
-export default async function ProjectList() {
+export default function ProjectList() {
   projects.sort((a, b) => a.title.localeCompare(b.title));
   return (
     <div className="mb-[min(10vh,10vw)] grid grid-cols-1 gap-14 2xl:grid-cols-3">
-      {projects.map(async (project) => {
+      {projects.map((project) => {
         const ProjectIcon = project.icon ?? QrCodeIcon;
-        const content = await remark()
-          .use(html)
-          .process(project.description)
-          .then((file) => file.toString());
-
         return (
           <div
             key={project.title}
@@ -27,10 +23,16 @@ export default async function ProjectList() {
               <h1 className="text-3xl">{project.title}:</h1>
             </div>
             <ProjectTags project={project} />
-            <div
-              className="project h-full"
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
+            <Suspense
+              fallback={
+                <Loading
+                  className="my-[min(2vh,2vw)] text-xl"
+                  dotSize="0.2rem"
+                />
+              }
+            >
+              <ProjectContent project={project} />
+            </Suspense>
             <ProjectLinks project={project} />
           </div>
         );

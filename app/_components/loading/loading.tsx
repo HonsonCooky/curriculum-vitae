@@ -6,7 +6,9 @@ export default function Loading(params: {
 }) {
   return (
     <div className={`flex flex-row items-baseline ${params.className}`}>
-      <h1 className="font-bold">Loading </h1>
+      <h1 className="font-bold" style={{ marginRight: params.dotSize }}>
+        Loading{" "}
+      </h1>
       <LoadingDots dotSize={params.dotSize} />
     </div>
   );

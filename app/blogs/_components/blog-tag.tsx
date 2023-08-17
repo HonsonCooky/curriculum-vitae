@@ -3,10 +3,7 @@ import { Tag } from "@prisma/client";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function BlogTag(params: {
-  chassName?: React.ComponentProps<"div">["className"];
-  tag: Tag;
-}) {
+export default function BlogTag(params: { tag: Tag }) {
   const uri = encodeURI(params.tag.id);
   const href = `/blogs/${uri}`;
   return (
