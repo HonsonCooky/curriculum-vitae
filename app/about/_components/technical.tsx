@@ -6,7 +6,7 @@ export default function TechnicalSection() {
       </h3>
       <ul className="list-inside list-disc text-2xl font-light">
         <li>{`Node.js | TypeScript:`}</li>
-        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
           <li>
             <span className=" text-light-green dark:text-dark-green">
               Extensive
@@ -15,7 +15,7 @@ export default function TechnicalSection() {
           </li>
         </ul>
         <li>Lua | Neovim:</li>
-        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
           <li>
             <span className=" text-light-green dark:text-dark-green">
               Extensive
@@ -24,7 +24,7 @@ export default function TechnicalSection() {
           </li>
         </ul>
         <li>PowerShell | Bash:</li>
-        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
           <li>
             <span className=" text-light-green dark:text-dark-green">
               Extensive
@@ -33,7 +33,7 @@ export default function TechnicalSection() {
           </li>
         </ul>
         <li>Microsoft Azure:</li>
-        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
           <li>
             <span className=" text-light-yellow dark:text-dark-yellow">
               Moderate
@@ -42,7 +42,7 @@ export default function TechnicalSection() {
           </li>
         </ul>
         <li>Terraform | GitHub Workflows:</li>
-        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
           <li>
             <span className=" text-light-yellow dark:text-dark-yellow">
               Moderate
@@ -51,7 +51,7 @@ export default function TechnicalSection() {
           </li>
         </ul>
         <li>React | React Native:</li>
-        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
           <li>
             <span className=" text-light-yellow dark:text-dark-yellow">
               Moderate
@@ -60,55 +60,54 @@ export default function TechnicalSection() {
           </li>
         </ul>
         <li>.Net | C#:</li>
-        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
           <li>
             <span className=" text-light-red dark:text-dark-red">Limited</span>{" "}
             professional and personal experience.
           </li>
         </ul>
         <li>Vue.js:</li>
-        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
           <li>
             <span className=" text-light-red dark:text-dark-red">Limited</span>{" "}
             professional and personal experience.
           </li>
         </ul>
         <li>Rust:</li>
-        <ul className="list-inside list-disc  pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
           <li>
             <span className=" text-light-red dark:text-dark-red">Limited</span>{" "}
             educational and personal experience.
           </li>
         </ul>
-      </ul>
-
-      <ul className="my-[min(4vh,4vw)] list-inside list-disc text-2xl font-light">
-        <li className="font-bold">Additonal Experience:</li>
-        <p className="pl-[min(3.5vh,3.5vw)] text-lg font-normal">
-          <span className=" text-light-yellow dark:text-dark-yellow">
-            Moderate
-          </span>{" "}
-          experience that is possibly outdated (+2 years since active use).
-        </p>
-        <ul className="grid list-inside  list-disc grid-cols-4 pl-[min(5vh,5vw)] text-xl">
-          {/*C*/}
-          <li className="col-span-1 font-bold">C, C++:</li>
-          <p className="col-span-3"> Educational and Personal</p>
-          {/*JAVA*/}
-          <li className="col-span-1 font-bold">Java:</li>
-          <p className="col-span-3"> Educational and Personal</p>
-          {/*RN*/}
-          <li className="col-span-1 font-bold">React-Native:</li>
-          <p className="col-span-3"> Educational and Personal</p>
-          {/*F#*/}
-          <li className="col-span-1 font-bold">F#:</li>
-          <p className="col-span-3"> Educational</p>
-          {/*RUBY*/}
-          <li className="col-span-1 font-bold">Ruby:</li>
-          <p className="col-span-3"> Educational</p>
-          {/*RUBY*/}
-          <li className="col-span-1 font-bold">Flutter, Dart:</li>
-          <p className="col-span-3"> Personal</p>
+        <ul className="mt-[min(2vh,2vw)] list-inside list-disc text-2xl font-light">
+          <li className="font-bold">Additonal Experience:</li>
+          <p className="pl-[min(5vh,5vw)] text-xl font-light">
+            <span className=" text-light-yellow dark:text-dark-yellow">
+              Moderate
+            </span>{" "}
+            experience that is possibly outdated (+2 years since active use).
+          </p>
+          <ul className="grid list-inside  list-disc grid-cols-4 pl-[min(5vh,5vw)] text-xl">
+            {/*C*/}
+            <li className="col-span-1 font-normal">C, C++:</li>
+            <p className="col-span-3"> Educational and Personal</p>
+            {/*JAVA*/}
+            <li className="col-span-1 font-normal">Java:</li>
+            <p className="col-span-3"> Educational and Personal</p>
+            {/*RN*/}
+            <li className="col-span-1 font-normal">React-Native:</li>
+            <p className="col-span-3"> Educational and Personal</p>
+            {/*F#*/}
+            <li className="col-span-1 font-normal">F#:</li>
+            <p className="col-span-3"> Educational</p>
+            {/*RUBY*/}
+            <li className="col-span-1 font-normal">Ruby:</li>
+            <p className="col-span-3"> Educational</p>
+            {/*RUBY*/}
+            <li className="col-span-1 font-normal">Flutter, Dart:</li>
+            <p className="col-span-3"> Personal</p>
+          </ul>
         </ul>
       </ul>
     </div>

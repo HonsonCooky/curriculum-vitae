@@ -1,0 +1,23 @@
+export default function BackgroundSection() {
+  return (
+    <div className="my-[min(2vh,2vw)]">
+      <h3 className="mb-[min(2vh,2vw)] text-4xl font-bold">Brief Background</h3>
+      <p className="text-justify text-xl font-light">
+        Born and raised in what friends have described as a &apos;singing
+        cult&apos;, a majority of my youth revolved around musical and thespian
+        endevours. In my late teens, a series of curiosities led me into a
+        digital technologies class. Equipped with an ability for calculus, and
+        the creative capacity for photography, programming was an activity that
+        enabled me to exploit my creative and methodical strengths; An art-form
+        with rules, yet no bounds. Infatuated with this new venture, my life
+        slowly transitioned from practicing piano to programming Python.
+        <br />
+        <br />
+        Since then, I&apos;ve finished College, completed four years at
+        University, and got hired as a developer. Today, I&apos;m still
+        programming in my free time; Happily blurring the line between
+        &quot;work&quot; and &quot;life&quot;.
+      </p>
+    </div>
+  );
+}
