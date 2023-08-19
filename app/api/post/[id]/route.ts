@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
-import { prisma, toErrorRes } from "../../globals";
-
-const searchParamUuidSchema = z.string().uuid().nonempty();
+import { prisma, searchParamUuidSchema, toErrorRes } from "../../globals";
 
 export async function GET(req: NextRequest) {
   try {

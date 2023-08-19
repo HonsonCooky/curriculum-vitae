@@ -7,6 +7,7 @@ import {
   PrismaClientValidationError,
 } from "@prisma/client/runtime/library";
 import { LRUCache } from "lru-cache";
+import { z } from "zod";
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;
@@ -51,3 +52,10 @@ export function rateLimit(options?: {
       }),
   };
 }
+
+export const searchParamUuidSchema = z.string().uuid().nonempty();
+export const PaginationSchema = z.object({
+  skip: z.number(),
+  take: z.number(),
+});
+export type PaginationType = z.infer<typeof PaginationSchema>;

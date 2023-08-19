@@ -1,13 +1,6 @@
+import { PaginationSchema, searchParamUuidSchema } from "@/app/api/globals";
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
 import { prisma, toErrorRes } from "../../globals";
-
-const searchParamUuidSchema = z.string().uuid().nonempty();
-export const PaginationSchema = z.object({
-  skip: z.number(),
-  take: z.number(),
-});
-export type PaginationType = z.infer<typeof PaginationSchema>;
 
 export async function POST(req: NextRequest) {
   try {
