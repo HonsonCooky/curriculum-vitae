@@ -9,6 +9,15 @@ import { projects } from "./projects";
 
 export default function ProjectList() {
   projects.sort((a, b) => a.title.localeCompare(b.title));
+
+  // No projects?
+  if (projects.length == 0)
+    return (
+      <div className="flex flex-1 items-center justify-center text-2xl font-light">
+        Failed to load projects. Try reloading the page?
+      </div>
+    );
+
   return (
     <div className="mb-[min(10vh,10vw)] grid grid-cols-1 gap-14 2xl:grid-cols-3">
       {projects.map((project) => {

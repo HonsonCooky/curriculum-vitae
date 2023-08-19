@@ -5,6 +5,16 @@ import BlogTag from "./_components/blog-tag";
 
 async function TagsList() {
   const tags = await prisma.tag.findMany();
+
+  // No tags?
+  if (tags.length == 0)
+    return (
+      <div className="flex flex-wrap justify-start gap-[min(2vh,2vw)] text-xl">
+        Oh no, you&apos;re early. There is nothing to explore right now, but
+        watch this space, they&apos;re coming.
+      </div>
+    );
+
   return (
     <div className="flex flex-wrap justify-start gap-[min(2vh,2vw)]">
       {tags

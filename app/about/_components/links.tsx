@@ -20,9 +20,8 @@ function LinkBtn(params: {
       onClick={params.onClick}
       className="flex flex-row items-center gap-4 rounded-full fill-light-text 
       px-[min(2vh,2vw)] py-[min(0.5vh,0.5vw)] nm-flat-light-base-sm hover:fill-light-mauve 
-      hover:text-light-mauve aria-selected:nm-inset-light-base-sm dark:fill-dark-text
-      dark:nm-flat-dark-base-sm dark:hover:fill-dark-mauve dark:hover:text-dark-mauve 
-      aria-selected:dark:nm-inset-dark-base-sm"
+      hover:text-light-mauve dark:fill-dark-text dark:nm-flat-dark-base-sm dark:hover:fill-dark-mauve 
+      dark:hover:text-dark-mauve"
     >
       {params.children}
     </motion.button>
