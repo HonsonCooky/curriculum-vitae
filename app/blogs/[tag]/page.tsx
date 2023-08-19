@@ -2,13 +2,13 @@
 
 import BackBtn from "@/app/_components/back-btn";
 import { getPosts, getTags } from "@/app/_utils/api-calls";
+import LoadingPage from "@/app/loading";
 import { Post, Tag } from "@prisma/client";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import GridTitle from "./_components/grid-title";
 import PostsList from "./_components/posts-list";
 import { SortStateSchema, SortStateType } from "./_components/sort-arrows";
-import LoadingTagPage from "./loading";
 
 export type PostTagType = Omit<Post, "content">;
 export default function TagPage() {
@@ -41,7 +41,7 @@ export default function TagPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!(tag && posts)) return <LoadingTagPage />;
+  if (!(tag && posts)) return <LoadingPage />;
   return (
     <div className="flex flex-1 flex-col items-center break-words">
       <BackBtn />
