@@ -1,6 +1,10 @@
-import { PaginationSchema, searchParamUuidSchema } from "@/app/api/globals";
+import {
+  PaginationSchema,
+  prisma,
+  searchParamUuidSchema,
+  toErrorRes,
+} from "@/app/api/globals";
 import { NextRequest, NextResponse } from "next/server";
-import { prisma, toErrorRes } from "../../globals";
 
 export async function POST(req: NextRequest) {
   try {

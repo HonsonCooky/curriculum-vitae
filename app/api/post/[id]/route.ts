@@ -1,5 +1,5 @@
+import { prisma, searchParamUuidSchema, toErrorRes } from "@/app/api/globals";
 import { NextRequest, NextResponse } from "next/server";
-import { prisma, searchParamUuidSchema, toErrorRes } from "../../globals";
 
 export async function GET(req: NextRequest) {
   try {

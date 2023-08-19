@@ -1,6 +1,6 @@
+import { prisma, rateLimit, toErrorRes } from "@/app/api/globals";
 import { NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
-import { prisma, rateLimit, toErrorRes } from "../globals";
 
 const limiter = rateLimit({
   interval: 10 * 60 * 1000, // 10 minutes
