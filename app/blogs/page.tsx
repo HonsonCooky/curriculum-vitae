@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import Loading from "../_components/loading/loading";
-import { getTags } from "../_utils/api-calls";
+import { prisma } from "../api/globals";
 import BlogTag from "./_components/blog-tag";
 
 async function TagsList() {
-  const tags = await getTags();
+  const tags = await prisma.tag.findMany();
   return (
     <div className="flex flex-wrap justify-start gap-[min(2vh,2vw)]">
       {tags

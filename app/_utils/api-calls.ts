@@ -1,6 +1,6 @@
-import { PaginationType } from "@/app/api/globals";
 import { CommentSchema, PostSchema, TagSchema } from "@/prisma/generated/zod";
 import { Comment } from "@prisma/client";
+import { PaginationType } from "../api/globals";
 
 const revalidationTime = 3600;
 

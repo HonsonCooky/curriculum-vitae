@@ -1,6 +1,6 @@
 import BackBtn from "@/app/_components/back-btn";
 import HcIcon from "@/app/_components/navbar/web/hc-icon";
-import { getPost } from "@/app/_utils/api-calls";
+import { prisma } from "@/app/api/globals";
 import { Comment } from "@prisma/client";
 import { remark } from "remark";
 import html from "remark-html";
@@ -13,7 +13,7 @@ export default async function PostPage({
 }: {
   params: { post: string };
 }) {
-  const postObj = await getPost(post);
+  const postObj = await prisma.post.findUnique({ where: { id: post } });
   if (!postObj) throw Error("Unable to retrieve post");
   const content = await remark()
     .use(html)
