@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "devNoCache": "pwsh -c \"rm -r -fo .next\" && pnpm dev",
-    "build": "next build",
+    "build": "pnpm exec prisma generate && pnpm exec next build",
     "start": "next start",
     "lint": "next lint",
     "format": "pnpm prettier --write .",
