@@ -10,9 +10,8 @@ export default function Home() {
           Harrison Cook
         </h1>
         <h2 className="mb-[min(12vh,12vw)] text-6xl">Software Engineer</h2>
-        <p className="w-full text-start text-4xl font-normal text-light-sky dark:text-dark-sky">
-          Haere Mai!{" "}
-          <span className="text-light-pink dark:text-dark-pink">Hello!</span>
+        <p className="w-full text-start text-4xl font-normal text-light-green dark:text-dark-green">
+          Haere Mai! Hello!
         </p>
         <WelcomeMsg />
       </div>

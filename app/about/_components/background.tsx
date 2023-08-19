@@ -14,9 +14,9 @@ export default function BackgroundSection() {
         <br />
         <br />
         Since then, I&apos;ve finished College, completed four years at
-        University, and got hired as a developer. Today, I&apos;m still
-        programming in my free time; Happily blurring the line between
-        &quot;work&quot; and &quot;life&quot;.
+        University, and found a job as a developer. Today, I&apos;m programming
+        for a living, and for fun in my free time; Happily blurring the lines
+        between &quot;work&quot; and &quot;life&quot;.
       </p>
     </div>
   );
