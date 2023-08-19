@@ -38,21 +38,6 @@ export async function getPosts(tagId: string) {
   }
 }
 
-export async function getPost(postId: string) {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/post/${postId}`,
-    { next: { revalidate: revalidationTime } }
-  );
-
-  try {
-    const post = await res.json();
-    post.content = Buffer.from(post.content);
-    return PostSchema.parse(post);
-  } catch (e) {
-    throw await processError(res, e);
-  }
-}
-
 export async function getComments(postId: string, pagination?: PaginationType) {
   const pagi: PaginationType = pagination ?? { skip: 0, take: 20 };
   const res = await fetch(
