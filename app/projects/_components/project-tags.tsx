@@ -6,7 +6,7 @@ export default function ProjectTags(params: { project: Project }) {
     <div className="mt-[min(2vh,2vw)] flex flex-wrap justify-start gap-[min(2vh,2vw)]">
       {params.project.tags.map((tag) => (
         <div
-          className="flex select-none flex-row items-center rounded-full px-[1vw] py-[0.5vh] nm-flat-light-base dark:nm-flat-dark-base"
+          className="flex select-none flex-row items-center rounded-full px-[min(1vh,1vw)] py-[0.5vh] nm-flat-light-base dark:nm-flat-dark-base xl:text-sm"
           key={tag.toString()}
         >
           {ProjectTag[tag].replaceAll("_", " ")}

@@ -4,7 +4,7 @@ export default function EducationSection() {
       <h3 className="mb-[min(2vh,2vw)] text-2xl font-bold xl:text-4xl">
         Educational Enhancements
       </h3>
-      <ul className="list-outside list-disc text-xl font-light xl:text-2xl">
+      <ul className="list-outside list-disc text-xl font-light xl:pl-[min(5vh,5vw)] xl:text-2xl">
         <li>A Bachelor of Engineering with First Class Honours</li>
         <ul className="list-outside list-disc pl-[min(5vh,5vw)] text-lg xl:text-xl">
           <li>

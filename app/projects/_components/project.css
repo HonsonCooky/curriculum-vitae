@@ -3,7 +3,6 @@
     font-size: 1.125rem;
     font-weight: 300;
     margin-top: min(2vh, 2vw);
-    text-align: justify;
   }
   .project > p > a {
     color: #1e66f5;
@@ -16,10 +15,15 @@
     font-size: 1.125rem;
     font-weight: 300;
     margin-top: min(2vh, 2vw);
-    text-align: justify;
   }
   .project > p > a {
     color: #89b4fa;
     text-decoration: underline;
+  }
+}
+
+@media (min-width: 1280px) {
+  .project > p {
+    text-align: justify;
   }
 }

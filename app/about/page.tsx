@@ -8,7 +8,7 @@ export default function About() {
   const age = Math.abs(ageDiff.getUTCFullYear() - 1970);
   return (
     <div className=" flex flex-1 flex-col items-center">
-      <div className="flex w-[80vw] flex-col break-words py-[min(25vh,25vw)] xl:w-[45vw] xl:py-[min(5vh,5vw)]">
+      <div className="flex w-[80vw] flex-col break-words py-[min(25vh,25vw)] xl:w-[65vw] xl:py-[min(5vh,5vw)]">
         <div className="flex flex-col py-[min(2vh,2vw)]">
           <h1 className="text-5xl font-bold text-light-mauve dark:text-dark-lavender xl:text-8xl">
             About Harrison
