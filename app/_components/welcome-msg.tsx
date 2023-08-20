@@ -13,7 +13,7 @@ export default function WelcomeMsg() {
 
   return (
     <div>
-      <p className="mb-[2vh] whitespace-pre-wrap text-justify text-lg font-light xl:text-3xl">
+      <p className="mb-[2vh] whitespace-pre-wrap text-lg font-light xl:text-justify xl:text-3xl">
         {useAlliteration ? alliteration : translation}
       </p>
       <div className="flex w-full items-end xl:justify-end">

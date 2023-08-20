@@ -1,12 +1,12 @@
 export default function EducationSection() {
   return (
     <div className="my-[min(2vh,2vw)]">
-      <h3 className="mb-[min(2vh,2vw)] text-4xl font-bold">
+      <h3 className="mb-[min(2vh,2vw)] text-2xl font-bold xl:text-4xl">
         Educational Enhancements
       </h3>
-      <ul className="list-inside list-disc text-2xl font-light">
+      <ul className="list-outside list-disc text-xl font-light xl:text-2xl">
         <li>A Bachelor of Engineering with First Class Honours</li>
-        <ul className="list-inside list-disc pl-[min(5vh,5vw)] text-xl">
+        <ul className="list-outside list-disc pl-[min(5vh,5vw)] text-lg xl:text-xl">
           <li>
             Majoring in{" "}
             <span className="text-light-green dark:text-dark-green">

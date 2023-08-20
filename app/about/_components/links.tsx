@@ -37,11 +37,13 @@ export default function LinkSection() {
 
   return (
     <div className="my-[min(2vh,2vw)]">
-      <h3 className="mb-[min(2vh,2vw)] text-4xl font-bold">More...</h3>
+      <h3 className="mb-[min(2vh,2vw)] text-2xl font-bold xl:text-4xl">
+        More...
+      </h3>
       <div className="flex flex-wrap gap-[min(2vh,2vw)]">
         <LinkBtn onClick={() => window.open("https://github.com/HonsonCooky")}>
-          <GitHubIcon className="h-[2rem]" />
-          <p className="text-xl">GitHub</p>
+          <GitHubIcon className="h-[1.25rem] xl:h-[2rem]" />
+          <p className="text-lg xl:text-xl">GitHub</p>
         </LinkBtn>
         <LinkBtn
           onClick={() =>
@@ -50,14 +52,14 @@ export default function LinkSection() {
             )
           }
         >
-          <LinkedInIcon className="h-[2rem]" />
-          <p className="text-xl">LinkedIn</p>
+          <LinkedInIcon className="h-[1.25rem] xl:h-[2rem]" />
+          <p className="text-lg xl:text-xl">LinkedIn</p>
         </LinkBtn>
         <LinkBtn
           onClick={() => window.open("https://www.reddit.com/user/HonsonCooky")}
         >
-          <RedditIcon className="h-[2rem]" />
-          <p className="text-xl">Reddit</p>
+          <RedditIcon className="h-[1.25rem] xl:h-[2rem]" />
+          <p className="text-lg xl:text-xl">Reddit</p>
         </LinkBtn>
         <LinkBtn
           onClick={() =>
@@ -66,12 +68,12 @@ export default function LinkSection() {
             )
           }
         >
-          <StackOverflowIcon className="h-[2rem]" />
-          <p className="text-xl">Stack Overflow</p>
+          <StackOverflowIcon className="h-[1.25rem] xl:h-[2rem]" />
+          <p className="text-lg xl:text-xl">Stack Overflow</p>
         </LinkBtn>
         <LinkBtn onClick={downloadCv}>
-          <ArrowDownTrayIcon className="h-[2rem]" />
-          <p className="text-xl">Download CV</p>
+          <ArrowDownTrayIcon className="h-[1.25rem] xl:h-[2rem]" />
+          <p className="text-lg xl:text-xl">Download CV</p>
         </LinkBtn>
       </div>
     </div>

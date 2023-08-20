@@ -1,8 +1,10 @@
 export default function BackgroundSection() {
   return (
     <div className="my-[min(2vh,2vw)]">
-      <h3 className="mb-[min(2vh,2vw)] text-4xl font-bold">Brief Background</h3>
-      <p className="text-justify text-xl font-light">
+      <h3 className="mb-[min(2vh,2vw)] text-2xl font-bold xl:text-4xl">
+        Brief Background
+      </h3>
+      <p className="text-lg font-light xl:text-justify xl:text-xl">
         Born and raised in what friends have described as a &apos;singing
         cult&apos;, a majority of my youth revolved around musical and thespian
         endevours. In my late teens, a series of curiosities led me into a
