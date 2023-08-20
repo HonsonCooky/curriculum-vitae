@@ -12,7 +12,7 @@ export default function PostTag(params: { tag: Tag; post: PostTagType }) {
         whileFocus={{ scale: 1.0 }}
         layout
         className="group mb-[min(2vh,2vw)] grid grid-cols-4 items-center gap-[min(2vh,2vw)] rounded  py-[min(1vh,1vw)] 
-        text-xl hover:text-light-mauve dark:hover:text-dark-mauve"
+        text-sm hover:text-light-mauve dark:hover:text-dark-mauve xl:text-xl"
       >
         <h3 className="col-span-1 break-words px-[min(2vh,2vw)] text-left font-bold">
           {params.post.title}

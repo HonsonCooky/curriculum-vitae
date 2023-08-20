@@ -9,7 +9,7 @@ async function TagsList() {
   // No tags?
   if (tags.length == 0)
     return (
-      <div className="flex flex-wrap justify-start gap-[min(2vh,2vw)] text-xl">
+      <div className="flex flex-wrap justify-start gap-[min(2vh,2vw)] text-lg xl:text-xl">
         Oh no, you&apos;re early. There is nothing to explore right now, but
         watch this space, they&apos;re coming.
       </div>
@@ -27,15 +27,15 @@ async function TagsList() {
 export default async function BlogHome() {
   return (
     <div className="flex flex-1 flex-col items-center">
-      <div className="w-[65vw] break-words">
+      <div className="flex w-[80vw] flex-col break-words py-[min(25vh,25vw)] xl:w-[65vw] xl:py-[min(5vh,5vw)]">
         <div className="flex flex-col py-[min(2vh,2vw)]">
-          <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">
+          <h1 className="text-5xl font-bold text-light-mauve dark:text-dark-lavender xl:text-8xl">
             Blogs
           </h1>
-          <h2 className="text-6xl">Ideas Worth Ignoring</h2>
+          <h2 className="text-3xl xl:text-6xl">Ideas Worth Ignoring</h2>
         </div>
         <div className="flex flex-col">
-          <p className="py-[min(4vh,4vw)] text-justify text-2xl font-light">
+          <p className="py-[min(4vh,4vw)] text-justify text-xl font-light xl:text-2xl">
             <span className="font-bold text-light-red dark:text-dark-red">
               Warning:
             </span>{" "}
@@ -45,16 +45,12 @@ export default async function BlogHome() {
             of alternative views, an anonymous comment section is provided on
             each topic. I&apos;m always open to new ideas, and would love to
             have mine challenged.
-            <br />
-            <span className="text-light-yellow dark:text-dark-yellow">
-              Note:
-            </span>{" "}
-            Comment sections may be moderated and altered to ensure
-            conversations are digestable.
           </p>
           <div className="py-[min(4vh,4vw)]">
-            <h3 className="text-4xl font-bold">Explore By Topic:</h3>
-            <p className="mb-[min(2vh,2vw)] text-2xl font-light">
+            <h3 className="text-2xl font-bold xl:text-4xl">
+              Explore By Topic:
+            </h3>
+            <p className="mb-[min(2vh,2vw)] text-sm font-light xl:text-2xl">
               *Select a tag to see posts that relate to this topic*
             </p>
             <Suspense

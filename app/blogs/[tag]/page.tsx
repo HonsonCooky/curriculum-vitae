@@ -45,16 +45,18 @@ export default function TagPage() {
   return (
     <div className="flex flex-1 flex-col items-center break-words">
       <BackBtn />
-      <div className="w-[65vw] pt-[min(2vh,2vw)]">
-        <div className="flex flex-col">
-          <h1 className="text-8xl font-bold text-light-mauve dark:text-dark-lavender">
+      <div className="flex w-[80vw] flex-col break-words py-[min(25vh,25vw)] xl:w-[65vw] xl:py-[min(5vh,5vw)]">
+        <div className="flex flex-col py-[min(2vh,2vw)]">
+          <h1 className="text-5xl font-bold text-light-mauve dark:text-dark-lavender xl:text-8xl">
             {tag.name}
           </h1>
-          <h2 className="mb-[min(4vh,4vw)] text-6xl">{tag.description}</h2>
+          <h2 className="mb-[min(4vh,4vw)] text-3xl xl:text-6xl">
+            {tag.description}
+          </h2>
         </div>
         <div
-          className="group mb-[min(2vh,2vw)] grid auto-rows-[1fr] grid-cols-4 items-center rounded text-2xl 
-          font-light"
+          className="group mb-[min(2vh,2vw)] grid auto-rows-[1fr] grid-cols-4 items-center rounded font-light 
+          xl:text-2xl"
         >
           <GridTitle
             colSpan={1}

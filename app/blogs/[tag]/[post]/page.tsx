@@ -23,11 +23,11 @@ export default async function PostPage({
   return (
     <div className="flex flex-col items-center break-words">
       <BackBtn />
-      <div className="flex w-[65vw] flex-col pb-[min(8vh,8vw)]">
-        <h1 className="mb-[min(1vh,1vw)] text-center text-8xl font-bold text-light-mauve dark:text-dark-lavender">
+      <div className="flex w-[80vw] flex-col py-[min(25vh,25vw)] pb-[min(8vh,8vw)] xl:w-[65vw] xl:py-0">
+        <h1 className="mb-[min(1vh,1vw)] text-center text-5xl font-bold text-light-mauve dark:text-dark-lavender xl:text-8xl">
           {postObj.title}
         </h1>
-        <h2 className="mb-[min(2vh,2vw)] text-center text-4xl">
+        <h2 className="mb-[min(2vh,2vw)] text-center text-2xl xl:text-4xl">
           {postObj.description}
         </h2>
         <div className="flex flex-row items-center">

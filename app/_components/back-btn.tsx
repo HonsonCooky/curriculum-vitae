@@ -7,7 +7,7 @@ export default function BackBtn() {
   return (
     <div
       onClick={router.back}
-      className=" sticky top-[min(10vh,10vw)] flex w-full px-[min(10vh,10vw)]"
+      className="sticky top-[min(10vh,10vw)] hidden w-full px-[min(10vh,10vw)] xl:flex"
     >
       <div
         className="group flex w-min translate-x-[-50%] flex-row items-center rounded-full p-[min(1vh,1vw)] 

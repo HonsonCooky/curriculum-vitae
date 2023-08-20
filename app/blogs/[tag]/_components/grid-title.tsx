@@ -46,7 +46,7 @@ export default function GridTitle(params: {
     >
       <h3 className="select-none break-all">{params.title}</h3>
       <SortArrows
-        className="h-[1.5rem] min-w-[1.5rem] stroke-light-red stroke-[min(0.2vh,0.2vw)]"
+        className="h-[1rem] min-w-[1rem] stroke-light-red stroke-[min(0.2vh,0.2vw)] xl:h-[1.5rem] xl:min-w-[1.5rem]"
         state={params.sortable.state}
       />
     </a>

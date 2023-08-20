@@ -99,8 +99,8 @@ export default function UserComment(params: {
       layout="position"
       animate={isStuck ? "stuck" : "unstuck"}
       variants={variants}
-      className="flex w-[50vw] flex-col self-center break-all rounded-xl px-[min(4vh,4vw)] pb-[min(2vh,2vw)] 
-      pt-[min(1vh,1vw)] nm-flat-light-base dark:nm-flat-dark-base"
+      className="flex w-full flex-col self-center break-all rounded-xl px-[min(4vh,4vw)] pb-[min(2vh,2vw)] 
+      pt-[min(1vh,1vw)] nm-flat-light-base dark:nm-flat-dark-base xl:w-[50vw]"
     >
       <div
         className="group mb-[min(1vh,1vw)] flex w-full justify-end"
@@ -116,11 +116,13 @@ export default function UserComment(params: {
         />
       </div>
       <div className="flex w-full justify-between">
-        <label className="mb-[min(1vh,1vw)] text-2xl">Comment:</label>
-        <label className="mb-[min(1vh,1vw)] text-xl font-light italic text-light-overlay2 dark:text-dark-overlay2">
+        <label className="mb-[min(1vh,1vw)] text-xl xl:text-2xl">
+          Comment:
+        </label>
+        <label className="mb-[min(1vh,1vw)] hidden text-xl font-light italic text-light-overlay2 dark:text-dark-overlay2 xl:flex">
           markdown compatable
         </label>
-        <label className="mb-[min(1vh,1vw)] text-2xl">
+        <label className="mb-[min(1vh,1vw)] text-xl xl:text-2xl">
           {comment.length}/{maxContentLength}
         </label>
       </div>
@@ -132,9 +134,9 @@ export default function UserComment(params: {
         rows={1}
         value={comment}
         className="mb-[min(2vh,2vw)] flex max-h-[15rem] flex-grow resize-none items-center rounded-xl px-[min(2vh,2vw)] 
-        pt-[min(1vh,1vw)] text-xl font-light nm-inset-light-base-sm dark:nm-inset-dark-base-sm"
+        pt-[min(1vh,1vw)] font-light nm-inset-light-base-sm dark:nm-inset-dark-base-sm xl:text-xl"
       />
-      <div className="flex flex-row items-center justify-end">
+      <div className="flex flex-col items-center justify-end xl:flex-row">
         <div className="flex h-full flex-1 items-center font-bold text-light-red dark:text-dark-red">
           <label
             aria-hidden={errComment ? true : false}
@@ -149,31 +151,35 @@ export default function UserComment(params: {
             {errAlias}
           </label>
         </div>
-        <label className="mr-[min(1vh,1vw)] text-2xl">Alias:</label>
-        <div className="flex flex-row items-center justify-end">
-          <input
-            onChange={updateAlias}
-            value={alias}
-            placeholder={randomName}
-            className="flex w-[12vw] items-center rounded-lg px-[min(2vh,2vw)] py-[min(0.5vh,0.5vw)] text-lg font-light 
-            nm-inset-light-base-sm dark:nm-inset-dark-base-sm"
-          />
-          <a
-            className="group ml-[min(1vh,1vw)] flex flex-row items-center rounded-xl p-[min(0.5vh,0.5vw)] 
-            nm-flat-light-base-sm hover:scale-[1.05] dark:nm-flat-dark-base-sm"
-            onClick={sendComment}
-          >
-            <h4
-              className="select-none px-[min(1vh,1vw)] text-xl group-hover:text-light-mauve 
-              dark:group-hover:text-dark-mauve"
-            >
-              Send
-            </h4>
-            <PaperAirplaneIcon
-              className="h-[1.25rem] pr-[min(1vh,1vw)] group-hover:stroke-light-mauve 
-              dark:group-hover:stroke-dark-mauve"
+        <div className="flex w-full flex-row xl:w-fit">
+          <label className="mr-[min(1vh,1vw)] text-lg xl:text-2xl">
+            Alias:
+          </label>
+          <div className="flex flex-row items-center justify-end">
+            <input
+              onChange={updateAlias}
+              value={alias}
+              placeholder={randomName}
+              className="flex w-full items-center rounded-lg px-[min(2vh,2vw)] py-[min(0.5vh,0.5vw)] font-light nm-inset-light-base-sm dark:nm-inset-dark-base-sm 
+            xl:w-[12vw] xl:text-lg"
             />
-          </a>
+            <a
+              className="group ml-[min(1vh,1vw)] flex flex-row items-center hover:scale-[1.05] xl:rounded-xl 
+            xl:p-[min(0.5vh,0.5vw)] xl:nm-flat-light-base-sm xl:dark:nm-flat-dark-base-sm"
+              onClick={sendComment}
+            >
+              <h4
+                className="hidden select-none px-[min(1vh,1vw)] text-xl group-hover:text-light-mauve dark:group-hover:text-dark-mauve 
+              xl:flex"
+              >
+                Send
+              </h4>
+              <PaperAirplaneIcon
+                className="h-[1.25rem] group-hover:stroke-light-mauve dark:group-hover:stroke-dark-mauve 
+              xl:pr-[min(1vh,1vw)]"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </motion.div>

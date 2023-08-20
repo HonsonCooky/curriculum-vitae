@@ -1,53 +1,68 @@
 @media (prefers-color-scheme: light) {
   .comment > h1 {
     color: #e64553;
-    font-weight: bold;
-    font-size: 2rem;
   }
   .comment > h2 {
     color: #df8e1d;
-    font-weight: bold;
-    font-size: 1.85rem;
   }
   .comment > h3 {
     color: #40a02b;
-    font-weight: bold;
-    font-size: 1.75rem;
   }
   .comment > h4 {
     color: #209fb5;
-    font-weight: bold;
-    font-size: 1.5rem;
-  }
-  .comment > p {
-    font-size: 1rem;
-    font-weight: 300;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   .comment > h1 {
     color: #eba0ac;
-    font-weight: bold;
-    font-size: 2rem;
   }
   .comment > h2 {
     color: #f9e2af;
-    font-weight: bold;
-    font-size: 1.85rem;
   }
   .comment > h3 {
     color: #a6e3a1;
-    font-weight: bold;
-    font-size: 1.75rem;
   }
   .comment > h4 {
     color: #74c7ec;
-    font-weight: bold;
+  }
+}
+
+.comment > h1 {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.comment > h2 {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.comment > h3 {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.comment > h4 {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+.comment > p {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+@media (min-width: 1280px) {
+  .comment > h1 {
+    font-size: 2rem;
+  }
+  .comment > h2 {
+    font-size: 1.85rem;
+  }
+  .comment > h3 {
+    font-size: 1.75rem;
+  }
+  .comment > h4 {
     font-size: 1.5rem;
   }
   .comment > p {
     font-size: 1rem;
-    font-weight: 300;
   }
 }

@@ -1,61 +1,72 @@
 @media (prefers-color-scheme: light) {
   .content > h1 {
     color: #e64553;
-    font-weight: bold;
-    font-size: 5rem;
-    margin-top: 2rem;
   }
   .content > h2 {
     color: #df8e1d;
-    font-weight: bold;
-    font-size: 4rem;
-    margin-top: 1.5rem;
   }
   .content > h3 {
     color: #40a02b;
-    font-weight: bold;
-    font-size: 3rem;
-    margin-top: 1rem;
   }
   .content > h4 {
     color: #209fb5;
-    font-weight: bold;
-    font-size: 2.5rem;
-    margin-top: 1rem;
-  }
-  .content > p {
-    font-size: 1.5rem;
-    font-weight: 300;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   .content > h1 {
     color: #eba0ac;
-    font-weight: bold;
-    font-size: 5rem;
-    margin-top: 2rem;
   }
   .content > h2 {
     color: #f9e2af;
-    font-weight: bold;
-    font-size: 4rem;
-    margin-top: 1.5rem;
   }
   .content > h3 {
     color: #a6e3a1;
-    font-weight: bold;
-    font-size: 3rem;
-    margin-top: 1rem;
   }
   .content > h4 {
     color: #74c7ec;
-    font-weight: bold;
+  }
+}
+
+.content > h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.content > h2 {
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-top: 1.5rem;
+}
+.content > h3 {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.content > h4 {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+.content > p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+@media (min-width: 1280px) {
+  .content > h1 {
+    font-size: 5rem;
+  }
+  .content > h2 {
+    font-size: 4rem;
+  }
+  .content > h3 {
+    font-size: 3rem;
+  }
+  .content > h4 {
     font-size: 2.5rem;
-    margin-top: 1rem;
   }
   .content > p {
     font-size: 1.5rem;
-    font-weight: 300;
   }
 }
