@@ -4,10 +4,11 @@ import { MenuItem } from "./menu-item";
 
 const variants: Variants = {
   open: {
+    visibility: "visible",
     transition: { staggerChildren: 0.05, delayChildren: 0.2 },
   },
   closed: {
-    transition: { staggerChildren: 0.02, staggerDirection: -1 },
+    visibility: "hidden",
   },
 };
 
@@ -17,6 +18,7 @@ function title(href: string) {
   const rest = name.slice(1).toLowerCase();
   return firstChar + rest;
 }
+
 export const NavBtns = (params: { pages: string[] }) => (
   <motion.ul variants={variants}>
     <MenuItem page={{ href: "/", title: "Home" }} key={"Home"} />

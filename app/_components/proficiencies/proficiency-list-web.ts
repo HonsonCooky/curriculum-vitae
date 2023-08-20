@@ -1,6 +1,6 @@
 import { paramsType } from "./proficiency-elements";
 
-export const proficienciesWeb: paramsType = [
+export const proficiencies: paramsType = [
   {
     imgRef: "terraform",
     left: "18%",

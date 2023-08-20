@@ -13,14 +13,14 @@ export default function WelcomeMsg() {
 
   return (
     <div>
-      <p className="mb-[2vh] whitespace-pre-wrap text-justify text-3xl font-light">
+      <p className="mb-[2vh] whitespace-pre-wrap text-justify text-lg font-light xl:text-3xl">
         {useAlliteration ? alliteration : translation}
       </p>
-      <div className="flex w-full items-end justify-end">
+      <div className="flex w-full items-end xl:justify-end">
         <button
           onClick={() => setUseAlliteration(!useAlliteration)}
-          className="rounded-lg p-[min(1vh,1vw)] text-2xl nm-flat-light-base-sm hover:scale-[1.05] hover:text-light-mauve 
-          dark:nm-flat-dark-base-sm dark:hover:text-dark-mauve"
+          className="rounded-lg p-[min(1vh,1vw)] text-lg nm-flat-light-base-sm hover:scale-[1.05] hover:text-light-mauve
+          dark:nm-flat-dark-base-sm dark:hover:text-dark-mauve xl:text-2xl"
         >
           {useAlliteration
             ? "Translate Alliteration"

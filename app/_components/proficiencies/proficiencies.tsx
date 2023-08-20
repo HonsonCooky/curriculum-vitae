@@ -1,7 +1,7 @@
 "use client";
 import { Variants, motion } from "framer-motion";
 import { ProficiencyElements } from "./proficiency-elements";
-import { proficienciesWeb } from "./proficiency-list-web";
+import { proficiencies } from "./proficiency-list-web";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -14,10 +14,9 @@ const container: Variants = {
 };
 
 export default function Proficiencies() {
-  const webProficiencies = proficienciesWeb;
   return (
     <motion.div variants={container} initial="hidden" animate="show">
-      <ProficiencyElements params={webProficiencies} className="flex" />
+      <ProficiencyElements params={proficiencies} className="hidden xl:flex" />
     </motion.div>
   );
 }

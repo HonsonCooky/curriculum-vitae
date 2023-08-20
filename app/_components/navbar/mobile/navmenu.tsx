@@ -3,8 +3,8 @@ import { Variants, motion, useCycle } from "framer-motion";
 import MenuIcon from "./menu-icon";
 import { NavBtns } from "./nav-btns";
 
-const pos = "4vh";
-const size = "6vh";
+const pos = "5vw";
+const size = "3rem";
 const sidebar: Variants = {
   open: {
     top: 0,
@@ -53,7 +53,7 @@ export const NavMenu = (params: {
 
   return (
     <motion.nav
-      className={`fixed z-40 flex flex-col nm-flat-light-base-sm dark:nm-flat-dark-base-sm ${params.className}`}
+      className={`fixed flex-col nm-flat-light-base-sm dark:nm-flat-dark-base-sm ${params.className}`}
       layout
       initial={false}
       animate={isOpen ? "open" : "closed"}
