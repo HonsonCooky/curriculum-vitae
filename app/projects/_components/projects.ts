@@ -113,7 +113,7 @@ export const projects: Project[] = [
     description:
       "Network Engineering piqued my interest early on at University. Fourth year Engineering papers are no joke, " +
       "but this particular assignment really hit home that I was on the right path. Armed with two " +
-      "[M5Stacks](https://m5stack.com/), the assignment was to simulated an IoT network. This particular assignment " +
+      "[M5Stacks](https://m5stack.com/), the assignment was to simulate an IoT network. This particular assignment " +
       "is unlikely to impress, but my search for this euphoria is what gets me out of bed.",
   },
   {
