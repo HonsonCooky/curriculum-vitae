@@ -39,7 +39,7 @@ export default async function BlogHome() {
             <span className="font-bold text-light-red dark:text-dark-red">
               Warning:
             </span>{" "}
-            You are about to enter the world of bais and opinions from a very
+            You are about to enter the world of bias and opinions from a very
             specific set of experiences. Posts are more akin to that of a
             journal entry; A casual documenation of my thoughts. In anticipation
             of alternative views, an anonymous comment section is provided on
