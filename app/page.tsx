@@ -3,7 +3,7 @@ import WelcomeMsg from "./_components/welcome-msg";
 
 export default function Home() {
   return (
-    <div className="flex flex-1 justify-center">
+    <div className="flex flex-1 items-center justify-center xl:items-start">
       <div className="flex w-[80vw] flex-col break-words py-[min(25vh,25vw)] xl:w-[45vw] xl:py-[min(5vh,5vw)]">
         <h1 className="text-5xl font-bold text-light-mauve dark:text-dark-lavender xl:text-8xl">
           Harrison Cook

@@ -80,7 +80,7 @@ export default function TechnicalSection() {
             educational and personal experience.
           </li>
         </ul>
-        <ul className="mt-[min(2vh,2vw)] list-outside list-disc text-xl font-light xl:pl-[min(5vh,5vw)] xl:text-2xl">
+        <ul className="mt-[min(2vh,2vw)] list-outside list-disc text-xl font-light xl:text-2xl">
           <li className="font-bold">Additonal Experience:</li>
           <p className="pl-[min(5vh,5vw)] text-lg font-light xl:text-xl">
             <span className=" text-light-yellow dark:text-dark-yellow">

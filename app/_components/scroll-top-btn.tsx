@@ -37,14 +37,14 @@ export default function ScrollToTopButton() {
 
   return (
     <motion.button
-      className="fixed bottom-0 right-0 p-10"
+      className="fixed bottom-[2vw] right-[2vw]"
       variants={ScrollToTopContainerVariants}
       initial="hide"
       animate={controls}
       onClick={scrollToTop}
     >
       <div
-        className="group flex w-min translate-x-[-50%] flex-row items-center rounded-full p-[min(1vh,1vw)] 
+        className="group flex w-min flex-row items-center rounded-full p-[min(1vh,1vw)] 
         nm-flat-light-base hover:scale-[1.1] dark:nm-flat-dark-base"
       >
         <ArrowUpIcon
