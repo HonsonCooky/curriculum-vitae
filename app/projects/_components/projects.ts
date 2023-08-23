@@ -10,11 +10,11 @@ import {
 export enum ProjectTag {
   SOFTWARE,
   HARDWARE,
-  PROFESSIONAL_USE,
-  PROBLEM_SOLVING,
+  PROBLEM,
+  PROFESSIONAL,
+  PERSONAL,
   EDUCATION,
   FOR_FUN,
-  PERSONAL_USE,
 }
 
 export type ProjectLink = {
@@ -39,12 +39,7 @@ export const projects: Project[] = [
   {
     title: "40% Keyboard",
     icon: ArrowDownOnSquareStackIcon,
-    tags: [
-      ProjectTag.HARDWARE,
-      ProjectTag.PROFESSIONAL_USE,
-      ProjectTag.PROBLEM_SOLVING,
-      ProjectTag.PERSONAL_USE,
-    ],
+    tags: [ProjectTag.HARDWARE, ProjectTag.PROFESSIONAL, ProjectTag.PROBLEM],
     description:
       "Physically impaired from a childhood injury, my journey with the Planck EZ keyboard has been nothing short of a " +
       "blessing. Customized keybindings and short travel distances make special characters a breeze, and wrist strain " +
@@ -53,7 +48,7 @@ export const projects: Project[] = [
   {
     title: "CV Website",
     icon: UserCircleIcon,
-    tags: [ProjectTag.SOFTWARE, ProjectTag.PERSONAL_USE, ProjectTag.FOR_FUN],
+    tags: [ProjectTag.SOFTWARE, ProjectTag.PERSONAL, ProjectTag.FOR_FUN],
     links: [
       {
         title: "GitHub Page",
@@ -68,7 +63,7 @@ export const projects: Project[] = [
   {
     title: "Desktop Builds",
     icon: CpuChipIcon,
-    tags: [ProjectTag.HARDWARE, ProjectTag.PERSONAL_USE, ProjectTag.FOR_FUN],
+    tags: [ProjectTag.HARDWARE, ProjectTag.PERSONAL, ProjectTag.FOR_FUN],
     description:
       "Learning how to build a computer provides some incredibly helpful teachings for software development. " +
       "I've successfully designed and built a handful of desktops with varying requirements; Teaching others as " +
@@ -77,12 +72,7 @@ export const projects: Project[] = [
   {
     title: "Flat Chores App",
     icon: BuildingOfficeIcon,
-    tags: [
-      ProjectTag.SOFTWARE,
-      ProjectTag.FOR_FUN,
-      ProjectTag.PROBLEM_SOLVING,
-      ProjectTag.PERSONAL_USE,
-    ],
+    tags: [ProjectTag.SOFTWARE, ProjectTag.FOR_FUN, ProjectTag.PROBLEM],
     links: [
       {
         title: "GitHub Page",
@@ -98,12 +88,7 @@ export const projects: Project[] = [
   {
     title: "M5Stack (ESP32)",
     icon: WifiIcon,
-    tags: [
-      ProjectTag.HARDWARE,
-      ProjectTag.SOFTWARE,
-      ProjectTag.EDUCATION,
-      ProjectTag.PROBLEM_SOLVING,
-    ],
+    tags: [ProjectTag.HARDWARE, ProjectTag.SOFTWARE, ProjectTag.EDUCATION],
     links: [
       {
         title: "GitHub Page",
@@ -119,12 +104,7 @@ export const projects: Project[] = [
   {
     title: "Neovim Config",
     icon: Cog6ToothIcon,
-    tags: [
-      ProjectTag.SOFTWARE,
-      ProjectTag.PROFESSIONAL_USE,
-      ProjectTag.PROBLEM_SOLVING,
-      ProjectTag.PERSONAL_USE,
-    ],
+    tags: [ProjectTag.SOFTWARE, ProjectTag.PROFESSIONAL, ProjectTag.PROBLEM],
     links: [
       {
         title: "GitHub Page",
