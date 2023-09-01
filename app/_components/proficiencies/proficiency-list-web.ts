@@ -27,7 +27,7 @@ export const proficiencies: paramsType = [
     top: "55%",
   },
   {
-    imgRef: "rust",
+    imgRef: "java",
     left: "84%",
     top: "55%",
   },
