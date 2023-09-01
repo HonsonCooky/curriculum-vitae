@@ -1,6 +1,7 @@
 import BackgroundSection from "./_components/background";
 import EducationSection from "./_components/education";
 import LinkSection from "./_components/links";
+import ProfessionalSection from "./_components/professional";
 import TechnicalSection from "./_components/technical";
 
 export default function About() {
@@ -23,6 +24,7 @@ export default function About() {
           <BackgroundSection />
           <EducationSection />
           <TechnicalSection />
+          <ProfessionalSection />
           <LinkSection />
         </div>
       </div>
