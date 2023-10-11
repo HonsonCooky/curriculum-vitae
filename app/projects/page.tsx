@@ -14,7 +14,7 @@ export default function Projects() {
         </div>
         <div className="flex flex-col">
           <p className="mt-[min(2vh,2vw)] text-lg font-light xl:text-2xl">
-            On this page you find an ever-growing menu.
+            On this page, you&apos;ll find an ever-growing menu.
           </p>
           <p className=" text-lg font-light xl:text-2xl">
             My dopamine chases decorate this venue.

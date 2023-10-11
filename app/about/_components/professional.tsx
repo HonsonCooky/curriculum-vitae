@@ -5,7 +5,7 @@ export default function ProfessionalSection() {
         Professional Participation
       </h3>
       <p className="mb-[min(2vh,2vw)] text-lg font-light xl:text-justify xl:text-xl">
-        The following list of descriptions denote the type of work I&apos;ve
+        The following list of descriptions denotes the type of work I&apos;ve
         fulfilled in a professional capacity. Whilst I&apos;m unable to exhibit
         this work, the &quot;Projects&quot; page contains examples of my
         free-time open-source projects.
@@ -31,11 +31,11 @@ export default function ProfessionalSection() {
         <li className="font-bold">Modularization:</li>
         <ul className="mb-4 list-outside list-disc pl-[min(5vh,5vw)] text-lg xl:text-xl">
           <li>
-            Construction and maintenance of reuseable programs, workflows, and
+            Construction and maintenance of reusable programs, workflows, and
             IaC.
           </li>
           <li>
-            Generic reusable architectures for independant context driven
+            Generic reusable architectures for independent context driven
             execution.
           </li>
           <li>
@@ -56,15 +56,15 @@ export default function ProfessionalSection() {
           <li>Terraform provider major version upgrades.</li>
         </ul>
         <li className="font-bold">
-          Maintenance and Upgrades of Forign Systems:
+          Maintenance and Upgrades of Foreign Systems:
         </li>
         <ul className="mb-4 list-outside list-disc pl-[min(5vh,5vw)] text-lg xl:text-xl">
           <li>
             Node.js + CI/CD upgrades and maintenance on existing unknown
             systems.
           </li>
-          <li>Completion of half done projects started by former employees.</li>
-          <li>Hand overs from other developers.</li>
+          <li>Completion of half-done projects started by former employees.</li>
+          <li>Handovers from other developers.</li>
         </ul>
       </ul>
     </div>

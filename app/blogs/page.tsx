@@ -41,10 +41,10 @@ export default async function BlogHome() {
             </span>{" "}
             You are about to enter the world of bias and opinions from a very
             specific set of experiences. Posts are more akin to that of a
-            journal entry; A casual documenation of my thoughts. In anticipation
-            of alternative views, an anonymous comment section is provided on
-            each topic. I&apos;m always open to new ideas, and would love to
-            have mine challenged.
+            journal entry; A casual documentation of my thoughts. In
+            anticipation of alternative views, an anonymous comment section is
+            provided on each topic. I&apos;m always open to new ideas and would
+            love to have mine challenged.
           </p>
           <div className="py-[min(4vh,4vw)]">
             <h3 className="text-2xl font-bold xl:text-4xl">

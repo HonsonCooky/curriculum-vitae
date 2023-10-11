@@ -80,10 +80,10 @@ export const projects: Project[] = [
       },
     ],
     description:
-      "Covid lock-downs provided me with a unique opportunity to build my first hobby project. For some time, my flat " +
+      "Covid lockdowns provided me with a unique opportunity to build my first hobby project. For some time, my flat " +
       "had struggled with maintaining a rotating chore list. This React-Native, Express.js, MongoDB application was " +
       "my solution. With a little 'scope-creep', the application also had a shared shopping list. Unfortunately, the " +
-      "app's functionality worked better than it's intended outcome...",
+      "app's functionality worked better than its intended outcome...",
   },
   {
     title: "M5Stack (ESP32)",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
       },
     ],
     description:
-      "Network Engineering piqued my interest early on at University. Fourth year Engineering papers are no joke, " +
+      "Network Engineering piqued my interest early on at University. Fourth-year Engineering papers are no joke, " +
       "but this particular assignment really hit home that I was on the right path. Armed with two " +
       "[M5Stacks](https://m5stack.com/), the assignment was to simulate an IoT network. This particular assignment " +
       "is unlikely to impress, but my search for this euphoria is what gets me out of bed.",

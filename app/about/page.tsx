@@ -18,7 +18,7 @@ export default function About() {
         </div>
         <div className="mb-[min(10vh,10vw)] flex flex-col gap-6">
           <p className="text-lg font-light xl:text-justify xl:text-2xl">
-            Hey! I&apos;m Harrison, a {age} year old Software Engineer from New
+            Hey! I&apos;m Harrison, a {age}-year-old Software Engineer from New
             Zealand.
           </p>
           <BackgroundSection />

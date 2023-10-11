@@ -74,7 +74,7 @@ export default function TechnicalSection() {
           </li>
         </ul>
         <ul className="mt-[min(2vh,2vw)] list-outside list-disc text-xl font-light xl:text-2xl">
-          <li className="font-bold">Additonal Experience:</li>
+          <li className="font-bold">Additional Experience:</li>
           <p className="text-lg font-light xl:text-xl">
             Experience that is possibly outdated (+2 years since active use).
           </p>
