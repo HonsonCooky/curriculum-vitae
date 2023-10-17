@@ -8,6 +8,7 @@
     "build": "pnpm exec prisma generate && pnpm exec next build",
     "start": "next start",
     "lint": "next lint",
+    "postinstall": "prisma generate",
     "format": "pnpm prettier --write .",
     "prisma": "pnpm exec prisma db push && pnpm exec prisma generate",
     "post": "pnpm exec tsc ./src/generate.ts && node ./src/generate.js"
