@@ -35,8 +35,8 @@ export default function TagPage() {
 
     if (!tag)
       getTags()
-        .then((tags) => tags?.filter((tag) => tag.id == id)[0])
-        .then((tag) => setTag(tag ?? tagFallBack))
+        .then((tags) => tags.filter((tag) => tag.id === id)[0])
+        .then((tag) => setTag(tag))
         .catch((_) => setTag(tagFallBack));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
