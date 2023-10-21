@@ -15,13 +15,14 @@ export default function TagPage() {
   const [tag, setTag] = useState<Tag | undefined>(undefined);
   const [posts, setPosts] = useState<PostTagType[] | undefined>(undefined);
   const [nameSort, setNameSort] = useState<SortStateType>(
-    SortStateSchema.enum.none
+    SortStateSchema.enum.none,
   );
   const [dateSort, setDateSort] = useState<SortStateType>(
-    SortStateSchema.enum.descend
+    SortStateSchema.enum.descend,
   );
 
-  const id = useParams().tag;
+  const slug = useParams().tag;
+  const id = Array.isArray(slug) ? slug[0] : slug;
   const tagFallBack = {
     name: "Server Error",
     description: "This tag may no longer be valid",
