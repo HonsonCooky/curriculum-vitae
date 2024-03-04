@@ -1,0 +1,22 @@
+/* Default Values */
+* {
+  outline: none;
+  color: rgba(var(--text));
+  font-family: "JetBrains Mono", monospace;
+}
+
+*::-webkit-scrollbar {
+  width: 1vw;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(var(--surface0));
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(var(--crust));
+}
+
+*:focus {
+  outline: 2px dotted rgba(var(--lavender)) !important;
+}
