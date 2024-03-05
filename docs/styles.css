@@ -3,23 +3,3 @@
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 @import url("./modules/theme.css");
 @import url("./modules/global.css");
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: rgba(var(--base));
-}
-
-search {
-  display: flex;
-  flex-direction: row;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-}

@@ -19,6 +19,30 @@
   background: rgba(var(--crust));
 }
 
-*:focus {
-  outline: 2px dotted rgba(var(--lavender)) !important;
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgba(var(--base));
+  width: 100vw;
+  min-height: 100vh;
+}
+
+button,
+input {
+  border: none;
+  background: rgba(var(--mantle));
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
 }
