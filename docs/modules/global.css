@@ -1,3 +1,5 @@
+@import url("./modules/theme.css");
+
 /* Default Values */
 * {
   outline: none;

@@ -11,47 +11,7 @@ body {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   background: rgba(var(--base));
-  width: 100vw;
-  min-height: 100vh;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-}
-
-header .full {
-  height: 100vh;
-}
-
-header .sticky {
-  height: 10vh;
-}
-
-hgroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  font-weight: 800;
-  font-size: 80px;
-}
-
-h2 {
-  font-weight: 100;
-  font-size: 24px;
-}
-
-img {
-  width: 128px;
-  height: 128px;
 }
 
 search {
@@ -62,5 +22,4 @@ search {
 .row {
   display: flex;
   flex-direction: row;
-  align-items: end;
 }
