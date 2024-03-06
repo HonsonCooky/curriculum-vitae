@@ -2,30 +2,106 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 @import url("./modules/theme.css");
-@import url("./modules/global.css");
+
+:root {
+  --btn-font-size: 16px;
+  --text-font-size: 14px;
+}
+
+/* Default Values */
+* {
+  outline: none;
+  color: var(--text);
+  font-family: "JetBrains Mono", monospace;
+}
+
+*::-webkit-scrollbar {
+  width: 1vw;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--accent-low);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--special);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--base);
+  width: 100vw;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+img {
+  width: 128px;
+  height: 128px;
+}
+
+button,
+input {
+  border: 1px solid var(--accent-high);
+  border-radius: 1vh;
+  background: var(--accent-low);
+  padding: 0.4vh 1.5vw;
+  font-size: var(--btn-font-size);
+}
+
+input::-webkit-input-placeholder {
+  color: var(--text);
+  font-size: var(--btn-font-size);
+}
 
 search {
   display: flex;
   flex-direction: row;
   gap: 0 !important;
-  border: 1px solid rgba(var(--text));
+  border: 1px solid var(--accent-high);
   border-radius: 1vh;
 }
 
 search > input {
   border: none;
-  border-right: 1px solid rgba(var(--surface1));
+  border-right: 1px solid var(--accent-high);
   border-radius: 1vh 0 0 1vh;
 }
 
 search > button {
   border: none;
-  border-left: 1px solid rgba(var(--surface1));
+  border-left: 1px solid var(--accent-high);
   border-radius: 0 1vh 1vh 0;
 }
 
-/* --vanilla: #f2f3aeff; */
-/* --flax: #edd382ff; */
-/* --sandy-brown: #fc9e4fff; */
-/* --cinnabar: #f4442eff; */
-/* --oxford-blue: #020122ff; */
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
