@@ -12,14 +12,20 @@ search {
   border-radius: 1vh;
 }
 
-search>input {
+search > input {
   border: none;
   border-right: 1px solid rgba(var(--surface1));
   border-radius: 1vh 0 0 1vh;
 }
 
-search>button {
+search > button {
   border: none;
   border-left: 1px solid rgba(var(--surface1));
   border-radius: 0 1vh 1vh 0;
 }
+
+/* --vanilla: #f2f3aeff; */
+/* --flax: #edd382ff; */
+/* --sandy-brown: #fc9e4fff; */
+/* --cinnabar: #f4442eff; */
+/* --oxford-blue: #020122ff; */
