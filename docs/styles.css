@@ -1,9 +1,14 @@
 /*FONT: JetBrainsMono*/
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
-@import url("./modules/theme.css");
 
 :root {
+  --raisin-black: #272727ff;
+  --sapphire: #2b50aaff;
+  --plum-web: #ff9fe5ff;
+  --tea-rose-red: #ffd4d4ff;
+  --light-red: #ff858dff;
+
   --btn-font-size: 16px;
   --text-font-size: 14px;
 }
@@ -11,8 +16,8 @@
 /* Default Values */
 * {
   outline: none;
-  color: var(--text);
-  font-family: "JetBrains Mono", monospace;
+  color: var(--tea-rose-red);
+  font-family: "Roboto", sans-serif;
 }
 
 *::-webkit-scrollbar {
@@ -20,11 +25,11 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--accent-low);
+  background: var(--tea-rose-red);
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--special);
+  background: var(--sapphire);
 }
 
 html,
@@ -34,74 +39,44 @@ body {
 }
 
 body {
-  background: var(--base);
+  background: var(--raisin-black);
   width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-h1 {
-  font-size: 80px;
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-h4 {
-  font-size: 18px;
-}
-
-img {
-  width: 128px;
-  height: 128px;
-}
-
-button,
-input {
-  border: 1px solid var(--accent-high);
-  border-radius: 1vh;
-  background: var(--accent-low);
-  padding: 0.4vh 1.5vw;
-  font-size: var(--btn-font-size);
-}
-
-input::-webkit-input-placeholder {
-  color: var(--text);
-  font-size: var(--btn-font-size);
-}
-
-search {
-  display: flex;
-  flex-direction: row;
-  gap: 0 !important;
-  border: 1px solid var(--accent-high);
-  border-radius: 1vh;
-}
-
-search > input {
-  border: none;
-  border-right: 1px solid var(--accent-high);
-  border-radius: 1vh 0 0 1vh;
-}
-
-search > button {
-  border: none;
-  border-left: 1px solid var(--accent-high);
-  border-radius: 0 1vh 1vh 0;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  gap: 2vw;
-}
-
-.col {
+header {
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header>hgroup {
+  display: flex;
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--plum-web);
+  width: 65vw;
+}
+
+header>hgroup>h1 {
+  margin: 0;
+  color: var(--raisin-black);
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 80px;
+}
+
+header>hgroup>h2 {
+  margin: 0;
+  color: var(--raisin-black);
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 28px;
 }
