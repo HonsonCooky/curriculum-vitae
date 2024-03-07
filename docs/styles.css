@@ -3,11 +3,13 @@
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 
 :root {
-  --raisin-black: #272727ff;
-  --sapphire: #2b50aaff;
-  --plum-web: #ff9fe5ff;
-  --tea-rose-red: #ffd4d4ff;
-  --light-red: #ff858dff;
+  --snow: #fbf5f3ff;
+  --snowish: #fbf5f399;
+  --fulvous: #e28413ff;
+  --oxford-blue: #000022ff;
+  --oxford-blueish: #00002299;
+  --rusty-red: #de3c4bff;
+  --cardinal: #c42847ff;
 
   --btn-font-size: 16px;
   --text-font-size: 14px;
@@ -16,8 +18,12 @@
 /* Default Values */
 * {
   outline: none;
-  color: var(--tea-rose-red);
+  color: var(--snow);
   font-family: "Roboto", sans-serif;
+}
+
+*::-webkit-input-placeholder {
+  color: var(--snowish);
 }
 
 *::-webkit-scrollbar {
@@ -25,11 +31,11 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--tea-rose-red);
+  background: var(--snow);
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--sapphire);
+  background: var(--fulvous);
 }
 
 html,
@@ -39,7 +45,7 @@ body {
 }
 
 body {
-  background: var(--raisin-black);
+  background: var(--oxford-blue);
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
@@ -53,7 +59,20 @@ header {
   overflow: hidden;
 }
 
-header>hgroup {
+header button:hover {
+  transition:
+    color 0.4s ease,
+    border-bottom 0.4s ease;
+  border-bottom: 2px solid transparent;
+  color: var(--oxford-blue);
+}
+
+header button:hover * {
+  transition: color 0.4s ease;
+  color: var(--oxford-blue);
+}
+
+header > hgroup {
   display: flex;
   position: absolute;
   top: 10vh;
@@ -61,22 +80,124 @@ header>hgroup {
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
-  background: var(--plum-web);
-  width: 65vw;
+  border-radius: 100vh 0 0 100vh;
+  background: var(--cardinal);
+  padding: 2vh 5vw;
+  width: 50vw;
+  height: 15vh;
 }
 
-header>hgroup>h1 {
+header > hgroup > h1 {
   margin: 0;
-  color: var(--raisin-black);
   font-weight: 800;
   font-size: 80px;
   line-height: 80px;
 }
 
-header>hgroup>h2 {
+header > hgroup > h2 {
   margin: 0;
-  color: var(--raisin-black);
   font-weight: 300;
   font-size: 28px;
   line-height: 28px;
+}
+
+header > search {
+  display: flex;
+  position: absolute;
+  top: 30vh;
+  right: 0;
+  flex-direction: row;
+  gap: 5px;
+  border: none;
+  width: 55vw;
+  height: 5vh;
+}
+
+header > search * {
+  border: none;
+  background: var(--cardinal);
+  font-size: 18px;
+}
+
+header > search > input {
+  flex: 1;
+  border-radius: 100vh 0 0 100vh;
+  padding-left: 2vw;
+}
+
+header > search > button {
+  border-bottom: 2px solid var(--snowish);
+  min-width: 3vw;
+}
+
+header > nav {
+  display: flex;
+  position: absolute;
+  top: 40vh;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+}
+
+header > nav > button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: none;
+  border-bottom: 2px solid var(--snowish);
+  border-radius: 100vh 0 0 100vh;
+  background: var(--fulvous);
+  padding: 1vh 2vw;
+  width: 50vw;
+  font-weight: 300;
+  font-size: 30px;
+  text-align: start;
+}
+
+header > nav > button > i {
+  padding: 0 2vw;
+}
+
+header > #logos {
+  display: flex;
+  position: absolute;
+  bottom: 5vh;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+header > #logos > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--fulvous);
+  border-radius: 100vh;
+  background: var(--snow);
+  width: 80px;
+  height: 80px;
+}
+
+header > #logos > div > img {
+  border-radius: 100vh;
+  width: auto;
+  height: 80px;
+  overflow: hidden;
+}
+
+header > #logos > div > div {
+  display: flex;
+  position: absolute;
+  bottom: -10px;
+  justify-content: center;
+  border-radius: 100vh;
+  background: var(--fulvous);
+  padding: 0.2vh 0.5vw;
+  min-width: 80px;
+  color: var(--snow);
+  font-weight: 200;
+  font-size: 16px;
+  text-align: center;
 }
