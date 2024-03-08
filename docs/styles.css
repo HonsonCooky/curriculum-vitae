@@ -1,6 +1,7 @@
 /*FONT: JetBrainsMono*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
+@import url("./modules/mobile.css");
 
 :root {
   --snow: #fbf5f3ff;
@@ -59,11 +60,16 @@ header {
   overflow: hidden;
 }
 
+header button {
+  border: none;
+  border-bottom: 2px solid var(--snowish) !important;
+}
+
 header button:hover {
   transition:
     color 0.4s ease,
     border-bottom 0.4s ease;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid transparent !important;
   color: var(--oxford-blue);
 }
 
@@ -75,7 +81,7 @@ header button:hover * {
 header > hgroup {
   display: flex;
   position: absolute;
-  top: 10vh;
+  top: 20px;
   right: 0;
   flex-direction: column;
   flex-direction: column;
@@ -83,8 +89,7 @@ header > hgroup {
   border-radius: 100vh 0 0 100vh;
   background: var(--cardinal);
   padding: 2vh 5vw;
-  width: 50vw;
-  height: 15vh;
+  width: 60vw;
 }
 
 header > hgroup > h1 {
@@ -104,7 +109,7 @@ header > hgroup > h2 {
 header > search {
   display: flex;
   position: absolute;
-  top: 30vh;
+  top: 160px;
   right: 0;
   flex-direction: row;
   gap: 5px;
@@ -126,7 +131,6 @@ header > search > input {
 }
 
 header > search > button {
-  border-bottom: 2px solid var(--snowish);
   min-width: 3vw;
 }
 
@@ -144,9 +148,6 @@ header > nav > button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: none;
-  border-bottom: 2px solid var(--snowish);
-  border-radius: 100vh 0 0 100vh;
   background: var(--fulvous);
   padding: 1vh 2vw;
   width: 50vw;
@@ -168,6 +169,10 @@ header > #logos {
   width: 100vw;
 }
 
+header > #logos *:hover {
+  color: var(--oxford-blue);
+}
+
 header > #logos > div {
   display: flex;
   flex-direction: row;
@@ -187,12 +192,11 @@ header > #logos > div > img {
   overflow: hidden;
 }
 
-header > #logos > div > div {
+header > #logos > div > button {
   display: flex;
   position: absolute;
   bottom: -10px;
   justify-content: center;
-  border-radius: 100vh;
   background: var(--fulvous);
   padding: 0.2vh 0.5vw;
   min-width: 80px;
