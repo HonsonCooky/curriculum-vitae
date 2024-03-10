@@ -1,20 +1,20 @@
 @media (prefers-color-scheme: light) {
   :root {
-    --tomato: #f06449ff;
-    --base: #ede6e3ff;
-    --platinum: #dadad9ff;
-    --text: #36382eff;
-    --blue: #5bc3ebff;
+    --tomato: #f06449;
+    --base: #ede6e3;
+    --platinum: #dadad9;
+    --text: #36382e;
+    --blue: #5bc3eb;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --tomato: #f092ddff;
-    --base: #392f5aff;
-    --platinum: #ffaff0ff;
-    --text: #eec8e0ff;
-    --blue: #a8c7bbff;
+    --tomato: #f092dd;
+    --base: #392f5a;
+    --platinum: #ffaff0;
+    --text: #eec8e0;
+    --blue: #a3d5ff;
   }
 }
 
@@ -78,13 +78,13 @@ hgroup {
   max-width: 50vw;
 }
 
-hgroup > h1 {
+hgroup>h1 {
   margin: 0;
   font-weight: 800;
   font-size: 80px;
 }
 
-hgroup > h2 {
+hgroup>h2 {
   margin: 0;
   font-weight: 300;
   font-size: 40px;

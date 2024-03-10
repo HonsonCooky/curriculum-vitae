@@ -3,8 +3,13 @@
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 @import url("../../modules/global.css");
 
+body {
+  display: flex;
+  flex-direction: row;
+}
+
 header {
-  max-width: 50vw;
+  flex: 1;
   height: 100vh;
 }
 
@@ -16,7 +21,7 @@ nav {
   margin-top: 15vh;
 }
 
-nav > button {
+nav>button {
   display: flex;
   position: relative;
   justify-content: center;
@@ -31,16 +36,42 @@ nav > button {
   font-size: 30px;
 }
 
-nav > button > i {
+nav>button>i {
   position: absolute;
   left: 30px;
+}
+
+#me-container {
+  display: block;
+  flex: 1;
 }
 
 #me-png {
   position: absolute;
   right: 0;
-  bottom: 0;
-  z-index: -10;
+  bottom: 5vh;
   max-width: 45vw;
-  max-height: 100vh;
+  max-height: 95vh;
+}
+
+#me-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  clip-path: polygon(100%40%, 40%30%, 0%50%, 30%100%, 100%100%);
+  background: var(--tomato);
+  width: 50vw;
+  max-width: 45vw;
+  height: 100%;
+}
+
+#me-fg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  clip-path: polygon(100%70%, 70%90%, 5%95%, 10%100%, 100%100%);
+  background: var(--blue);
+  width: 50vw;
+  max-width: 45vw;
+  height: 100%;
 }
