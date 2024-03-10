@@ -16,21 +16,22 @@ nav {
   margin-top: 15vh;
 }
 
-nav>button {
+nav > button {
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
   gap: 10px;
   border: none;
+  border-bottom: 2px solid var(--text);
   border-radius: 3vh;
-  background: var(--vivid-sky-blue);
+  background: transparent;
   width: 90%;
   font-weight: 300;
   font-size: 30px;
 }
 
-nav>button>i {
+nav > button > i {
   position: absolute;
   left: 30px;
 }

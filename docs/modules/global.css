@@ -1,10 +1,24 @@
-:root {
-  --tomato: #f06449ff;
-  --isabelline: #ede6e3ff;
-  --platinum: #dadad9ff;
-  --black-olive: #36382eff;
-  --vivid-sky-blue: #5bc3ebff;
+@media (prefers-color-scheme: light) {
+  :root {
+    --tomato: #f06449ff;
+    --base: #ede6e3ff;
+    --platinum: #dadad9ff;
+    --text: #36382eff;
+    --blue: #5bc3ebff;
+  }
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tomato: #f092ddff;
+    --base: #392f5aff;
+    --platinum: #ffaff0ff;
+    --text: #eec8e0ff;
+    --blue: #a8c7bbff;
+  }
+}
+
+:root {
   --btn-font-size: 16px;
   --text-font-size: 14px;
 }
@@ -12,12 +26,12 @@
 /* Default Values */
 * {
   outline: none;
-  color: var(--black-olive);
+  color: var(--text);
   font-family: "Roboto", sans-serif;
 }
 
 *::-webkit-input-placeholder {
-  color: var(--black-olive);
+  color: var(--text);
   font-weight: 300;
 }
 
@@ -26,7 +40,7 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--black-olive);
+  background: var(--text);
 }
 
 *::-webkit-scrollbar-thumb {
@@ -40,7 +54,7 @@ body {
 }
 
 body {
-  background: var(--isabelline);
+  background: var(--base);
   width: 100%;
   overflow-x: hidden;
 }
@@ -50,27 +64,27 @@ button:hover {
     color 0.2s ease,
     background 0.2s ease;
   background: var(--tomato);
-  color: var(--isabelline);
+  color: var(--base);
 }
 
 button:hover * {
   transition: color 0.2s ease;
-  color: var(--isabelline);
+  color: var(--base);
 }
 
 hgroup {
-  border-bottom: 2px solid var(--black-olive);
+  border-bottom: 2px solid var(--text);
   padding: 2vh 2vw;
   max-width: 50vw;
 }
 
-hgroup>h1 {
+hgroup > h1 {
   margin: 0;
   font-weight: 800;
   font-size: 80px;
 }
 
-hgroup>h2 {
+hgroup > h2 {
   margin: 0;
   font-weight: 300;
   font-size: 40px;
