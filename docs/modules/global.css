@@ -1,0 +1,77 @@
+:root {
+  --tomato: #f06449ff;
+  --isabelline: #ede6e3ff;
+  --platinum: #dadad9ff;
+  --black-olive: #36382eff;
+  --vivid-sky-blue: #5bc3ebff;
+
+  --btn-font-size: 16px;
+  --text-font-size: 14px;
+}
+
+/* Default Values */
+* {
+  outline: none;
+  color: var(--black-olive);
+  font-family: "Roboto", sans-serif;
+}
+
+*::-webkit-input-placeholder {
+  color: var(--black-olive);
+  font-weight: 300;
+}
+
+*::-webkit-scrollbar {
+  width: 1vw;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--black-olive);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--platinum);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--isabelline);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+button:hover {
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+  background: var(--tomato);
+  color: var(--isabelline);
+}
+
+button:hover * {
+  transition: color 0.2s ease;
+  color: var(--isabelline);
+}
+
+hgroup {
+  border-bottom: 2px solid var(--black-olive);
+  padding: 2vh 2vw;
+  max-width: 50vw;
+}
+
+hgroup>h1 {
+  margin: 0;
+  font-weight: 800;
+  font-size: 80px;
+}
+
+hgroup>h2 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 40px;
+}

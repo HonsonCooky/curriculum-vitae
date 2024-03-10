@@ -1,0 +1,25 @@
+@import url("../../modules/global.css");
+
+search {
+  display: flex;
+  gap: 2px;
+  max-width: 50vw;
+}
+
+search>input {
+  flex: 1;
+  border: none;
+  border-radius: 0 1vh 1vh 0;
+  background: var(--platinum);
+  padding: 0.5vh 2vw;
+  font-size: 24px;
+}
+
+search>button {
+  border: none;
+  border-radius: 1vh 3vh 3vh 1vh;
+  background: var(--platinum);
+  padding: 5px;
+  min-width: 60px;
+  font-size: 20px;
+}
