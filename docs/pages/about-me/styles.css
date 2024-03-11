@@ -1,25 +1,49 @@
 @import url("../../modules/global.css");
 
+hgroup {
+  justify-content: end;
+  text-align: end;
+}
+
+main h2 {
+  font-weight: 100;
+  font-size: 40px;
+}
+
 search {
   display: flex;
+  flex-direction: row;
+  justify-content: end;
   gap: 2px;
-  max-width: 50vw;
 }
 
 search>input {
   flex: 1;
   border: none;
-  border-radius: 0 1vh 1vh 0;
-  background: var(--platinum);
-  padding: 0.5vh 2vw;
-  font-size: 24px;
+  border-bottom: 2px solid var(--text);
+  background: transparent;
+  padding: 1vh 2vw 0.5vh 4vw;
+  font-size: 20px;
 }
 
 search>button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   border: none;
-  border-radius: 1vh 3vh 3vh 1vh;
-  background: var(--platinum);
+  border-bottom: 2px solid var(--text);
+  border-left: 2px solid var(--text);
+  background: transparent;
   padding: 5px;
-  min-width: 60px;
+  min-width: 5vw;
   font-size: 20px;
+}
+
+search>button>i {
+  color: var(--text);
+}
+
+main {
+  padding: 2vh 2vw;
 }
