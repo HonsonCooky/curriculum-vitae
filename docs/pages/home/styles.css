@@ -50,7 +50,7 @@ nav > button {
   top: 0;
   right: 0;
   clip-path: polygon(100%20%, 75%40%, 40%30%, 0%50%, 30%100%, 100%100%);
-  background: var(--pink);
+  background: var(--green);
   width: 50vw;
   max-width: 45vw;
   height: 100%;
@@ -61,7 +61,7 @@ nav > button {
   top: 0;
   right: 0;
   clip-path: polygon(100%70%, 70%90%, 5%95%, 10%100%, 100%100%);
-  background: var(--mauve);
+  background: var(--blue);
   width: 50vw;
   max-width: 45vw;
   height: 100%;
