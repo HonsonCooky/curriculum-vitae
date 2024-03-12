@@ -18,14 +18,14 @@ nav {
   margin-top: 15vh;
 }
 
-nav>button {
+nav > button {
   display: flex;
   position: relative;
   align-items: center;
   gap: 2vw;
   border: none;
   border-bottom: 2px solid var(--text);
-  background: transparent;
+  border-radius: 0 2vh 2vh 0;
   padding: 0.5vh 2vw;
   width: 80%;
   font-weight: 300;

@@ -74,6 +74,7 @@
 /* Default Values */
 * {
   outline: none;
+  border-radius: 2vh;
   color: var(--text);
   /* font-family: "Roboto", sans-serif; */
   font-family: "JetBrains Mono", monospace;
@@ -114,13 +115,17 @@ button:hover {
   transition:
     color 0.2s ease,
     background 0.2s ease;
-  background: var(--lavender);
+  background: var(--mauve);
   color: var(--base);
 }
 
 button:hover * {
   transition: color 0.2s ease;
   color: var(--base);
+}
+
+button {
+  background: var(--surface0);
 }
 
 header {
@@ -133,16 +138,16 @@ hgroup {
   padding: 2vh 2vw;
 }
 
-hgroup>h1 {
+hgroup > h1 {
   margin: 0;
   font-weight: 800;
-  font-size: 80px;
+  font-size: 10vh;
 }
 
-hgroup>h2 {
+hgroup > h2 {
   margin: 0;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 5vh;
 }
 
 .marked {
