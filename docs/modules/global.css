@@ -37,9 +37,7 @@
 /* Default Values */
 * {
   outline: none;
-  border-radius: 2vh;
   color: var(--text);
-  /* font-family: "Roboto", sans-serif; */
   font-family: "JetBrains Mono", monospace;
 }
 
@@ -85,32 +83,6 @@ button:hover {
 button:hover * {
   transition: color 0.2s ease;
   color: var(--base);
-}
-
-button {
-  background: var(--surface0);
-}
-
-header {
-  position: sticky;
-  top: 0;
-}
-
-hgroup {
-  border-bottom: 2px solid var(--text);
-  padding: 2vh 2vw;
-}
-
-hgroup > h1 {
-  margin: 0;
-  font-weight: 800;
-  font-size: 10vh;
-}
-
-hgroup > h2 {
-  margin: 0;
-  font-weight: 300;
-  font-size: 5vh;
 }
 
 .marked {
