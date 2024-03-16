@@ -3,9 +3,10 @@
     display: flex;
     flex-direction: row;
     border-radius: 2vh;
-    background: var(--a1);
+    background: var(--surface);
     width: 90%;
     height: 70vh;
+    overflow: hidden;
   }
 
   #title {
@@ -32,17 +33,28 @@
   #profile-container {
     position: relative;
     flex: 2;
-    border-radius: 2vh;
-    background: rgba(25, 23, 36, 0.5);
     height: 100%;
+  }
+
+  #profile-container>i {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transition:
+      font-size 0.5s ease,
+      top 0.5s ease,
+      left 0.5s ease;
+    font-size: 0vh;
   }
 
   #profile-png {
     position: absolute;
     right: 5%;
     bottom: 0;
-    max-width: 120%;
-    max-height: 105%;
+    z-index: 100;
+    max-width: 100%;
+    max-height: 95%;
   }
 
   #tags {
@@ -59,9 +71,7 @@
     justify-content: center;
     align-items: center;
     gap: 1vh;
-    border: 0.4vh solid var(--a2);
     border-radius: 2vh;
-    background: var(--base);
     padding: 1vh 0vw;
     height: 10vh;
   }

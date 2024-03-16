@@ -1,13 +1,9 @@
-export function implementSearchBox(searchBox, searchButton, searchElement) {
+function implementSearchBox(searchBox, searchElement) {
   if (!searchBox || !searchElement) return;
 
   let currentIndex = -1;
   let prevQuery = "";
   const error = "error";
-
-  function scrollIntoViewIfNeeded(element) {
-    element.classList.add(highlight);
-  }
 
   function findAndReplace(query, element) {
     const children = Array.from(element.children).filter((e) => e.innerText.length != 0);
@@ -83,10 +79,6 @@ export function implementSearchBox(searchBox, searchButton, searchElement) {
     }
   }
 
-  searchButton?.addEventListener("click", function() {
-    search(searchBox.value, false);
-  });
-
   searchBox.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
       event.preventDefault();
@@ -100,3 +92,7 @@ export function implementSearchBox(searchBox, searchButton, searchElement) {
   });
   return searchBox;
 }
+
+const searchBox = document.getElementById("page-search").querySelector("input");
+const searchElement = document.querySelector("main");
+implementSearchBox(searchBox, searchElement);

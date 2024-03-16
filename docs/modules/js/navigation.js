@@ -17,6 +17,7 @@ consoleLogo.addEventListener("click", function() {
 
 const navBtns = Array.from(document.querySelector("nav").children);
 navBtns.forEach((c) => {
+  if (!c.id.includes("btn")) return;
   c.addEventListener("click", function() {
     const elementId = c.id.replace("-btn", "") + "-section";
     const element = document.getElementById(elementId);
