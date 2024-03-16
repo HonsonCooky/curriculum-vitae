@@ -8,11 +8,11 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--a1);
+  background: var(--highlight-low);
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--s1);
+  background: var(--highlight-high);
 }
 
 html,
@@ -29,17 +29,12 @@ body {
   overflow-x: hidden;
 }
 
-button:hover {
+button:hover,
+search:hover {
   transition:
     color 0.2s ease,
     background 0.2s ease;
-  background: var(--s1);
-  color: var(--base);
-}
-
-button:hover * {
-  transition: color 0.2s ease;
-  color: var(--base);
+  background: var(--overlay);
 }
 
 main {
@@ -58,10 +53,10 @@ section {
 }
 
 .marked {
-  background: var(--a2);
+  background: var(--iris);
   color: var(--base);
 }
 
 .highlight {
-  background: var(--a1) !important;
+  background: var(--foam) !important;
 }

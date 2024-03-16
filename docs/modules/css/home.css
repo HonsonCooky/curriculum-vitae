@@ -19,14 +19,12 @@
 
   #title>h1 {
     margin: 0;
-    color: var(--s1);
     font-weight: 800;
     font-size: 8vh;
   }
 
   #title>h2 {
     margin: 0;
-    color: var(--s2);
     font-weight: 300;
     font-size: 4vh;
   }
@@ -35,13 +33,13 @@
     position: relative;
     flex: 2;
     border-radius: 2vh;
-    background: var(--a2);
+    background: rgba(25, 23, 36, 0.5);
     height: 100%;
   }
 
   #profile-png {
     position: absolute;
-    right: 0;
+    right: 5%;
     bottom: 0;
     max-width: 120%;
     max-height: 105%;
@@ -74,22 +72,6 @@
     justify-content: center;
     align-items: end;
     gap: 1vw;
-  }
-
-  #tags>div:nth-child(1) * {
-    color: var(--s1);
-  }
-
-  #tags>div:nth-child(2) * {
-    color: var(--s2);
-  }
-
-  #tags>div:nth-child(3) * {
-    color: var(--s3);
-  }
-
-  #tags>div:nth-child(4) * {
-    color: var(--a2);
   }
 
   #tags i {

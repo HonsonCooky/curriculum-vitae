@@ -13,31 +13,31 @@ header {
   #logo-console {
     display: flex;
     flex-direction: row;
-    opacity: 0.8;
-    border: 0.1vh solid var(--a2);
-    border-top: 1.5vh solid var(--a2);
+    align-items: center;
+    border: 0.1vh solid var(--iris);
+    border-top: 1.5vh solid var(--iris);
     border-radius: 1vh;
-    background-color: var(--a1);
-    padding: 1vh 3vw 1vh 1vw;
+    background-color: var(--overlay);
+    padding: 1vh 1vw 1vh 1vh;
   }
 
   #logo-console * {
-    font-size: 1.8vh;
+    font-size: 2vh;
     font-family: "JetBrains Mono", monospace;
+    user-select: none;
   }
 
   #logo-console *:nth-child(1) {
     margin-right: 0.5vw;
-    color: var(--s2);
+    color: var(--foam);
   }
 
   #logo-console *:nth-child(2) {
-    color: var(--s1);
+    color: var(--gold);
   }
 
   #logo-console *:nth-child(3) {
-    margin-right: 0.5vw;
-    color: var(--s3);
+    color: var(--love);
   }
 
   nav {
@@ -65,6 +65,7 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 1vw;
     border: 0.1vh solid var(--text);
     border-radius: 2vh;
     padding: 0.5vh 1vw;
@@ -72,6 +73,7 @@ header {
 
   nav>search * {
     border: none;
+    background: transparent;
     font-size: 2vh;
   }
 
