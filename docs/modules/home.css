@@ -1,0 +1,82 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  border-radius: 2vh;
+  background: var(--a1);
+  width: 90%;
+  height: 70vh;
+}
+
+#title {
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0vh 4vw;
+  max-height: 100%;
+}
+
+#title>h1 {
+  margin: 0;
+  color: var(--s1);
+  font-size: 8vh;
+}
+
+#title>h2 {
+  margin: 0;
+  color: var(--s2);
+  font-size: 4vh;
+}
+
+#profile-container {
+  position: relative;
+  flex: 2;
+  border-radius: 2vh;
+  background: var(--a2);
+  height: 100%;
+}
+
+#profile-png {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  max-width: 120%;
+  max-height: 105%;
+}
+
+#tags {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  width: 90%;
+}
+
+#tags>div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+  border: 2px solid var(--a2);
+  border-radius: 2vh;
+  background: var(--base);
+  padding: 1vh 0vw;
+  height: 10vh;
+}
+
+#tags>div>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+  gap: 1vw;
+}
+
+#tags i {
+  font-size: 5vh;
+}
+
+#tags span {
+  font-size: 2vh;
+}

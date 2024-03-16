@@ -1,61 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-@import url("https://www.nerdfonts.com/assets/css/webfont.css");
-
-/*THEME: Catppuccin Latte*/
-:root {
-  --rosewater: #f2d5cf;
-  --flamingo: #eebebe;
-  --pink: #f4b8e4;
-  --mauve: #ca9ee6;
-  --red: #e78284;
-  --maroon: #ea999c;
-  --peach: #ef9f76;
-  --yellow: #e5c890;
-  --green: #a6d189;
-  --teal: #81c8be;
-  --sky: #99d1db;
-  --sapphire: #85c1dc;
-  --blue: #8caaee;
-  --lavender: #babbf1;
-  --text: #c6d0f5;
-  --subtext1: #b5bfe2;
-  --subtext0: #a5adce;
-  --overlay2: #949cbb;
-  --overlay1: #838ba7;
-  --overlay0: #737994;
-  --surface2: #626880;
-  --surface1: #51576d;
-  --surface0: #414559;
-  --base: #303446;
-  --mantle: #292c3c;
-  --crust: #232634;
-  --btn-font-size: 16px;
-  --text-font-size: 14px;
-}
-
-/* Default Values */
-* {
-  outline: none;
-  color: var(--text);
-  font-family: "JetBrains Mono", monospace;
-}
-
 *::-webkit-input-placeholder {
   color: var(--text);
   font-weight: 300;
 }
 
 *::-webkit-scrollbar {
-  width: 1vw;
+  width: 0.7vw;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--mantle);
+  background: var(--a1);
 }
 
 *::-webkit-scrollbar-thumb {
-  background: var(--overlay2);
+  background: var(--s1);
 }
 
 html,
@@ -76,7 +33,7 @@ button:hover {
   transition:
     color 0.2s ease,
     background 0.2s ease;
-  background: var(--mauve);
+  background: var(--s1);
   color: var(--base);
 }
 
@@ -85,11 +42,26 @@ button:hover * {
   color: var(--base);
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+  min-height: 90vh;
+}
+
 .marked {
-  background: var(--lavender);
+  background: var(--a2);
   color: var(--base);
 }
 
 .highlight {
-  background: var(--yellow) !important;
+  background: var(--a1) !important;
 }

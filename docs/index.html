@@ -1,16 +1,79 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>About: Harrison Cook</title>
+    <title>Harrison Cook</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="HC_LOGO_LIGHT_48x48.png" />
+    <link rel="icon" href="../../assets/HC_LOGO_LIGHT_48x48.png" />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./scripts.js" defer></script>
   </head>
 
   <body>
-    <p>Kia Ora! Version 2.0.0 of this website is currently being built</p>
-    <p>Thank you for your interest! Feel free to get in contact with me via:</p>
-    <p>contact@honsoncooky.dev</p>
+    <header>
+      <div id="logo-console">
+        <span>@HonsonCooky</span>
+        <span>:$</span>
+      </div>
+      <nav>
+        <button id="home-btn"><i class="nf nf-oct-home"></i><span>Home</span></button>
+        <button id="about-me-btn"><i class="nf nf-oct-person"></i><span>About Me</span></button>
+        <button id="work-experience-btn"><i class="nf nf-oct-code"></i><span>Work Experience</span></button>
+        <button id="side-projects-btn"><i class="nf nf-oct-project"></i><span>Side Projects</span></button>
+        <button id="blog-posts-btn"><i class="nf nf-oct-note"></i><span>Blog Posts</span></button>
+        <search>
+          <i class="nf nf-oct-search"></i>
+          <input placeholder="Search" />
+        </search>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="card">
+          <div id="title">
+            <h2>Kia Ora, I'm</h2>
+            <h1>Harrison Cook</h1>
+            <p>Qualified Software Engineer</p>
+          </div>
+          <div id="profile-container">
+            <img id="profile-png" src="../../assets/me-2.png" alt="me" />
+          </div>
+        </div>
+        <div id="tags">
+          <div id="frontend">
+            <div class="icons">
+              <i class="nf nf-md-language_css3"></i>
+              <i class="nf nf-md-language_html5"></i>
+              <i class="nf nf-md-language_typescript"></i>
+            </div>
+            <span>FrontEnd</span>
+          </div>
+          <div id="backend">
+            <div class="icons">
+              <i class="nf nf-md-language_csharp"></i>
+              <i class="nf nf-md-language_java"></i>
+              <i class="nf nf-md-language_cpp"></i>
+            </div>
+            <span>BackEnd</span>
+          </div>
+          <div id="integrations">
+            <div class="icons">
+              <i class="nf nf-cod-azure"></i>
+              <i class="nf nf-md-terraform"></i>
+              <i class="nf nf-seti-github"></i>
+            </div>
+            <span>Integrations</span>
+          </div>
+          <div id="More">
+            <div class="icons">
+              <i class="nf nf-md-language_ruby"></i>
+              <i class="nf nf-seti-f_sharp"></i>
+              <i class="nf nf-md-language_rust"></i>
+            </div>
+            <span>And More..</span>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

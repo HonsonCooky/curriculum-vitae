@@ -1,0 +1,70 @@
+header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  flex-direction: row;
+  align-items: center;
+  z-index: 100;
+  border-radius: 2vh;
+  background: var(--base);
+  padding: 1vh 5%;
+  height: 8vh;
+}
+
+header>#logo-console {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--text);
+  border-top: 2vh solid var(--text);
+  border-radius: 1vh;
+  background-color: var(--a1);
+  padding: 1vh 4vw 1vh 1vw;
+}
+
+header>#logo-console * {
+  font-family: "JetBrains Mono", monospace;
+}
+
+header>#logo-console *:nth-child(1) {
+  color: var(--s1);
+}
+
+header>#logo-console *:nth-child(2) {
+  color: var(--s2);
+}
+
+header>nav {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 1vw;
+  max-height: 100%;
+}
+
+header>nav>button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5vw;
+  border: none;
+  border-radius: 2vh;
+  background: transparent;
+  padding: 1vh 1vw;
+}
+
+header>nav>search {
+  border: 1px solid var(--text);
+  border-radius: 2vh;
+  padding: 0.5vh 1vw;
+}
+
+header>nav>search * {
+  border: none;
+  font-size: 2vh;
+}
+
+header>nav>button * {
+  font-size: 2vh;
+}
