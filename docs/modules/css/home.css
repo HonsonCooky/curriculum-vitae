@@ -5,41 +5,35 @@
     border-radius: 2vh;
     background: var(--overlay);
     width: 90%;
-  }
-
-  .card > * {
-    flex-grow: 1;
-    /* flex-basis: 450px; */
+    overflow: hidden;
   }
 
   #title {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     padding: 2vh 2vw;
     min-height: 20vh;
   }
 
-  #title > * {
-    margin: 0;
-  }
-
   #title > h1 {
+    margin: 0 0 2vh 0;
     color: var(--gold);
     font-weight: 800;
-    font-size: clamp(1.25rem, -0.3676rem + 6.4706vw, 4rem);
+    font-size: clamp(1.25rem, 10vw, 5rem);
   }
 
   #title > h2 {
+    margin: 0 0;
     color: var(--foam);
     font-weight: 300;
     font-size: 4vh;
   }
 
-  #title > p,
-  #title > p * {
+  #title > label {
     font-weight: 400;
-    font-size: 2vh;
+    font-size: 3vh;
   }
 
   #title > p > a {
@@ -48,27 +42,14 @@
 
   #profile-container {
     display: flex;
-    position: relative;
     justify-content: end;
-    padding: 2vh 2vw 0 0;
+    background: var(--gold);
+    padding: 2vh 2vw 0 2vw;
     overflow: hidden;
   }
 
-  #profile-container > i {
-    position: absolute;
-    top: 100%;
-    right: 50%;
-    transition:
-      top 0.5s ease,
-      right 0.5s ease;
-  }
-
   #profile-png {
-    position: relative;
-    bottom: 0%;
-    left: 0%;
-    z-index: 100;
-    max-width: 50vw;
+    max-width: 70vw;
     max-height: 70vh;
   }
 
@@ -87,6 +68,7 @@
     align-items: center;
     gap: 1vh;
     border-radius: 2vh;
+    background: var(--overlay);
     padding: 1vh 0vw;
     height: 10vh;
   }
@@ -99,8 +81,20 @@
     gap: 1vw;
   }
 
+  #tags > div:nth-child(1) * {
+    color: var(--love);
+  }
+
+  #tags > div:nth-child(2) * {
+    color: var(--foam);
+  }
+
+  #tags > div:nth-child(3) * {
+    color: var(--iris);
+  }
+
   #tags i {
-    font-size: 5vh;
+    font-size: 3em;
   }
 
   #tags span {
