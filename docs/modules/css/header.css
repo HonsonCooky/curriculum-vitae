@@ -61,23 +61,7 @@ header {
     padding: 1vh 1vw;
   }
 
-  nav>search {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1vw;
-    border: 0.1vh solid var(--text);
-    border-radius: 2vh;
-    padding: 0.5vh 1vw;
-  }
-
-  nav>search * {
-    border: none;
-    background: transparent;
-    font-size: 2vh;
-  }
-
   nav>button * {
-    font-size: 2vh;
+    font-size: 2.2vh;
   }
 }
