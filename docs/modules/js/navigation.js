@@ -4,11 +4,6 @@ function scrollElementIntoView(element) {
   window.scrollTo({ top: pos - headerSize, behavior: "smooth" });
 }
 
-const pageSearchElement = document.getElementById("page-search");
-pageSearchElement.addEventListener("click", function() {
-  pageSearchElement.querySelector("input").focus();
-});
-
 const consoleLogo = document.getElementById("logo-console");
 consoleLogo.addEventListener("click", function() {
   const home = document.getElementById("home-section");

@@ -3,39 +3,15 @@ const colors = ["text", "love", "gold", "rose", "pine", "foam", "iris"];
 const settings = [
   {
     top: "20%",
-    left: "85%",
+    right: "10%",
     color: colors[4],
-    size: 7,
+    size: 5,
   },
   {
     top: "24%",
-    left: "66%",
+    right: "30%",
     color: colors[6],
     size: 5,
-  },
-  {
-    top: "8%",
-    left: "80%",
-    color: colors[0],
-    size: 6,
-  },
-  {
-    top: "10%",
-    left: "60%",
-    color: colors[5],
-    size: 5,
-  },
-  {
-    top: "2%",
-    left: "50%",
-    color: colors[1],
-    size: 4,
-  },
-  {
-    top: "2%",
-    left: "0%",
-    color: colors[2],
-    size: 6,
   },
 ];
 // const colors = ["text", "love", "gold", "rose", "pine", "foam", "iris"];
@@ -45,11 +21,11 @@ function move(element, index) {
     if (index > settings.length - 1) return;
     const setting = settings[index % settings.length];
     element.style.top = setting.top;
-    element.style.left = setting.left;
+    element.style.right = setting.right;
     element.style.color = `var(--${setting.color})`;
-    element.style.fontSize = `${setting.size}vh`;
+    // element.style.fontSize = `0.${setting.size}em`;
     element.style.zIndex = icons.length - index;
-  }, index * 100);
+  }, index * 200);
 }
 
 icons.forEach((element, index) => {

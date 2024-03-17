@@ -1,60 +1,75 @@
 #home-section {
   .card {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     border-radius: 2vh;
-    background: var(--surface);
+    background: var(--overlay);
     width: 90%;
-    height: 70vh;
-    overflow: hidden;
+  }
+
+  .card > * {
+    flex-grow: 1;
+    /* flex-basis: 450px; */
   }
 
   #title {
     display: flex;
-    flex: 3;
     flex-direction: column;
     justify-content: center;
-    padding: 0vh 4vw;
-    max-height: 100%;
+    padding: 2vh 2vw;
+    min-height: 20vh;
   }
 
-  #title>h1 {
+  #title > * {
     margin: 0;
+  }
+
+  #title > h1 {
+    color: var(--gold);
     font-weight: 800;
-    font-size: 8vh;
+    font-size: clamp(1.25rem, -0.3676rem + 6.4706vw, 4rem);
   }
 
-  #title>h2 {
-    margin: 0;
+  #title > h2 {
+    color: var(--foam);
     font-weight: 300;
     font-size: 4vh;
   }
 
-  #profile-container {
-    position: relative;
-    flex: 2;
-    height: 100%;
+  #title > p,
+  #title > p * {
+    font-weight: 400;
+    font-size: 2vh;
   }
 
-  #profile-container>i {
-    display: none;
+  #title > p > a {
+    color: var(--rose);
+  }
+
+  #profile-container {
+    display: flex;
+    position: relative;
+    justify-content: end;
+    padding: 2vh 2vw 0 0;
+    overflow: hidden;
+  }
+
+  #profile-container > i {
     position: absolute;
     top: 100%;
-    left: 50%;
+    right: 50%;
     transition:
-      font-size 0.5s ease,
       top 0.5s ease,
-      left 0.5s ease;
-    font-size: 0vh;
+      right 0.5s ease;
   }
 
   #profile-png {
-    position: absolute;
-    right: 5%;
-    bottom: 0;
+    position: relative;
+    bottom: 0%;
+    left: 0%;
     z-index: 100;
-    max-width: 100%;
-    max-height: 95%;
+    max-width: 50vw;
+    max-height: 70vh;
   }
 
   #tags {
@@ -64,7 +79,7 @@
     width: 90%;
   }
 
-  #tags>div {
+  #tags > div {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -76,7 +91,7 @@
     height: 10vh;
   }
 
-  #tags>div>div {
+  #tags > div > div {
     display: flex;
     flex-direction: row;
     justify-content: center;

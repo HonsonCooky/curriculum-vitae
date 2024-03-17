@@ -90,9 +90,4 @@ function implementSearchBox(searchBox, searchElement) {
       document.activeElement.blur();
     }
   });
-  return searchBox;
 }
-
-const searchBox = document.getElementById("page-search").querySelector("input");
-const searchElement = document.querySelector("main");
-implementSearchBox(searchBox, searchElement);
