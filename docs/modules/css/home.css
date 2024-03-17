@@ -106,6 +106,7 @@
   }
 
   #profile-png {
+    filter: drop-shadow(var(--overlay) 0.5rem 0.5rem 1rem);
     max-width: 100%;
     max-height: 80vh;
   }
