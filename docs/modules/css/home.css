@@ -1,95 +1,89 @@
 #home-section {
   .card {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     border-radius: 2vh;
     background: var(--overlay);
     width: 90%;
+    min-height: 80vh;
     overflow: hidden;
   }
 
-  #title {
+  #info {
     display: flex;
-    flex: 1;
+    flex: 3;
     flex-direction: column;
     justify-content: center;
+    gap: 10vh;
     padding: 2vh 2vw;
     min-height: 20vh;
   }
 
-  #title > h1 {
+  #title>h1 {
     margin: 0 0 2vh 0;
     color: var(--gold);
     font-weight: 800;
     font-size: clamp(1.25rem, 10vw, 5rem);
   }
 
-  #title > h2 {
+  #title>h2 {
     margin: 0 0;
     color: var(--foam);
     font-weight: 300;
     font-size: 4vh;
   }
 
-  #title > label {
+  #title>label {
     font-weight: 400;
     font-size: 3vh;
-  }
-
-  #title > p > a {
-    color: var(--rose);
-  }
-
-  #profile-container {
-    display: flex;
-    justify-content: end;
-    background: var(--gold);
-    padding: 2vh 2vw 0 2vw;
-    overflow: hidden;
-  }
-
-  #profile-png {
-    max-width: 70vw;
-    max-height: 70vh;
   }
 
   #tags {
     display: flex;
     flex-direction: row;
-    gap: 2vw;
+    flex-wrap: wrap;
+    gap: 1vw;
     width: 90%;
   }
 
-  #tags > div {
+  .tag {
     display: flex;
-    flex: 1;
+    flex-grow: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1vh;
     border-radius: 2vh;
-    background: var(--overlay);
-    padding: 1vh 0vw;
-    height: 10vh;
+    background: var(--base);
+    padding: 1vh 2vw;
+    min-height: 10vh;
   }
 
-  #tags > div > div {
+  .icons {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     gap: 1vw;
+    padding: 1vh 2vw;
   }
 
-  #tags > div:nth-child(1) * {
+  #more>.icons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #frontend * {
     color: var(--love);
   }
 
-  #tags > div:nth-child(2) * {
+  #backend * {
     color: var(--foam);
   }
 
-  #tags > div:nth-child(3) * {
+  #integrations * {
     color: var(--iris);
   }
 
@@ -100,5 +94,30 @@
   #tags span {
     font-weight: 800;
     font-size: 2vh;
+  }
+
+  #profile-container {
+    display: flex;
+    flex: 2;
+    justify-content: end;
+    align-items: end;
+    background: var(--gold);
+    padding: 2vh 2vw 0 2vw;
+  }
+
+  #profile-png {
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
+  @media only screen and (max-width: 1080px) {
+    #info {
+      align-items: center;
+      text-align: center;
+    }
+
+    #profile-container {
+      display: none;
+    }
   }
 }

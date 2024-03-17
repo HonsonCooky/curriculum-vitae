@@ -1,90 +1,86 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <title>Harrison Cook</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="../../assets/HC_LOGO_LIGHT_48x48.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./scripts.js" defer></script>
+  </head>
 
-<head>
-  <title>Harrison Cook</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" href="../../assets/HC_LOGO_LIGHT_48x48.png" />
-  <link rel="stylesheet" href="./styles.css" />
-  <script type="module" src="./scripts.js" defer></script>
-</head>
-
-<body>
-  <!-- HEADER -->
-  <header>
-    <div id="logo-console">
-      <span>PS</span>
-      <span>C:\HonsonCooky</span>
-      <span>></span>
-    </div>
-    <nav>
-      <button id="about-me-btn"><i class="nf nf-oct-person"></i><span>About Me</span></button>
-      <button id="work-experience-btn"><i class="nf nf-oct-code"></i><span>Work Experience</span></button>
-      <button id="side-projects-btn"><i class="nf nf-oct-project"></i><span>Side Projects</span></button>
-      <button id="blog-posts-btn"><i class="nf nf-oct-note"></i><span>Blog Posts</span></button>
-    </nav>
-  </header>
-  <main>
-    <!-- HOME -->
-    <section id="home-section">
-      <div class="card">
-        <div id="title">
-          <h2>Kia Ora, I'm</h2>
-          <h1>Harrison Cook</h1>
-          <label>A Full Stack, Qualified Software Engineer.</label>
-          <p>
-            Here hosts the humble HTTP home of happily hard-working Harrison. A heuristic hands-on happening,
-            harbouring hearty heat hatched from his head. Hooked? Heed high for hyperlinks.
-          </p>
-        </div>
-        <div id="profile-container">
-          <img id="profile-png" src="../../assets/me-3.png" alt="me" />
-        </div>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div id="logo-console">
+        <span>PS</span>
+        <span>C:\HonsonCooky</span>
+        <span>></span>
       </div>
-      <div id="tags">
-        <div id="frontend">
-          <div class="icons">
-            <i class="nf nf-md-language_html5"></i>
-            <i class="nf nf-md-language_typescript"></i>
-            <i class="nf nf-seti-react"></i>
+      <nav>
+        <button id="about-me-btn"><i class="nf nf-oct-person"></i><span>About Me</span></button>
+        <button id="work-experience-btn"><i class="nf nf-oct-code"></i><span>Work Experience</span></button>
+        <button id="side-projects-btn"><i class="nf nf-oct-project"></i><span>Side Projects</span></button>
+        <button id="blog-posts-btn"><i class="nf nf-oct-note"></i><span>Blog Posts</span></button>
+      </nav>
+    </header>
+    <main>
+      <!-- HOME -->
+      <section id="home-section">
+        <div class="card">
+          <div id="info">
+            <div id="title">
+              <h2>Kia Ora, I'm</h2>
+              <h1>Harrison Cook</h1>
+              <label>A Full Stack, Qualified Software Engineer.</label>
+            </div>
+            <div id="tags">
+              <div id="frontend" class="tag">
+                <div class="icons">
+                  <i class="nf nf-md-language_html5"></i>
+                  <i class="nf nf-md-language_typescript"></i>
+                  <i class="nf nf-seti-react"></i>
+                </div>
+                <span>FrontEnd</span>
+              </div>
+              <div id="backend" class="tag">
+                <div class="icons">
+                  <i class="nf nf-md-language_csharp"></i>
+                  <i class="nf nf-dev-dotnet"></i>
+                  <i class="nf nf-seti-db"></i>
+                </div>
+                <span>BackEnd</span>
+              </div>
+              <div id="integrations" class="tag">
+                <div class="icons">
+                  <i class="nf nf-cod-azure"></i>
+                  <i class="nf nf-md-terraform"></i>
+                  <i class="nf nf-seti-github"></i>
+                </div>
+                <span>Integrations</span>
+              </div>
+              <div id="more" class="tag">
+                <div class="icons">
+                  <i class="nf nf-md-powershell"></i>
+                  <i class="nf nf-md-language_rust"></i>
+                  <i class="nf nf-md-language_java"></i>
+                </div>
+                <span>And More...</span>
+              </div>
+            </div>
           </div>
-          <span>FrontEnd</span>
-        </div>
-        <div id="backend">
-          <div class="icons">
-            <i class="nf nf-md-language_csharp"></i>
-            <i class="nf nf-dev-dotnet"></i>
-            <i class="nf nf-seti-db"></i>
+          <div id="profile-container">
+            <img id="profile-png" src="../../assets/me-3.png" alt="me" />
           </div>
-          <span>BackEnd</span>
         </div>
-        <div id="integrations">
-          <div class="icons">
-            <i class="nf nf-cod-azure"></i>
-            <i class="nf nf-md-terraform"></i>
-            <i class="nf nf-seti-github"></i>
-          </div>
-          <span>Integrations</span>
-        </div>
-        <div id="More">
-          <div class="icons">
-            <i class="nf nf-md-language_rust"></i>
-            <i class="nf nf-md-language_java"></i>
-            <i class="nf nf-md-language_ruby"></i>
-          </div>
-          <span>And More...</span>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ABOUT -->
-    <section id="about-me-section">
-      <div>
-        <h1>About Me</h1>
-      </div>
-    </section>
-  </main>
-</body>
-
+      <!-- ABOUT -->
+      <section id="about-me-section">
+        <div>
+          <h1>About Me</h1>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
