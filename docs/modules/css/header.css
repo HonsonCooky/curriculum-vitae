@@ -5,7 +5,6 @@ header {
   flex-direction: row;
   align-items: center;
   z-index: 100;
-  border-radius: 2vh;
   background: var(--base);
   padding: 1vh 5%;
   height: 8vh;
@@ -50,7 +49,7 @@ header {
     max-height: 100%;
   }
 
-  nav>button {
+  nav > button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -61,7 +60,7 @@ header {
     padding: 1vh 1vw;
   }
 
-  nav>button * {
+  nav > button * {
     font-size: 2.2vh;
   }
 }

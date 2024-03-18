@@ -11,15 +11,32 @@ consoleLogo.addEventListener("click", function() {
 });
 
 const navBtns = Array.from(document.querySelector("nav").children);
-navBtns.forEach((c) => {
-  if (!c.id.includes("btn")) return;
-  c.addEventListener("click", function() {
-    const elementId = c.id.replace("-btn", "") + "-section";
+navBtns.forEach((btn) => {
+  if (!btn.id.includes("btn")) return;
+  btn.addEventListener("click", function() {
+    const elementId = btn.id.replace("-btn", "") + "-section";
     const element = document.getElementById(elementId);
     if (!element) {
       console.error(`Unable to find ${elementId}`);
       return;
     }
     scrollElementIntoView(element);
+  });
+});
+
+window.addEventListener("scroll", function() {
+  navBtns.forEach((btn) => {
+    const elementId = btn.id.replace("-btn", "") + "-section";
+    const element = document.getElementById(elementId);
+    const elementRect = element.getBoundingClientRect();
+    const breakPoint = window.innerHeight / 3;
+    const children = Array.from(btn.children);
+
+    if (elementRect.top < breakPoint && elementRect.bottom > breakPoint) {
+      console.log(children);
+      children.forEach((c) => (c.style.color = "var(--foam)"));
+    } else {
+      children.forEach((c) => (c.style.color = "inherit"));
+    }
   });
 });
