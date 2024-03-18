@@ -10,7 +10,7 @@ consoleLogo.addEventListener("click", function() {
   scrollElementIntoView(home);
 });
 
-const navBtns = Array.from(document.querySelector("nav").children);
+const navBtns = Array.from(document.getElementById("web-nav").children);
 navBtns.forEach((btn) => {
   if (!btn.id.includes("btn")) return;
   btn.addEventListener("click", function() {
@@ -34,7 +34,7 @@ window.addEventListener("scroll", function() {
 
     if (elementRect.top < breakPoint && elementRect.bottom > breakPoint) {
       console.log(children);
-      children.forEach((c) => (c.style.color = "var(--foam)"));
+      children.forEach((c) => (c.style.color = "var(--gold)"));
     } else {
       children.forEach((c) => (c.style.color = "inherit"));
     }

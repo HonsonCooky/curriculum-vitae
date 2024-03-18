@@ -39,7 +39,7 @@ header {
     color: var(--love);
   }
 
-  nav {
+  #web-nav {
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -49,7 +49,7 @@ header {
     max-height: 100%;
   }
 
-  nav > button {
+  #web-nav > button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -60,7 +60,7 @@ header {
     padding: 1vh 1vw;
   }
 
-  nav > button * {
+  #web-nav > button * {
     font-size: 2.2vh;
   }
 }
