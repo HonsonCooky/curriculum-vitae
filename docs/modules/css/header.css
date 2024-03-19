@@ -38,49 +38,48 @@ header {
   }
 
   #home {
+    flex: 1;
     font-family: inherit;
 
-    >button {
-      >span:nth-child(1) {
+    > button {
+      > span:nth-child(1) {
         margin-right: 10px;
         color: var(--foam);
         font-family: inherit;
       }
 
-      >span:nth-child(2) {
+      > span:nth-child(2) {
         color: var(--gold);
         font-family: inherit;
       }
 
-      >i {
+      > i {
         transition: rotate 0.2s ease;
         color: var(--love);
-        font-size: inherit;
+        font-size: 0.8rem;
       }
     }
   }
 
   #pages {
-    display: flex;
-    flex-direction: row;
     align-items: center;
 
     button {
       gap: 8px;
 
-      >i {
+      > i {
         color: inherit;
         font-size: inherit;
       }
 
-      >span {
+      > span {
         color: inherit;
         font-size: inherit;
         font-family: inherit;
       }
     }
 
-    >span {
+    > span {
       color: inherit;
       font-size: inherit;
       font-family: inherit;
@@ -93,7 +92,7 @@ header {
     #home {
       width: 100%;
 
-      >button {
+      > button {
         width: 100%;
       }
     }
@@ -105,11 +104,11 @@ header {
       gap: 0;
       width: 100%;
 
-      >button {
+      > button {
         width: 100%;
       }
 
-      >span {
+      > span {
         display: none;
       }
     }
