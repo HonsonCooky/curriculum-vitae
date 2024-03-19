@@ -28,12 +28,6 @@ body {
   overflow-x: hidden;
 }
 
-button:hover,
-search:hover {
-  transition: background 0.5s ease;
-  background: var(--highlight-high);
-}
-
 main {
   display: flex;
   flex-direction: column;
@@ -42,13 +36,4 @@ main {
 
 section {
   min-height: 90vh;
-}
-
-.marked {
-  background: var(--iris);
-  color: var(--base);
-}
-
-.highlight {
-  background: var(--foam) !important;
 }

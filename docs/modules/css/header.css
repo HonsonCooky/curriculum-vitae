@@ -3,64 +3,111 @@ header {
   position: sticky;
   top: 0;
   flex-direction: row;
-  align-items: center;
-  z-index: 100;
+  align-items: start;
+  margin: 8px;
+  border: 2px solid var(--iris);
+  border-top: 20px solid var(--iris);
+  border-radius: 8px;
   background: var(--base);
-  padding: 1vh 5%;
-  height: 8vh;
+  overflow: hidden;
+  font-size: 18px;
+  font-family: "JetBrains Mono", monospace;
 
-  #logo-console {
+  div {
+    display: flex;
+    flex-direction: row;
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 0.1vh solid var(--iris);
-    border-top: 1.5vh solid var(--iris);
-    border-radius: 1vh;
-    background-color: var(--overlay);
-    padding: 1vh 1vw 1vh 1vh;
-  }
-
-  #logo-console * {
-    font-size: 2vh;
-    font-family: "JetBrains Mono", monospace;
-    user-select: none;
-  }
-
-  #logo-console *:nth-child(1) {
-    margin-right: 0.5vw;
-    color: var(--foam);
-  }
-
-  #logo-console *:nth-child(2) {
-    color: var(--gold);
-  }
-
-  #logo-console *:nth-child(3) {
-    color: var(--love);
-  }
-
-  #web-nav {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    gap: 1vw;
-    max-height: 100%;
-  }
-
-  #web-nav > button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5vw;
     border: none;
-    border-radius: 2vh;
     background: transparent;
-    padding: 1vh 1vw;
+    padding: 10px;
+    font-size: inherit;
+    font-family: inherit;
   }
 
-  #web-nav > button * {
-    font-size: 2.2vh;
+  button:hover {
+    transition: background 0.2s ease-in;
+    background: var(--highlight-med);
+  }
+
+  #home {
+    font-family: inherit;
+
+    >button {
+      >span:nth-child(1) {
+        margin-right: 10px;
+        color: var(--foam);
+        font-family: inherit;
+      }
+
+      >span:nth-child(2) {
+        color: var(--gold);
+        font-family: inherit;
+      }
+
+      >i {
+        color: var(--love);
+        font-size: inherit;
+      }
+    }
+  }
+
+  #pages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    button {
+      gap: 8px;
+
+      >i {
+        color: inherit;
+        font-size: inherit;
+      }
+
+      >span {
+        color: inherit;
+        font-size: inherit;
+        font-family: inherit;
+      }
+    }
+
+    >span {
+      color: inherit;
+      font-size: inherit;
+      font-family: inherit;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+
+    #home {
+      >button {
+        flex: 1;
+      }
+    }
+
+    #pages {
+      display: none;
+      flex-direction: column;
+      align-items: start;
+      gap: 0;
+      width: 100%;
+
+      >button {
+        width: 100%;
+      }
+
+      >span {
+        display: none;
+      }
+    }
   }
 }
