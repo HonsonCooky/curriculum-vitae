@@ -23,7 +23,7 @@ function toggleMobileNavBtns(off) {
   }
 }
 
-window.addEventListener("click", function(event) {
+window.addEventListener("click", function (event) {
   if (
     !(pages.contains(event.target) || homeBtn.contains(event.target)) &&
     window.getComputedStyle(pages).display != "none"
@@ -32,7 +32,7 @@ window.addEventListener("click", function(event) {
   }
 });
 
-homeBtn.addEventListener("click", function() {
+homeBtn.addEventListener("click", function () {
   if (window.getComputedStyle(pages).display === "none") {
     toggleMobileNavBtns();
   } else {
@@ -42,17 +42,22 @@ homeBtn.addEventListener("click", function() {
 });
 
 Array.from(pages.querySelectorAll("button")).forEach((navBtn) => {
-  navBtn.addEventListener("click", function() {
+  navBtn.addEventListener("click", function () {
     const sectionId = navBtn.id.replace("btn", "section");
     toggleMobileNavBtns(true);
     scrollIntoView(sectionId);
   });
 });
 
-window.addEventListener("resize", function() {
+window.addEventListener("resize", function () {
   if (window.matchMedia("(max-width: 600px)").matches) {
     pages.style.display = "none";
   } else {
     pages.style.display = "flex";
   }
+});
+
+window.addEventListener("scroll", function (event) {
+  // TODO
+  console.log(event);
 });
