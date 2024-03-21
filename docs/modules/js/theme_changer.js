@@ -1,19 +1,16 @@
-const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 const attr = "data-theme";
-const themeBtn = document.getElementById("theme-btn");
 
-function setTheme(theme) {
+function currentTheme() {
+  return document.documentElement.getAttribute(attr);
+}
+
+function setTheme(isDark) {
+  const theme = isDark ? "dark" : "light";
   document.documentElement.setAttribute(attr, theme);
-  let classPrefix = "nf nf-md-brightness_";
-  const classSuffix = theme === "dark" ? "4" : "5";
-  themeBtn.className = classPrefix + classSuffix;
 }
 
-function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute(attr);
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-  setTheme(newTheme);
+function resetTheme() {
+  setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
 }
 
-themeBtn.addEventListener("click", toggleTheme);
-setTheme(defaultTheme);
+resetTheme();

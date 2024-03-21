@@ -2,7 +2,29 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
+
+  button {
+    display: flex;
+    flex-direction: row;
+    border: none;
+    background: none;
+    padding: 6px 1rem 6px 10px;
+    font-size: 1rem;
+
+    &:hover {
+      padding-right: 0;
+
+      *:last-child::after {
+        position: relative;
+        margin: 0 0.5rem;
+        background: var(--pine);
+        content: "_";
+        color: var(--pine);
+      }
+    }
+  }
 
   #logo {
     display: flex;
@@ -11,7 +33,6 @@ header {
     border: 2px solid var(--iris);
     border-top: 14px solid var(--iris);
     border-radius: 10px;
-    padding: 6px 10px;
     width: max-content;
     font-size: 1rem;
 
@@ -28,25 +49,9 @@ header {
     }
   }
 
-  button {
-    border: none;
-    background: none;
-  }
-
-  button:hover {
-    background: var(--highlight-high);
-  }
-
-  #interaction-panel {
+  nav {
     display: flex;
     flex-direction: row;
-    align-items: center;
-
-    >button {
-      display: flex;
-      border-radius: 10px;
-      padding: 6px;
-      font-size: 2rem;
-    }
+    gap: 10px;
   }
 }

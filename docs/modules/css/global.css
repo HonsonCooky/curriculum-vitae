@@ -27,17 +27,3 @@ body {
   background: var(--base);
   min-height: 100vh;
 }
-
-.mobile {
-  display: none;
-}
-
-@media only screen and (max-width: 600px) {
-  .web {
-    display: none;
-  }
-
-  .mobile {
-    display: flex;
-  }
-}
