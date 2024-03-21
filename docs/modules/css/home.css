@@ -1,0 +1,28 @@
+#home-section {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    display: flex;
+    flex: 1;
+    flex-basis: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  div:nth-child(1) {
+    img {
+      position: relative;
+      flex: 1;
+      z-index: 10;
+      background: var(--overlay);
+      padding: 2vw 2vw 0 2vw;
+      max-width: 70%;
+    }
+  }
+}

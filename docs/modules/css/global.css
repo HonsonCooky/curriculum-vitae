@@ -28,6 +28,11 @@ body {
   min-height: 100vh;
 }
 
+main,
+section {
+  min-height: calc(100vh - 70px);
+}
+
 @keyframes blinking {
   to {
     visibility: hidden;

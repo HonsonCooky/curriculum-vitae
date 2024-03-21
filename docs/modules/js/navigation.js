@@ -30,5 +30,7 @@ Array.from(nav.children).forEach((btn) => {
 window.addEventListener("resize", function() {
   if (!window.matchMedia("(max-width: 800px)").matches) {
     nav.style.display = "flex";
+  } else {
+    nav.style.display = "none";
   }
 });

@@ -5,6 +5,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background: var(--base);
   padding: 10px;
 
   #logo {
