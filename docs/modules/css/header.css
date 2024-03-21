@@ -1,9 +1,52 @@
 header {
-  background: var(--base);
-  padding: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
 
-  #content {
+  #logo {
     display: flex;
     flex-direction: row;
+    gap: 8px;
+    border: 2px solid var(--iris);
+    border-top: 14px solid var(--iris);
+    border-radius: 10px;
+    padding: 6px 10px;
+    width: max-content;
+    font-size: 1rem;
+
+    >span:nth-child(1) {
+      color: var(--foam);
+    }
+
+    >span:nth-child(2) {
+      color: var(--gold);
+    }
+
+    >span:nth-child(3) {
+      color: var(--love);
+    }
+  }
+
+  button {
+    border: none;
+    background: none;
+  }
+
+  button:hover {
+    background: var(--highlight-high);
+  }
+
+  #interaction-panel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    >button {
+      display: flex;
+      border-radius: 10px;
+      padding: 6px;
+      font-size: 2rem;
+    }
   }
 }
