@@ -32,5 +32,3 @@ window.addEventListener("resize", function() {
     nav.style.display = "flex";
   }
 });
-
-console.log();
