@@ -1,35 +1,15 @@
 header {
   display: flex;
+  position: sticky;
+  top: 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
 
-  button {
-    display: flex;
-    flex-direction: row;
-    border: none;
-    background: none;
-    padding: 6px 1rem 6px 10px;
-    font-size: 1rem;
-
-    &:hover {
-      padding-right: 0;
-
-      *:last-child::after {
-        position: relative;
-        margin: 0 0.5rem;
-        background: var(--pine);
-        content: "_";
-        color: var(--pine);
-      }
-    }
-  }
-
   #logo {
     display: flex;
     flex-direction: row;
-    gap: 8px;
     border: 2px solid var(--iris);
     border-top: 14px solid var(--iris);
     border-radius: 10px;
@@ -37,6 +17,7 @@ header {
     font-size: 1rem;
 
     >span:nth-child(1) {
+      margin-right: 8px;
       color: var(--foam);
     }
 
@@ -49,9 +30,40 @@ header {
     }
   }
 
+  i {
+    display: none;
+    font-size: 1.5rem;
+  }
+
   nav {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+
+    label {
+      display: none;
+      padding: 0 10px;
+      color: var(--pine);
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    i {
+      display: block;
+    }
+
+    nav {
+      display: none;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      flex-direction: column;
+      background: var(--overlay);
+      padding: 10px;
+      width: calc(100% - 20px);
+
+      label {
+        display: flex;
+      }
+    }
   }
 }

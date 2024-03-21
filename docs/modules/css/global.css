@@ -27,3 +27,41 @@ body {
   background: var(--base);
   min-height: 100vh;
 }
+
+@keyframes blinking {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blinking {
+  to {
+    visibility: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  background: none;
+  padding: 6px 25.5px 6px 10px;
+  font-size: 1rem;
+
+  &:hover {
+    background: var(--overlay);
+    padding-right: 0px;
+
+    &::after {
+      animation: blinking 0.5s steps(2, start) infinite alternate;
+      -webkit-animation: blinking 0.5s steps(2, start) infinite alternate;
+      margin: 0 0.5rem;
+      content: "_";
+      color: var(--text);
+    }
+  }
+}
