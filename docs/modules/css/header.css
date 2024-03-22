@@ -33,10 +33,6 @@ header {
     }
   }
 
-  i {
-    font-size: 1.5rem;
-  }
-
   nav {
     display: flex;
     flex-direction: row;
@@ -51,6 +47,10 @@ header {
       padding: 0 8px;
       font-size: 1.5rem;
     }
+
+    #nav-mobile {
+      display: none;
+    }
   }
 
   .mobile {
@@ -58,14 +58,8 @@ header {
   }
 
   @media only screen and (max-width: 800px) {
-    .web {
-      display: none;
-    }
-
-    .mobile {
+    #nav-mobile {
       display: flex;
-      flex-direction: row;
-      justify-content: center;
     }
 
     nav {

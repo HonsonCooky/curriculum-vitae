@@ -1,15 +1,15 @@
 const header = document.querySelector("header");
-const icon = header.querySelector("i");
+const mobileBtn = document.getElementById("nav-mobile");
 const nav = header.querySelector("nav");
 
 // NAV MENU
-icon.addEventListener("click", function() {
-  if (icon.className.includes("oct-x")) {
-    icon.className = "nf nf-oct-three_bars";
+mobileBtn.addEventListener("click", function() {
+  if (mobileBtn.className.includes("oct-x")) {
+    mobileBtn.className = "nf nf-oct-three_bars";
     nav.style.display = "none";
     return;
   }
-  icon.className = "nf nf-oct-x";
+  mobileBtn.className = "nf nf-oct-x";
   nav.style.display = "flex";
 });
 
@@ -24,8 +24,8 @@ Array.from(nav.children).forEach((btn) => {
   btn.addEventListener("click", function() {
     const sectionId = btn.innerText.replace(".\\", "") + "-section";
     window.location.href = "#" + sectionId;
-    if (icon.className.includes("oct-x")) {
-      icon.className = "nf nf-oct-three_bars";
+    if (mobileBtn.className.includes("oct-x")) {
+      mobileBtn.className = "nf nf-oct-three_bars";
       nav.style.display = "none";
       return;
     }
