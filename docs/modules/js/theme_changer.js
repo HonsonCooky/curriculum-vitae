@@ -1,4 +1,5 @@
 const attr = "data-theme";
+const themeBtn = document.getElementById("theme-btn");
 
 function currentTheme() {
   return document.documentElement.getAttribute(attr);

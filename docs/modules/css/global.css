@@ -24,13 +24,14 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  background: var(--base);
+  background: linear-gradient(30deg, var(--gold) -200%, var(--base) 100%);
+  background-size: 100vw 100%;
   min-height: 100vh;
 }
 
 main,
 section {
-  min-height: calc(100vh - 70px);
+  min-height: 100vh;
 }
 
 @keyframes blinking {
@@ -54,12 +55,16 @@ button {
   flex-direction: row;
   border: none;
   background: none;
-  padding: 6px 25.5px 6px 10px;
+  padding: 6px 30px 6px 10px;
   font-size: 1rem;
 
   &:hover {
-    background: var(--overlay);
-    padding-right: 0px;
+    padding-right: 4.4px;
+
+    &,
+    > * {
+      color: var(--foam) !important;
+    }
 
     &::after {
       animation: blinking 0.5s steps(2, start) infinite alternate;

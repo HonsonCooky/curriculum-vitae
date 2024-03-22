@@ -3,32 +3,60 @@
   flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  min-height: calc(100vh - 70px);
 
-  div {
+  #profile {
     display: flex;
-    flex: 1;
-    flex-basis: 400px;
-    flex-direction: column;
+    position: relative;
+    flex: 1 0 300px;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    text-align: center;
+
+    #profile-container {
+      display: flex;
+      position: absolute;
+      flex-direction: row;
+      justify-content: center;
+      rotate: 5deg;
+      border: 5px solid var(--text);
+      border-radius: 10px;
+      background: radial-gradient(circle at 0% 60%, var(--base) 20%, var(--iris) 300%);
+      aspect-ratio: 1;
+      width: 80%;
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        bottom: -5%;
+        rotate: -5deg;
+        filter: drop-shadow(10px 5px 10px var(--base));
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
   }
 
-  #profile-container {
-    position: relative;
+  #titles {
+    display: flex;
+    flex: 1 0 300px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
 
-    #profile-bg {
-      position: absolute;
-      background: var(--overlay);
-      max-width: 500px;
-      max-height: 100vh;
+    h1 {
+      background: linear-gradient(90deg, var(--love), var(--iris));
+      background-clip: text;
+      font-size: 4vw;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
     }
 
-    img {
-      flex: 1;
-      z-index: 10;
-      max-width: 500px;
+    h2 {
+      margin: 0;
+      color: var(--text);
+      font-size: 30px;
     }
   }
 }

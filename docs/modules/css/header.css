@@ -1,11 +1,12 @@
 header {
   display: flex;
-  position: sticky;
+  position: none;
   top: 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: var(--base);
+  z-index: 100;
+  background: transparent;
   padding: 10px;
 
   #logo {
@@ -17,16 +18,16 @@ header {
     width: max-content;
     font-size: 1rem;
 
-    >span:nth-child(1) {
+    > span:nth-child(1) {
       margin-right: 8px;
       color: var(--foam);
     }
 
-    >span:nth-child(2) {
+    > span:nth-child(2) {
       color: var(--gold);
     }
 
-    >span:nth-child(3) {
+    > span:nth-child(3) {
       color: var(--love);
     }
   }
