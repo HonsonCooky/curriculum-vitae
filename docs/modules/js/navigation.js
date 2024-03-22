@@ -2,6 +2,7 @@ const header = document.querySelector("header");
 const icon = header.querySelector("i");
 const nav = header.querySelector("nav");
 
+// NAV MENU
 icon.addEventListener("click", function() {
   if (icon.className.includes("oct-x")) {
     icon.className = "nf nf-oct-three_bars";
@@ -12,9 +13,12 @@ icon.addEventListener("click", function() {
   nav.style.display = "flex";
 });
 
-header.querySelector("button").addEventListener("click", function() {
+// HOME BTN
+document.getElementById("logo").addEventListener("click", function() {
   window.location.href = "#";
 });
+
+// NAV BTNS
 Array.from(nav.children).forEach((btn) => {
   if (btn.id === "theme-btn") return;
   btn.addEventListener("click", function() {
@@ -28,6 +32,7 @@ Array.from(nav.children).forEach((btn) => {
   });
 });
 
+// Update Nav from Mobile to Web based on window size
 window.addEventListener("resize", function() {
   if (!window.matchMedia("(max-width: 800px)").matches) {
     nav.style.display = "flex";
@@ -36,6 +41,7 @@ window.addEventListener("resize", function() {
   }
 });
 
+// Update header sticky position based on window scroll
 window.addEventListener("scroll", function() {
   if (this.lastScrollY) {
     const direction = window.scrollY - this.lastScrollY;
