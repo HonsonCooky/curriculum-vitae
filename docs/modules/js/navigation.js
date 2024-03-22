@@ -1,15 +1,16 @@
 const header = document.querySelector("header");
-const mobileBtn = document.getElementById("nav-mobile");
 const nav = header.querySelector("nav");
+const mobileBtn = document.getElementById("nav-mobile");
+const [mobileOpenIcon, mobileCloseIcon] = ["nf nf-md-folder", "nf nf-md-folder_open"];
 
 // NAV MENU
 mobileBtn.addEventListener("click", function() {
-  if (mobileBtn.className.includes("oct-x")) {
-    mobileBtn.className = "nf nf-oct-three_bars";
+  if (mobileBtn.className.includes(mobileCloseIcon)) {
+    mobileBtn.className = mobileOpenIcon;
     nav.style.display = "none";
     return;
   }
-  mobileBtn.className = "nf nf-oct-x";
+  mobileBtn.className = mobileCloseIcon;
   nav.style.display = "flex";
 });
 

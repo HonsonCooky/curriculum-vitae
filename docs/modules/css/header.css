@@ -3,7 +3,7 @@ header {
   position: none;
   top: 0;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   z-index: 100;
   background: transparent;
@@ -19,18 +19,22 @@ header {
     font-weight: 400;
     font-size: 1rem;
 
-    > span:nth-child(1) {
+    >span:nth-child(1) {
       margin-right: 8px;
       color: var(--foam);
     }
 
-    > span:nth-child(2) {
+    >span:nth-child(2) {
       color: var(--gold);
     }
 
-    > span:nth-child(3) {
+    >span:nth-child(3) {
       color: var(--love);
     }
+  }
+
+  #spacer {
+    flex: 1;
   }
 
   nav {
@@ -42,15 +46,19 @@ header {
       padding: 0 10px;
       color: var(--pine);
     }
+  }
 
-    i {
-      padding: 0 8px;
-      font-size: 1.5rem;
-    }
+  i {
+    padding: 6px 30px 6px 10px;
+    font-size: 1.5rem;
 
-    #nav-mobile {
-      display: none;
+    &:hover {
+      color: var(--foam) !important;
     }
+  }
+
+  #nav-mobile {
+    display: none;
   }
 
   .mobile {

@@ -1,5 +1,6 @@
 const attr = "data-theme";
 const themeBtn = document.getElementById("theme-btn");
+const [lightThemeIcon, darkThemeIcon] = ["nf nf-oct-sun", "nf nf-oct-moon"];
 
 function currentTheme() {
   return document.documentElement.getAttribute(attr);
@@ -8,8 +9,7 @@ function currentTheme() {
 function setTheme(isDark) {
   const theme = isDark ? "dark" : "light";
   document.documentElement.setAttribute(attr, theme);
-  themeBtn.querySelector("span").innerText = theme.toUpperCase();
-  themeBtn.querySelector("i").className = "nf nf-md-brightness_" + (isDark ? "4" : "5");
+  themeBtn.className = isDark ? darkThemeIcon : lightThemeIcon;
 }
 
 function resetTheme() {
