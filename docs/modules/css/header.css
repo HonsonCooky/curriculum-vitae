@@ -6,7 +6,7 @@ header {
   gap: 2vw;
   padding: 10px;
   font-weight: 400;
-  font-size: clamp(14px, 2vw, 20px);
+  font-size: clamp(14px, 2.5vw, 20px);
 
   * {
     font-weight: inherit;
@@ -25,22 +25,22 @@ header {
     display: flex;
   }
 
-  >#logo {
+  > #logo {
     border: 2px solid var(--iris);
     border-top: 12px solid var(--iris);
     border-radius: 0.2em;
 
-    >span:nth-child(1) {
+    > span:nth-child(1) {
       margin-right: 1vw;
       color: var(--foam);
     }
 
-    >span:nth-child(2) {
+    > span:nth-child(2) {
       margin-right: 6px;
       color: var(--gold);
     }
 
-    >span:nth-child(3) {
+    > span:nth-child(3) {
       color: var(--love);
     }
   }
@@ -53,11 +53,18 @@ header {
     align-items: center;
     gap: 1vw;
 
-    >nav {
+    > nav {
+      gap: 8px;
       padding-top: 12px;
+
+      > label {
+        margin: 0;
+        color: var(--love);
+        font-weight: 700;
+      }
     }
 
-    >i {
+    > i {
       padding-top: 12px;
 
       &:hover {
@@ -67,7 +74,7 @@ header {
   }
 
   @media screen and (max-width: 600px) {
-    font-size: clamp(14px, 4.5vw, 30px);
+    font-size: clamp(14px, 4vw, 30px);
 
     .mobile {
       display: flex;
@@ -78,13 +85,23 @@ header {
     }
 
     #logo {
-      >span:nth-child(1) {
+      > span:nth-child(1) {
         margin-right: 2vw;
       }
     }
 
     #interactions {
       gap: 4vw;
+
+      > i {
+        font-size: clamp(14px, 5vw, 35px);
+      }
+
+      > nav {
+        > button {
+          padding: 0;
+        }
+      }
     }
   }
 }

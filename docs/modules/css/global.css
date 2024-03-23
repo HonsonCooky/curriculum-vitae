@@ -24,7 +24,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(30deg, var(--gold) -200%, var(--base) 100%);
+  background: linear-gradient(30deg, var(--love) -200%, var(--base) 100%);
   background-size: 100vw 100%;
   min-height: 100vh;
 }
@@ -40,8 +40,11 @@ section {
 button {
   border: none;
   background: none;
+  padding: 1px 6px;
 
   &:hover {
+    background: var(--overlay);
+
     > * {
       color: var(--foam);
     }

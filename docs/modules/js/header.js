@@ -4,11 +4,12 @@ const navMobileBtn = document.getElementById("nav-mobile-btn");
 
 function mobileNavMenuDisplay(show) {
   navMenu.style.cssText = `
-    display: ${show ? "flex" : "none"};
-    flex-direction: column;
-    position: absolute;
-    top: 20vh;
-    left: 0;
+  display: ${show ? "flex" : "none"};
+  flex-direction: column;
+  position: absolute;
+  top: ${header.scrollHeight}px;
+  left: 0;
+  padding: 1vh 5vw;
   `;
 }
 
@@ -19,6 +20,22 @@ navMobileBtn.addEventListener("click", function() {
   navMobileBtn.classList.add(folderIconStates[toAdd]);
   navMobileBtn.classList.remove(folderIconStates[toRemove]);
   mobileNavMenuDisplay(toAdd === 1);
+});
+
+// Nav button interactions
+Array.from(header.querySelectorAll("button")).forEach((btn) => {
+  console.log(btn);
+});
+
+// Toggle the nav between mobile and web depending on window size
+window.addEventListener("resize", function() {
+  if (window.matchMedia("(max-width: 600px)").matches) {
+    console.log("here");
+  } else {
+    navMenu.style.cssText = "";
+    navMobileBtn.classList.add(folderIconStates[0]);
+    navMobileBtn.classList.remove(folderIconStates[1]);
+  }
 });
 
 // Update header sticky position based on window scroll
