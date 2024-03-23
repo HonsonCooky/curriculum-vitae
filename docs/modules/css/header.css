@@ -1,30 +1,42 @@
 header {
   display: flex;
-  position: none;
   top: 0;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  z-index: 100;
-  background: transparent;
+  gap: 2vw;
   padding: 10px;
+  font-weight: 400;
+  font-size: clamp(14px, 2vw, 20px);
 
-  #logo {
+  * {
+    font-weight: inherit;
+    font-size: inherit;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .web {
     display: flex;
-    flex-direction: row;
+  }
+
+  button {
+    display: flex;
+  }
+
+  >#logo {
     border: 2px solid var(--iris);
-    border-top: 14px solid var(--iris);
-    border-radius: 10px;
-    width: max-content;
-    font-weight: 400;
-    font-size: 1rem;
+    border-top: 12px solid var(--iris);
+    border-radius: 0.2em;
 
     >span:nth-child(1) {
-      margin-right: 8px;
+      margin-right: 1vw;
       color: var(--foam);
     }
 
     >span:nth-child(2) {
+      margin-right: 6px;
       color: var(--gold);
     }
 
@@ -33,56 +45,46 @@ header {
     }
   }
 
-  #spacer {
-    flex: 1;
-  }
-
-  nav {
+  #interactions {
     display: flex;
+    flex: 1;
     flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 1vw;
 
-    label {
-      display: none;
-      padding: 0 10px;
-      color: var(--pine);
+    >nav {
+      padding-top: 12px;
+    }
+
+    >i {
+      padding-top: 12px;
+
+      &:hover {
+        color: var(--gold);
+      }
     }
   }
 
-  i {
-    padding: 6px 30px 6px 10px;
-    font-size: 1.5rem;
+  @media screen and (max-width: 600px) {
+    font-size: clamp(14px, 4.5vw, 30px);
 
-    &:hover {
-      color: var(--foam) !important;
-    }
-  }
-
-  #nav-mobile {
-    display: none;
-  }
-
-  .mobile {
-    display: none;
-  }
-
-  @media only screen and (max-width: 800px) {
-    #nav-mobile {
+    .mobile {
       display: flex;
     }
 
-    nav {
+    .web {
       display: none;
-      position: absolute;
-      top: 70px;
-      left: 0;
-      flex-direction: column;
-      background: var(--overlay);
-      padding: 10px;
-      width: calc(100% - 20px);
+    }
 
-      label {
-        display: flex;
+    #logo {
+      >span:nth-child(1) {
+        margin-right: 2vw;
       }
+    }
+
+    #interactions {
+      gap: 4vw;
     }
   }
 }

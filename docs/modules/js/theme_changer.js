@@ -1,19 +1,11 @@
-const attr = "data-theme";
+/** ------------------------------------------------------
+ * DYNAMIC THEME CHANGING
+ ------------------------------------------------------*/
 const themeBtn = document.getElementById("theme-btn");
 const [lightThemeIcon, darkThemeIcon] = ["nf nf-oct-sun", "nf nf-oct-moon"];
 
-function currentTheme() {
-  return document.documentElement.getAttribute(attr);
-}
-
-function setTheme(isDark) {
-  const theme = isDark ? "dark" : "light";
-  document.documentElement.setAttribute(attr, theme);
+function setThemeBtnIcon(isDark) {
   themeBtn.className = isDark ? darkThemeIcon : lightThemeIcon;
-}
-
-function resetTheme() {
-  setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
 }
 
 themeBtn.addEventListener("click", function() {
@@ -21,4 +13,24 @@ themeBtn.addEventListener("click", function() {
   setTheme(!isDark);
 });
 
+/** ------------------------------------------------------
+ * GLOBAL THEME CHANGING
+ ------------------------------------------------------*/
+const attrName = "theme";
+
+/** Get the current "theme" attribute value from the document */
+const currentTheme = () => document.documentElement.getAttribute(attrName);
+
+/** Set the theme of the document */
+function setTheme(isDark) {
+  const theme = isDark ? "dark" : "light";
+  setThemeBtnIcon(isDark);
+  document.documentElement.setAttribute(attrName, theme);
+}
+
+function resetTheme() {
+  setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+}
+
+// On Startup, set the theme
 resetTheme();

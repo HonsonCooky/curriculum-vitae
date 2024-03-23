@@ -34,42 +34,21 @@ section {
   min-height: 100vh;
 }
 
-@keyframes blinking {
-  to {
-    visibility: hidden;
-  }
-}
-
-@-webkit-keyframes blinking {
-  to {
-    visibility: hidden;
-  }
-}
-
+/* -------------------------------
+ * BUTTON HOVER ANIMATION
+ -------------------------------*/
 button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   border: none;
   background: none;
-  padding: 6px 30px 6px 10px;
-  font-size: 1rem;
 
   &:hover {
-    padding-right: 4.4px;
-
-    &,
-    >* {
-      color: var(--foam) !important;
+    > * {
+      color: var(--foam);
     }
 
-    &::after {
-      animation: blinking 0.5s steps(2, start) infinite alternate;
-      -webkit-animation: blinking 0.5s steps(2, start) infinite alternate;
-      margin: 0 8px;
-      content: "_";
-      color: var(--text);
+    > span:last-of-type {
+      background: var(--text);
+      color: var(--base);
     }
   }
 }
