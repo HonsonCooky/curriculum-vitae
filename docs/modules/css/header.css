@@ -4,21 +4,14 @@ header {
   flex-direction: row;
   align-items: center;
   gap: 2vw;
+  z-index: 100;
   padding: 10px;
   font-weight: 400;
-  font-size: clamp(14px, 2.5vw, 20px);
+  font-size: clamp(12px, 2.5vw, 20px);
 
   * {
     font-weight: inherit;
     font-size: inherit;
-  }
-
-  .mobile {
-    display: none;
-  }
-
-  .web {
-    display: flex;
   }
 
   button {
@@ -54,7 +47,7 @@ header {
     gap: 1vw;
 
     > nav {
-      gap: 8px;
+      gap: 6px;
       padding-top: 12px;
 
       > label {
@@ -98,6 +91,10 @@ header {
       }
 
       > nav {
+        background: var(--base);
+        padding-bottom: 2vh !important;
+        width: 100%;
+
         > button {
           padding: 0;
         }

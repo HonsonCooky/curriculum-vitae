@@ -24,7 +24,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(30deg, var(--love) -200%, var(--base) 100%);
+  background: linear-gradient(45deg, var(--iris) -100%, var(--base) 90%);
   background-size: 100vw 100%;
   min-height: 100vh;
 }
@@ -32,6 +32,14 @@ body {
 main,
 section {
   min-height: 100vh;
+}
+
+.mobile {
+  display: none;
+}
+
+.web {
+  display: flex;
 }
 
 /* -------------------------------

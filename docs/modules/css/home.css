@@ -1,1 +1,148 @@
+#home-section {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
 
+  > #profile {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > #profile-container {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      rotate: 5deg;
+      margin: 5% 0;
+      border: 5px solid var(--text);
+      border-radius: 2vw;
+      background: radial-gradient(circle at 0% 70%, var(--base) 0%, var(--iris) 300%);
+      aspect-ratio: 1;
+      width: 70%;
+      overflow: hidden;
+
+      > img {
+        position: absolute;
+        bottom: -3%;
+        rotate: -5deg;
+        filter: drop-shadow(10px 7px 10px var(--shadow));
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  #titles {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10vh;
+    padding: 0 2vw;
+
+    > #title {
+      > h1 {
+        background: linear-gradient(90deg, var(--love), var(--rose));
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-weight: 800;
+        font-size: clamp(30px, 8vw + 1rem, 120px);
+        line-height: clamp(30px, 8vw + 1rem, 120px);
+        -webkit-text-fill-color: transparent;
+        margin: 0;
+      }
+
+      > h2 {
+        margin: 0;
+        font-size: clamp(20px, 2vw + 1rem, 60px);
+      }
+    }
+
+    > #tags {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1vh 2vw;
+      width: 100%;
+
+      > div {
+        display: flex;
+        flex: 1 0 12rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5vh;
+        border: 2px solid var(--text);
+        border-radius: 1vw;
+        padding: 1vh 0 0 0;
+
+        > .icons {
+          > i {
+            font-size: clamp(20px, 1vw + 1rem, 50px);
+          }
+        }
+
+        > label {
+          font-size: clamp(14px, 0.5vw + 1rem, 30px);
+        }
+      }
+
+      > #frontend {
+        border-color: var(--foam);
+
+        * {
+          color: var(--foam);
+        }
+      }
+
+      > #backend {
+        border-color: var(--love);
+
+        * {
+          color: var(--love);
+        }
+      }
+
+      > #integrations {
+        border-color: var(--gold);
+
+        * {
+          color: var(--gold);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
+    min-height: 0;
+
+    .mobile {
+      display: flex;
+    }
+
+    .web {
+      display: none;
+    }
+
+    > #profile {
+      flex: 1;
+
+      > #profile-container {
+        width: auto;
+        height: clamp(100px, 70vw, 500px);
+      }
+    }
+
+    #titles {
+      justify-content: start;
+      align-items: center;
+      gap: 5vh;
+      text-align: center;
+    }
+  }
+}

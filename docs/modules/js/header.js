@@ -22,19 +22,29 @@ navMobileBtn.addEventListener("click", function() {
   mobileNavMenuDisplay(toAdd === 1);
 });
 
+function resetNavMobileMenu() {
+  navMenu.style.cssText = "";
+  navMobileBtn.classList.add(folderIconStates[0]);
+  navMobileBtn.classList.remove(folderIconStates[1]);
+}
+
 // Nav button interactions
 Array.from(header.querySelectorAll("button")).forEach((btn) => {
-  console.log(btn);
+  let url = "#" + btn.innerText.replace(".\\", "") + "-section";
+  if (btn.id === "logo") {
+    url = "#";
+  }
+
+  btn.addEventListener("click", function() {
+    window.location.href = url;
+    resetNavMobileMenu();
+  });
 });
 
 // Toggle the nav between mobile and web depending on window size
 window.addEventListener("resize", function() {
-  if (window.matchMedia("(max-width: 600px)").matches) {
-    console.log("here");
-  } else {
-    navMenu.style.cssText = "";
-    navMobileBtn.classList.add(folderIconStates[0]);
-    navMobileBtn.classList.remove(folderIconStates[1]);
+  if (!window.matchMedia("(max-width: 600px)").matches) {
+    resetNavMobileMenu();
   }
 });
 
