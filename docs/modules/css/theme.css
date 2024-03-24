@@ -41,6 +41,7 @@
 
 /* Default Values */
 * {
+  box-sizing: border-box;
   outline: none;
   color: var(--text);
   font-weight: 500;

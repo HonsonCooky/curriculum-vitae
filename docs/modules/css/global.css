@@ -24,12 +24,12 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(45deg, var(--iris) -100%, var(--base) 90%);
+  box-sizing: content-box;
+  background: linear-gradient(225deg, var(--base) 10%, var(--love) 200%);
   background-size: 100vw 100%;
   min-height: 100vh;
 }
 
-main,
 section {
   min-height: 100vh;
 }
@@ -40,6 +40,16 @@ section {
 
 .web {
   display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .mobile {
+    display: flex;
+  }
+
+  .web {
+    display: none;
+  }
 }
 
 /* -------------------------------
@@ -54,12 +64,12 @@ button {
     background: var(--overlay);
 
     > * {
-      color: var(--foam);
+      color: var(--foam) !important;
     }
 
     > span:last-of-type {
       background: var(--text);
-      color: var(--base);
+      color: var(--base) !important;
     }
   }
 }

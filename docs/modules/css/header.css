@@ -1,13 +1,15 @@
 header {
   display: flex;
-  top: 0;
+  position: sticky;
+  top: -10vh;
   flex-direction: row;
   align-items: center;
   gap: 2vw;
   z-index: 100;
+  transition: top 0.2s ease;
   padding: 10px;
   font-weight: 400;
-  font-size: clamp(12px, 2.5vw, 20px);
+  font-size: max(15px, 1cqw + 0.5rem);
 
   * {
     font-weight: inherit;
@@ -66,16 +68,8 @@ header {
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media only screen and (max-width: 600px) {
     font-size: clamp(14px, 4vw, 30px);
-
-    .mobile {
-      display: flex;
-    }
-
-    .web {
-      display: none;
-    }
 
     #logo {
       > span:nth-child(1) {

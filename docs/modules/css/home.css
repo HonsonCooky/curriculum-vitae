@@ -1,35 +1,36 @@
 #home-section {
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "tt pr" "tg tg";
+  grid-auto-rows: auto 1fr;
+  min-height: initial;
 
-  > #profile {
+  #profile {
     display: flex;
-    flex: 1;
-    flex-direction: column;
+    grid-area: pr;
     justify-content: center;
     align-items: center;
+    padding: 7%;
 
     > #profile-container {
       display: flex;
       position: relative;
-      flex-direction: column;
-      align-items: center;
-      rotate: 5deg;
-      margin: 5% 0;
-      border: 5px solid var(--text);
-      border-radius: 2vw;
-      background: radial-gradient(circle at 0% 70%, var(--base) 0%, var(--iris) 300%);
+      flex-direction: row;
+      justify-content: center;
+      rotate: 7deg;
+      border: 0.5vw solid var(--text);
+      border-radius: 1vw;
+      background: linear-gradient(80deg, var(--base) 0%, var(--iris) 100%);
       aspect-ratio: 1;
       width: 70%;
       overflow: hidden;
 
       > img {
         position: absolute;
-        bottom: -3%;
-        rotate: -5deg;
-        filter: drop-shadow(10px 7px 10px var(--shadow));
-        max-width: 100%;
+        bottom: -5%;
+        rotate: -7deg;
+        filter: drop-shadow(0.5vw 0.4vw 1vw var(--shadow));
+        max-width: 80%;
         max-height: 100%;
       }
     }
@@ -37,112 +38,91 @@
 
   #titles {
     display: flex;
-    flex: 1;
+    grid-area: tt;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    gap: 10vh;
-    padding: 0 2vw;
+    padding: 2vh 2vw;
 
-    > #title {
-      > h1 {
-        background: linear-gradient(90deg, var(--love), var(--rose));
-        background-clip: text;
-        -webkit-background-clip: text;
-        font-weight: 800;
-        font-size: clamp(30px, 8vw + 1rem, 120px);
-        line-height: clamp(30px, 8vw + 1rem, 120px);
-        -webkit-text-fill-color: transparent;
-        margin: 0;
-      }
+    > h1 {
+      margin: 0;
+      background: linear-gradient(90deg, var(--love), var(--iris));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      font-size: max(72px, 8cqw + 1rem);
+      line-height: 100%;
+    }
 
-      > h2 {
-        margin: 0;
-        font-size: clamp(20px, 2vw + 1rem, 60px);
+    > h2 {
+      font-size: max(24px, 1.5cqw + 1rem);
+      line-height: 100%;
+    }
+  }
+
+  #tags {
+    display: flex;
+    grid-area: tg;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2cqw;
+    padding: 1cqh 2cqh;
+
+    > div {
+      flex: 1 0 300px;
+      border: min(4px, 0.5vw) solid var(--text);
+      border-radius: 1vw;
+      padding: 1cqh 2cqh;
+      font-size: 3cqh;
+      text-align: center;
+    }
+
+    #frontend {
+      border-color: var(--foam);
+
+      * {
+        color: var(--foam);
       }
     }
 
-    > #tags {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 1vh 2vw;
-      width: 100%;
+    #backend {
+      border-color: var(--love);
 
-      > div {
-        display: flex;
-        flex: 1 0 12rem;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5vh;
-        border: 2px solid var(--text);
-        border-radius: 1vw;
-        padding: 1vh 0 0 0;
-
-        > .icons {
-          > i {
-            font-size: clamp(20px, 1vw + 1rem, 50px);
-          }
-        }
-
-        > label {
-          font-size: clamp(14px, 0.5vw + 1rem, 30px);
-        }
+      * {
+        color: var(--love);
       }
+    }
 
-      > #frontend {
-        border-color: var(--foam);
+    #integrations {
+      border-color: var(--gold);
 
-        * {
-          color: var(--foam);
-        }
-      }
-
-      > #backend {
-        border-color: var(--love);
-
-        * {
-          color: var(--love);
-        }
-      }
-
-      > #integrations {
-        border-color: var(--gold);
-
-        * {
-          color: var(--gold);
-        }
+      * {
+        color: var(--gold);
       }
     }
   }
 
-  @media screen and (max-width: 1100px) {
-    flex-direction: column;
-    min-height: 0;
-
-    .mobile {
-      display: flex;
-    }
-
-    .web {
-      display: none;
-    }
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "pr" "tt" "tg";
+    grid-auto-rows: auto;
 
     > #profile {
-      flex: 1;
+      padding-bottom: 0;
 
       > #profile-container {
-        width: auto;
-        height: clamp(100px, 70vw, 500px);
+        width: 60%;
       }
     }
 
-    #titles {
-      justify-content: start;
-      align-items: center;
-      gap: 5vh;
+    > #titles {
       text-align: center;
+    }
+
+    > #tags {
+      > div {
+        font-size: max(14px, 1cqw + 1rem);
+      }
     }
   }
 }
