@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "tt pr" "tg tg";
-  grid-auto-rows: auto 1fr;
-  min-height: initial;
+  grid-auto-rows: 1fr auto;
+  padding: 1vh 2vw;
 
   #profile {
     display: flex;
@@ -61,23 +61,23 @@
 
   #tags {
     display: flex;
+    position: relative;
     grid-area: tg;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 2cqw;
-    padding: 1cqh 2cqh;
 
     > div {
-      flex: 1 0 300px;
+      flex: 1 0 200px;
       border: min(4px, 0.5vw) solid var(--text);
       border-radius: 1vw;
-      padding: 1cqh 2cqh;
-      font-size: 3cqh;
+      padding: 0.5cqh 1cqh;
+      font-size: max(14px, 0.5cqw + 1rem);
       text-align: center;
     }
 
-    #frontend {
+    #integrations {
       border-color: var(--foam);
 
       * {
@@ -85,7 +85,7 @@
       }
     }
 
-    #backend {
+    #frontend {
       border-color: var(--love);
 
       * {
@@ -93,11 +93,19 @@
       }
     }
 
-    #integrations {
+    #more {
       border-color: var(--gold);
 
       * {
         color: var(--gold);
+      }
+    }
+
+    #backend {
+      border-color: var(--iris);
+
+      * {
+        color: var(--iris);
       }
     }
   }
@@ -117,12 +125,6 @@
 
     > #titles {
       text-align: center;
-    }
-
-    > #tags {
-      > div {
-        font-size: max(14px, 1cqw + 1rem);
-      }
     }
   }
 }

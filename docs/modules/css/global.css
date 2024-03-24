@@ -30,8 +30,14 @@ body {
   min-height: 100vh;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+
 section {
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .mobile {
@@ -43,6 +49,10 @@ section {
 }
 
 @media only screen and (max-width: 600px) {
+  section {
+    min-height: 0;
+  }
+
   .mobile {
     display: flex;
   }
