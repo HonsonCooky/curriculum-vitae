@@ -1,1 +1,9 @@
+section {
+  > hgroup {
+    display: flex;
+    flex-direction: column;
 
+    > h1 {
+    }
+  }
+}
