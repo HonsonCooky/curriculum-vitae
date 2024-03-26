@@ -1,3 +1,2 @@
-import "./modules/js/theme_changer.js";
-import "./modules/js/button_splitter.js";
-import "./modules/js/header.js";
+import "./modules/theme.js";
+import "./modules/header/header.js";

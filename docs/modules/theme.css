@@ -39,11 +39,77 @@
   --shadow: #191724;
 }
 
-/* Default Values */
 * {
   box-sizing: border-box;
   outline: none;
   color: var(--text);
-  font-weight: 500;
+  font-size: inherit;
   font-family: "Kode Mono", monospace;
 }
+
+*::-webkit-input-placeholder {
+  color: var(--text);
+  font-weight: 300;
+}
+
+*::-webkit-scrollbar {
+  width: 0.7vw;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--highlight-low);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--highlight-high);
+}
+
+html,
+body {
+  margin: 0;
+  background: linear-gradient(225deg, var(--base) 10%, var(--love) 200%);
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+}
+
+section {
+  min-height: 90vh;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  background: none;
+
+  &:hover {
+    background: var(--overlay);
+
+    * {
+      color: var(--foam) !important;
+    }
+
+    .cursor {
+      animation: blink-animation 1s steps(2, start) infinite;
+      background: var(--text);
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {}
