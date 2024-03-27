@@ -1,2 +1,2 @@
 import "./modules/theme.js";
-import "./modules/home/home.js";
+import "./modules/nav/nav.js";
