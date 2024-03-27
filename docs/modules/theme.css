@@ -74,16 +74,7 @@ body {
 body {
   display: flex;
   flex-direction: column;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 10vh;
-}
-
-section {
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 @keyframes blink-animation {
@@ -112,4 +103,5 @@ button {
   }
 }
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+}
