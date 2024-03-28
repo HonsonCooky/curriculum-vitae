@@ -1,7 +1,8 @@
 header {
   position: fixed;
   top: 0;
-  backdrop-filter: blur(10px);
+  z-index: 100;
+  backdrop-filter: blur(50px);
   background: transparent;
   width: 100%;
 
@@ -12,6 +13,7 @@ header {
     align-items: center;
     padding: 1vh min(4vw, 10px);
     width: 100%;
+    font-weight: 800;
     font-size: min(4vw, 24px);
 
     #menu-btn {
@@ -39,9 +41,12 @@ header {
     flex-direction: column;
     gap: min(2vh, 12px);
     opacity: 0;
+    z-index: 90;
     transition:
       height 200ms ease,
+      border 200ms ease,
       opacity 200ms ease;
+    border-bottom: 0;
     padding: 0 min(4vw, 12px);
     width: 100%;
     height: 0px;
@@ -50,10 +55,19 @@ header {
     button {
       display: flex;
       flex-direction: row;
-      gap: min(2vw, 20px);
       border-radius: 1vh;
       padding: min(0.5vh, 10px);
       font-size: min(5vw, 28px);
+
+      &:before,
+      * {
+        text-shadow: 2px 2px 1px var(--base);
+      }
+
+      span {
+        padding-left: min(4vw, 20px);
+        font-weight: 800;
+      }
     }
 
     > div {
@@ -70,6 +84,8 @@ header {
 
   &.open > #floating-nav {
     opacity: 1;
+    border-bottom: 10px solid var(--foam);
+    padding: 2vh min(4vw, 12px);
     height: 40vh;
   }
 

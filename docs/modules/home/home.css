@@ -1,0 +1,12 @@
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #profile {
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 99%);
+    filter: drop-shadow(10px 7px 10px var(--text));
+    max-width: 70%;
+    max-height: 100%;
+  }
+}
