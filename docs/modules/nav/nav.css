@@ -5,11 +5,9 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(2px);
-  background: transparent;
-  padding: 1vh 4vw;
+  padding: 0 4vw;
   height: 7vh;
-  font-size: min(7vw, 24px);
+  font-size: min(5vw, 24px);
 
   span {
     display: flex;
@@ -39,30 +37,41 @@ nav {
     display: flex;
     position: fixed;
     top: 7vh;
-    right: 0;
+    left: 0;
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    gap: 2vh;
     backdrop-filter: blur(2px);
     transition:
-      width 100ms linear,
-      font-size 100ms ease,
-      height 100ms linear;
+      height 200ms ease,
+      padding 200ms ease;
     background: transparent;
-    padding: 4vh 4vw;
-    width: 0;
+    padding: 0;
+    padding: 0vh 4vw;
+    width: 100%;
     height: 0;
-    font-size: 0;
-    text-align: end;
+    overflow: hidden;
 
-    #spacer {
-      flex: 1;
+    button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: min(4vw, 10px);
+      padding: min(0.5vh, 4px) min(1vw, 6px);
     }
   }
 
-  #menu-btn.open+#floating-nav {
-    width: 100%;
-    height: 93vh;
-    font-size: 7cqw;
+  #menu-btn.open + #floating-nav {
+    padding: 4vh 4vw;
+    height: initial;
+  }
+
+  #theme-btn {
+    display: flex;
+    flex-direction: row;
+    gap: min(4vw, 10px);
+    margin-top: 10vh;
+    padding: min(0.5vh, 4px) min(1vw, 6px);
   }
 }

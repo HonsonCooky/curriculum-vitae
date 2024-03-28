@@ -77,12 +77,6 @@ body {
   min-height: 100vh;
 }
 
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
-}
-
 button {
   display: flex;
   flex-direction: row;
@@ -91,16 +85,10 @@ button {
 
   &:hover {
     background: var(--highlight-high);
+    color: var(--foam) !important;
 
     * {
       color: var(--foam) !important;
     }
-
-    .cursor {
-      animation: blink-animation 1s steps(2, start) infinite;
-      background: var(--text);
-    }
   }
 }
-
-@media only screen and (min-width: 600px) {}
