@@ -14,14 +14,16 @@
 </head>
 
 <body>
-  <nav>
-    <span>
-      <span>PS</span>
-      <span>C:\HonsonCooky</span>
-      <span>></span>
-    </span>
-    <button title="menu" type="button" class="nf nf-md-folder" id="menu-btn"></button>
-    <div id="floating-nav">
+  <header>
+    <nav id="sticky-nav">
+      <span>
+        <span>PS</span>
+        <span>C:\HonsonCooky</span>
+        <span>></span>
+      </span>
+      <button title="menu" type="button" class="nf nf-md-folder" id="menu-btn"></button>
+    </nav>
+    <nav id="floating-nav">
       <button type="button">
         <div class="nf nf-md-home"></div>
         <span>.\home</span>
@@ -42,11 +44,19 @@
         <div class="nf nf-md-post"></div>
         <span>.\blogs</span>
       </button>
-      <button id="theme-btn" type="button" class="nf nf-md-theme_light_dark"><span>: Light</span></button>
-    </div>
-  </nav>
+      <div>
+        <button id="theme-btn" type="button" class="nf nf-md-theme_light_dark"><span>: Light</span></button>
+      </div>
+    </nav>
+  </header>
 
-  <main style="height: 100vh"></main>
+  <main style="height: 100vh">
+    <div id="home" class="page"></div>
+    <div id="about" class="page"></div>
+    <div id="skillset" class="page"></div>
+    <div id="projects" class="page"></div>
+    <div id="blogs" class="page"></div>
+  </main>
 </body>
 
 </html>

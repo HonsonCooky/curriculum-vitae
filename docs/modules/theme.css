@@ -77,6 +77,10 @@ body {
   min-height: 100vh;
 }
 
+.page {
+  min-height: 100vh;
+}
+
 button {
   display: flex;
   flex-direction: row;
