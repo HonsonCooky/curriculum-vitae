@@ -1,5 +1,7 @@
 const themeAttrName = "theme";
-const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+  ? "dark"
+  : "light";
 document.documentElement.setAttribute(themeAttrName, defaultTheme);
 
 const themeBtn = document.getElementById("theme-btn");
