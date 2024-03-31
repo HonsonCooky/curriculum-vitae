@@ -1,16 +1,17 @@
-const themeAttrName = "theme";
-const defaultTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-  ? "dark"
-  : "light";
-document.documentElement.setAttribute(themeAttrName, defaultTheme);
-
+const themeAttr = "theme";
 const themeBtn = document.getElementById("theme-btn");
-const themeText = document.getElementById("theme-text");
-themeText.innerText = `${defaultTheme}`;
-themeBtn.addEventListener("click", function() {
-  const currentTheme = document.documentElement.getAttribute(themeAttrName);
-  let newTheme = "dark";
-  if (currentTheme === "dark") newTheme = "light";
-  document.documentElement.setAttribute(themeAttrName, newTheme);
-  themeText.innerText = `${newTheme}`;
-});
+
+function setTheme(isDark) {
+  const theme = isDark ? "dark" : "light";
+  const iconIndex = theme === "dark" ? 4 : 7;
+  document.documentElement.setAttribute(themeAttr, theme);
+  themeBtn.className = `nf nf-md-brightness_${iconIndex}`;
+}
+
+function toggleTheme() {
+  const curTheme = document.documentElement.getAttribute(themeAttr);
+  setTheme(!(curTheme === "dark"));
+}
+
+setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+themeBtn.addEventListener("click", toggleTheme);

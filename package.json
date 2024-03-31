@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "prettier": "^3.2.5",
-    "prettier-plugin-css-order": "^2.1.1"
+    "prettier-plugin-css-order": "^2.1.1",
+    "prettier-plugin-organize-attributes": "^1.0.0"
   }
 }

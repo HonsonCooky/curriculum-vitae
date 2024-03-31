@@ -1,3 +1,6 @@
+@import url("https://www.nerdfonts.com/assets/css/webfont.css");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
 :root {
   --base: #faf4ed;
   --surface: #fffaf3;
@@ -14,7 +17,6 @@
   --highlight-low: #f4ede8;
   --highlight-med: #dfdad9;
   --highlight-high: #cecacd;
-  --shadow: #575279;
 }
 
 [theme="dark"] {
@@ -33,7 +35,6 @@
   --highlight-low: #21202e;
   --highlight-med: #403d52;
   --highlight-high: #524f67;
-  --shadow: #191724;
 }
 
 * {
@@ -44,39 +45,11 @@
   color: var(--text);
   font-weight: inherit;
   font-size: inherit;
-  font-family: monospace;
-}
-
-*::-webkit-input-placeholder {
-  color: var(--text);
-  font-weight: 300;
-}
-
-*::-webkit-scrollbar {
-  width: 0.7dvw;
-}
-
-*::-webkit-scrollbar-track {
-  background: var(--highlight-low);
-}
-
-*::-webkit-scrollbar-thumb {
-  background: var(--highlight-high);
+  font-family: "JetBrains Mono", monospace;
 }
 
 html,
 body {
   margin: 0;
-  background: var(--base);
-  scroll-behavior: smooth;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-}
-
-main {
-  min-height: 100dvh;
+  background-color: var(--base);
 }
