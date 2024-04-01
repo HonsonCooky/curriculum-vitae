@@ -17,6 +17,15 @@
   --highlight-low: #f4ede8;
   --highlight-med: #dfdad9;
   --highlight-high: #cecacd;
+
+  /* FONT-SIZES */
+  --fs-sm: clamp(1rem, -0.13vi + 1.03rem, 0.93rem);
+  --fs-base: clamp(1.13rem, 0.68vi + 0.95rem, 1.5rem);
+  --fs-md: clamp(1.27rem, 2.11vi + 0.74rem, 2.43rem);
+  --fs-lg: clamp(1.42rem, 4.55vi + 0.29rem, 3.93rem);
+  --fs-xl: clamp(1.6rem, 8.64vi + -0.56rem, 6.35rem);
+  --fs-xxl: clamp(1.8rem, 15.42vi + -2.05rem, 10.28rem);
+  --fs-xxxl: clamp(2.03rem, 26.56vi + -4.61rem, 16.63rem);
 }
 
 [theme="dark"] {

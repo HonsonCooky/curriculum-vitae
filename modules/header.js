@@ -2,17 +2,27 @@ const header = document.querySelector("header");
 const nav = header.querySelector("nav");
 const menuBtn = document.getElementById("menu-btn");
 
-menuBtn.addEventListener("click", function () {
-  const mobileOpenTag = "open";
-  if (nav.classList.contains(mobileOpenTag)) {
-    nav.classList.remove(mobileOpenTag);
+function toggleMenu() {
+  const openTag = "open";
+  if (nav.classList.contains(openTag)) {
+    nav.classList.remove(openTag);
     menuBtn.className = "nf nf-md-menu";
   } else {
-    nav.classList.add(mobileOpenTag);
+    nav.classList.add(openTag);
     menuBtn.className = "nf nf-md-close";
   }
-});
+}
 
-window.addEventListener("resize", function () {
-  const mobile = window.matchMedia("");
-});
+menuBtn.addEventListener("click", toggleMenu);
+
+const navButtons = Array.from(nav.children);
+for (const btn of navButtons) {
+  btn.addEventListener("click", function() {
+    const sectionId = `${btn.innerText.replaceAll(".\\", "")}-section`;
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      toggleMenu();
+      sectionElement.scrollIntoView();
+    }
+  });
+}
