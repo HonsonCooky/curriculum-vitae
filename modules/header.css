@@ -4,8 +4,9 @@ header {
   top: 0;
   justify-content: space-between;
   z-index: 100;
+  background: var(--base);
   padding: 6px 10px;
-  font-size: min(6vw, 24px);
+  font-size: min(5vw, 24px);
 
   nav {
     display: flex;
