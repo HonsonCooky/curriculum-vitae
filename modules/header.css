@@ -7,6 +7,9 @@ header {
   background: var(--base);
   padding: 6px 10px;
   font-size: min(5vw, 24px);
+  align-items: center;
+  height: 5dvh;
+  font-weight: 600;
 
   nav {
     display: flex;
@@ -34,7 +37,7 @@ header {
       height: 100dvh;
     }
 
-    > button {
+    >button {
       &:active {
         color: var(--foam);
       }
