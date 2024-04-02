@@ -1,22 +1,37 @@
 const typingText = document.getElementById("typing-text");
-const typingAnimation = typingText.getAnimations().filter(a => a.animationName === "typing")[0];
-const deletingAnimation = typingText.getAnimations().filter(a => a.animationName === "deleting")[0];
-const phrases = ["Full Stack Developer", "Frontend | TypeScript", "Backend | .Net & C#", "Integrations | Azure", "CI/CD | Pipelines"];
 let currentPhrase = 0;
+const phrases = [
+  " Full Stack Developer",
+  " Frontend Developer",
+  " Backend Developer",
+  "n Integration Engineer",
+  "n Infrastructure Engineer",
+];
+const typingSpeedBase = 100; // milliseconds
 
-function loadNextTypingText() {
-  typingAnimation.cancel();
-  deletingAnimation.cancel();
-  const nextPhrase = phrases[currentPhrase];
-  const typingTextDuration = nextPhrase.length / 6;
-  typingText.innerText = nextPhrase;
-  typingText.style.animationTimingFunction = `step-end, steps(${nextPhrase.length}, end), steps(${nextPhrase.length}, end)`;
-  typingText.style.animationDuration = `0.75s, ${typingTextDuration}s, ${typingTextDuration / 4}s`;
-  typingText.style.animationDelay = `0s, 0s, ${typingTextDuration + 3}s`;
-  currentPhrase = (currentPhrase + 1) % phrases.length;
-  typingAnimation.play();
-  deletingAnimation.play();
+function typeWriter(phrase, i) {
+  if (i < phrase.length) {
+    typingText.innerHTML += phrase.charAt(i);
+    setTimeout(() => typeWriter(phrase, i + 1), typingSpeedBase);
+  } else {
+    setTimeout(deleteWriter, 1500);
+  }
 }
 
-deletingAnimation.onfinish = loadNextTypingText();
-loadNextTypingText();
+function deleteWriter() {
+  if (typingText.innerHTML.length > 0) {
+    typingText.innerText = typingText.innerText.slice(0, -1);
+    setTimeout(() => deleteWriter(), typingSpeedBase / 3);
+  } else {
+    setTimeout(nextPhrase, 1000);
+    return;
+  }
+}
+
+function nextPhrase() {
+  const phrase = phrases[currentPhrase];
+  typeWriter(phrase, 0);
+  currentPhrase = (currentPhrase + 1) % phrases.length;
+}
+
+nextPhrase();

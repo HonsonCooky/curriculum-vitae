@@ -1,31 +1,4 @@
-@keyframes typing {
-
-  from {
-    width: 0;
-  }
-
-  20% {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes deleting {
-
-  from {
-    width: 100%;
-  }
-
-  to {
-    width: 0;
-  }
-}
-
 @keyframes blink-caret {
-
   from,
   to {
     border-color: transparent;
@@ -34,7 +7,6 @@
   50% {
     border-color: var(--gold);
   }
-
 }
 
 #home-section {
@@ -45,40 +17,40 @@
   padding: 2vh 2vw;
   height: 95dvh;
 
-  >#profile {
+  > #profile {
     display: flex;
     justify-content: center;
-    box-shadow: 0px 0px 7px 5px inset var(--shadow);
+    box-shadow: 0px 0px 10px 5px inset var(--highlight-high);
     border-radius: 100vh;
-    background: var(--highlight-high);
+    background: var(--overlay);
     padding: 2vh 2vw 0 2vw;
     aspect-ratio: 1/1;
     max-width: 90%;
     max-height: 50vh;
     overflow: hidden;
 
-    >img {
-      filter: drop-shadow(-1px 1px 7px var(--shadow)) drop-shadow(-1px 1px 7px var(--shadow));
+    > img {
       object-fit: contain;
     }
   }
 
-  >section {
+  > section {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 
-    >hgroup {
+    > hgroup {
       padding: 2vh 0;
 
-      >p {
+      > p {
         margin: 0;
-        font-size: min(6vw, 30px);
+        color: var(--foam);
         font-weight: 400;
+        font-size: min(6vw, 30px);
       }
 
-      >h1 {
+      > h1 {
         margin: 0;
         color: var(--gold);
         font-weight: 900;
@@ -86,22 +58,19 @@
       }
     }
 
-    #typing-area {
+    #typing-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       font-size: min(5vw, 24px);
-      font-weight: 200;
-      color: var(--rose);
 
       #typing-text {
-        color: inherit;
-        overflow: hidden;
+        display: flex;
+        animation: blink-caret 0.75s step-end infinite;
+        margin: 0;
         border-right: 2px solid var(--gold);
-        white-space: nowrap;
-        margin: 0 auto;
-        animation-name: blink-caret, typing, deleting;
-        animation-duration: .75s, 3s, 3s;
-        animation-delay: 0s, 0s, 5s;
-        animation-iteration-count: infinite, 1, 1;
-        animation-timing-function: step-end, steps(10, end), steps(10, end);
+        padding: 0;
+        min-height: 1em;
       }
     }
   }
