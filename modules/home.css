@@ -58,20 +58,13 @@
       }
     }
 
-    #typing-container {
+    #typing-text {
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      animation: blink-caret 0.75s step-end infinite;
+      margin: 0;
+      border-right: 2px solid var(--gold);
+      padding: 0;
       font-size: min(5vw, 24px);
-
-      #typing-text {
-        display: flex;
-        animation: blink-caret 0.75s step-end infinite;
-        margin: 0;
-        border-right: 2px solid var(--gold);
-        padding: 0;
-        min-height: 1em;
-      }
     }
   }
 
