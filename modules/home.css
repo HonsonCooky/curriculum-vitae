@@ -1,11 +1,12 @@
 @keyframes blink-caret {
+
   from,
   to {
     border-color: transparent;
   }
 
   50% {
-    border-color: var(--gold);
+    border-color: var(--text);
   }
 }
 
@@ -17,10 +18,10 @@
   padding: 2vh 2vw;
   height: 95dvh;
 
-  > #profile {
+  >#profile {
     display: flex;
     justify-content: center;
-    box-shadow: 0px 0px 10px 5px inset var(--highlight-high);
+    box-shadow: 0px 0px 10px 5px inset var(--shadow);
     border-radius: 100vh;
     background: var(--overlay);
     padding: 2vh 2vw 0 2vw;
@@ -29,42 +30,37 @@
     max-height: 50vh;
     overflow: hidden;
 
-    > img {
+    >img {
+      filter: drop-shadow(2px 2px 7px var(--shadow)) drop-shadow(-2px 2px 7px var(--shadow));
       object-fit: contain;
     }
   }
 
-  > section {
+  >hgroup {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 2vh 0;
     text-align: center;
 
-    > hgroup {
-      padding: 2vh 0;
-
-      > p {
-        margin: 0;
-        color: var(--foam);
-        font-weight: 400;
-        font-size: min(6vw, 30px);
-      }
-
-      > h1 {
-        margin: 0;
-        color: var(--gold);
-        font-weight: 900;
-        font-size: min(18vw, 80px);
-      }
+    >p {
+      margin: 0;
+      font-weight: 500;
+      font-size: min(6vw, 30px);
     }
 
-    #typing-text {
-      display: flex;
-      animation: blink-caret 0.75s step-end infinite;
+    >h1 {
       margin: 0;
-      border-right: 2px solid var(--gold);
-      padding: 0;
-      font-size: min(5vw, 24px);
+      color: var(--gold);
+      font-weight: 900;
+      font-size: min(18vw, 80px);
+      line-height: 100%;
+    }
+
+    #typewriter-text {
+      animation: blink-caret 0.75s step-end infinite;
+      border-right: 4px solid var(--text);
+      min-height: min(18vw, 80px);
     }
   }
 

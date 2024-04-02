@@ -14,6 +14,7 @@ function toggleMenu() {
 }
 
 menuBtn.addEventListener("click", toggleMenu);
+nav.addEventListener("click", toggleMenu);
 
 const navButtons = Array.from(nav.children);
 for (const btn of navButtons) {
@@ -21,7 +22,6 @@ for (const btn of navButtons) {
     const sectionId = `${btn.innerText.replaceAll(".\\", "")}-section`;
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
-      toggleMenu();
       sectionElement.scrollIntoView();
     }
   });

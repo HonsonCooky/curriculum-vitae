@@ -3,13 +3,13 @@ header {
   position: sticky;
   top: 0;
   justify-content: space-between;
+  align-items: center;
   z-index: 100;
   background: var(--base);
   padding: 6px 10px;
-  font-size: min(5vw, 24px);
-  align-items: center;
   height: 5dvh;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: min(5vw, 24px);
 
   nav {
     display: flex;
@@ -18,15 +18,14 @@ header {
     left: 0;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
-    gap: 0;
+    gap: 8px;
     opacity: 0;
     z-index: -1;
     backdrop-filter: blur(20px);
     transition-duration: 0.5s;
     transition-property: height, opacity, gap;
     transition-timing-function: ease;
-    padding: 0 10px;
+    padding: 30px;
     width: 100dvw;
     height: 0dvh;
     overflow: hidden;
@@ -38,6 +37,11 @@ header {
     }
 
     >button {
+      border-radius: 1vh;
+      background: var(--overlay);
+      padding: 12px 8px;
+      text-align: start;
+
       &:active {
         color: var(--foam);
       }

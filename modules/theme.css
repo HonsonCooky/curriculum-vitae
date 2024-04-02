@@ -14,7 +14,7 @@
   --highlight-low: #f4ede8;
   --highlight-med: #dfdad9;
   --highlight-high: #cecacd;
-  --shadow: #191724;
+  --shadow: #464168;
 }
 
 [theme="dark"] {
@@ -41,6 +41,7 @@
   outline: none;
   border: none;
   background: none;
+  scroll-margin-top: 5dvh;
   color: var(--text);
   font-style: normal;
   font-weight: inherit;
@@ -53,4 +54,8 @@ html,
 body {
   margin: 0;
   background-color: var(--base);
+}
+
+hr {
+  border-top: 2px solid var(--overlay);
 }
