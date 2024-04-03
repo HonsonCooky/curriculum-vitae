@@ -11,44 +11,59 @@ header {
   font-weight: 400;
   font-size: min(5vw, 24px);
 
-  nav {
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    flex-direction: column;
-    justify-content: center;
-    gap: 8px;
-    opacity: 0;
-    z-index: -1;
-    backdrop-filter: blur(20px);
-    transition-duration: 0.5s;
-    transition-property: height, opacity, gap;
-    transition-timing-function: ease;
-    padding: 30px;
-    width: 100dvw;
-    height: 0dvh;
-    overflow: hidden;
+  @media only screen and (max-width: 768px) {
+    nav {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      opacity: 0;
+      z-index: -1;
+      backdrop-filter: blur(20px);
+      transition-duration: 0.5s;
+      transition-property: height, opacity, gap;
+      transition-timing-function: ease;
+      padding: 30px;
+      width: 100dvw;
+      height: 0dvh;
+      overflow: hidden;
 
-    &.open {
-      gap: 2vh;
-      opacity: 1;
-      height: 100dvh;
-    }
+      &.open {
+        gap: 2vh;
+        opacity: 1;
+        height: 100dvh;
+      }
 
-    > button {
-      border-radius: 1vh;
-      background: var(--overlay);
-      padding: 12px 8px;
-      text-align: start;
+      > button {
+        text-align: start;
+        text-shadow: 2px 2px 2px var(--base);
 
-      &:active {
-        color: var(--foam);
+        &:active,
+        &:hover {
+          color: var(--foam);
+        }
       }
     }
   }
 
-  @media only screen and (max-width: 768px) {
-    /* DESKTOP */
+  @media only screen and (min-width: 768px) {
+    padding: 1vh max(1vw, 10px);
+    font-size: clamp(16px, 1.5vw, 40px);
+
+    > nav {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: clamp(6px, 1vw, 20px);
+    }
+
+    > div {
+      #menu-btn {
+        display: none;
+      }
+    }
   }
 }

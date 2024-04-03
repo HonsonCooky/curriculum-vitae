@@ -1,9 +1,9 @@
 const header = document.querySelector("header");
 const nav = header.querySelector("nav");
 const menuBtn = document.getElementById("menu-btn");
+const openTag = "open";
 
 function toggleMenu() {
-  const openTag = "open";
   if (nav.classList.contains(openTag)) {
     nav.classList.remove(openTag);
     menuBtn.className = "nf nf-md-menu";
@@ -26,3 +26,10 @@ for (const btn of navButtons) {
     }
   });
 }
+
+window.addEventListener("resize", function() {
+  if (nav.classList.contains(openTag)) {
+    nav.classList.remove("open");
+    menuBtn.className = "nf nf-md-menu";
+  }
+});
