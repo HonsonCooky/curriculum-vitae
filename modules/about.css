@@ -4,6 +4,8 @@
   align-items: center;
 
   @media only screen and (max-width: 1024px) {
+    margin-top: 10vh;
+
     > hgroup {
       display: flex;
       flex-direction: column;
