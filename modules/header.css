@@ -36,7 +36,7 @@ header {
       height: 100dvh;
     }
 
-    >button {
+    > button {
       border-radius: 1vh;
       background: var(--overlay);
       padding: 12px 8px;
