@@ -27,14 +27,14 @@ header {
       transition-property: height, opacity, gap;
       transition-timing-function: ease;
       padding: 30px;
-      width: 100dvw;
-      height: 0dvh;
+      width: 100vw;
+      height: 0;
       overflow: hidden;
 
       &.open {
         gap: 2vh;
         opacity: 1;
-        height: 100dvh;
+        height: 100vh;
       }
 
       > button {
