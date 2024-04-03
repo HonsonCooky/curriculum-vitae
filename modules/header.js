@@ -27,15 +27,23 @@ for (const btn of navButtons) {
   });
 }
 
+const main = document.querySelector("main");
+const mainChildren = Array.from(main.children);
+
+for (const child of mainChildren) {
+  child.style.scrollMarginTop = header.scrollHeight + "px";
+}
+
 window.addEventListener("resize", function() {
   if (nav.classList.contains(openTag)) {
     nav.classList.remove("open");
     menuBtn.className = "nf nf-md-menu";
   }
+  for (const child of mainChildren) {
+    child.style.scrollMarginTop = header.scrollHeight + "px";
+  }
 });
 
-const main = document.querySelector("main");
-const mainChildren = Array.from(main.children);
 window.addEventListener("scroll", function(event) {
   setTimeout(function() {
     for (const child of mainChildren) {

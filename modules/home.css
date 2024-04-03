@@ -10,7 +10,7 @@
     > #profile-container {
       display: flex;
       justify-content: center;
-      box-shadow: 0px 0px 10px 5px inset var(--shadow);
+      box-shadow: 0 0 3vw 1vw inset var(--shadow);
       border-radius: 100vh;
       background: var(--overlay);
       padding: 2vh 2vw 0 2vw;
@@ -20,8 +20,7 @@
       overflow: hidden;
 
       > img {
-        filter: drop-shadow(2px 2px 7px var(--shadow))
-          drop-shadow(-2px 2px 7px var(--shadow));
+        filter: drop-shadow(0vw -0.5vw 1vw var(--shadow));
         object-fit: contain;
       }
     }

@@ -7,8 +7,7 @@ header {
   z-index: 100;
   border-bottom: 2px solid var(--text);
   background: var(--base);
-  padding: 6px 10px;
-  height: 5dvh;
+  padding: min(1vh, 10px) min(10vw, 30px);
   font-weight: 400;
   font-size: min(5vw, 24px);
 
