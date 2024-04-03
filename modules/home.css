@@ -6,47 +6,90 @@
   padding: 2vh 2vw;
   height: 95dvh;
 
-  >#profile-container {
-    display: flex;
-    justify-content: center;
-    box-shadow: 0px 0px 10px 5px inset var(--shadow);
-    border-radius: 100vh;
-    background: var(--overlay);
-    padding: 2vh 2vw 0 2vw;
-    aspect-ratio: 1/1;
-    max-width: 90%;
-    max-height: 50vh;
-    overflow: hidden;
+  @media only screen and (max-width: 769px) {
+    > #profile-container {
+      display: flex;
+      justify-content: center;
+      box-shadow: 0px 0px 10px 5px inset var(--shadow);
+      border-radius: 100vh;
+      background: var(--overlay);
+      padding: 2vh 2vw 0 2vw;
+      aspect-ratio: 1/1;
+      max-width: 90%;
+      max-height: 50vh;
+      overflow: hidden;
 
-    >img {
-      filter: drop-shadow(2px 2px 7px var(--shadow)) drop-shadow(-2px 2px 7px var(--shadow));
-      object-fit: contain;
+      > img {
+        filter: drop-shadow(2px 2px 7px var(--shadow))
+          drop-shadow(-2px 2px 7px var(--shadow));
+        object-fit: contain;
+      }
+    }
+
+    > hgroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2vh 0;
+      text-align: center;
+
+      > h2 {
+        font-weight: 500;
+        font-size: min(6vw, 30px);
+      }
+
+      > h1 {
+        margin: 0;
+        color: var(--gold);
+        font-weight: 900;
+        font-size: min(18vw, 80px);
+        line-height: 100%;
+      }
     }
   }
 
-  >hgroup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2vh 0;
-    text-align: center;
+  @media only screen and (min-width: 769px) {
+    flex-direction: row;
+    justify-content: space-around;
 
-    >h2 {
-      font-weight: 500;
-      font-size: min(6vw, 30px);
+    > #profile-container {
+      display: flex;
+      justify-content: center;
+      box-shadow: 0px 0px 10px 5px inset var(--shadow);
+      border-radius: 100vh;
+      background: var(--overlay);
+      padding: 2vh 2vw 0 2vw;
+      aspect-ratio: 1/1;
+      max-width: 90%;
+      max-height: 50vh;
+      overflow: hidden;
+
+      > img {
+        filter: drop-shadow(2px 2px 7px var(--shadow))
+          drop-shadow(-2px 2px 7px var(--shadow));
+        object-fit: contain;
+      }
     }
 
-    >h1 {
-      color: var(--gold);
-      font-weight: 900;
-      font-size: min(18vw, 80px);
-      line-height: 100%;
-      margin: 0;
+    > hgroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2vh 0;
+      text-align: center;
+
+      > h2 {
+        font-weight: 500;
+        font-size: clamp(20px, 2.5vw, 60px);
+      }
+
+      > h1 {
+        margin: 0;
+        color: var(--gold);
+        font-weight: 900;
+        font-size: clamp(60px, 7vw, 200px);
+        line-height: 100%;
+      }
     }
-
-  }
-
-  @media only screen and (max-width: 768px) {
-    /* DESKTOP */
   }
 }

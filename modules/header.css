@@ -11,7 +11,7 @@ header {
   font-weight: 400;
   font-size: min(5vw, 24px);
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 769px) {
     nav {
       display: flex;
       position: absolute;
@@ -49,7 +49,7 @@ header {
     }
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 769px) {
     padding: 1vh max(1vw, 10px);
     font-size: clamp(16px, 1.5vw, 40px);
 
