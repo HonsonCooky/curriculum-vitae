@@ -5,13 +5,14 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+  border-bottom: 2px solid var(--text);
   background: var(--base);
   padding: 6px 10px;
   height: 5dvh;
   font-weight: 400;
   font-size: min(5vw, 24px);
 
-  @media only screen and (max-width: 769px) {
+  @media only screen and (max-width: 1024px) {
     nav {
       display: flex;
       position: absolute;
@@ -41,15 +42,14 @@ header {
         text-align: start;
         text-shadow: 2px 2px 2px var(--base);
 
-        &:active,
-        &:hover {
+        &:active {
           color: var(--foam);
         }
       }
     }
   }
 
-  @media only screen and (min-width: 769px) {
+  @media only screen and (min-width: 1024px) {
     padding: 1vh max(1vw, 10px);
     font-size: clamp(16px, 1.5vw, 40px);
 
@@ -58,6 +58,12 @@ header {
       flex-direction: row;
       justify-content: center;
       gap: clamp(6px, 1vw, 20px);
+
+      > button {
+        &:hover {
+          color: var(--foam);
+        }
+      }
     }
 
     > div {

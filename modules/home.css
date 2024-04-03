@@ -6,7 +6,7 @@
   padding: 2vh 2vw;
   height: 95dvh;
 
-  @media only screen and (max-width: 769px) {
+  @media only screen and (max-width: 1024px) {
     > #profile-container {
       display: flex;
       justify-content: center;
@@ -16,7 +16,7 @@
       padding: 2vh 2vw 0 2vw;
       aspect-ratio: 1/1;
       max-width: 90%;
-      max-height: 50vh;
+      max-height: 40vh;
       overflow: hidden;
 
       > img {
@@ -48,8 +48,8 @@
     }
   }
 
-  @media only screen and (min-width: 769px) {
-    flex-direction: row;
+  @media only screen and (min-width: 1024px) {
+    flex-direction: row-reverse;
     justify-content: space-around;
 
     > #profile-container {
@@ -60,7 +60,7 @@
       background: var(--overlay);
       padding: 2vh 2vw 0 2vw;
       aspect-ratio: 1/1;
-      max-width: 90%;
+      max-width: 30vw;
       max-height: 50vh;
       overflow: hidden;
 
