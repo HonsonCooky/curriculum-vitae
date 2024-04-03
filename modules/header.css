@@ -41,10 +41,6 @@ header {
       > button {
         text-align: start;
         text-shadow: 2px 2px 2px var(--base);
-
-        &:active {
-          color: var(--foam);
-        }
       }
     }
   }

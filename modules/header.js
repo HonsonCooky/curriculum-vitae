@@ -19,7 +19,7 @@ nav.addEventListener("click", toggleMenu);
 const navButtons = Array.from(nav.children);
 for (const btn of navButtons) {
   btn.addEventListener("click", function() {
-    const sectionId = `${btn.innerText.replaceAll(".\\", "")}-section`;
+    const sectionId = btn.id.replaceAll("-btn", "");
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
       sectionElement.scrollIntoView();
@@ -32,4 +32,22 @@ window.addEventListener("resize", function() {
     nav.classList.remove("open");
     menuBtn.className = "nf nf-md-menu";
   }
+});
+
+const main = document.querySelector("main");
+const mainChildren = Array.from(main.children);
+window.addEventListener("scroll", function(event) {
+  setTimeout(function() {
+    for (const child of mainChildren) {
+      const rect = child.getBoundingClientRect();
+      const btnId = `${child.id}-btn`;
+      const btn = document.getElementById(btnId);
+      const threshold = window.innerHeight / 4;
+      if (rect.top < threshold && rect.bottom > threshold) {
+        btn.style.color = "var(--foam)";
+      } else {
+        btn.style.color = "var(--text)";
+      }
+    }
+  }, 0);
 });
