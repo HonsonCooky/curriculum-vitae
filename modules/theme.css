@@ -46,6 +46,7 @@
     --fs-3: clamp(1.512rem, 0.6738rem + 4.1912cqi, 2.6855rem);
     --fs-4: clamp(1.8144rem, 0.7126rem + 5.509cqi, 3.3569rem);
     --fs-5: clamp(2.1773rem, 0.7352rem + 7.2103cqi, 4.1962rem);
+    --fs-title: clamp(3.75rem, 1.0714rem + 13.3929cqi, 7.5rem);
 
     --space-3xs: clamp(0.25rem, 0.1607rem + 0.4464cqi, 0.375rem);
     --space-2xs: clamp(0.5rem, 0.3214rem + 0.8929cqi, 0.75rem);
@@ -61,7 +62,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   :root {
     --fs--2: clamp(0.6944rem, 0.391rem + 0.6323cqi, 0.96rem);
     --fs--1: clamp(0.8333rem, 0.4143rem + 0.873cqi, 1.2rem);
@@ -71,6 +72,7 @@
     --fs-3: clamp(1.728rem, 0.3546rem + 2.8612cqi, 2.9297rem);
     --fs-4: clamp(2.0736rem, 0.2582rem + 3.7822cqi, 3.6621rem);
     --fs-5: clamp(2.4883rem, 0.1005rem + 4.9746cqi, 4.5776rem);
+    --fs-title: clamp(4.5rem, 1.0714rem + 7.1429cqi, 7.5rem);
 
     --space-3xs: clamp(0.3125rem, 0.0982rem + 0.4464cqi, 0.5rem);
     --space-2xs: clamp(0.5625rem, 0.1339rem + 0.8929cqi, 0.9375rem);
