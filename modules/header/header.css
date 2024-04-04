@@ -5,8 +5,6 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
-  font-size: var(--fs-0);
-  padding: var(--space-3xs) var(--space-m);
   border-bottom: var(--border-size) solid var(--text);
   background: var(--base);
   z-index: 100;
@@ -17,6 +15,9 @@ header {
 
 
   @media screen and (max-width: 768px) {
+    padding: var(--space-xs) var(--space-m);
+    font-size: var(--fs-1);
+
     >nav {
       z-index: -1;
       position: absolute;
@@ -43,6 +44,9 @@ header {
   }
 
   @media screen and (min-width: 769px) {
+    padding: var(--space-2xs) var(--space-m);
+    font-size: var(--fs-0);
+
     >nav {
       flex-direction: row;
       gap: var(--space-s)

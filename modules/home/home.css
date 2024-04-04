@@ -53,7 +53,7 @@
 
   @media screen and (min-width: 769px) {
     flex-direction: row;
-    height: calc(100vh - var(--fs-0) - var(--space-s));
+    height: calc(100vh - var(--fs-0) - var(--space-m));
 
     >div {
       max-width: 50vw;

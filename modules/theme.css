@@ -60,6 +60,10 @@
 
     --border-size: clamp(0.125rem, 0.0357rem + 0.4464cqi, 0.25rem);
   }
+
+  * {
+    scroll-margin-top: calc(var(--fs-1) + var(--space-l));
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -86,6 +90,10 @@
 
     --border-size: clamp(0.125rem, -0.0179rem + 0.2976cqi, 0.25rem);
   }
+
+  * {
+    scroll-margin-top: calc(var(--fs-0) + var(--space-m));
+  }
 }
 
 * {
@@ -99,7 +107,6 @@
   font-size: inherit;
   font-family: "Reddit Mono", monospace;
   font-optical-sizing: auto;
-  scroll-margin-top: calc(var(--fs-0) + var(--space-s));
 }
 
 *::-webkit-input-placeholder {
