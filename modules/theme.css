@@ -99,6 +99,7 @@
   font-size: inherit;
   font-family: "Reddit Mono", monospace;
   font-optical-sizing: auto;
+  scroll-margin-top: calc(var(--fs-0) + var(--space-s));
 }
 
 *::-webkit-input-placeholder {
@@ -125,6 +126,11 @@ body {
   scroll-behavior: smooth;
 }
 
-hr {
-  border-top: 2px solid var(--overlay);
+
+@media screen and (min-width: 1440px) {
+  body {
+    >main {
+      padding: 0 calc((100vw - 1440px) /2);
+    }
+  }
 }
