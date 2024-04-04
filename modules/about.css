@@ -6,7 +6,7 @@
   @media only screen and (max-width: 1024px) {
     margin-top: 10vh;
 
-    > hgroup {
+    >hgroup {
       display: flex;
       flex-direction: column;
       align-content: center;
@@ -18,7 +18,7 @@
       width: 100%;
       text-align: end;
 
-      > h1 {
+      >h1 {
         margin: 0;
         color: var(--love);
         font-weight: 900;
@@ -26,19 +26,19 @@
         line-height: 100%;
       }
 
-      > h2 {
+      >h2 {
         margin: 0;
         font-weight: 400;
         font-size: clamp(14px, 4vw, 30px);
       }
 
-      > hr {
+      >hr {
         border-bottom: 2px solid var(--text);
         width: 100%;
       }
     }
 
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -48,7 +48,7 @@
       width: 100%;
       scroll-margin-top: 15vh;
 
-      > h3 {
+      >h3 {
         margin: 0;
         width: 100%;
         color: var(--rose);
@@ -58,14 +58,14 @@
         text-decoration: underline;
       }
 
-      > p {
+      >p {
         margin: 0;
         font-size: clamp(14px, 3.2vw, 30px);
       }
     }
 
-    > #background {
-      > #dance-container {
+    >#background {
+      >#dance-container {
         display: flex;
         flex-direction: column;
         justify-content: end;
@@ -76,22 +76,47 @@
         padding: 0 2%;
         aspect-ratio: 1/1;
 
-        > img {
+        >img {
           filter: drop-shadow(0vw -0.2vh 0.5vw var(--shadow));
           max-width: calc(90vw - 60px);
         }
       }
     }
 
-    > #contact-info {
+    >#contact-info {
       position: sticky;
       bottom: 0;
     }
   }
 
   @media only screen and (min-width: 1024px) {
-    > #dance-container {
-      display: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    >hgroup {
+      >h1 {}
+
+      >h2 {}
+
+      >hr {
+        border-bottom: 2px solid var(--text);
+        width: 100%;
+      }
     }
+
+    >div {
+      >h3 {}
+
+      >p {}
+    }
+
+    >#background {
+      >#dance-container {
+        >img {}
+      }
+    }
+
+    >#contact-info {}
   }
 }

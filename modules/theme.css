@@ -49,6 +49,23 @@
   font-optical-sizing: auto;
 }
 
+*::-webkit-input-placeholder {
+  color: var(--text);
+  font-weight: 300;
+}
+
+*::-webkit-scrollbar {
+  width: 0.7vw;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--highlight-low);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--highlight-high);
+}
+
 html,
 body {
   margin: 0;

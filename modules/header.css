@@ -9,8 +9,9 @@ header {
   background: var(--base);
   padding: min(1vh, 10px) min(10vw, 30px);
   font-weight: 400;
-  font-size: min(5vw, 24px);
+  font-size: min(4.5vw, 24px);
 
+  /* MOBILE */
   @media only screen and (max-width: 1024px) {
     nav {
       display: flex;
@@ -37,31 +38,36 @@ header {
         height: 100vh;
       }
 
-      > button {
+      >button {
         text-align: start;
         text-shadow: 2px 2px 2px var(--base);
+
+        &:active {
+          color: var(--foam) !important;
+        }
       }
     }
   }
 
+  /* DESKTOP */
   @media only screen and (min-width: 1024px) {
     padding: 1vh max(1vw, 10px);
     font-size: clamp(16px, 1.5vw, 40px);
 
-    > nav {
+    >nav {
       display: flex;
       flex-direction: row;
       justify-content: center;
       gap: clamp(6px, 1vw, 20px);
 
-      > button {
+      >button {
         &:hover {
-          color: var(--foam);
+          color: var(--foam) !important;
         }
       }
     }
 
-    > div {
+    >div {
       #menu-btn {
         display: none;
       }
