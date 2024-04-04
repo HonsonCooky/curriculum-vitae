@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 @import url("./modules/theme.css");
-@import url("./modules/header.css");
-@import url("./modules/home.css");
-@import url("./modules/about.css");
+@import url("./modules/header/header.css");
