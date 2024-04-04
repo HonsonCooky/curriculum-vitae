@@ -18,7 +18,7 @@ nav.addEventListener("click", toggleMenu);
 
 const navButtons = Array.from(nav.children);
 for (const btn of navButtons) {
-  btn.addEventListener("click", function () {
+  btn.addEventListener("click", function() {
     const sectionId = btn.id.replaceAll("-btn", "");
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
@@ -34,7 +34,7 @@ for (const child of mainChildren) {
   child.style.scrollMarginTop = header.scrollHeight + "px";
 }
 
-window.addEventListener("resize", function () {
+window.addEventListener("resize", function() {
   if (nav.classList.contains(openTag)) {
     nav.classList.remove("open");
     menuBtn.className = "nf nf-md-menu";
@@ -44,8 +44,8 @@ window.addEventListener("resize", function () {
   }
 });
 
-window.addEventListener("scroll", function (event) {
-  setTimeout(function () {
+window.addEventListener("scroll", function(event) {
+  setTimeout(function() {
     for (const child of mainChildren) {
       const rect = child.getBoundingClientRect();
       const btnId = `${child.id}-btn`;
@@ -53,6 +53,8 @@ window.addEventListener("scroll", function (event) {
       const threshold = window.innerHeight / 4;
       if (rect.top < threshold && rect.bottom > threshold) {
         btn.style.color = "var(--iris)";
+      } else {
+        btn.style.color = "var(--inherit)";
       }
     }
   }, 0);
