@@ -13,11 +13,12 @@ header {
     display: flex;
 
     > button {
-      border: var(--border-size) solid var(--gold);
-      padding: 0 var(--space-xs);
+      transition-duration: 0.5s;
+      transition-property: color;
+      transition-timing-function: ease;
 
-      &:hover {
-        border-color: var(--highlight-high);
+      &:hover,
+      &:active {
         color: var(--foam);
       }
     }
@@ -38,7 +39,7 @@ header {
       opacity: 0;
       z-index: -1;
       backdrop-filter: blur(20px);
-      transition-duration: 0.75s;
+      transition-duration: 0.5s;
       transition-property: height, opacity, gap;
       transition-timing-function: ease;
       width: 100vw;
@@ -48,10 +49,6 @@ header {
         gap: var(--space-xs);
         opacity: 1;
         height: 100vh;
-      }
-
-      > button {
-        border-radius: var(--fs-1);
       }
     }
   }
@@ -65,7 +62,9 @@ header {
       gap: var(--space-s);
 
       > button {
-        border-radius: var(--fs-0);
+        &:hover,
+        &:active {
+        }
       }
     }
 

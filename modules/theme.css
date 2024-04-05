@@ -98,9 +98,6 @@
 
 * {
   box-sizing: border-box;
-  outline: none;
-  border: none;
-  background: none;
   color: var(--text);
   font-style: normal;
   font-weight: inherit;

@@ -18,23 +18,21 @@ nav.addEventListener("click", toggleMenu);
 
 const navButtons = Array.from(nav.children);
 for (const btn of navButtons) {
-  btn.addEventListener("click", function() {
+  btn.addEventListener("click", function () {
     const sectionId = btn.id.replaceAll("-btn", "");
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
       sectionElement.scrollIntoView();
     } else {
-      console.log(`Missing ${sectionId}`)
+      console.log(`Missing ${sectionId}`);
     }
   });
 }
 
-window.addEventListener("resize", function() {
+window.addEventListener("resize", function () {
   if (nav.classList.contains(openTag)) toggleMenu();
-})
+});
 
-window.addEventListener("scroll", function() {
-  setTimeout(function() {
-
-  }, 0)
-})
+window.addEventListener("scroll", function () {
+  setTimeout(function () {}, 0);
+});

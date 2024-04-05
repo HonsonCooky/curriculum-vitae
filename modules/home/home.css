@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
 
-  > div {
+  > #profile-container {
     display: flex;
     justify-content: center;
     box-shadow: 0 0 var(--fs-0) 0 inset var(--shadow);
@@ -15,9 +15,7 @@
     overflow: hidden;
 
     > img {
-      filter: drop-shadow(
-        var(--border-size) 0 calc(var(--border-size) * 2) var(--shadow)
-      );
+      filter: drop-shadow(var(--border-size) 0 calc(var(--border-size) * 2) var(--shadow));
       object-fit: contain;
     }
   }
@@ -39,27 +37,6 @@
       margin: 0;
       font-size: var(--fs-1);
       line-height: 100%;
-    }
-
-    > a {
-      display: flex;
-      gap: var(--space-2xs);
-      margin-top: var(--space-m);
-      border-radius: var(--fs-0);
-      background: var(--gold);
-      padding: var(--space-3xs) var(--space-xs);
-      color: var(--base);
-      font-size: var(--fs--1);
-      text-decoration: none;
-
-      &:hover {
-        background: var(--overlay);
-        color: var(--foam);
-      }
-
-      * {
-        color: inherit;
-      }
     }
   }
 
