@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
 
-  >div {
+  > div {
     display: flex;
     justify-content: center;
     box-shadow: 0 0 var(--fs-0) 0 inset var(--shadow);
@@ -14,40 +14,63 @@
     aspect-ratio: 1/1;
     overflow: hidden;
 
-    >img {
-      filter: drop-shadow(var(--border-size) 0 calc(var(--border-size) * 2) var(--shadow));
+    > img {
+      filter: drop-shadow(
+        var(--border-size) 0 calc(var(--border-size) * 2) var(--shadow)
+      );
       object-fit: contain;
     }
   }
 
-  >hgroup {
+  > hgroup {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    >h1 {
+    > h1 {
       margin: 0;
       color: var(--gold);
+      font-weight: 900;
       font-size: var(--fs-title);
       line-height: 100%;
-      font-weight: 900;
     }
 
-    >h2 {
-      font-size: var(--fs-1);
+    > h2 {
       margin: 0;
+      font-size: var(--fs-1);
       line-height: 100%;
+    }
+
+    > a {
+      display: flex;
+      gap: var(--space-2xs);
+      margin-top: var(--space-m);
+      border-radius: var(--fs-0);
+      background: var(--gold);
+      padding: var(--space-3xs) var(--space-xs);
+      color: var(--base);
+      font-size: var(--fs--1);
+      text-decoration: none;
+
+      &:hover {
+        background: var(--overlay);
+        color: var(--foam);
+      }
+
+      * {
+        color: inherit;
+      }
     }
   }
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    padding: var(--space-xl) 0;
     gap: var(--space-m);
+    padding: var(--space-xl) 0;
 
-    >div {
-      max-height: 50vh;
+    > div {
       max-width: 90vw;
+      max-height: 50vh;
     }
   }
 
@@ -55,7 +78,7 @@
     flex-direction: row;
     height: calc(100vh - var(--fs-0) - var(--space-m));
 
-    >div {
+    > div {
       max-width: 50vw;
       max-height: 60vh;
     }

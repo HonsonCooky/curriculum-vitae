@@ -1,44 +1,57 @@
 header {
   display: flex;
+  position: sticky;
+  top: 0;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
+  z-index: 100;
   border-bottom: var(--border-size) solid var(--text);
   background: var(--base);
-  z-index: 100;
 
-  >nav {
+  > nav {
     display: flex;
-  }
 
+    > button {
+      border: var(--border-size) solid var(--gold);
+      padding: 0 var(--space-xs);
+
+      &:hover {
+        border-color: var(--highlight-high);
+        color: var(--foam);
+      }
+    }
+  }
 
   @media screen and (max-width: 768px) {
     padding: var(--space-xs) var(--space-m);
     font-size: var(--fs-1);
 
-    >nav {
-      z-index: -1;
+    > nav {
       position: absolute;
       top: 0;
       left: 0;
-      height: 0;
       flex-direction: column;
       justify-content: center;
       align-items: start;
+      gap: 0;
       opacity: 0;
+      z-index: -1;
       backdrop-filter: blur(20px);
+      transition-duration: 0.75s;
       transition-property: height, opacity, gap;
       transition-timing-function: ease;
-      transition-duration: 0.75s;
       width: 100vw;
-      gap: 0;
+      height: 0;
 
       &.open {
+        gap: var(--space-xs);
         opacity: 1;
         height: 100vh;
-        gap: var(--space-xs)
+      }
+
+      > button {
+        border-radius: var(--fs-1);
       }
     }
   }
@@ -47,12 +60,16 @@ header {
     padding: var(--space-2xs) var(--space-m);
     font-size: var(--fs-0);
 
-    >nav {
+    > nav {
       flex-direction: row;
-      gap: var(--space-s)
+      gap: var(--space-s);
+
+      > button {
+        border-radius: var(--fs-0);
+      }
     }
 
-    >div {
+    > div {
       #menu-btn {
         display: none;
       }
@@ -60,6 +77,6 @@ header {
   }
 
   @media screen and (min-width: 1440px) {
-    padding: var(--space-3xs) calc(((100vw - 1440px) / 4) + var(--space-m));
+    padding: var(--space-2xs) calc(((100vw - 1440px) / 4) + var(--space-m));
   }
 }
