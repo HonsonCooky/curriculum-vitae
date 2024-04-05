@@ -11,19 +11,14 @@ header {
 
   > nav {
     display: flex;
+  }
 
-    > button {
-      transition-duration: 0.5s;
-      transition-property: color;
-      transition-timing-function: ease;
-      border-color: var(--overlay);
-      background: none;
-
-      &:hover,
-      &:active {
-        color: var(--foam);
-      }
-    }
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-s);
+    height: 100%;
   }
 
   @media screen and (max-width: 768px) {
@@ -62,12 +57,6 @@ header {
     > nav {
       flex-direction: row;
       gap: var(--space-s);
-
-      > button {
-        &:hover,
-        &:active {
-        }
-      }
     }
 
     > div {

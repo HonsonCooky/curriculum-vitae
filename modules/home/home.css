@@ -20,23 +20,25 @@
     }
   }
 
-  > hgroup {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  > #title {
+    > hgroup {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    > h1 {
-      margin: 0;
-      color: var(--gold);
-      font-weight: 900;
-      font-size: var(--fs-title);
-      line-height: 100%;
-    }
+      > h1 {
+        margin: 0;
+        color: var(--gold);
+        font-weight: 900;
+        font-size: var(--fs-title);
+        line-height: 100%;
+      }
 
-    > h2 {
-      margin: 0;
-      font-size: var(--fs-1);
-      line-height: 100%;
+      > h2 {
+        margin: 0;
+        font-size: var(--fs-1);
+        line-height: 100%;
+      }
     }
   }
 
@@ -45,7 +47,7 @@
     gap: var(--space-m);
     padding: var(--space-xl) 0;
 
-    > div {
+    > #profile-container {
       max-width: 90vw;
       max-height: 50vh;
     }
@@ -55,7 +57,7 @@
     flex-direction: row;
     height: calc(100vh - var(--fs-0) - var(--space-m));
 
-    > div {
+    > #profile-container {
       max-width: 50vw;
       max-height: 60vh;
     }
