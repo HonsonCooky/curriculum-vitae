@@ -16,6 +16,8 @@ header {
       transition-duration: 0.5s;
       transition-property: color;
       transition-timing-function: ease;
+      border-color: var(--overlay);
+      background: none;
 
       &:hover,
       &:active {
