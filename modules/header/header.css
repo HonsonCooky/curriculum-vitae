@@ -3,17 +3,26 @@ header {
   position: sticky;
   top: 0;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   z-index: 100;
   border-bottom: var(--border-size) solid var(--text);
   background: var(--base);
 
-  > nav {
+  >nav {
     display: flex;
+
+    >a {
+      user-select: none;
+      text-decoration: none;
+
+      &:hover,
+      &:active {
+        color: var(--foam);
+      }
+    }
   }
 
-  > div {
+  >div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,10 +31,11 @@ header {
   }
 
   @media screen and (max-width: 768px) {
+    justify-content: space-between;
     padding: var(--space-xs) var(--space-m);
     font-size: var(--fs-1);
 
-    > nav {
+    >nav {
       position: absolute;
       top: 0;
       left: 0;
@@ -39,6 +49,7 @@ header {
       transition-duration: 0.5s;
       transition-property: height, opacity, gap;
       transition-timing-function: ease;
+      padding: var(--space-m);
       width: 100vw;
       height: 0;
 
@@ -54,12 +65,14 @@ header {
     padding: var(--space-2xs) var(--space-m);
     font-size: var(--fs-0);
 
-    > nav {
+    >nav {
+      flex: 1;
       flex-direction: row;
       gap: var(--space-s);
+      padding: 0 var(--space-s);
     }
 
-    > div {
+    >div {
       #menu-btn {
         display: none;
       }

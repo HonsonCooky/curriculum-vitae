@@ -98,6 +98,9 @@
 
 * {
   box-sizing: border-box;
+  outline: none;
+  border: none;
+  background: none;
   color: var(--text);
   font-style: normal;
   font-weight: inherit;
@@ -130,24 +133,9 @@ body {
   scroll-behavior: smooth;
 }
 
-button {
-  transition-duration: 0.5s;
-  transition-property: color, background-color, border-color;
-  transition-timing-function: ease;
-  border-color: var(--overlay);
-  background: none;
-
-  &:hover,
-  &:active {
-    border-color: var(--highlight-high);
-    background-color: var(--highlight-low);
-    color: var(--foam);
-  }
-}
-
 @media screen and (min-width: 1440px) {
   body {
-    > main {
+    >main {
       padding: 0 calc((100vw - 1440px) / 2);
     }
   }
