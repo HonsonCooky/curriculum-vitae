@@ -1,6 +1,113 @@
 @import url("https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
-@import url("./modules/theme.css");
-@import url("./modules/header/header.css");
-@import url("./modules/home/home.css");
-@import url("./modules/about/about.css");
+
+:root {
+  --base: #faf4ed;
+  --surface: #fffaf3;
+  --overlay: #f2e9e1;
+  --muted: #9893a5;
+  --subtle: #797593;
+  --text: #575279;
+  --love: #b4637a;
+  --gold: #ea9d34;
+  --rose: #d7827e;
+  --pine: #286983;
+  --foam: #56949f;
+  --iris: #907aa9;
+  --highlight-low: #f4ede8;
+  --highlight-med: #dfdad9;
+  --highlight-high: #cecacd;
+  --shadow: #464168;
+
+  --fs--2: clamp(0.6944rem, 0.5826rem + 0.5591vi, 0.96rem);
+  --fs--1: clamp(0.8333rem, 0.6789rem + 0.7719vi, 1.2rem);
+  --fs-0: clamp(1rem, 0.7895rem + 1.0526vi, 1.5rem);
+  --fs-1: clamp(1.2rem, 0.9158rem + 1.4211vi, 1.875rem);
+  --fs-2: clamp(1.44rem, 1.0595rem + 1.9026vi, 2.3438rem);
+  --fs-3: clamp(1.728rem, 1.222rem + 2.5299vi, 2.9297rem);
+  --fs-4: clamp(2.0736rem, 1.4048rem + 3.3442vi, 3.6621rem);
+  --fs-5: clamp(2.4883rem, 1.6086rem + 4.3986vi, 4.5776rem);
+  --fs-title: clamp(3.75rem, 2.1711rem + 7.8947vi, 7.5rem);
+
+  --space-3xs: clamp(0.25rem, 0.1974rem + 0.2632vi, 0.375rem);
+  --space-2xs: clamp(0.5rem, 0.3947rem + 0.5263vi, 0.75rem);
+  --space-xs: clamp(0.75rem, 0.5921rem + 0.7895vi, 1.125rem);
+  --space-s: clamp(1rem, 0.7895rem + 1.0526vi, 1.5rem);
+  --space-m: clamp(1.5rem, 1.1842rem + 1.5789vi, 2.25rem);
+  --space-l: clamp(2rem, 1.5789rem + 2.1053vi, 3rem);
+  --space-xl: clamp(3rem, 2.3684rem + 3.1579vi, 4.5rem);
+  --space-2xl: clamp(4rem, 3.1579rem + 4.2105vi, 6rem);
+  --space-3xl: clamp(6rem, 4.7368rem + 6.3158vi, 9rem);
+
+  --border-size: clamp(0.125rem, 0.0357rem + 0.4464cqi, 0.25rem);
+
+  --scroll-margin-top: 0px;
+}
+
+[theme="dark"] {
+  --base: #191724;
+  --surface: #1f1d2e;
+  --overlay: #26233a;
+  --muted: #6e6a86;
+  --subtle: #908caa;
+  --text: #e0def4;
+  --love: #eb6f92;
+  --gold: #f6c177;
+  --rose: #ebbcba;
+  --pine: #31748f;
+  --foam: #9ccfd8;
+  --iris: #c4a7e7;
+  --highlight-low: #21202e;
+  --highlight-med: #403d52;
+  --highlight-high: #524f67;
+  --shadow: #080613;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-margin-top: var(--scroll-margin-top);
+  color: var(--text);
+  font-family: "Reddit Mono", monospace;
+  text-decoration: none;
+}
+
+*::-webkit-input-placeholder {
+  color: var(--text);
+  font-weight: 300;
+}
+
+*::-webkit-scrollbar {
+  width: var(--space-2xs);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--highlight-low);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--highlight-high);
+}
+
+html {
+  margin: 0;
+  background-color: var(--base);
+  padding: 0 calc((100vw - 1440px) / 2);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  border: var(--border-size) solid var(--text);
+  border-top: none;
+  min-height: 100vh;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: var(--border-size);
+}
