@@ -1,45 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Harrison Cook's Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="./assets/imgs/HC_LOGO_LIGHT_48x48.png" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="scripts.js" defer></script>
-  </head>
 
-  <body>
-    <header>
-      <button id="view-btn">
-        <span>View</span>
-        <i class="nf nf-oct-triangle_down"></i>
-      </button>
-      <nav>
-        <button>Home</button>
-        <button>About</button>
-        <button>Work</button>
-        <button>Projects</button>
-        <button>Blogs</button>
-      </nav>
-    </header>
+<head>
+  <title>Harrison Cook's Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="./assets/imgs/HC_LOGO_LIGHT_48x48.png" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="scripts.js" defer></script>
+</head>
 
-    <main>
-      <div id="home-section" style="height: 100vh">Home</div>
-      <div id="about-section" style="height: 100vh">About</div>
-      <div id="work-section" style="height: 100vh">Work History</div>
-      <div id="projects-section" style="height: 100vh">Projects</div>
-      <div id="blogs-section" style="height: 100vh">Blogs</div>
-    </main>
+<body>
+  <header>
+    <button id="view-btn">
+      <span>View</span>
+      <i class="nf nf-oct-triangle_down"></i>
+    </button>
+    <nav>
+      <button>Home</button>
+      <button>About</button>
+      <button>Work</button>
+      <button>Projects</button>
+      <button>Blogs</button>
+    </nav>
+  </header>
 
-    <footer>
-      <fieldset>
-        <legend>C:\HonsonCooky></legend>
-        <button class="nf nf-fa-github" id="github-btn" type="button" title="theme"></button>
-        <button class="nf nf-fa-linkedin" id="linkedin-btn" type="button" title="theme"></button>
-        <button class="nf nf-fa-reddit_alien" id="reddit-btn" type="button" title="theme"></button>
-        <button id="theme-btn" type="button" title="theme"></button>
-      </fieldset>
-    </footer>
-  </body>
+  <main>
+    <div id="home-section" style="height: 100%">Home</div>
+    <div id="about-section" style="height: 100%">About</div>
+    <div id="work-section" style="height: 100%">Work History</div>
+    <div id="projects-section" style="height: 100%">Projects</div>
+    <div id="blogs-section" style="height: 100%">Blogs</div>
+  </main>
+
+  <footer>
+    <fieldset>
+      <legend>C:\HonsonCooky></legend>
+      <a id="github-btn" type="button">[GitHub]</a>
+      <a id="linkedin-btn" type="button">[LinkedIn]</a>
+      <a id="reddit-btn" type="button">[Reddit]</a>
+      <a id="stackoverflow-btn" type="button">[Stack Overflow]</a>
+      <label class="theme-toggle">
+        [
+        <input class="toggle-checkbox" id="theme-btn" type="checkbox" />
+        <span class="toggle-label">Dark Theme</span>
+        ]
+      </label>
+    </fieldset>
+  </footer>
+</body>
+
 </html>

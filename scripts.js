@@ -6,9 +6,7 @@ const themeBtn = document.getElementById("theme-btn");
 
 function setTheme(isDark) {
   const theme = isDark ? "dark" : "light";
-  const iconIndex = theme === "dark" ? 4 : 7;
   document.documentElement.setAttribute(themeAttr, theme);
-  themeBtn.className = `nf nf-md-brightness_${iconIndex}`;
 }
 
 function toggleTheme() {
@@ -16,21 +14,15 @@ function toggleTheme() {
   setTheme(!(curTheme === "dark"));
 }
 
-setTheme(window.matchMedia("(prefers-color-scheme: dark)").matches);
+const isDefaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+setTheme(isDefaultDark);
+themeBtn.checked = isDefaultDark;
 themeBtn.addEventListener("click", toggleTheme);
-
-/**--------------------------------------------------------------------------------------------------------------------
-  HEADER SIZE SCROLL MARGIN 
----------------------------------------------------------------------------------------------------------------------*/
-const header = document.querySelector("header");
-document.documentElement.style.setProperty("--scroll-margin-top", header.offsetHeight + "px");
-window.addEventListener("resize", () => {
-  document.documentElement.style.setProperty("--scroll-margin-top", header.offsetHeight + "px");
-});
 
 /**--------------------------------------------------------------------------------------------------------------------
   NAVIGATION 
 ---------------------------------------------------------------------------------------------------------------------*/
+const header = document.querySelector("header");
 const viewBtn = document.getElementById("view-btn");
 const viewBtnArrow = viewBtn.querySelector("i");
 const nav = header.querySelector("nav");
@@ -58,4 +50,12 @@ window.addEventListener("click", function(event) {
   if (nav.classList.contains(openTag) && !(nav.contains(event.target) || viewBtn.contains(event.target))) {
     toggleNav();
   }
+});
+
+const main = document.body.querySelector("main");
+//TODO
+window.addEventListener("wheel", function(event) {
+  if (main.contains(event.target)) return;
+  const eventClone = new event.constructor(event.type, event);
+  main.dispatchEvent(eventClone);
 });

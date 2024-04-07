@@ -41,8 +41,6 @@
   --space-3xl: clamp(6rem, 4.7368rem + 6.3158vi, 9rem);
 
   --border-size: 0.125rem;
-
-  --scroll-margin-top: 0px;
 }
 
 [theme="dark"] {
@@ -67,7 +65,6 @@
 
 * {
   box-sizing: border-box;
-  scroll-margin-top: var(--scroll-margin-top);
   color: var(--text);
   font-size: inherit;
   font-family: "Reddit Mono", monospace;
@@ -93,9 +90,8 @@
 
 html {
   margin: 0;
-  background-color: var(--base);
+  background-color: var(--surface);
   padding: 0 calc((100vw - 1440px) / 2);
-  scroll-behavior: smooth;
 }
 
 body {
@@ -103,12 +99,16 @@ body {
   position: relative;
   flex-direction: column;
   align-items: center;
+  clip-path: inset(0 0 0 0 round 1% 1% 1% 1%);
   margin: 0;
   border: var(--border-size) solid var(--text);
-  min-height: 100vh;
+  background-color: var(--base);
+  height: 100vh;
+  overflow: hidden;
 }
 
 button {
+  cursor: pointer;
   outline: none;
   border-color: var(--btn-border-dark);
   background-color: inherit;
@@ -120,28 +120,28 @@ button {
 }
 
 header {
-  position: sticky;
-  top: 0;
+  position: relative;
+  border-bottom: var(--border-size) solid var(--pine);
   background: var(--text);
   padding: var(--space-3xs) var(--space-m);
   width: 100%;
   color: var(--base);
   font-size: var(--fs-0);
 
-  >button {
+  > #view-btn {
     gap: var(--border-size);
     border-color: var(--btn-border-light);
 
-    >i {
+    > i {
       display: inline-flex;
       transition: rotate 0.2s ease;
     }
   }
 
-  >nav {
+  > nav {
     display: flex;
     position: absolute;
-    top: var(--scroll-margin-top);
+    top: calc(100% + var(--border-size));
     left: calc(var(--space-m) / 2);
     flex-direction: column;
     gap: 0;
@@ -164,10 +164,10 @@ header {
     }
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     font-size: var(--fs--1);
 
-    >nav {
+    > nav {
       &.open {
         height: calc((var(--space-xs) * 2) + ((var(--fs--1) + var(--space-2xs) + 9px) * 5));
       }
@@ -175,45 +175,67 @@ header {
   }
 }
 
+main {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
 footer {
   width: 100%;
-  font-size: var(--fs-0);
+  font-size: var(--fs--1);
 
-  >fieldset {
+  > fieldset {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: end;
-    gap: var(--space-m);
+    align-items: center;
+    gap: var(--space-3xs);
     margin: 0;
     border: none;
-    border-top: var(--border-size) solid var(--overlay);
+    border-top: var(--border-size) solid var(--pine);
     background: var(--text);
-    padding: var(--space-3xs) var(--space-m);
-    padding-bottom: var(--space-xs);
 
-    >legend {
+    > legend {
       background: var(--overlay);
-      padding: 0 var(--space-3xs);
+      padding: 0 var(--space-xs);
     }
 
-    >button {
-      border-color: var(--btn-border-light);
-      padding: var(--space-3xs) var(--space-xs);
+    > a {
+      cursor: pointer;
       color: var(--base);
+      user-select: none;
+    }
+
+    > .theme-toggle {
+      display: flex;
+      flex-direction: row;
+      cursor: pointer;
+      margin-left: var(--space-3xs);
+      color: var(--base);
+
+      > .toggle-checkbox {
+        cursor: pointer;
+        margin: 0;
+        margin-right: var(--space-3xs);
+      }
+
+      > .toggle-label {
+        color: inherit;
+        user-select: none;
+      }
     }
   }
 
-  @media screen and (min-width: 768px) {
-    font-size: var(--fs--1);
+  @media screen and (min-width: 769px) {
+    font-size: var(--fs--2);
 
-    >fieldset {
-      gap: var(--space-xs);
+    > fieldset {
       padding: 0 var(--space-m);
       padding-bottom: var(--space-2xs);
-
-      >button {
-        padding: var(--border-size) var(--space-xs);
-      }
     }
   }
 }
