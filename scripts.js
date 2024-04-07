@@ -52,10 +52,6 @@ window.addEventListener("click", function(event) {
   }
 });
 
-const main = document.body.querySelector("main");
-//TODO
-window.addEventListener("wheel", function(event) {
-  if (main.contains(event.target)) return;
-  const eventClone = new event.constructor(event.type, event);
-  main.dispatchEvent(eventClone);
-});
+/**--------------------------------------------------------------------------------------------------------------------
+  TEXT LOADER 
+---------------------------------------------------------------------------------------------------------------------*/
