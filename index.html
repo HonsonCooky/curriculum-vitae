@@ -1,59 +1,96 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Harrison Cook's Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="./assets/imgs/HC_LOGO_LIGHT_48x48.png" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="scripts.js" defer></script>
-  </head>
 
-  <body>
-    <header>
-      <button id="view-btn">
-        <span>View</span>
-        <i class="nf nf-oct-triangle_down"></i>
-      </button>
-      <nav>
-        <button>Home</button>
-        <button>About</button>
-        <button>Work</button>
-        <button>Projects</button>
-        <button>Blogs</button>
-      </nav>
-    </header>
+<head>
+  <title>Harrison Cook's Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="icon" type="image/x-icon" href="./assets/imgs/HC_LOGO_LIGHT_48x48.png" />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="scripts.js" defer></script>
+</head>
 
-    <main>
-      <div id="home-section">
-        <div id="home-title">
-          <p>Hi, I'm Harrison Cook</p>
-          <h1>SOFTWARE ENGINEER</h1>
-        </div>
-        <div id="home-png">
-          <img src="./assets/imgs/me.png" alt="me.png" />
-        </div>
+<body>
+  <header>
+    <button id="view-btn">
+      <span>View</span>
+      <i class="nf nf-oct-triangle_down"></i>
+    </button>
+    <nav>
+      <button>Home</button>
+      <button>About</button>
+      <button>Work</button>
+      <button>Projects</button>
+      <button>Blogs</button>
+    </nav>
+  </header>
+
+  <main>
+    <div id="home-section">
+      <hgroup id="home-title">
+        <h2>Hi, I'm Harrison Cook</h2>
+        <h1>SOFTWARE ENGINEER</h1>
+      </hgroup>
+      <div id="home-png">
+        <img src="./assets/imgs/me.png" alt="me.png" />
       </div>
-      <div id="about-section">About</div>
-      <div id="work-section">Work History</div>
-      <div id="projects-section">Projects</div>
-      <div id="blogs-section">Blogs</div>
-    </main>
+    </div>
+    <div id="about-section">
+      <hgroup id="about-title">
+        <h1>.\about</h1>
+        <h2>[Background, Education, Experience]</h2>
+        <hr />
+      </hgroup>
+      <section id="background">
+        <h3>Background</h3>
+        <p>
+          Hailing from what my friends affectionately call a ‘singing cult,’ my formative years were steeped in music
+          and the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital
+          technologies.
+        </p>
+        <div id="about-png">
+          <img src="./assets/imgs/dance.png" alt="dancer.png" />
+        </div>
+        <p>
+          Armed with a knack for calculus and a flair for photography, I discovered programming— an art form that
+          blends creativity with methodical precision. It’s a canvas with rules, yet infinite possibilities. As a
+          trained Software Engineer, I’ve traded sheet music for syntax. Now, my compositions resonate through elegant
+          algorithms, harmonizing data structures and orchestrating efficient solutions. Whether it’s a symphony of
+          APIs or a concerto in cloud architecture, I thrive on turning complexity into clarity.
+        </p>
+        <p>
+          Today, I stand as a bright, bubbly, resilient, and reliable individual, ready to contribute my unique blend
+          of creativity and technical prowess to exciting projects. Welcome to my melodic journey through bytes and
+          bits!
+        </p>
+      </section>
+      <section id="education">
+        <h3>Education</h3>
+      </section>
+      <section id="experience">
+        <h3>Technology Experience</h3>
+      </section>
+    </div>
+    <div id="work-section">Work History</div>
+    <div id="projects-section">Projects</div>
+    <div id="blogs-section">Blogs</div>
+  </main>
 
-    <footer>
-      <fieldset>
-        <legend>C:\HonsonCooky></legend>
-        <a id="github-btn" type="button">[GitHub]</a>
-        <a id="linkedin-btn" type="button">[LinkedIn]</a>
-        <a id="reddit-btn" type="button">[Reddit]</a>
-        <a id="stackoverflow-btn" type="button">[Stack Overflow]</a>
-        <label class="theme-toggle">
-          [
-          <input class="toggle-checkbox" id="theme-btn" type="checkbox" />
-          <span class="toggle-label">Dark Theme</span>
-          ]
-        </label>
-      </fieldset>
-    </footer>
-  </body>
+  <footer>
+    <fieldset>
+      <legend>C:\HonsonCooky></legend>
+      <a id="github-btn" type="button">[GitHub]</a>
+      <a id="linkedin-btn" type="button">[LinkedIn]</a>
+      <a id="reddit-btn" type="button">[Reddit]</a>
+      <a id="stackoverflow-btn" type="button">[Stack Overflow]</a>
+      <label class="theme-toggle">
+        [
+        <input class="toggle-checkbox" id="theme-btn" type="checkbox" />
+        <span class="toggle-label">Dark Theme</span>
+        ]
+      </label>
+    </fieldset>
+  </footer>
+</body>
+
 </html>

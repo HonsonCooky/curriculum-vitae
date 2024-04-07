@@ -188,13 +188,13 @@ main {
 
   >div {
     min-height: 100%;
+    padding: 0 var(--space-m);
   }
 }
 
 #home-section {
   display: grid;
   grid-template-areas: "profile" "title";
-  padding: 0 var(--space-m);
 
   >#home-title {
     display: flex;
@@ -204,17 +204,20 @@ main {
     align-items: center;
     text-align: center;
 
-    >p {
+    >h2 {
       margin: 0;
       padding: 0;
       font-size: var(--fs-0);
+      font-weight: 500;
     }
 
     >h1 {
       margin: 0;
       padding: 0;
+      line-height: 100%;
       color: var(--gold);
       font-size: var(--fs-title);
+      font-weight: 900;
     }
   }
 
@@ -241,6 +244,70 @@ main {
     }
 
     >#home-png {
+      >img {
+        max-width: 25cqw;
+        max-height: calc(var(--fs-5) * 7);
+      }
+    }
+  }
+}
+
+#about-section {
+
+  #about-title {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    >h1 {
+      margin: 0;
+      line-height: 100%;
+      color: var(--love);
+      font-weight: 700;
+      font-size: var(--fs-3);
+    }
+
+    >h2 {
+      margin-bottom: 0;
+      line-height: 100%;
+      font-size: var(--fs--1);
+      font-weight: 400;
+    }
+
+    >hr {
+      width: 100%;
+      background: var(--muted);
+      height: var(--border-size);
+    }
+  }
+
+  #background {
+    >p {
+      text-align: justify;
+      font-size: var(--fs-0);
+      font-weight: 400;
+    }
+
+    >#about-png {
+      display: flex;
+      grid-area: profile;
+      justify-content: center;
+      align-items: center;
+
+      >img {
+        padding: var(--space-xs);
+        padding-bottom: 0;
+        border: var(--space-3xs) solid var(--text);
+        max-width: 100%;
+        object-fit: contain;
+      }
+
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+
+    >#about-png {
       >img {
         max-width: 25cqw;
         max-height: calc(var(--fs-5) * 7);
