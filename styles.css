@@ -100,7 +100,7 @@ body {
   margin: 0;
   border: var(--border-size) solid var(--text);
   background-color: var(--base);
-  height: 100vh;
+  height: 100dvh;
 
   @media screen and (min-width: 1440px) {
     clip-path: inset(0 0 0 0 round 1vh 1vh 1vh 1vh);
@@ -116,6 +116,53 @@ button {
 
   * {
     color: inherit;
+  }
+}
+
+img {
+  padding-top: var(--space-xs);
+  border: var(--space-3xs) solid var(--subtle);
+  object-fit: contain;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  color: var(--gold);
+  font-size: var(--fs-title);
+  font-weight: 900;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  color: var(--rose);
+  font-size: var(--fs-4);
+  font-weight: 700;
+}
+
+h3 {
+  color: var(--iris);
+  font-size: var(--fs-3);
+  font-weight: 500;
+}
+
+p {
+  font-size: var(--fs--1);
+  font-weight: 400;
+}
+
+@media screen and (min-width: 769px) {
+  h2 {
+    font-size: var(--fs-2);
+  }
+
+  h3 {
+    font-size: var(--fs-1);
+  }
+
+  p {
+    font-size: var(--fs--2);
   }
 }
 
@@ -204,20 +251,12 @@ main {
     align-items: center;
     text-align: center;
 
-    >h2 {
-      margin: 0;
-      padding: 0;
-      font-size: var(--fs-0);
-      font-weight: 500;
+    >h1 {
+      line-height: 100%;
     }
 
-    >h1 {
-      margin: 0;
-      padding: 0;
-      line-height: 100%;
-      color: var(--gold);
-      font-size: var(--fs-title);
-      font-weight: 900;
+    >span {
+      font-size: var(--fs-1);
     }
   }
 
@@ -228,10 +267,8 @@ main {
     align-items: center;
 
     >img {
-      border: var(--space-3xs) solid var(--text);
       max-width: 50cqw;
       max-height: calc(var(--fs-5) * 7);
-      object-fit: contain;
     }
   }
 
@@ -259,19 +296,9 @@ main {
     flex-direction: column;
     align-items: end;
 
-    >h1 {
-      margin: 0;
-      line-height: 100%;
-      color: var(--love);
-      font-weight: 700;
-      font-size: var(--fs-3);
-    }
-
-    >h2 {
-      margin-bottom: 0;
-      line-height: 100%;
+    >span {
+      text-align: end;
       font-size: var(--fs--1);
-      font-weight: 400;
     }
 
     >hr {
@@ -282,11 +309,6 @@ main {
   }
 
   #background {
-    >p {
-      text-align: justify;
-      font-size: var(--fs-0);
-      font-weight: 400;
-    }
 
     >#about-png {
       display: flex;
@@ -295,22 +317,49 @@ main {
       align-items: center;
 
       >img {
-        padding: var(--space-xs);
-        padding-bottom: 0;
-        border: var(--space-3xs) solid var(--text);
-        max-width: 100%;
-        object-fit: contain;
+        max-width: min(100%, 400px);
       }
 
     }
   }
 
   @media screen and (min-width: 769px) {
+    >#background {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: var(--space-m);
+      grid-template-areas: "header header" "img p1" "img p2" "img p3";
 
-    >#about-png {
-      >img {
-        max-width: 25cqw;
-        max-height: calc(var(--fs-5) * 7);
+      >h3 {
+        grid-area: header;
+      }
+
+      >p {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: justify;
+
+        &:nth-child(1) {
+          grid-area: p1;
+        }
+
+        &:nth-child(2) {
+          grid-area: p2;
+        }
+
+        &:nth-child(3) {
+          grid-area: p3;
+        }
+      }
+
+      >#about-png {
+        grid-area: img;
+
+        >img {
+          max-width: 40cqw;
+          max-height: 40cqh;
+        }
       }
     }
   }
@@ -327,7 +376,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: var(--space-3xs);
+    column-gap: var(--space-xs);
     margin: 0;
     border: none;
     border-top: var(--border-size) solid var(--overlay);
@@ -344,24 +393,29 @@ footer {
       user-select: none;
     }
 
-    >.theme-toggle {
+    >#theme {
       display: flex;
       flex-direction: row;
       justify-content: end;
-      cursor: pointer;
-      color: var(--base);
 
-      >.toggle-checkbox {
+      >.theme-toggle {
+        display: flex;
+        flex-direction: row;
         cursor: pointer;
-        margin: 0;
-        margin-right: var(--space-3xs);
-        border-color: var(--subtle);
-        accent-color: var(--base);
-      }
+        color: var(--base);
 
-      >.toggle-label {
-        color: inherit;
-        user-select: none;
+        >.toggle-checkbox {
+          cursor: pointer;
+          margin: 0;
+          margin-right: var(--space-3xs);
+          border-color: var(--subtle);
+          accent-color: var(--base);
+        }
+
+        >.toggle-label {
+          color: inherit;
+          user-select: none;
+        }
       }
     }
   }
@@ -373,7 +427,7 @@ footer {
       padding: 0 var(--space-m);
       padding-bottom: var(--space-3xs);
 
-      >.theme-toggle {
+      >#theme {
         flex: 1;
       }
     }
