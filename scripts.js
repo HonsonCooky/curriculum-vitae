@@ -22,33 +22,44 @@ themeBtn.addEventListener("click", toggleTheme);
 /**--------------------------------------------------------------------------------------------------------------------
   NAVIGATION 
 ---------------------------------------------------------------------------------------------------------------------*/
-const header = document.querySelector("header");
-const viewBtn = document.getElementById("view-btn");
-const viewBtnArrow = viewBtn.querySelector("i");
-const nav = header.querySelector("nav");
 const openTag = "open";
+const header = document.querySelector("header");
+const headerBtns = header.querySelectorAll(":scope > div > button");
+const headerPairs = Array.from(headerBtns).map((btn) => {
+  const nav = document.getElementById(btn.id.replaceAll("-btn", "-nav"));
+  return {
+    btn,
+    nav,
+  };
+});
 
-function toggleNav() {
-  if (nav.classList.contains(openTag)) {
+function toggleNav(btn, nav, off) {
+  const icon = btn.querySelector("i");
+  if (nav.classList.contains(openTag) || off) {
     nav.classList.remove(openTag);
-    viewBtnArrow.style.rotate = "0deg";
+    icon.style.rotate = "0deg";
   } else {
     nav.classList.add(openTag);
-    viewBtnArrow.style.rotate = "-180deg";
+    icon.style.rotate = "-180deg";
   }
 }
 
-viewBtn.addEventListener("click", toggleNav);
-
-Array.from(nav.children).forEach((btn) => {
-  btn.addEventListener("click", function() {
-    window.location.href = `#${btn.innerText.toLowerCase()}-section`;
+for (const { btn, nav } of headerPairs) {
+  btn.addEventListener("click", () => {
+    headerPairs.forEach(({ btn: oBtn, nav: oNav }) => {
+      if (oBtn != btn) toggleNav(oBtn, oNav, true);
+    });
+    toggleNav(btn, nav);
   });
-});
+}
 
 window.addEventListener("click", function(event) {
-  if (nav.classList.contains(openTag) && !(nav.contains(event.target) || viewBtn.contains(event.target))) {
-    toggleNav();
+  for (const { btn, nav } of headerPairs) {
+    if (btn.contains(event.target) || nav.contains(event.target)) return;
+  }
+
+  for (const { btn, nav } of headerPairs) {
+    toggleNav(btn, nav, true);
   }
 });
 
