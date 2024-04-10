@@ -12,39 +12,68 @@
   <body>
     <header>
       <div id="file">
-        <button id="file-btn">
-          <span>File</span>
-          <i class="nf nf-oct-triangle_down"></i>
-        </button>
+        <button id="file-btn" type="button">File</button>
         <nav id="file-nav">
-          <button>GitHub</button>
-          <button>LinkedIn</button>
-          <button>Reddit</button>
-          <button>Stack Overflow</button>
+          <button type="button">
+            <i class="nf nf-cod-github_alt"></i>
+            <span>GitHub</span>
+          </button>
+          <button type="button">
+            <i class="nf nf-fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </button>
+          <button type="button">
+            <i class="nf nf-fa-reddit_alien"></i>
+            <span>Reddit</span>
+          </button>
+          <button type="button">
+            <i class="nf nf-fa-stack_overflow"></i>
+            <span>Stack Overflow</span>
+          </button>
+
+          <hr />
+
+          <button type="button">
+            <i class="nf nf-cod-file_pdf"></i>
+            <span>Résumé</span>
+          </button>
         </nav>
       </div>
       <div id="view">
-        <button id="view-btn">
-          <span>View</span>
-          <i class="nf nf-oct-triangle_down"></i>
-        </button>
+        <button id="view-btn" type="button">View</button>
         <nav id="view-nav">
-          <button>Home</button>
-          <button>About</button>
-          <button>Work</button>
-          <button>Projects</button>
-          <button>Blogs</button>
-          <label class="theme-toggle">
-            [
-            <span class="toggle-label">Dark Theme</span>
-            <input class="toggle-checkbox" id="theme-btn" type="checkbox" />
-            ]
-          </label>
+          <button type="button">
+            <i class="nf nf-md-page_layout_body"></i>
+            <span>Home</span>
+          </button>
+          <button type="button">
+            <i class="nf nf-md-page_layout_body"></i>
+            <span>About</span>
+          </button>
+          <button type="button">
+            <i class="nf nf-md-page_layout_body"></i>
+            <span>Work</span>
+          </button>
+          <button type="button">
+            <i class="nf nf-md-page_layout_body"></i>
+            <span>Projects</span>
+          </button>
+          <button type="button">
+            <i class="nf nf-md-page_layout_body"></i>
+            <span>Blogs</span>
+          </button>
+
+          <hr />
+
+          <button id="theme-btn">
+            <div id="checkbox"></div>
+            <span class="toggle-label" for="theme-btn">Dark Theme</span>
+          </button>
         </nav>
       </div>
     </header>
 
-    <main style="min-height: 100vh">
+    <main style="min-height: 100dvh">
       <!-- <div id="home-section"> -->
       <!--   <hgroup id="home-title"> -->
       <!--     <span>Hi, I'm Harrison Cook</span> -->

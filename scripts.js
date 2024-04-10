@@ -16,7 +16,6 @@ function toggleTheme() {
 
 const isDefaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 setTheme(isDefaultDark);
-themeBtn.checked = isDefaultDark;
 themeBtn.addEventListener("click", toggleTheme);
 
 /**--------------------------------------------------------------------------------------------------------------------
@@ -34,13 +33,12 @@ const headerPairs = Array.from(headerBtns).map((btn) => {
 });
 
 function toggleNav(btn, nav, off) {
-  const icon = btn.querySelector("i");
   if (nav.classList.contains(openTag) || off) {
+    btn.classList.remove(openTag);
     nav.classList.remove(openTag);
-    icon.style.rotate = "0deg";
   } else {
+    btn.classList.add(openTag);
     nav.classList.add(openTag);
-    icon.style.rotate = "-180deg";
   }
 }
 
