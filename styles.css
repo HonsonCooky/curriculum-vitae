@@ -36,7 +36,7 @@
   --space-3xl: clamp(6.75rem, 5.6786rem + 5.3571vi, 8.25rem);
   --border-size: clamp(0.125rem, 0.0357rem + 0.4464vi, 0.25rem);
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     --fs--2: clamp(0.6944rem, 0.4824rem + 0.4418vi, 0.88rem);
     --fs--1: clamp(0.8333rem, 0.5286rem + 0.6349vi, 1.1rem);
     --fs-0: clamp(1rem, 0.5714rem + 0.8929vi, 1.375rem);
@@ -128,9 +128,20 @@ body {
 }
 
 button {
+  display: flex;
+  column-gap: var(--space-2xs);
+  flex-direction: row;
+  align-items: start;
+  cursor: pointer;
   border: none;
   border-radius: var(--border-size);
   background: none;
+  padding: var(--border-size);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: start;
 
   &:hover,
   &:active {
@@ -152,11 +163,71 @@ img {
 hr {
   border-color: var(--surface);
   background-color: var(--surface);
+  width: 100%;
   color: var(--surface);
 }
 
 i {
   display: inline-flex;
+}
+
+label.checkmark {
+  display: flex;
+  column-gap: var(--space-2xs);
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-size);
+  background: none;
+  padding: var(--border-size);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: start;
+
+  &:hover,
+  &:active {
+    background: var(--highlight-high);
+    color: var(--text);
+  }
+
+  /* Hide the browser's default checkbox */
+  >input {
+    display: none;
+  }
+
+  /* Create a custom checkbox */
+  >.checkmark {
+    position: relative;
+    border: 2px solid var(--text);
+    border-radius: var(--border-size);
+    background-color: var(--base);
+    aspect-ratio: 1/1;
+    height: var(--fs--1);
+  }
+
+  &:hover input~.checkmark {
+    background-color: var(--muted);
+  }
+
+  .checkmark:after {
+    position: absolute;
+    bottom: -2px;
+    left: 1px;
+    margin: 0;
+    padding: 0;
+    content: "";
+    color: var(--text);
+    font-weight: 900;
+    font-size: var(--fs-0);
+  }
+
+  & input:checked~.checkmark:after {
+    content: "\2713";
+  }
 }
 
 header {
@@ -199,24 +270,7 @@ header {
       }
 
       >button {
-        display: flex;
-        column-gap: var(--space-2xs);
-        flex-direction: row;
-        align-items: start;
-        padding: var(--border-size);
         padding-right: var(--space-m);
-        font-weight: 200;
-        text-align: start;
-      }
-
-      #theme-btn {
-        border-color: white;
-        background-color: var(--base);
-        color: var(--base);
-      }
-
-      >hr {
-        width: 100%;
       }
     }
   }
