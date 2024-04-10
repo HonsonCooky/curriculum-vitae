@@ -120,8 +120,6 @@ body {
     sans-serif;
 
   @media screen and (min-width: 1441px) {
-    border-right: var(--border-size) solid var(--text);
-    border-left: var(--border-size) solid var(--text);
     height: 100dvh;
     overflow-y: scroll;
   }
@@ -151,13 +149,32 @@ button {
 }
 
 img {
-  border-left: var(--space-2xs) solid var(--text);
-  background: var(--surface);
+  border: var(--border-size) solid var(--overlay);
+  border-right: var(--space-s) solid var(--overlay);
   padding: var(--space-s);
   padding-bottom: 0;
   max-width: 100%;
   max-height: 40vh;
   object-fit: contain;
+}
+
+h1 {
+  margin: 0;
+  color: var(--gold);
+  font-weight: 900;
+  font-size: var(--fs-5);
+}
+
+h2 {
+  color: var(--love);
+  font-weight: 700;
+  font-size: var(--fs-3);
+}
+
+h3 {
+  color: var(--rose);
+  font-weight: 700;
+  font-size: var(--fs-2);
 }
 
 hr {
@@ -273,6 +290,34 @@ header {
         padding-right: var(--space-m);
       }
     }
+  }
+}
+
+main {
+  padding: var(--space-m);
+
+  #home-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "title img";
+
+    #home-title {
+      display: flex;
+      grid-area: title;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        text-align: center;
+      }
+    }
+
+    #home-png {
+      grid-area: img;
+    }
+
+    @media screen and (min-width: 769px) {}
   }
 }
 
