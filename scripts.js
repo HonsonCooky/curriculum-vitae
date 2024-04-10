@@ -16,6 +16,7 @@ function toggleTheme() {
 
 const isDefaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 setTheme(isDefaultDark);
+themeBtn.checked = isDefaultDark;
 themeBtn.addEventListener("click", toggleTheme);
 
 /**--------------------------------------------------------------------------------------------------------------------

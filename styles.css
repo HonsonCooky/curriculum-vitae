@@ -209,20 +209,14 @@ header {
         text-align: start;
       }
 
+      #theme-btn {
+        border-color: white;
+        background-color: var(--base);
+        color: var(--base);
+      }
+
       >hr {
         width: 100%;
-      }
-    }
-
-    #theme-btn {
-      >#checkbox {
-        background-color: var(--muted);
-        width: var(--fs--1);
-        height: var(--fs--1);
-
-        document[theme="dark"] {
-          background-color: white;
-        }
       }
     }
   }
