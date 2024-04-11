@@ -140,6 +140,7 @@ button {
 img {
   border: var(--border-size) solid var(--overlay);
   border-right: var(--space-s) solid var(--overlay);
+  border-radius: var(--border-size);
   padding: var(--space-s);
   padding-bottom: 0;
   max-width: 100%;
@@ -339,7 +340,7 @@ main {
     @media screen and (min-width: 769px) {
       row-gap: 0;
       flex-direction: row;
-      min-height: 82dvh;
+      min-height: calc(100dvh - var(--fs--1) - (var(--space-3xs) * 2) - 7px - var(--space-m) - (var(--border-size) * 2) - var(--fs-2) - 7px);
 
       #home-title {
         order: 1;
