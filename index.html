@@ -1,136 +1,59 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <title>Harrison Cook's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="./assets/imgs/HC_LOGO_LIGHT_48x48.png" />
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <script src="./scripts.js" defer></script>
+  </head>
 
-<head>
-  <title>Harrison Cook's Portfolio</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="icon" type="image/x-icon" href="./assets/imgs/HC_LOGO_LIGHT_48x48.png" />
-  <link rel="stylesheet" type="text/css" href="./styles.css" />
-  <script src="./scripts.js" defer></script>
-</head>
-
-<body>
-  <header>
-    <div id="file">
-      <button id="file-btn" type="button">File</button>
-      <nav id="file-nav">
-        <button type="button">
-          <i class="nf nf-cod-github_alt"></i>
-          <span>GitHub</span>
-        </button>
-        <button type="button">
-          <i class="nf nf-fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </button>
-        <button type="button">
-          <i class="nf nf-fa-reddit_alien"></i>
-          <span>Reddit</span>
-        </button>
-        <button type="button">
-          <i class="nf nf-fa-stack_overflow"></i>
-          <span>Stack Overflow</span>
-        </button>
-
-        <hr />
-
-        <button type="button">
-          <i class="nf nf-cod-file_pdf"></i>
-          <span>Résumé</span>
-        </button>
-      </nav>
-    </div>
-    <div id="view">
-      <button id="view-btn" type="button">View</button>
-      <nav id="view-nav">
-        <button type="button">
-          <i class="nf nf-md-page_layout_body"></i>
+  <body>
+    <header>
+      <a>C:\HonsonCooky&gt;</a>
+      <nav>
+        <a id="home-section-btn" href="#home-section">
+          <i class="nf nf-fa-folder_open"></i>
           <span>Home</span>
-        </button>
-        <button type="button">
-          <i class="nf nf-md-page_layout_body"></i>
+        </a>
+        <a id="about-section-btn" href="#about-section">
+          <i class="nf nf-fa-folder"></i>
           <span>About</span>
-        </button>
-        <button type="button">
-          <i class="nf nf-md-page_layout_body"></i>
+        </a>
+        <a id="work-section-btn" href="#work-section">
+          <i class="nf nf-fa-folder"></i>
           <span>Work</span>
-        </button>
-        <button type="button">
-          <i class="nf nf-md-page_layout_body"></i>
+        </a>
+        <a id="project-section-btn" href="#project-section">
+          <i class="nf nf-fa-folder"></i>
           <span>Projects</span>
-        </button>
-        <button type="button">
-          <i class="nf nf-md-page_layout_body"></i>
+        </a>
+        <a id="blog-section-btn" href="#blog-section">
+          <i class="nf nf-fa-folder"></i>
           <span>Blogs</span>
-        </button>
-
-        <hr />
-
-        <label class="checkmark">
-          <input id="theme-btn" type="checkbox"></input>
-          <span class="checkmark"></span>
-          <span class="toggle-label" for="theme-btn">Dark Theme</span>
-        </label>
+        </a>
+        <a id="resume-section-btn" href="./assets/docs/HarrisonCooksCV.pdf" target="_blank">
+          <i class="nf nf-fa-file_pdf"></i>
+          <span>Resume</span>
+        </a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <div id="home-section">
-      <hgroup id="home-title">
-        <div>
-          <span>Hi! I'm</span>
-          <span>Harrison Cook</span>
-        </div>
-        <h1>SOFTWARE</h1>
-        <h1>ENGINEER</h1>
-      </hgroup>
-      <div id="home-png">
-        <img src="./assets/imgs/me.png" alt="me.png" />
+    <main>
+      <div id="home-section">home</div>
+      <div id="about-section">about</div>
+      <div id="work-section">work</div>
+      <div id="project-section">projects</div>
+      <div id="blog-section">blogs</div>
+    </main>
+
+    <footer>
+      <label id="mode">--Normal--</label>
+      <div>
+        <input id="theme-btn" type="checkbox" />
+        <label for="theme-btn">Dark Theme</label>
       </div>
-    </div>
-    <div id="about-section">
-      <h2>About</h2>
-      <section id="background">
-        <h3>Background</h3>
-        <p>
-          Hailing from what my friends affectionately call a ‘singing cult,’ my formative years were steeped in music
-          and the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital
-          technologies.
-        </p>
-        <div id="about-png">
-          <img src="./assets/imgs/dance.png" alt="dancer.png" />
-        </div>
-        <p>
-          Armed with a knack for calculus and a flair for photography, I discovered programming— an art form that
-          blends creativity with methodical precision. It’s a canvas with rules, yet near infinite possibilities. As a
-          trained Software Engineer, I’ve traded sheet music for syntax. Now, my compositions resonate through elegant
-          algorithms, harmonizing data structures and orchestrating efficient solutions. Whether it’s a symphony of
-          APIs or a concerto in cloud architecture, I thrive on turning complexity into clarity.
-        </p>
-        <p>
-          Today, I stand as a bright, bubbly, resilient, and reliable individual. I'm ready to contribute my unique
-          blend of creativity and technical prowess to exciting projects; Are you ready for me? Welcome to my melodic
-          journey through bytes and bits!
-        </p>
-        <h3>/Background</h3>
-      </section>
-      <section id="education">
-        <h3>Education</h3>
-      </section>
-      <section id="experience">
-        <h3>Technology Experience</h3>
-      </section>
-      <h2>/About</h2>
-    </div>
-    <div id="work-section">Work History</div>
-    <div id="projects-section">Projects</div>
-    <div id="blogs-section">Blogs</div>
-  </main>
-
-  <footer>
-    <label>C:\HonsonCooky></label>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>
