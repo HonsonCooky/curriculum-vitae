@@ -11,7 +11,9 @@
 
   <body>
     <header>
-      <a>C:\HonsonCooky&gt;</a>
+      <a id="logo">
+        <span>C:\HonsonCooky&gt;</span>
+      </a>
       <nav>
         <a id="home-section-btn" href="#home-section">
           <i class="nf nf-fa-folder_open"></i>
@@ -41,7 +43,63 @@
     </header>
 
     <main>
-      <div id="home-section">home</div>
+      <div id="home-section">
+        <table>
+          <caption>
+            <h5>TABLE I</h5>
+            <h5>Basic Information</h5>
+          </caption>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th><span>Value</span><i class="nf nf-md-cursor_default_click"></i></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>FirstName</td>
+              <td id="home-table-firstname">
+                <span class="main">"Harrison"</span>
+                <span class="side">|| <i>"HonsonCooky"</i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>LastName</td>
+              <td id="home-table-lastname">
+                <span class="main">"Cook"</span>
+                <span class="side"><i>NVARCHAR(4)</i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td id="home-table-age">
+                <span class="main">24</span>
+                <span class="side"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>Occupation</td>
+              <td id="home-table-occupation">
+                <span class="main">"Software Engineer"</span>
+                <span class="side"><i>Accredited</i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td id="home-table-location">
+                <span class="main">"New Zealand"</span>
+                <span class="side"><i>UTC+12</i></span>
+              </td>
+            </tr>
+            <tr>
+              <td>Image</td>
+              <td id="home-table-img">
+                <img src="./assets/imgs/me.png" alt="me.png" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div id="about-section">about</div>
       <div id="work-section">work</div>
       <div id="project-section">projects</div>

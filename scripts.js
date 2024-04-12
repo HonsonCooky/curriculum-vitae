@@ -25,6 +25,16 @@ themeBtn.addEventListener("click", toggleTheme);
 const header = document.querySelector("header");
 document.documentElement.style.setProperty("--scroll-top", `${header.offsetHeight}px`);
 
+const menuBtn = document.getElementById("logo");
+const nav = document.querySelector("nav");
+menuBtn.addEventListener("click", function() {
+  nav.className = nav.className === "open" ? "" : "open";
+});
+
+window.addEventListener("resize", function() {
+  nav.className = "";
+});
+
 const pages = Array.from(document.querySelector("main").children);
 const threshold = window.innerHeight / 5;
 window.addEventListener("scroll", function() {
@@ -35,7 +45,6 @@ window.addEventListener("scroll", function() {
       const navBtn = document.getElementById(navBtnId);
       const icon = navBtn.querySelector("i");
       if (rect.top < threshold && rect.bottom > threshold) {
-        console.log(navBtnId);
         icon.className = "nf nf-fa-folder_open";
       } else {
         icon.className = "nf nf-fa-folder";
@@ -43,3 +52,30 @@ window.addEventListener("scroll", function() {
     }
   }, 0);
 });
+
+/**--------------------------------------------------------------------------------------------------------------------
+  HOME 
+---------------------------------------------------------------------------------------------------------------------*/
+// AGE
+const ageCell = document.getElementById("home-table-age");
+const ageValue = ageCell.querySelector(".main");
+const birthday = new Date("1999-06-08");
+const localDate = new Date();
+
+function calcAge(birthDate, otherDate) {
+  var years = otherDate.getFullYear() - birthDate.getFullYear();
+  if (
+    otherDate.getMonth() < birthDate.getMonth() ||
+    (otherDate.getMonth() === birthDate.getMonth() && otherDate.getDate() < birthDate.getDate())
+  ) {
+    years--;
+  }
+  return years;
+}
+
+ageValue.innerHTML = calcAge(birthday, localDate);
+
+// TIMEZONE
+const locCell = document.getElementById("home-table-location");
+const tzSide = locCell.querySelector(".side");
+tzSide.innerHTML = `UTC+${Math.floor()}`;
