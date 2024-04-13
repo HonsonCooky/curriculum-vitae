@@ -35,6 +35,13 @@ window.addEventListener("resize", function() {
   nav.className = "";
 });
 
+window.addEventListener("click", function(event) {
+  if (nav.className === "open") {
+    if (menuBtn.contains(event.target) || nav.contains(event.target)) return;
+    nav.className = "";
+  }
+});
+
 const pages = Array.from(document.querySelector("main").children);
 const threshold = window.innerHeight / 5;
 window.addEventListener("scroll", function() {
@@ -45,9 +52,11 @@ window.addEventListener("scroll", function() {
       const navBtn = document.getElementById(navBtnId);
       const icon = navBtn.querySelector("i");
       if (rect.top < threshold && rect.bottom > threshold) {
-        icon.className = "nf nf-fa-folder_open";
+        icon.className = "nf nf-fa-folder_open_o";
+        navBtn.style.color = "var(--iris)";
       } else {
         icon.className = "nf nf-fa-folder";
+        navBtn.style.color = "";
       }
     }
   }, 0);
@@ -59,6 +68,7 @@ window.addEventListener("scroll", function() {
 // AGE
 const ageCell = document.getElementById("home-table-age");
 const ageValue = ageCell.querySelector(".main");
+const ageComment = ageCell.querySelector(".side");
 const birthday = new Date("1999-06-08");
 const localDate = new Date();
 
@@ -75,7 +85,27 @@ function calcAge(birthDate, otherDate) {
 
 ageValue.innerHTML = calcAge(birthday, localDate);
 
+function loadAgeComment() {
+  const timeAlive = Date.now() - birthday.getTime();
+  ageComment.innerHTML = `<i>${timeAlive.toLocaleString()}ms</i>`;
+}
+
+loadAgeComment();
+
+let intervalId = "";
+ageCell.addEventListener("mouseenter", function() {
+  intervalId = setInterval(loadAgeComment, 100);
+});
+ageCell.addEventListener("mouseleave", function() {
+  clearInterval(intervalId);
+});
+
 // TIMEZONE
 const locCell = document.getElementById("home-table-location");
 const tzSide = locCell.querySelector(".side");
-tzSide.innerHTML = `UTC+${Math.floor()}`;
+fetch("https://www.timeapi.io/api/TimeZone/zone?timeZone=Pacific/Auckland")
+  .then((res) => res.json())
+  .then((json) => {
+    const utcNZHourOffset = Number.parseInt(json.currentUtcOffset.seconds) / 3600;
+    if (utcNZHourOffset != 12) tzSide.innerHTML = `UTC+${utcNZHourOffset}`;
+  });

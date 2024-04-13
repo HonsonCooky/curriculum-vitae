@@ -117,8 +117,9 @@ input[type="checkbox"] {
   margin: 0;
   accent-color: var(--base);
 
-  &:hover {
-    accent-color: var(--foam);
+  &:hover,
+  &:active {
+    accent-color: var(--gold);
   }
 }
 
@@ -141,7 +142,7 @@ header {
 
     &:hover,
     &:active {
-      color: var(--foam);
+      color: var(--gold) !important;
     }
   }
 
@@ -167,7 +168,7 @@ header {
     transition-duration: 0.2s;
     transition-property: height padding border;
     transition-timing-function: ease;
-    border-radius: 0 var(--border-size) var(--border-size) var(--border-size);
+    border-radius: 0 var(--border-size) var(--border-size) 0;
     background: var(--overlay);
     padding: 0 var(--space-m);
     padding-right: var(--space-3xl);
@@ -175,7 +176,6 @@ header {
     overflow: hidden;
 
     &.open {
-      border-top: 0;
       padding: var(--space-s) var(--space-m);
       padding-right: var(--space-3xl);
       height: calc(100dvh - var(--scroll-top));
@@ -190,12 +190,19 @@ header {
   @media screen and (min-width: 769px) {
     >nav {
       all: unset;
-      display: inline-block;
+      display: inline-flex;
+      column-gap: var(--space-s);
+      padding-left: var(--space-m);
 
       >a {
         >i {
-          margin: 0 var(--space-3xs);
+          margin: 0 var(--border-size);
         }
+      }
+
+      >a:last-of-type {
+        position: static;
+        bottom: initial;
       }
     }
   }
@@ -231,7 +238,6 @@ main {
 #home-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   padding: var(--space-m);
   font-size: var(--fs-0);
@@ -239,17 +245,18 @@ main {
   >table {
     border: 1px solid var(--text);
     width: 100%;
+    font-size: var(--fs-0);
 
     @media screen and (min-width: 769px) {
-      width: 50%;
+      max-width: min(70%, 600px);
     }
 
     >caption {
       padding: var(--space-m) 0;
 
       >h5 {
-        margin: 0 var(--space-3xs);
-        font-size: var(--fs-1);
+        margin: 0 var(--space-xs);
+        font-size: var(--fs-2);
       }
     }
 
@@ -257,17 +264,15 @@ main {
       >tr {
         >th {
           position: relative;
-          vertical-align: center;
           border: 1px solid var(--text);
           background: var(--gold);
           padding-right: var(--space-m);
           padding-left: var(--space-3xs);
           color: var(--base);
-          font-size: var(--fs-1);
           text-align: start;
 
           &:last-of-type {
-            /* background: var(--foam); */
+            background: var(--love);
 
             >i {
               position: absolute;
@@ -281,31 +286,36 @@ main {
     }
 
     >tbody {
+      position: relative;
+
       >tr {
         >td {
-          vertical-align: center;
           border: 1px solid var(--text);
-          padding-right: var(--space-m);
           padding-left: var(--space-3xs);
           text-align: start;
 
           >.side {
+            position: absolute;
+            top: 102%;
+            left: 50%;
+            transform: translateX(-50%);
             visibility: hidden;
+            width: max-content;
           }
 
           &:first-of-type {
             vertical-align: top;
             font-weight: 500;
           }
+        }
 
-          &:last-of-type:hover,
-          &:last-of-type:active {
-            color: var(--gold);
-            font-weight: 300;
+        &:hover,
+        &:active {
+          color: var(--gold);
+          font-weight: 300;
 
-            >.side {
-              visibility: visible;
-            }
+          >td>.side {
+            visibility: visible;
           }
         }
 
@@ -324,7 +334,7 @@ main {
           &:active {
             >img {
               transform: scale(1);
-              filter: drop-shadow(var(--border-size) var(--border-size) var(--space-3xs) var(--muted));
+              filter: drop-shadow(var(--border-size) var(--border-size) var(--space-3xs) var(--subtle));
             }
           }
         }
