@@ -317,24 +317,35 @@ table {
           visibility: hidden;
           width: max-content;
         }
-      }
 
-      img {
-        display: block;
-        transform: scale(0.9);
-        margin: auto auto;
-        max-width: 100%;
-        max-height: 50dvh;
+        >.shrink {
+          height: var(--fs-1);
+        }
+
+        >img {
+          display: block;
+          transform: scale(0.9);
+          margin: auto auto;
+          max-width: 100%;
+          max-height: 50dvh;
+        }
       }
 
       &:hover,
       &:active {
-        >td>.side {
-          visibility: visible;
-        }
+        >td {
+          >.side {
+            visibility: visible;
+          }
 
-        img {
-          transform: scale(1);
+          >.shrink {
+            height: initial;
+            color: var(--text);
+          }
+
+          >img {
+            transform: scale(1);
+          }
         }
       }
     }
@@ -357,13 +368,15 @@ table {
     }
 
     >tbody {
+      >tr {
 
-      &:hover,
-      &:active {
-        color: var(--gold);
+        &:hover,
+        &:active {
+          color: var(--gold);
 
-        img {
-          filter: drop-shadow(var(--space-3xs) var(--border-size) var(--border-size) var(--gold));
+          >td>img {
+            filter: drop-shadow(var(--space-3xs) var(--border-size) var(--border-size) var(--gold));
+          }
         }
       }
     }
@@ -372,6 +385,10 @@ table {
 
 #about-section {
   >table {
+    @media screen and (min-width: 769px) {
+      max-width: min(70%, 700px);
+    }
+
     >thead {
       >tr {
         >th {
@@ -382,20 +399,33 @@ table {
     }
 
     >tbody {
-      font-size: var(--fs--1);
-
       >tr {
-        >td:last-of-type {
-          vertical-align: middle;
+        >#background-cell {
+          transition: height 0.5s ease;
+          height: var(--fs-1);
+
+          &::before {
+            content: "...";
+          }
         }
-      }
 
-      &:hover,
-      &:active {
-        color: var(--gold);
+        &:hover,
+        &:active {
+          color: var(--love);
 
-        img {
-          filter: drop-shadow(var(--space-3xs) var(--border-size) var(--border-size) var(--love));
+          >td {
+            >img {
+              filter: drop-shadow(var(--space-3xs) var(--border-size) var(--border-size) var(--love));
+            }
+          }
+
+          >#background-cell {
+            height: calc(var(--fs-0) * 30);
+
+            >p {
+              color: var(--text);
+            }
+          }
         }
       }
     }
