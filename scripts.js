@@ -31,6 +31,13 @@ menuBtn.addEventListener("click", function() {
   nav.className = nav.className === "open" ? "" : "open";
 });
 
+const navBtns = Array.from(nav.children);
+for (const navBtn of navBtns) {
+  navBtn.addEventListener("click", function() {
+    nav.className = "";
+  });
+}
+
 window.addEventListener("resize", function() {
   nav.className = "";
 });
