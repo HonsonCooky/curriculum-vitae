@@ -94,14 +94,14 @@ ageValue.innerHTML = calcAge(birthday, localDate);
 
 function loadAgeComment() {
   const timeAlive = Date.now() - birthday.getTime();
-  ageComment.innerHTML = `<i>${timeAlive.toLocaleString()}ms</i>`;
+  ageComment.innerHTML = `${timeAlive.toLocaleString()}ms`;
 }
 
 loadAgeComment();
 
 let intervalId = "";
 ageCell.addEventListener("mouseenter", function() {
-  intervalId = setInterval(loadAgeComment, 100);
+  intervalId = setInterval(loadAgeComment, 71);
 });
 ageCell.addEventListener("mouseleave", function() {
   clearInterval(intervalId);

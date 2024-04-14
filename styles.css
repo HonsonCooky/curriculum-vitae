@@ -134,7 +134,7 @@ header {
   top: 0dvh;
   z-index: 100;
   background: var(--overlay);
-  padding: var(--border-size) var(--space-m);
+  padding: var(--space-3xs) var(--space-m);
   font-size: var(--fs-1);
 
   a {
@@ -252,6 +252,19 @@ main {
   }
 }
 
+img {
+  display: block;
+  transform: scale(0.95);
+  transform-origin: bottom center;
+  margin: auto auto;
+  max-width: 100%;
+  max-height: 50dvh;
+
+  &:hover {
+    transform: scale(1);
+  }
+}
+
 table {
   border: 1px solid var(--text);
   width: 100%;
@@ -318,17 +331,19 @@ table {
           width: max-content;
         }
 
-        >.shrink {
-          height: var(--fs-1);
+        >div {
+          >span {
+            >.no-hover {
+              color: var(--iris);
+            }
+          }
         }
+      }
 
-        >img {
-          display: block;
-          transform: scale(0.9);
-          margin: auto auto;
-          max-width: 100%;
-          max-height: 50dvh;
-        }
+      figcaption {
+        display: none;
+        background: var(--base);
+        text-align: center;
       }
 
       &:hover,
@@ -338,14 +353,25 @@ table {
             visibility: visible;
           }
 
-          >.shrink {
-            height: initial;
-            color: var(--text);
-          }
-
           >img {
             transform: scale(1);
           }
+
+          >div {
+            >span {
+              display: block;
+              padding: var(--space-s) var(--space-m);
+              color: var(--text);
+
+              >.no-hover {
+                display: none;
+              }
+            }
+          }
+        }
+
+        figcaption {
+          display: block;
         }
       }
     }
@@ -375,7 +401,7 @@ table {
           color: var(--gold);
 
           >td>img {
-            filter: drop-shadow(var(--space-3xs) var(--border-size) var(--border-size) var(--gold));
+            filter: drop-shadow(0 0 var(--space-3xs) var(--gold));
           }
         }
       }
@@ -385,45 +411,64 @@ table {
 
 #about-section {
   >table {
-    @media screen and (min-width: 769px) {
-      max-width: min(70%, 700px);
-    }
-
     >thead {
       >tr {
         >th {
-          background-color: var(--love);
-          color: var(--base);
+          background-color: var(--overlay);
+
+          &:first-of-type {
+            display: none;
+            padding-right: var(--space-m);
+          }
         }
       }
     }
 
     >tbody {
       >tr {
-        >#background-cell {
-          transition: height 0.5s ease;
-          height: var(--fs-1);
-
-          &::before {
-            content: "...";
+        >td {
+          &:first-of-type {
+            display: none;
+            padding-right: var(--space-m);
           }
         }
 
         &:hover,
         &:active {
-          color: var(--love);
+          color: var(--gold);
 
           >td {
             >img {
-              filter: drop-shadow(var(--space-3xs) var(--border-size) var(--border-size) var(--love));
+              clip-path: rect(-10% 110% 100% -10%);
+              filter: drop-shadow(0 0 var(--space-3xs) var(--gold));
             }
           }
+        }
+      }
+    }
+  }
 
-          >#background-cell {
-            height: calc(var(--fs-0) * 30);
+  @media screen and (min-width: 769px) {
+    >table {
+      >thead {
+        >tr {
+          >th {
+            &:first-of-type {
+              display: table-cell;
+            }
+          }
+        }
+      }
 
-            >p {
-              color: var(--text);
+      >tbody {
+        >tr {
+          >td {
+            &:first-of-type {
+              display: table-cell;
+            }
+
+            .mobile-only {
+              display: none;
             }
           }
         }
