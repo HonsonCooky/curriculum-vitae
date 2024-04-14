@@ -39,6 +39,7 @@ for (const navBtn of navBtns) {
 }
 
 window.addEventListener("resize", function() {
+  document.documentElement.style.setProperty("--scroll-top", `${header.offsetHeight}px`);
   nav.className = "";
 });
 

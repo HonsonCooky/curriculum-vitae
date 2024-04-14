@@ -119,6 +119,22 @@ body {
   }
 }
 
+.web {
+  display: none;
+
+  @media screen and (min-width: 769px) {
+    display: initial;
+  }
+}
+
+.mobile {
+  display: initial;
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
 input[type="checkbox"] {
   margin: 0;
   accent-color: var(--base);
@@ -178,7 +194,7 @@ table {
   font-size: var(--fs-0);
 
   >caption {
-    padding-bottom: var(--space-m);
+    padding: var(--space-m) 0;
   }
 
   >thead {
@@ -191,7 +207,7 @@ table {
         position: relative;
         border: 1px solid var(--text);
         background-color: var(--gold);
-        padding-left: var(--space-3xs);
+        padding: var(--border-size) var(--space-3xs);
         color: var(--base);
         font-weight: 900;
         text-align: start;
@@ -213,10 +229,22 @@ table {
       >td {
         vertical-align: top;
         border: 1px solid var(--text);
-        padding: 0 var(--space-3xs);
+        padding: 1px var(--space-3xs);
         overflow: hidden;
         font-weight: 400;
         text-align: start;
+
+        &:first-of-type {
+          padding-right: var(--space-m);
+        }
+
+        *:first-child {
+          margin-top: 0;
+        }
+
+        >img {
+          padding: 0 var(--space-m);
+        }
       }
 
       &:hover,
@@ -343,6 +371,10 @@ main {
       max-width: max-content;
     }
 
+    >caption {
+      padding-top: 0;
+    }
+
     >tbody {
       >tr {
         >td {
@@ -373,6 +405,7 @@ main {
   >#introduction {
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     @media screen and (min-width: 769px) {
       column-gap: var(--space-m);
@@ -380,6 +413,59 @@ main {
 
       >figure {
         min-width: 30dvw;
+      }
+    }
+  }
+
+  >#information {
+    >table {
+      >thead {
+        >tr {
+          >th {
+            &:first-of-type {
+              background: var(--muted);
+
+              @media screen and (min-width: 769px) {
+                background: var(--gold);
+              }
+            }
+          }
+        }
+      }
+
+      >tbody {
+        >tr {
+          >td {
+            &:first-of-type {
+              transform: rotate(180deg);
+              padding: 0;
+              padding: 0 var(--border-size);
+              writing-mode: vertical-lr;
+              text-align: center;
+
+              @media screen and (min-width: 769px) {
+                transform: rotate(0deg);
+                padding: 0 var(--space-3xs);
+                padding-right: var(--space-m);
+                writing-mode: horizontal-tb;
+                text-align: start;
+              }
+            }
+
+            >ul {
+              list-style: square;
+
+              >li {
+                margin-bottom: var(--space-xs);
+              }
+            }
+          }
+
+          &:hover,
+          &:active {
+            color: var(--text);
+          }
+        }
       }
     }
   }
