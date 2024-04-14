@@ -289,6 +289,10 @@ table {
   }
 
   >thead {
+    position: sticky;
+    top: var(--scroll-top);
+    z-index: 90;
+
     >tr {
       >th {
         position: relative;
@@ -334,7 +338,7 @@ table {
         >div {
           >span {
             >.no-hover {
-              color: var(--iris);
+              color: var(--rose);
             }
           }
         }
@@ -358,15 +362,21 @@ table {
           }
 
           >div {
+            display: flex;
+            flex-direction: column;
+
             >span {
               display: block;
-              padding: var(--space-s) var(--space-m);
               color: var(--text);
 
               >.no-hover {
                 display: none;
               }
             }
+          }
+
+          >#introduction {
+            row-gap: var(--space-m);
           }
         }
 
