@@ -50,7 +50,7 @@ window.addEventListener("click", function(event) {
   }
 });
 
-const pages = Array.from(document.querySelector("main").children);
+const pages = Array.from(document.querySelector("main").querySelectorAll(":scope>div"));
 const threshold = window.innerHeight / 5;
 window.addEventListener("scroll", function() {
   setTimeout(() => {
@@ -71,49 +71,49 @@ window.addEventListener("scroll", function() {
 });
 
 /**--------------------------------------------------------------------------------------------------------------------
-  HOME 
+  HOME
 ---------------------------------------------------------------------------------------------------------------------*/
 // AGE
-const ageCell = document.getElementById("home-table-age");
-const ageValue = ageCell.querySelector(".main");
-const ageComment = ageCell.querySelector(".side");
-const birthday = new Date("1999-06-08");
-const localDate = new Date();
-
-function calcAge(birthDate, otherDate) {
-  var years = otherDate.getFullYear() - birthDate.getFullYear();
-  if (
-    otherDate.getMonth() < birthDate.getMonth() ||
-    (otherDate.getMonth() === birthDate.getMonth() && otherDate.getDate() < birthDate.getDate())
-  ) {
-    years--;
-  }
-  return years;
-}
-
-ageValue.innerHTML = calcAge(birthday, localDate);
-
-function loadAgeComment() {
-  const timeAlive = Date.now() - birthday.getTime();
-  ageComment.innerHTML = `${timeAlive.toLocaleString()}ms`;
-}
-
-loadAgeComment();
-
-let intervalId = "";
-ageCell.addEventListener("mouseenter", function() {
-  intervalId = setInterval(loadAgeComment, 71);
-});
-ageCell.addEventListener("mouseleave", function() {
-  clearInterval(intervalId);
-});
-
-// TIMEZONE
-const locCell = document.getElementById("home-table-location");
-const tzSide = locCell.querySelector(".side");
-fetch("https://www.timeapi.io/api/TimeZone/zone?timeZone=Pacific/Auckland")
-  .then((res) => res.json())
-  .then((json) => {
-    const utcNZHourOffset = Number.parseInt(json.currentUtcOffset.seconds) / 3600;
-    if (utcNZHourOffset != 12) tzSide.innerHTML = `UTC+${utcNZHourOffset}`;
-  });
+// const ageCell = document.getElementById("home-table-age");
+// const ageValue = ageCell.querySelector(".main");
+// const ageComment = ageCell.querySelector(".side");
+// const birthday = new Date("1999-06-08");
+// const localDate = new Date();
+//
+// function calcAge(birthDate, otherDate) {
+//   var years = otherDate.getFullYear() - birthDate.getFullYear();
+//   if (
+//     otherDate.getMonth() < birthDate.getMonth() ||
+//     (otherDate.getMonth() === birthDate.getMonth() && otherDate.getDate() < birthDate.getDate())
+//   ) {
+//     years--;
+//   }
+//   return years;
+// }
+//
+// ageValue.innerHTML = calcAge(birthday, localDate);
+//
+// function loadAgeComment() {
+//   const timeAlive = Date.now() - birthday.getTime();
+//   ageComment.innerHTML = `${timeAlive.toLocaleString()}ms`;
+// }
+//
+// loadAgeComment();
+//
+// let intervalId = "";
+// ageCell.addEventListener("mouseenter", function() {
+//   intervalId = setInterval(loadAgeComment, 71);
+// });
+// ageCell.addEventListener("mouseleave", function() {
+//   clearInterval(intervalId);
+// });
+//
+// // TIMEZONE
+// const locCell = document.getElementById("home-table-location");
+// const tzSide = locCell.querySelector(".side");
+// fetch("https://www.timeapi.io/api/TimeZone/zone?timeZone=Pacific/Auckland")
+//   .then((res) => res.json())
+//   .then((json) => {
+//     const utcNZHourOffset = Number.parseInt(json.currentUtcOffset.seconds) / 3600;
+//     if (utcNZHourOffset != 12) tzSide.innerHTML = `UTC+${utcNZHourOffset}`;
+//   });

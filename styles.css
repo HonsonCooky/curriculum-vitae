@@ -135,6 +135,13 @@ body {
   }
 }
 
+hr {
+  border-color: var(--surface);
+  background-color: var(--surface);
+  max-width: 80%;
+  color: var(--surface);
+}
+
 input[type="checkbox"] {
   margin: 0;
   accent-color: var(--base);
@@ -155,11 +162,21 @@ figure {
     font-size: var(--fs--1);
     text-align: center;
   }
+
+  &:hover {
+    >img {
+      transform: scale(1);
+    }
+
+    >figcaption {
+      color: var(--gold);
+    }
+  }
 }
 
 img {
   display: block;
-  transform: scale(0.95);
+  transform: scale(0.9);
   transform-origin: bottom center;
   margin: auto auto;
   max-width: 100%;
@@ -171,7 +188,7 @@ img {
 }
 
 h1 {
-  font-weight: 300;
+  font-weight: 900;
   font-size: var(--fs-5);
 }
 
@@ -204,20 +221,12 @@ table {
 
     >tr {
       >th {
-        position: relative;
         border: 1px solid var(--text);
         background-color: var(--gold);
         padding: var(--border-size) var(--space-3xs);
         color: var(--base);
         font-weight: 900;
         text-align: start;
-
-        >i {
-          position: absolute;
-          top: 50%;
-          right: var(--space-3xs);
-          transform: translateY(-50%);
-        }
       }
     }
   }
@@ -250,12 +259,6 @@ table {
       &:hover,
       &:active {
         color: var(--gold);
-
-        >td {
-          >img {
-            transform: scale(1);
-          }
-        }
       }
     }
   }
@@ -377,23 +380,11 @@ main {
 
     >tbody {
       >tr {
-        >td {
-          >.side {
-            display: block;
-            position: absolute;
-            top: 102%;
-            left: 50%;
-            transform: translateX(-50%);
-            visibility: hidden;
-            width: 100%;
-            text-align: center;
-          }
+        >#home-table-img {
+          padding: 0;
 
-          &:hover,
-          &:active {
-            >.side {
-              visibility: visible;
-            }
+          >figure {
+            border: none;
           }
         }
       }
