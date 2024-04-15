@@ -92,10 +92,6 @@
   color: var(--base);
 }
 
-*::-webkit-scrollbar {
-  display: none;
-}
-
 html {
   margin: 0;
   background: var(--base);
@@ -243,22 +239,21 @@ table {
         font-weight: 400;
         text-align: start;
 
-        &:first-of-type {
-          padding-right: var(--space-m);
-        }
-
-        *:first-child {
-          margin-top: 0;
-        }
-
-        >img {
-          padding: 0 var(--space-m);
+        >figure {
+          border: none;
         }
       }
 
       &:hover,
       &:active {
         color: var(--gold);
+      }
+    }
+
+    >.section-header {
+      td {
+        background-color: var(--text);
+        color: var(--base);
       }
     }
   }
@@ -371,7 +366,7 @@ main {
 #home-section {
   table {
     @media screen and (min-width: 769px) {
-      max-width: max-content;
+      max-width: min(70%, 700px);
     }
 
     >caption {
@@ -382,10 +377,6 @@ main {
       >tr {
         >#home-table-img {
           padding: 0;
-
-          >figure {
-            border: none;
-          }
         }
       }
     }
@@ -409,52 +400,14 @@ main {
   }
 
   >#information {
+    width: 100%;
+    overflow-x: scroll;
+
     >table {
-      >thead {
-        >tr {
-          >th {
-            &:first-of-type {
-              background: var(--muted);
-
-              @media screen and (min-width: 769px) {
-                background: var(--gold);
-              }
-            }
-          }
-        }
-      }
-
       >tbody {
-        >tr {
+        >tr:not(.section-header):nth-of-type(even) {
           >td {
-            &:first-of-type {
-              transform: rotate(180deg);
-              padding: 0;
-              padding: 0 var(--border-size);
-              writing-mode: vertical-lr;
-              text-align: center;
-
-              @media screen and (min-width: 769px) {
-                transform: rotate(0deg);
-                padding: 0 var(--space-3xs);
-                padding-right: var(--space-m);
-                writing-mode: horizontal-tb;
-                text-align: start;
-              }
-            }
-
-            >ul {
-              list-style: square;
-
-              >li {
-                margin-bottom: var(--space-xs);
-              }
-            }
-          }
-
-          &:hover,
-          &:active {
-            color: var(--text);
+            background-color: var(--overlay);
           }
         }
       }
