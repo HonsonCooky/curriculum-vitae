@@ -85,6 +85,7 @@
   color: inherit;
   font-size: inherit;
   font-family: "Inconsolata", monospace;
+  text-decoration-thickness: 1px;
 }
 
 *::selection {
@@ -176,7 +177,7 @@ img {
   transform-origin: bottom center;
   margin: auto auto;
   max-width: 100%;
-  max-height: 50dvh;
+  max-height: 40dvh;
 
   &:hover {
     transform: scale(1);
@@ -184,8 +185,10 @@ img {
 }
 
 h1 {
+  margin-top: 0;
   font-weight: 900;
   font-size: var(--fs-5);
+  text-align: center;
 }
 
 h3 {
@@ -203,7 +206,6 @@ h4 {
 
 table {
   border: 1px solid var(--text);
-  width: 100%;
   font-size: var(--fs-0);
 
   >caption {
@@ -220,6 +222,7 @@ table {
         border: 1px solid var(--text);
         background-color: var(--gold);
         padding: var(--border-size) var(--space-3xs);
+        padding-right: var(--space-m);
         color: var(--base);
         font-weight: 900;
         text-align: start;
@@ -234,7 +237,8 @@ table {
       >td {
         vertical-align: top;
         border: 1px solid var(--text);
-        padding: 1px var(--space-3xs);
+        padding: var(--border-size) var(--space-3xs);
+        padding-right: var(--space-m);
         overflow: hidden;
         font-weight: 400;
         text-align: start;
@@ -244,16 +248,8 @@ table {
         }
       }
 
-      &:hover,
-      &:active {
+      &:hover {
         color: var(--gold);
-      }
-    }
-
-    >.section-header {
-      td {
-        background-color: var(--text);
-        color: var(--base);
       }
     }
   }
@@ -365,12 +361,12 @@ main {
 
 #home-section {
   table {
-    @media screen and (min-width: 769px) {
-      max-width: min(70%, 700px);
-    }
-
     >caption {
       padding-top: 0;
+    }
+
+    >thead {
+      display: table-header-group;
     }
 
     >tbody {
@@ -400,18 +396,15 @@ main {
   }
 
   >#information {
-    width: 100%;
-    overflow-x: scroll;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
 
-    >table {
-      >tbody {
-        >tr:not(.section-header):nth-of-type(even) {
-          >td {
-            background-color: var(--overlay);
-          }
-        }
-      }
-    }
+#work-section {
+  >section {
+    max-width: 100%;
+    overflow-x: auto;
   }
 }
 
