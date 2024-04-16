@@ -94,6 +94,7 @@
   color: inherit;
   font-size: inherit;
   font-family: "Inconsolata", monospace;
+  text-decoration: none;
 }
 
 *::selection {
@@ -107,24 +108,53 @@ body {
   color: var(--foreground);
 }
 
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+
+  >header {
+    grid-area: header;
+    border-bottom: var(--border-size) solid var(--white);
+  }
+
+  >nav {
+    display: flex;
+    grid-area: nav;
+    flex-direction: column;
+  }
+
+  >main {
+    grid-area: main;
+  }
+
+  >footer {
+    grid-area: footer;
+  }
+
+  @media screen and (min-width: 769px) {
+    grid-template-areas: "header header" "nav main" "footer footer";
+    height: 100dvh;
+
+    >main {
+      overflow-y: scroll;
+    }
+  }
+}
+
 footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  z-index: 100;
-  background: var(--foreground);
+  align-items: center;
+  background: var(--overlay);
   padding: var(--border-size) var(--space-m);
-  color: var(--black);
+  width: 100%;
+  font-size: var(--fs--1);
 
   >div {
     display: flex;
     column-gap: var(--space-3xs);
     flex-direction: row;
-  }
-
-  @media screen and (min-width: 769px) {
-    position: sticky;
-    bottom: 0dvh;
   }
 }
 
