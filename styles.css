@@ -2,26 +2,31 @@
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 
 :root {
-  --background: #e1e2e7;
-  --black: #e9e9ed;
-  --blue: #2e7de9;
-  --brightBlack: #a1a6c5;
-  --brightBlue: #2e7de9;
-  --brightCyan: #007197;
-  --brightGreen: #587539;
-  --brightPurple: #7847bd;
-  --brightRed: #f52a65;
-  --brightWhite: #3760bf;
-  --brightYellow: #8c6c3e;
-  --cursorColor: #3760bf;
-  --cyan: #007197;
-  --foreground: #3760bf;
-  --green: #587539;
-  --purple: #9854f1;
-  --red: #f52a65;
-  --selectionBackground: #b6bfe2;
-  --white: #6172b0;
-  --yellow: #8c6c3e;
+  --black: #15141b;
+  --white: #edecee;
+  --gray: #6d6d6d;
+  --purple: #a277ff;
+  --purple-fading: #3d375e7f;
+  --green: #61ffca;
+  --orange: #ffca85;
+  --pink: #f694ff;
+  --blue: #82e2ff;
+  --red: #ff6767;
+  --background: var(--black);
+  --foreground: var(--white);
+  --muted: var(--gray);
+  --selection: var(--purple-fading);
+  --primary: var(--purple);
+  --secondary: var(--green);
+  --tertiary: var(--orange);
+  --quaternary: var(--pink);
+  --quinary: var(--blue);
+  --senary: var(--red);
+  --warning: var(--orange);
+  --success: var(--green);
+  --error: var(--red);
+
+  --scroll-top: 0px;
 
   --fs--2: clamp(0.7813rem, 0.7107rem + 0.3527cqi, 0.88rem);
   --fs--1: clamp(0.9375rem, 0.8214rem + 0.5804cqi, 1.1rem);
@@ -41,8 +46,6 @@
   --space-2xl: clamp(4.5rem, 3.7857rem + 3.5714vi, 5.5rem);
   --space-3xl: clamp(6.75rem, 5.6786rem + 5.3571vi, 8.25rem);
   --border-size: clamp(0.125rem, 0.0357rem + 0.4464vi, 0.2rem);
-
-  --scroll-top: 0px;
 
   @media screen and (min-width: 769px) {
     --fs--2: clamp(0.6944rem, 0.4824rem + 0.4418vi, 0.88rem);
@@ -66,29 +69,6 @@
   }
 }
 
-[theme="dark"] {
-  --background: #24283b;
-  --black: #1d202f;
-  --blue: #7aa2f7;
-  --brightBlack: #414868;
-  --brightBlue: #7aa2f7;
-  --brightCyan: #7dcfff;
-  --brightGreen: #9ece6a;
-  --brightPurple: #9d7cd8;
-  --brightRed: #f7768e;
-  --brightWhite: #c0caf5;
-  --brightYellow: #e0af68;
-  --cursorColor: #c0caf5;
-  --cyan: #7dcfff;
-  --foreground: #c0caf5;
-  --green: #9ece6a;
-  --purple: #bb9af7;
-  --red: #f7768e;
-  --selectionBackground: #2e3c64;
-  --white: #a9b1d6;
-  --yellow: #e0af68;
-}
-
 * {
   box-sizing: border-box;
   color: inherit;
@@ -98,7 +78,8 @@
 }
 
 *::selection {
-  background: var(--selectionBackground);
+  background: var(--selection);
+  color: var(--background);
 }
 
 html,
@@ -108,57 +89,8 @@ body {
   color: var(--foreground);
 }
 
-body {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "header" "main" "footer";
-
-  >header {
-    grid-area: header;
-    border-bottom: var(--border-size) solid var(--white);
-  }
-
-  >nav {
-    display: flex;
-    grid-area: nav;
-    flex-direction: column;
-  }
-
-  >main {
-    grid-area: main;
-  }
-
-  >footer {
-    display: flex;
-    grid-area: footer;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--overlay);
-    padding: var(--border-size) var(--space-m);
-    width: 100%;
-    font-size: var(--fs--1);
-
-    >div {
-      display: flex;
-      column-gap: var(--space-3xs);
-      flex-direction: row;
-    }
-  }
-
-  @media screen and (min-width: 769px) {
-    grid-template-columns: 1fr 5fr;
-    grid-template-areas: "header header" "nav main" "footer footer";
-    height: 100dvh;
-
-    >main {
-      overflow-y: scroll;
-    }
-
-    >nav {
-      all: unset;
-    }
-  }
+hr {
+  border: 0.1rem dotted var(--foreground);
 }
 
 figure {
