@@ -1,82 +1,223 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Harrison Cook's Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="./assets/imgs/HC_LOGO_LIGHT_48x48.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harrison Cook - Software Engineer</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
     <script src="./scripts.js" defer></script>
   </head>
 
   <body>
-    <main>
-      <!-- HOME -->
-      <div id="home-section">
-        <h1>Harrison Cook</h1>
-        <h2>Software Engineer</h2>
-        <figure>
-          <img src="./assets/imgs/me.png" />
-          <figcaption>Fig. 1. Unconventional Engineer Profile</figcaption>
-        </figure>
-      </div>
-      <hr />
+    <!-- Home Section -->
+    <section id="home">
+      <h1>Harrison Cook</h1>
+      <p>Software Engineer</p>
+    </section>
 
-      <!-- ABOUT -->
-      <div id="about-section">
-        <h1>ABOUT ME</h1>
-        <section id="introduction">
-          <figure>
-            <img src="./assets/imgs/dance.png" alt="dance.png" />
-            <figcaption>Fig. 2. Engineers Can't Dance?</figcaption>
-          </figure>
-          <div>
-            <p>
-              Hailing from what my friends affectionately call a ‘singing cult,’ my formative years were steeped in
-              music and the performing arts. As I entered my late teens, curiosity beckoned me toward the world of
-              digital technologies.
-            </p>
-            <p>
-              Armed with a knack for calculus and a flair for photography, I discovered programming— an art form that
-              blends creativity with methodical precision. It’s a canvas with rules, yet near infinite possibilities.
-              Now, I’ve traded sheet music for syntax; my compositions resonate through elegant algorithms, harmonizing
-              data structures and orchestrating efficient solutions. Whether it’s a symphony of APIs or a concerto in
-              cloud architecture, I thrive on turning complexity into clarity.
-            </p>
-            <p>
-              Today, I stand as a bright, bubbly, resilient, and reliable individual. I'm ready to contribute my unique
-              blend of creativity and technical prowess to exciting projects; Are you ready for me? Welcome to my
-              melodic journey through bytes and bits!
-            </p>
-          </div>
-        </section>
-      </div>
-      <hr />
+    <!-- About Me Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hailing from what my friends affectionately call a ‘singing cult,’ my formative years were steeped in music and
+        the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital technologies.
+      </p>
+      <p>
+        Armed with a knack for calculus and a flair for photography, I discovered programming— an art form that blends
+        creativity with methodical precision. It’s a canvas with rules, yet near infinite possibilities. Now, I’ve
+        traded sheet music for syntax; my compositions resonate through elegant algorithms, harmonizing data structures
+        and orchestrating efficient solutions. Whether it’s a symphony of APIs or a concerto in cloud architecture, I
+        thrive on turning complexity into clarity.
+      </p>
+      <p>
+        Today, I stand as a bright, bubbly, resilient, and reliable individual. I'm ready to contribute my unique blend
+        of creativity and technical prowess to exciting projects; Are you ready for me? Welcome to my melodic journey
+        through bytes and bits!
+      </p>
+    </section>
 
-      <!-- WORK -->
-      <div id="work-section">
-        <h1>WORK EXPERIENCE</h1>
+    <!-- Work Experience Section -->
+    <section id="work-experience">
+      <h2>Work Experience</h2>
+      <!-- List your work history, including company names, job titles, and descriptions -->
+      <div class="job">
+        <h3>Z Energy</h3>
+        <p>Intermediate Developer | 2021 - Present</p>
+        <p>DESC</p>
       </div>
-      <hr />
+      <div class="job">
+        <h3>Raygun</h3>
+        <p>Intern Developer | 2020 - 2021</p>
+        <p>DESC</p>
+      </div>
+      <div class="job">
+        <h3>Victoria University</h3>
+        <p>Tutor | 2019 - 2021</p>
+        <p>DESC</p>
+      </div>
+      <div class="job">
+        <h3>Code Camp</h3>
+        <p>Tutor | 2018 - 2019</p>
+        <p>DESC</p>
+      </div>
+    </section>
 
-      <!-- PROJECTS -->
-      <div id="project-section">
-        <h1>PERSONAL PROJECTS</h1>
-      </div>
-      <hr />
+    <!-- Tech Skills Section -->
+    <section id="tech-skills">
+      <h2>Technical Skills</h2>
+      <table border="1">
+        <tr>
+          <th>Category</th>
+          <th>Technology</th>
+        </tr>
+        <tr>
+          <td rowspan="11">Programming Languages</td>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>C#</td>
+        </tr>
+        <tr>
+          <td>C++</td>
+        </tr>
+        <tr>
+          <td>Dart</td>
+        </tr>
+        <tr>
+          <td>F#</td>
+        </tr>
+        <tr>
+          <td>Java</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+        </tr>
+        <tr>
+          <td>Lua</td>
+        </tr>
+        <tr>
+          <td>Ruby</td>
+        </tr>
+        <tr>
+          <td>Rust</td>
+        </tr>
+        <tr>
+          <td>Typescript</td>
+        </tr>
 
-      <!-- BLOG -->
-      <div id="blog-section">
-        <h1>BLOGS</h1>
-      </div>
-    </main>
+        <tr>
+          <td rowspan="2">Web Technologies</td>
+          <td>CSS</td>
+        </tr>
+        <tr>
+          <td>HTML</td>
+        </tr>
 
-    <footer>
-      <label id="mode">--Normal--</label>
-      <div>
-        <input id="theme-btn" type="checkbox" />
-        <label for="theme-btn">Dark Theme</label>
+        <tr>
+          <td rowspan="6">Frameworks/Libraries</td>
+          <td>.Net</td>
+        </tr>
+        <tr>
+          <td>Flutter</td>
+        </tr>
+        <tr>
+          <td>Next.js</td>
+        </tr>
+        <tr>
+          <td>React</td>
+        </tr>
+        <tr>
+          <td>React-Native</td>
+        </tr>
+        <tr>
+          <td>Vue.js</td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">Runtime Environments</td>
+          <td>JDK</td>
+        </tr>
+        <tr>
+          <td>Node.js</td>
+        </tr>
+
+        <tr>
+          <td>Infrastructure as Code (IaC)</td>
+          <td>Terraform</td>
+        </tr>
+
+        <tr>
+          <td rowspan="2">Version Control Systems</td>
+          <td>Azure DevOps</td>
+        </tr>
+        <tr>
+          <td>GitHub</td>
+        </tr>
+
+        <tr>
+          <td>Cloud Services</td>
+          <td>Azure Cloud</td>
+        </tr>
+
+        <tr>
+          <td rowspan="5">Integrated Development Environments (IDEs)</td>
+          <td>JetBrains</td>
+        </tr>
+        <tr>
+          <td>Neovim</td>
+        </tr>
+        <tr>
+          <td>VSCode</td>
+        </tr>
+        <tr>
+          <td>Visual Studio</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Soft Skills Section -->
+    <section id="soft-skills">
+      <h2>Soft Skills</h2>
+      <ul>
+        <li>
+          <strong>Teamwork:</strong> Throughout my life, I’ve actively engaged in various groups and teams, spanning
+          sports, bands, university projects, and diverse work environments. Whether leading or following, I’ve honed my
+          ability to adapt swiftly to different team dynamics. My extensive experience provides a rich reference point
+          for navigating the intricacies of new teams.
+        </li>
+        <li>
+          <strong>Communication:</strong> Drawing from my thespian background and 3 years of tutoring across various age
+          groups, I’ve developed robust verbal communication skills. Whether interacting with clients or colleagues, I
+          excel in conveying ideas effectively and fostering meaningful connections.
+        </li>
+        <li>
+          <strong>Personality:</strong> Endorsed by colleagues, mentors, and supervisors for my organizational skills,
+          zest, and dependability, I excel in collaborative settings that honor collective effort. I am passionate about
+          creating and nurturing a workspace that not only inspires daily motivation and enthusiasm but also makes it a
+          place truly worth the early morning rise.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Personal Projects Section -->
+    <section id="personal-projects">
+      <h2>Personal Projects</h2>
+      <!-- Create cards or links for your projects -->
+      <div class="project-card">
+        <h3>Project 1</h3>
+        <p>Description of the project and your role</p>
       </div>
-    </footer>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs">
+      <h2>Blogs</h2>
+      <!-- Create a table or list of links to your blog posts -->
+      <ul>
+        <li><a href="blog-post-1.html">Blog Post 1</a></li>
+      </ul>
+    </section>
+
+    <footer></footer>
   </body>
 </html>
