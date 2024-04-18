@@ -11,13 +11,23 @@
   <body>
     <!-- Home Section -->
     <section id="home">
-      <h1>Harrison Cook</h1>
-      <p>Software Engineer</p>
+      <hgroup>
+        <h1>Harrison Cook</h1>
+        <p>Software Engineer</p>
+      </hgroup>
+      <figure>
+        <img src="./assets/imgs/me.png" />
+        <figcaption>Fig. 1. Unconventional Engineer Profile</figcaption>
+      </figure>
     </section>
 
     <!-- About Me Section -->
     <section id="about">
       <h2>About Me</h2>
+      <figure>
+        <img src="./assets/imgs/dance.png" />
+        <figcaption>Fig. 2. Engineers can dance?</figcaption>
+      </figure>
       <p>
         Hailing from what my friends affectionately call a ‘singing cult,’ my formative years were steeped in music and
         the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital technologies.
@@ -42,23 +52,39 @@
       <!-- List your work history, including company names, job titles, and descriptions -->
       <div class="job">
         <h3>Z Energy</h3>
-        <p>Intermediate Developer | 2021 - Present</p>
+        <p>Intermediate Developer | May 2022 - Present</p>
+        <p>Graduate Developer | Nov 2021 - May 2022</p>
         <p>DESC</p>
       </div>
       <div class="job">
         <h3>Raygun</h3>
-        <p>Intern Developer | 2020 - 2021</p>
+        <p>Intern Developer | Nov 2020 - Feb 2021</p>
         <p>DESC</p>
       </div>
       <div class="job">
         <h3>Victoria University</h3>
-        <p>Tutor | 2019 - 2021</p>
+        <p>Tutor | Mar 2019 - Nov 2021</p>
         <p>DESC</p>
       </div>
       <div class="job">
-        <h3>Code Camp</h3>
-        <p>Tutor | 2018 - 2019</p>
-        <p>DESC</p>
+        <h3>Others</h3>
+        <table border="1">
+          <tr>
+            <td>ANZCO Meat Works</td>
+            <td>Freezer-hand</td>
+            <td>Nov 2019 - Feb 2020</td>
+          </tr>
+          <tr>
+            <td>Code Camp</td>
+            <td>Camp leader</td>
+            <td>Mar 2018 - Jul 2019</td>
+          </tr>
+          <tr>
+            <td>Bunnings Warehouse</td>
+            <td>Floor-hand</td>
+            <td>Aug 2016 - Mar 2020</td>
+          </tr>
+        </table>
       </div>
     </section>
 
@@ -160,14 +186,14 @@
         </tr>
 
         <tr>
-          <td rowspan="5">Integrated Development Environments (IDEs)</td>
+          <td rowspan="5">Integrated Development Environments</td>
           <td>JetBrains</td>
         </tr>
         <tr>
           <td>Neovim</td>
         </tr>
         <tr>
-          <td>VSCode</td>
+          <td>Visual Studio Code</td>
         </tr>
         <tr>
           <td>Visual Studio</td>
@@ -202,7 +228,6 @@
     <!-- Personal Projects Section -->
     <section id="personal-projects">
       <h2>Personal Projects</h2>
-      <!-- Create cards or links for your projects -->
       <div class="project-card">
         <h3>Project 1</h3>
         <p>Description of the project and your role</p>
@@ -212,12 +237,31 @@
     <!-- Blogs Section -->
     <section id="blogs">
       <h2>Blogs</h2>
-      <!-- Create a table or list of links to your blog posts -->
       <ul>
         <li><a href="blog-post-1.html">Blog Post 1</a></li>
       </ul>
     </section>
 
-    <footer></footer>
+    <footer>
+      <label id="mode">--Normal--</label>
+      <label id="links">
+        <a class="nf nf-fa-github" href="https://github.com/HonsonCooky" target="_blank"></a>
+        <a
+          class="nf nf-fa-linkedin"
+          href="https://www.linkedin.com/in/harrison-cook-software-engineer/"
+          target="_blank"
+        ></a>
+        <a class="nf nf-fa-reddit_alien" href="https://www.reddit.com/user/HonsonCooky/" target="_blank"></a>
+        <a
+          class="nf nf-fa-stack_overflow"
+          href="https://stackoverflow.com/users/19093612/harrison-cook"
+          target="_blank"
+        ></a>
+      </label>
+      <label>
+        <input id="theme-btn" type="checkbox" />
+        <label for="theme-btn">Dark Theme</label>
+      </label>
+    </footer>
   </body>
 </html>
