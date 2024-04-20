@@ -23,12 +23,22 @@
           </button>
           <button type="Contact">
             <i class="nf nf-fa-file_pdf"></i>
-            Resume
+            CV
           </button>
         </div>
+        <p>
+          A passionate software engineer with <span id="industry-years">3</span> years of industry experience under my
+          belt. My technical toolkit includes TypeScript, C#, Azure, Terraform, and GitHub Actions. But what truly sets
+          me apart? It’s my youthful energy and unwavering commitment to innovation. Whether I’m diving into backend
+          complexities or exploring the fascinating world of embedded systems, I thrive on pushing boundaries and
+          creating remarkable digital solutions. In team collaborations, I’m known for my bright and friendly demeanor,
+          making me a valuable asset. My enthusiasm is contagious, and I approach challenges with a positive mindset.
+          When it comes to building cutting-edge products, I’m the one to watch—always ready to turn ideas into reality.
+          Let’s create something extraordinary together!
+        </p>
       </div>
       <figure>
-        <img src="./assets/imgs/me.png" />
+        <img src="./assets/imgs/me.png" alt="me.png" />
         <figcaption>Fig. 1. Unconventional Engineer Profile</figcaption>
       </figure>
     </section>
@@ -36,10 +46,6 @@
     <!-- About Me Section -->
     <section id="about">
       <h2>About Me</h2>
-      <figure>
-        <img src="./assets/imgs/dance.png" />
-        <figcaption>Fig. 2. Engineers can dance?</figcaption>
-      </figure>
       <p>
         Hailing from what my friends affectionately call a ‘singing cult,’ my formative years were steeped in music and
         the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital technologies.
@@ -56,48 +62,6 @@
         of creativity and technical prowess to exciting projects; Are you ready for me? Welcome to my melodic journey
         through bytes and bits!
       </p>
-    </section>
-
-    <!-- Work Experience Section -->
-    <section id="work-experience">
-      <h2>Work Experience</h2>
-      <!-- List your work history, including company names, job titles, and descriptions -->
-      <div class="job">
-        <h3>Z Energy</h3>
-        <p>Intermediate Developer | May 2022 - Present</p>
-        <p>Graduate Developer | Nov 2021 - May 2022</p>
-        <p>DESC</p>
-      </div>
-      <div class="job">
-        <h3>Raygun</h3>
-        <p>Intern Developer | Nov 2020 - Feb 2021</p>
-        <p>DESC</p>
-      </div>
-      <div class="job">
-        <h3>Victoria University</h3>
-        <p>Tutor | Mar 2019 - Nov 2021</p>
-        <p>DESC</p>
-      </div>
-      <div class="job">
-        <h3>Others</h3>
-        <table border="1">
-          <tr>
-            <td>ANZCO Meat Works</td>
-            <td>Freezer-hand</td>
-            <td>Nov 2019 - Feb 2020</td>
-          </tr>
-          <tr>
-            <td>Code Camp</td>
-            <td>Camp leader</td>
-            <td>Mar 2018 - Jul 2019</td>
-          </tr>
-          <tr>
-            <td>Bunnings Warehouse</td>
-            <td>Floor-hand</td>
-            <td>Aug 2016 - Mar 2020</td>
-          </tr>
-        </table>
-      </div>
     </section>
 
     <!-- Tech Skills Section -->
@@ -140,7 +104,7 @@
           <td>Rust</td>
         </tr>
         <tr>
-          <td>Typescript</td>
+          <td>TypeScript</td>
         </tr>
 
         <tr>
@@ -213,6 +177,53 @@
       </table>
     </section>
 
+    <!-- Education Section -->
+    <section id="education">
+      <h2>Education</h2>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="work-experience">
+      <h2>Work Experience</h2>
+      <!-- List your work history, including company names, job titles, and descriptions -->
+      <div class="job">
+        <h3>Z Energy</h3>
+        <p>Intermediate Developer | May 2022 - Present</p>
+        <p>Graduate Developer | Nov 2021 - May 2022</p>
+        <p>DESC</p>
+      </div>
+      <div class="job">
+        <h3>Raygun</h3>
+        <p>Intern Developer | Nov 2020 - Feb 2021</p>
+        <p>DESC</p>
+      </div>
+      <div class="job">
+        <h3>Victoria University</h3>
+        <p>Tutor | Mar 2019 - Nov 2021</p>
+        <p>DESC</p>
+      </div>
+      <div class="job">
+        <h3>Others</h3>
+        <table border="1">
+          <tr>
+            <td>ANZCO Meat Works</td>
+            <td>Freezer-hand</td>
+            <td>Nov 2019 - Feb 2020</td>
+          </tr>
+          <tr>
+            <td>Code Camp</td>
+            <td>Camp leader</td>
+            <td>Mar 2018 - Jul 2019</td>
+          </tr>
+          <tr>
+            <td>Bunnings Warehouse</td>
+            <td>Floor-hand</td>
+            <td>Aug 2016 - Mar 2020</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
     <!-- Soft Skills Section -->
     <section id="soft-skills">
       <h2>Soft Skills</h2>
@@ -240,9 +251,67 @@
     <!-- Personal Projects Section -->
     <section id="personal-projects">
       <h2>Personal Projects</h2>
+
+      <!-- Browser Home -->
       <div class="project-card">
-        <h3>Project 1</h3>
-        <p>Description of the project and your role</p>
+        <h3>browser-home</h3>
+        <div class="tags">
+          <span>JavaScript</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>webpack</span>
+        </div>
+        <p>
+          A custom-built home page with tools, shortcuts, and links designed specifically for my productivity as a
+          software engineer.
+        </p>
+        <a href="https://github.com/HonsonCooky/advent-of-code" target="_blank">GitHub</a>
+      </div>
+
+      <!-- Advent Of Code -->
+      <div class="project-card">
+        <h3>advent-of-code</h3>
+        <div class="tags">
+          <span>Rust</span>
+        </div>
+        <p>
+          Advent of Code is an annual coding challenge event that takes place during December. Each day, participants
+          are presented with a new problem to solve using their programming skills. This repository contains my attempts
+          and solutions to these exciting challenges.
+        </p>
+        <a href="https://github.com/HonsonCooky/advent-of-code" target="_blank">GitHub</a>
+      </div>
+
+      <!-- Ira Street Chores -->
+      <div class="project-card">
+        <h3>ira-street-chores</h3>
+        <div class="tags">
+          <span>Archieved</span>
+          <span>TypeScript</span>
+          <span>React-Native</span>
+          <span>express.js</span>
+          <span>MongoDB</span>
+        </div>
+        <p>
+          A mobile app designed for families, roommates, and flatmates. It simplifies managing cleaning schedules,
+          shopping lists, and expenses.
+        </p>
+        <a href="https://github.com/HonsonCooky/ira-street-chores" target="_blank">GitHub</a>
+      </div>
+
+      <!-- M5Stack -->
+      <div class="project-card">
+        <h3>m5stack-ble</h3>
+        <div class="tags">
+          <span>Archieved</span>
+          <span>C++</span>
+        </div>
+        <p>
+          ESP32 BLE Network with M5Stack: A lightweight, power-efficient solution for short-range data transmission.
+          Utilizing M5Stack Arduino boards, this project demonstrates point-to-point communication, allowing devices to
+          exchange small amounts of data.
+        </p>
+        <a href="https://github.com/HonsonCooky/m5stack-ble" target="_blank">GitHub</a>
       </div>
     </section>
 
