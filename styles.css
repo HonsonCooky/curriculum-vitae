@@ -1,2 +1,68 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
+
+:root {
+  /* --base: #2e2e3aff; */
+  /* --text: #bbb8b2ff; */
+  /* --orange: #de9151ff; */
+  /* --blue: #7e78d2ff; */
+  /* --red: #bf1a2fff; */
+
+  --fs--2: clamp(0.6944rem, 0.5242rem + 0.9079vi, 0.96rem);
+  --fs--1: clamp(0.8333rem, 0.5983rem + 1.2536vi, 1.2rem);
+  --fs-0: clamp(1rem, 0.6795rem + 1.7094vi, 1.5rem);
+  --fs-1: clamp(1.2rem, 0.7673rem + 2.3077vi, 1.875rem);
+  --fs-2: clamp(1.44rem, 0.8607rem + 3.0897vi, 2.3438rem);
+  --fs-3: clamp(1.728rem, 0.9577rem + 4.1083vi, 2.9297rem);
+  --fs-4: clamp(2.0736rem, 1.0553rem + 5.4308vi, 3.6621rem);
+  --fs-5: clamp(2.4883rem, 1.149rem + 7.143vi, 4.5776rem);
+
+  @media screen and (min-width: 769px) {
+    --fs--2: clamp(0.6944rem, 0.391rem + 0.6323vi, 0.96rem);
+    --fs--1: clamp(0.8333rem, 0.4143rem + 0.873vi, 1.2rem);
+    --fs-0: clamp(1rem, 0.4286rem + 1.1905vi, 1.5rem);
+    --fs-1: clamp(1.2rem, 0.4286rem + 1.6071vi, 1.875rem);
+    --fs-2: clamp(1.44rem, 0.4071rem + 2.1518vi, 2.3438rem);
+    --fs-3: clamp(1.728rem, 0.3546rem + 2.8612vi, 2.9297rem);
+    --fs-4: clamp(2.0736rem, 0.2582rem + 3.7822vi, 3.6621rem);
+    --fs-5: clamp(2.4883rem, 0.1005rem + 4.9746vi, 4.5776rem);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  color: inherit;
+  font-size: inherit;
+  font-family: "Inconsolata", monospace;
+}
+
+html {
+  @media screen and (min-width: 1440px) {
+    padding: 0 calc((100dvw - 1440px) / 2);
+  }
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--base);
+  color: var(--text);
+  font-size: var(--fs-0);
+}
+
+h1 {
+  color: var(--orange);
+  font-weight: 900;
+  font-size: var(--fs-5);
+}
+
+h2 {
+  color: var(--blue);
+  font-weight: 900;
+  font-size: var(--fs-4);
+}
+
+h3 {
+  font-weight: 900;
+  font-size: var(--fs-3);
+}
