@@ -24,8 +24,14 @@ themeBtn.addEventListener("click", toggleTheme);
  HOME
 ----------------------------------------------------------------------------------------------------------------------*/
 const industryExperience = document.getElementById("industry-years");
-const startDate = new Date("2021-08-01");
-const todayDate = new Date();
-const dateDiff = todayDate.getTime() - startDate.getTime();
-const years = dateDiff / (1000 * 60 * 60 * 24 * 365);
-industryExperience.innerHTML = years.toFixed(1);
+const workStart = new Date("2021-08-01");
+const today = new Date();
+const workingTime = today.getTime() - workStart.getTime();
+const workingYears = workingTime / (1000 * 60 * 60 * 24 * 365);
+industryExperience.innerHTML = workingYears.toFixed(1);
+
+const ageValue = document.getElementById("age-value");
+const birthDate = new Date("1999-06-08");
+const ageTime = today.getTime() - birthDate.getTime();
+const ageYears = ageTime / (1000 * 60 * 60 * 24 * 365);
+ageValue.innerHTML = Math.floor(ageYears);

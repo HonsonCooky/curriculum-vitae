@@ -11,39 +11,51 @@
   <body>
     <!-- Home Section -->
     <section id="home">
+      <table border="1">
+        <caption>
+          <h3>TABLE I</h3>
+          <p>Basic Information</p>
+        </caption>
+        <tbody>
+          <tr>
+            <th>FirstName</th>
+            <td>Harrison</td>
+          </tr>
+          <tr>
+            <th>LastName</th>
+            <td>Cook</td>
+          </tr>
+          <tr>
+            <th>Age</th>
+            <td id="age-value">XX</td>
+          </tr>
+          <tr>
+            <th>Occupation</th>
+            <td id="age-value">Software Engineer</td>
+          </tr>
+          <tr>
+            <th>Location</th>
+            <td id="age-value">New Zealand</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <figure>
+                <img src="./assets/imgs/me.png" alt="me.png" />
+                <figcaption>Fig. 1. Unconventional Engineer Profile</figcaption>
+              </figure>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <div>
-        <hgroup>
-          <h1>Harrison Cook</h1>
-          <p>Software Engineer</p>
-        </hgroup>
-        <div class="btn-group">
-          <button type="button">
-            <i class="nf nf-md-email"></i>
-            Contact
-          </button>
-          <button type="Contact">
-            <i class="nf nf-fa-file_pdf"></i>
-            CV
-          </button>
-        </div>
-        <p>
-          With <span id="industry-years">X</span> years of industry experience as a Software Engineer, I am fervently
-          committed to developing digital products that are synonymous with safety, reliability, and innovation. My
-          technical prowess is anchored in <code class="inline">TypeScript</code>, <code class="inline">C#</code>, and
-          <code class="inline">Rust</code>, complemented by a comprehensive proficiency in a wide array of technologies.
-          My career aspirations are geared towards specializing in network technologies, aiming to contribute to
-          advancements that redefine our digital connectivity and security.
-        </p>
+        <button>Contact</button>
+        <button>Resume</button>
       </div>
-      <figure>
-        <img src="./assets/imgs/me.png" alt="me.png" />
-        <figcaption>Fig. 1. Unconventional Engineer Profile</figcaption>
-      </figure>
     </section>
 
     <!-- About Me Section -->
     <section id="about">
-      <h2>About Me</h2>
+      <h1>About Me</h1>
       <p>
         Hailing from what my friends affectionately call a ‘singing cult,’ my formative years were steeped in music and
         the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital technologies.
@@ -56,6 +68,14 @@
         thrive on turning complexity into clarity.
       </p>
       <p>
+        With <span id="industry-years">X</span> years of industry experience as a Software Engineer, I am fervently
+        committed to developing digital products that are synonymous with safety, reliability, and innovation. My
+        technical prowess is anchored in <code class="inline">TypeScript</code>, <code class="inline">C#</code>, and
+        <code class="inline">Rust</code>, complemented by a comprehensive proficiency in a wide array of technologies.
+        My career aspirations are geared towards specializing in network technologies, aiming to contribute to
+        advancements that redefine our digital connectivity and security.
+      </p>
+      <p>
         Today, I stand as a bright, bubbly, resilient, and reliable individual. I'm ready to contribute my unique blend
         of creativity and technical prowess to exciting projects; Are you ready for me? Welcome to my melodic journey
         through bytes and bits!
@@ -64,7 +84,7 @@
 
     <!-- Work Experience Section -->
     <section id="work-experience">
-      <h2>Work Experience</h2>
+      <h1>Work Experience</h1>
       <div class="job">
         <h3>Z Energy</h3>
         <p>Intermediate Developer | May 2022 - Present</p>
@@ -105,7 +125,7 @@
 
     <!-- Education Section -->
     <section id="education">
-      <h2>Education</h2>
+      <h1>Education</h1>
       <ul class="education-list">
         <li>
           <h3>Bachelor of Engineering with First Class Honors</h3>
@@ -137,7 +157,7 @@
 
     <!-- Tech Skills Section -->
     <section id="tech-skills">
-      <h2>Technical Skills</h2>
+      <h1>Technical Skills</h1>
       <table id="languages-table" border="1">
         <tr>
           <th>Programming Languages</th>
@@ -274,7 +294,7 @@
 
     <!-- Soft Skills Section -->
     <section id="soft-skills">
-      <h2>Soft Skills</h2>
+      <h1>Soft Skills</h1>
       <ul>
         <li>
           <strong>Teamwork:</strong> Throughout my life, I’ve actively engaged in various groups and teams, spanning
@@ -298,7 +318,7 @@
 
     <!-- Personal Projects Section -->
     <section id="personal-projects">
-      <h2>Personal Projects</h2>
+      <h1>Personal Projects</h1>
 
       <!-- Curriculum Vitae -->
       <div class="project-card">
@@ -438,6 +458,14 @@
           refining my craft and keeping my technical skills sharp.
         </p>
       </div>
+    </section>
+
+    <!-- Blogs Section -->
+    <section id="blogs">
+      <h1>Blogs</h1>
+      <ul>
+        <li>You're early... nothing to see here yet</li>
+      </ul>
     </section>
 
     <footer>

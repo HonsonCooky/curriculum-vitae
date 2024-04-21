@@ -1,31 +1,31 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 
 :root {
-  /* --base: #2e2e3aff; */
-  /* --text: #bbb8b2ff; */
-  /* --orange: #de9151ff; */
-  /* --blue: #7e78d2ff; */
-  /* --red: #bf1a2fff; */
+  --base: #2e2e3aff;
+  --text: #bbb8b2ff;
+  --orange: #de9151ff;
+  --blue: #7e78d2ff;
+  --red: #bf1a2fff;
 
-  --fs--2: clamp(0.6944rem, 0.5242rem + 0.9079vi, 0.96rem);
-  --fs--1: clamp(0.8333rem, 0.5983rem + 1.2536vi, 1.2rem);
-  --fs-0: clamp(1rem, 0.6795rem + 1.7094vi, 1.5rem);
-  --fs-1: clamp(1.2rem, 0.7673rem + 2.3077vi, 1.875rem);
-  --fs-2: clamp(1.44rem, 0.8607rem + 3.0897vi, 2.3438rem);
-  --fs-3: clamp(1.728rem, 0.9577rem + 4.1083vi, 2.9297rem);
-  --fs-4: clamp(2.0736rem, 1.0553rem + 5.4308vi, 3.6621rem);
-  --fs-5: clamp(2.4883rem, 1.149rem + 7.143vi, 4.5776rem);
+  --fs--2: clamp(0.5208rem, 0.3932rem + 0.6809vi, 0.72rem);
+  --fs--1: clamp(0.625rem, 0.4487rem + 0.9402vi, 0.9rem);
+  --fs-0: clamp(0.75rem, 0.5096rem + 1.2821vi, 1.125rem);
+  --fs-1: clamp(0.9rem, 0.5755rem + 1.7308vi, 1.4063rem);
+  --fs-2: clamp(1.08rem, 0.6455rem + 2.3173vi, 1.7578rem);
+  --fs-3: clamp(1.296rem, 0.7183rem + 3.0813vi, 2.1973rem);
+  --fs-4: clamp(1.5552rem, 0.7915rem + 4.0731vi, 2.7466rem);
+  --fs-5: clamp(1.8662rem, 0.8618rem + 5.3572vi, 3.4332rem);
 
   @media screen and (min-width: 769px) {
-    --fs--2: clamp(0.6944rem, 0.391rem + 0.6323vi, 0.96rem);
-    --fs--1: clamp(0.8333rem, 0.4143rem + 0.873vi, 1.2rem);
-    --fs-0: clamp(1rem, 0.4286rem + 1.1905vi, 1.5rem);
-    --fs-1: clamp(1.2rem, 0.4286rem + 1.6071vi, 1.875rem);
-    --fs-2: clamp(1.44rem, 0.4071rem + 2.1518vi, 2.3438rem);
-    --fs-3: clamp(1.728rem, 0.3546rem + 2.8612vi, 2.9297rem);
-    --fs-4: clamp(2.0736rem, 0.2582rem + 3.7822vi, 3.6621rem);
-    --fs-5: clamp(2.4883rem, 0.1005rem + 4.9746vi, 4.5776rem);
+    --fs--2: clamp(0.5208rem, 0.2932rem + 0.4742vi, 0.72rem);
+    --fs--1: clamp(0.625rem, 0.3107rem + 0.6548vi, 0.9rem);
+    --fs-0: clamp(0.75rem, 0.3214rem + 0.8929vi, 1.125rem);
+    --fs-1: clamp(0.9rem, 0.3214rem + 1.2054vi, 1.4063rem);
+    --fs-2: clamp(1.08rem, 0.3054rem + 1.6138vi, 1.7578rem);
+    --fs-3: clamp(1.296rem, 0.266rem + 2.1459vi, 2.1973rem);
+    --fs-4: clamp(1.5552rem, 0.1936rem + 2.8366vi, 2.7466rem);
+    --fs-5: clamp(1.8662rem, 0.0754rem + 3.7309vi, 3.4332rem);
   }
 }
 
@@ -33,10 +33,24 @@
   box-sizing: border-box;
   color: inherit;
   font-size: inherit;
-  font-family: "Inconsolata", monospace;
+  /* font-family: "Source Code Pro", monospace; */
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 html {
+  padding: 0 min(2vh, 20px);
+
   @media screen and (min-width: 1440px) {
     padding: 0 calc((100dvw - 1440px) / 2);
   }
@@ -50,19 +64,76 @@ body {
   font-size: var(--fs-0);
 }
 
+section {
+  border-bottom: 2px solid var(--blue);
+  padding: var(--fs-2) 0;
+}
+
 h1 {
-  color: var(--orange);
+  margin: 0;
+  color: var(--blue);
   font-weight: 900;
   font-size: var(--fs-5);
 }
 
-h2 {
-  color: var(--blue);
-  font-weight: 900;
-  font-size: var(--fs-4);
+button {
+  border-color: var(--text);
+  background: none;
+  text-align: center;
+
+  &:hover,
+  &:active {
+    background: var(--blue);
+    color: var(--base);
+  }
 }
 
-h3 {
-  font-weight: 900;
-  font-size: var(--fs-3);
+table {
+  border-color: var(--text);
+
+  * {
+    border-color: var(--text);
+
+    * {
+      border-color: var(--text);
+
+      * {
+        border-color: var(--text);
+      }
+    }
+  }
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    max-width: 100%;
+    max-height: 50vh;
+  }
+
+  figcaption {
+    font-size: var(--fs--1);
+    text-align: center;
+  }
+}
+
+#home {
+  display: flex;
+  row-gap: var(--fs-0);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  table {
+    tr {
+      th {
+        color: var(--orange);
+        text-align: start;
+      }
+    }
+  }
 }
