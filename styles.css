@@ -183,11 +183,16 @@ table {
     margin-bottom: 0;
   }
 
-  >p {
+  #help-info {
     margin-top: 0;
     margin-bottom: var(--s-xl);
-    color: var(--muted);
+    padding: 0 var(--s-2xs);
+    color: var(--subtle);
     font-size: var(--fs--1);
+
+    p {
+      margin: 0;
+    }
   }
 
   #tables {
@@ -242,36 +247,6 @@ table {
     table {
       td {
         position: relative;
-
-        .metric {
-          display: none;
-          position: absolute;
-          right: var(--s-s);
-          color: var(--muted);
-          text-align: right;
-        }
-
-        .description {
-          display: none;
-          position: absolute;
-          top: 100%;
-          left: -1%;
-          z-index: 100;
-          border: var(--border) solid var(--text);
-          border-radius: 0 var(--border) var(--border) 0;
-          background: var(--highlight-low);
-          width: 102%;
-        }
-
-        &:hover {
-          .metric {
-            display: inline-block;
-          }
-
-          .description {
-            display: block;
-          }
-        }
       }
     }
   }
