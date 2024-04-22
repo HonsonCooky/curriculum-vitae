@@ -70,6 +70,10 @@
   font-family: "JetBrains Mono", monospace;
 }
 
+*::selection {
+  background: var(--highlight-high);
+}
+
 html {
   margin: 0;
   background: var(--surface);
@@ -105,7 +109,6 @@ h1 {
 }
 
 ul {
-  padding: 0 var(--s-s);
   list-style-type: square;
   list-style-position: inside;
 }
@@ -142,6 +145,13 @@ button {
   }
 }
 
+code.inline {
+  border-radius: var(--border);
+  background: var(--text);
+  padding: 0 var(--s-2xs);
+  color: var(--base);
+}
+
 table {
   border: var(--border) solid var(--text);
 
@@ -155,7 +165,7 @@ table {
   }
 
   th {
-    color: var(--rose);
+    color: var(--gold);
     font-weight: 600;
     text-align: start;
   }
@@ -185,6 +195,56 @@ table {
   }
 }
 
+#work-experience {
+  #jobs {
+    display: flex;
+    row-gap: var(--s-xs);
+    flex-direction: column;
+    padding: var(--s-m) 0;
+
+    .job {
+      border-radius: var(--border);
+      background: var(--surface);
+      padding: var(--s-s) var(--s-m);
+
+      h3 {
+        margin: 0;
+        color: var(--gold);
+        font-weight: 200;
+        font-size: var(--fs-3);
+      }
+
+      p {
+        margin: 0;
+        color: var(--subtle);
+
+        &:last-of-type {
+          margin: var(--s-m) 0;
+          color: var(--text);
+        }
+      }
+    }
+  }
+}
+
+#education {
+  ul {
+    padding: 0;
+
+    ul {
+      padding: 0 var(--s-m);
+    }
+
+    li {
+      h3 {
+        display: inline-block;
+        color: var(--gold);
+        font-size: var(--fs-2);
+      }
+    }
+  }
+}
+
 #tech-skills {
   >h1 {
     margin-bottom: 0;
@@ -196,15 +256,19 @@ table {
     padding: 0 var(--s-2xs);
     color: var(--subtle);
 
+    #intro {
+      margin-bottom: var(--fs-0);
+    }
+
     p {
-      margin: 0;
+      margin: var(--s-2xs) 0;
     }
   }
 
   #tables {
     display: grid;
-    grid-template-areas: "pl" "fl" "web" "iac" "run" "vcs" "ide";
-    gap: var(--s-m);
+    grid-template-areas: "pl" "fl" "cloud" "web" "iac" "run" "vcs" "ide";
+    gap: var(--fs-0);
 
     #languages-table {
       grid-area: pl;
@@ -216,6 +280,10 @@ table {
 
     #vcs-table {
       grid-area: vcs;
+    }
+
+    #cloud-table {
+      grid-area: cloud;
     }
 
     #ide-table {
@@ -234,20 +302,21 @@ table {
       grid-area: iac;
     }
 
-    @media screen and (min-width: 400px) {
+    @media screen and (min-width: 500px) {
       grid-template-areas:
         "pl fl "
         "pl web"
         "ide vcs"
+        "ide cloud"
         "iac run";
     }
 
-    @media screen and (min-width: 1100px) {
+    @media screen and (min-width: 1200px) {
       grid-template-areas:
         "pl fl ide"
         "pl fl web"
-        "pl vcs iac"
-        "pl vcs run";
+        "pl vcs run"
+        "pl cloud iac";
     }
 
     table {
@@ -256,18 +325,17 @@ table {
 
         .tooltip {
           display: none;
-          position: absolute;
-          top: calc(100% + var(--border));
-          left: 0;
-          z-index: 100;
-          border: var(--border) solid var(--text);
-          background: var(--highlight-high);
-          width: 100%;
           font-size: var(--fs--1);
+
+          ul {
+            padding: 0;
+          }
         }
 
         &:hover,
         &:active {
+          background: var(--highlight-high);
+
           .tooltip {
             display: block;
           }
