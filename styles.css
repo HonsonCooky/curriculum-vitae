@@ -1,107 +1,106 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 
 :root {
-  --base: #2e2e3aff;
-  --text: #bbb8b2ff;
-  --orange: #de9151ff;
-  --blue: #7e78d2ff;
-  --red: #bf1a2fff;
+  --base: #faf4ed;
+  --surface: #fffaf3;
+  --overlay: #f2e9e1;
+  --muted: #9893a5;
+  --subtle: #797593;
+  --text: #575279;
+  --love: #b4637a;
+  --gold: #ea9d34;
+  --rose: #d7827e;
+  --pine: #286983;
+  --foam: #56949f;
+  --iris: #907aa9;
+  --highlight-low: #f4ede8;
+  --highlight-med: #dfdad9;
+  --highlight-high: #cecacd;
 
-  --fs--2: clamp(0.5208rem, 0.3932rem + 0.6809vi, 0.72rem);
-  --fs--1: clamp(0.625rem, 0.4487rem + 0.9402vi, 0.9rem);
-  --fs-0: clamp(0.75rem, 0.5096rem + 1.2821vi, 1.125rem);
-  --fs-1: clamp(0.9rem, 0.5755rem + 1.7308vi, 1.4063rem);
-  --fs-2: clamp(1.08rem, 0.6455rem + 2.3173vi, 1.7578rem);
-  --fs-3: clamp(1.296rem, 0.7183rem + 3.0813vi, 2.1973rem);
-  --fs-4: clamp(1.5552rem, 0.7915rem + 4.0731vi, 2.7466rem);
-  --fs-5: clamp(1.8662rem, 0.8618rem + 5.3572vi, 3.4332rem);
+  --fs--2: clamp(0.5208rem, 0.4573rem + 0.339vi, 0.72rem);
+  --fs--1: clamp(0.625rem, 0.5372rem + 0.4681vi, 0.9rem);
+  --fs-0: clamp(0.75rem, 0.6303rem + 0.6383vi, 1.125rem);
+  --fs-1: clamp(0.9rem, 0.7384rem + 0.8617vi, 1.4063rem);
+  --fs-2: clamp(1.08rem, 0.8637rem + 1.1537vi, 1.7578rem);
+  --fs-3: clamp(1.296rem, 1.0084rem + 1.5341vi, 2.1973rem);
+  --fs-4: clamp(1.5552rem, 1.175rem + 2.0279vi, 2.7466rem);
+  --fs-5: clamp(1.8662rem, 1.3661rem + 2.6672vi, 3.4332rem);
 
-  @media screen and (min-width: 769px) {
-    --fs--2: clamp(0.5208rem, 0.2932rem + 0.4742vi, 0.72rem);
-    --fs--1: clamp(0.625rem, 0.3107rem + 0.6548vi, 0.9rem);
-    --fs-0: clamp(0.75rem, 0.3214rem + 0.8929vi, 1.125rem);
-    --fs-1: clamp(0.9rem, 0.3214rem + 1.2054vi, 1.4063rem);
-    --fs-2: clamp(1.08rem, 0.3054rem + 1.6138vi, 1.7578rem);
-    --fs-3: clamp(1.296rem, 0.266rem + 2.1459vi, 2.1973rem);
-    --fs-4: clamp(1.5552rem, 0.1936rem + 2.8366vi, 2.7466rem);
-    --fs-5: clamp(1.8662rem, 0.0754rem + 3.7309vi, 3.4332rem);
-  }
+  --s-3xs: clamp(0.1875rem, 0.1476rem + 0.2128vi, 0.3125rem);
+  --s-2xs: clamp(0.375rem, 0.2952rem + 0.4255vi, 0.625rem);
+  --s-xs: clamp(0.5625rem, 0.4428rem + 0.6383vi, 0.9375rem);
+  --s-s: clamp(0.75rem, 0.5904rem + 0.8511vi, 1.25rem);
+  --s-m: clamp(1.125rem, 0.8856rem + 1.2766vi, 1.875rem);
+  --s-l: clamp(1.5rem, 1.1809rem + 1.7021vi, 2.5rem);
+  --s-xl: clamp(2.25rem, 1.7713rem + 2.5532vi, 3.75rem);
+  --s-2xl: clamp(3rem, 2.3617rem + 3.4043vi, 5rem);
+  --s-3xl: clamp(4.5rem, 3.5426rem + 5.1064vi, 7.5rem);
+
+  --border: clamp(0.0625rem, 0.0426rem + 0.1064vi, 0.125rem);
+
+  --scroll-top: 0;
+  --scroll-bottom: 0;
+}
+
+[theme="dark"] {
+  --base: #232136;
+  --surface: #2a273f;
+  --overlay: #393552;
+  --muted: #6e6a86;
+  --subtle: #908caa;
+  --text: #e0def4;
+  --love: #eb6f92;
+  --gold: #f6c177;
+  --rose: #ea9a97;
+  --pine: #3e8fb0;
+  --foam: #9ccfd8;
+  --iris: #c4a7e7;
+  --highlight-low: #2a283e;
+  --highlight-med: #44415a;
+  --highlight-high: #56526e;
 }
 
 * {
   box-sizing: border-box;
+  border-radius: var(--border);
   color: inherit;
   font-size: inherit;
-  /* font-family: "Source Code Pro", monospace; */
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  font-size: inherit;
+  font-family: "JetBrains Mono", monospace;
 }
 
 html {
-  padding: 0 min(2vh, 20px);
+  margin: 0;
+  background: var(--surface);
 
   @media screen and (min-width: 1440px) {
     padding: 0 calc((100dvw - 1440px) / 2);
   }
 }
 
-html,
 body {
   margin: 0;
   background: var(--base);
+  padding: 0 var(--s-m);
   color: var(--text);
   font-size: var(--fs-0);
+
+  @media screen and (min-width: 1440px) {
+    border: var(--border) solid var(--text);
+  }
 }
 
 section {
-  border-bottom: 2px solid var(--blue);
-  padding: var(--fs-2) 0;
+  border-bottom: var(--border) solid var(--muted);
+  padding: var(--s-xl) 0;
 }
 
 h1 {
   margin: 0;
-  color: var(--blue);
+  color: var(--iris);
   font-weight: 900;
   font-size: var(--fs-5);
-}
-
-button {
-  border-color: var(--text);
-  background: none;
-  text-align: center;
-
-  &:hover,
-  &:active {
-    background: var(--blue);
-    color: var(--base);
-  }
-}
-
-table {
-  border-color: var(--text);
-
-  * {
-    border-color: var(--text);
-
-    * {
-      border-color: var(--text);
-
-      * {
-        border-color: var(--text);
-      }
-    }
-  }
 }
 
 figure {
@@ -110,30 +109,198 @@ figure {
   justify-content: center;
   align-items: center;
 
-  img {
-    max-width: 100%;
-    max-height: 50vh;
-  }
-
   figcaption {
     font-size: var(--fs--1);
     text-align: center;
   }
 }
 
+img {
+  max-width: 100%;
+  max-height: 40dvh;
+}
+
+button {
+  display: flex;
+  column-gap: var(--s-xs);
+  flex-direction: row;
+  align-items: center;
+  border: var(--border) solid var(--text);
+  background-color: var(--surface);
+  padding: var(--s-3xs) var(--s-m);
+
+  &:hover,
+  &:active {
+    background-color: var(--highlight-high);
+  }
+}
+
+table {
+  border: var(--border) solid var(--text);
+
+  caption {
+    h3 {
+      color: var(--subtle);
+      font-weight: 400;
+      font-size: var(--fs-0);
+      white-space: nowrap;
+    }
+  }
+
+  th {
+    color: var(--rose);
+    font-weight: 600;
+    text-align: start;
+  }
+
+  td {
+    font-weight: 400;
+  }
+
+  th,
+  td {
+    border: var(--border) solid var(--text);
+    padding: var(--border) var(--s-s);
+  }
+}
+
 #home {
   display: flex;
-  row-gap: var(--fs-0);
+  row-gap: var(--s-l);
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  table {
-    tr {
-      th {
-        color: var(--orange);
-        text-align: start;
+  >div {
+    display: flex;
+    column-gap: var(--s-m);
+    flex-direction: row;
+  }
+}
+
+#tech-skills {
+  >h1 {
+    margin-bottom: 0;
+  }
+
+  >p {
+    margin-top: 0;
+    margin-bottom: var(--s-xl);
+    color: var(--muted);
+    font-size: var(--fs--1);
+  }
+
+  #tables {
+    display: grid;
+    grid-template-areas: "pl" "fl" "web" "iac" "run" "vcs" "ide";
+    gap: var(--s-m);
+
+    #languages-table {
+      grid-area: pl;
+    }
+
+    #frameworks-table {
+      grid-area: fl;
+    }
+
+    #vcs-table {
+      grid-area: vcs;
+    }
+
+    #ide-table {
+      grid-area: ide;
+    }
+
+    #web-table {
+      grid-area: web;
+    }
+
+    #runtimes-table {
+      grid-area: run;
+    }
+
+    #iac-table {
+      grid-area: iac;
+    }
+
+    @media screen and (min-width: 400px) {
+      grid-template-areas:
+        "pl fl "
+        "pl web"
+        "ide vcs"
+        "iac run";
+    }
+
+    @media screen and (min-width: 1100px) {
+      grid-template-areas:
+        "pl fl ide"
+        "pl fl web"
+        "pl vcs iac"
+        "pl vcs run";
+    }
+
+    table {
+      td {
+        position: relative;
+
+        .metric {
+          display: none;
+          position: absolute;
+          right: var(--s-s);
+          color: var(--muted);
+          text-align: right;
+        }
+
+        .description {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: -1%;
+          z-index: 100;
+          border: var(--border) solid var(--text);
+          border-radius: 0 var(--border) var(--border) 0;
+          background: var(--highlight-low);
+          width: 102%;
+        }
+
+        &:hover {
+          .metric {
+            display: inline-block;
+          }
+
+          .description {
+            display: block;
+          }
+        }
       }
     }
+  }
+}
+
+footer {
+  display: flex;
+  position: sticky;
+  bottom: 0dvh;
+  flex-direction: row;
+  justify-content: space-between;
+  background: var(--base);
+  padding: var(--border) 0;
+
+  #links {
+    display: none;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.expand {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  .expand {
+    display: inline-block;
   }
 }

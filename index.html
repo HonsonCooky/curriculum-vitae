@@ -11,10 +11,9 @@
   <body>
     <!-- Home Section -->
     <section id="home">
-      <table border="1">
+      <table>
         <caption>
-          <h3>TABLE I</h3>
-          <p>Basic Information</p>
+          <h3>Basic Information</h3>
         </caption>
         <tbody>
           <tr>
@@ -48,8 +47,14 @@
         </tbody>
       </table>
       <div>
-        <button>Contact</button>
-        <button>Resume</button>
+        <button>
+          <i class="nf nf-fa-info"></i>
+          <span>Contact</span>
+        </button>
+        <button>
+          <i class="nf nf-fa-file_pdf"></i>
+          <span>Resume</span>
+        </button>
       </div>
     </section>
 
@@ -101,26 +106,6 @@
         <p>Tutor | Mar 2019 - Nov 2021</p>
         <p>DESC</p>
       </div>
-      <div class="job dropdown">
-        <h3>Others</h3>
-        <table class="dropdown-content">
-          <tr>
-            <td>ANZCO Meat Works</td>
-            <td>Freezer-hand</td>
-            <td>Nov 2019 - Feb 2020</td>
-          </tr>
-          <tr>
-            <td>Code Camp</td>
-            <td>Camp leader</td>
-            <td>Mar 2018 - Jul 2019</td>
-          </tr>
-          <tr>
-            <td>Bunnings Warehouse</td>
-            <td>Floor-hand</td>
-            <td>Aug 2016 - Mar 2020</td>
-          </tr>
-        </table>
-      </div>
     </section>
 
     <!-- Education Section -->
@@ -129,28 +114,13 @@
       <ul class="education-list">
         <li>
           <h3>Bachelor of Engineering with First Class Honors</h3>
-          <table>
-            <tr>
-              <th>Major:</th>
-              <td>Software Engineering</td>
-            </tr>
-            <tr>
-              <th>Specialization:</th>
-              <td>Networked Applications</td>
-            </tr>
-            <tr>
-              <th>Accreditation:</th>
-              <td>Washington and Seoul Accords</td>
-            </tr>
-            <tr>
-              <th>Institution:</th>
-              <td>Victoria University of Wellington</td>
-            </tr>
-            <tr>
-              <th>Years:</th>
-              <td>2018 - 2021</td>
-            </tr>
-          </table>
+          <ul>
+            <li><strong>Major:</strong> Software Engineering</li>
+            <li><strong>Specialization:</strong> Networked Applications</li>
+            <li><strong>Accreditation:</strong> Washington and Seoul Accords</li>
+            <li><strong>Institution:</strong> Victoria University of Wellington</li>
+            <li><strong>Years:</strong> 2018 - 2021</li>
+          </ul>
         </li>
       </ul>
     </section>
@@ -158,138 +128,239 @@
     <!-- Tech Skills Section -->
     <section id="tech-skills">
       <h1>Technical Skills</h1>
-      <table id="languages-table" border="1">
-        <tr>
-          <th>Programming Languages</th>
-        </tr>
-        <tr>
-          <td>C</td>
-        </tr>
-        <tr>
-          <td>C#</td>
-        </tr>
-        <tr>
-          <td>C++</td>
-        </tr>
-        <tr>
-          <td>Dart</td>
-        </tr>
-        <tr>
-          <td>F#</td>
-        </tr>
-        <tr>
-          <td>Java</td>
-        </tr>
-        <tr>
-          <td>JavaScript</td>
-        </tr>
-        <tr>
-          <td>Lua</td>
-        </tr>
-        <tr>
-          <td>Ruby</td>
-        </tr>
-        <tr>
-          <td>Rust</td>
-        </tr>
-        <tr>
-          <td>TypeScript</td>
-        </tr>
-      </table>
+      <div>*Hover for information*</div>
+      <div id="tables">
+        <table id="languages-table">
+          <tr>
+            <th>Programming Languages</th>
+          </tr>
+          <tr>
+            <td>
+              <span>C</span>
+              <span class="metric">4/10</span>
+              <div class="description">
+                <ul>
+                  <li><strong>Experience:</strong> [University, Embedded]</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>C#</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>C++</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Dart</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>F#</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Java</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>JavaScript</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Lua</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Ruby</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Rust</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>TypeScript</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+        </table>
 
-      <table id="frameworks-table" border="1">
-        <tr>
-          <th>Frameworks/Libraries</th>
-        </tr>
-        <tr>
-          <td>.Net</td>
-        </tr>
-        <tr>
-          <td>Flutter</td>
-        </tr>
-        <tr>
-          <td>Next.js</td>
-        </tr>
-        <tr>
-          <td>React</td>
-        </tr>
-        <tr>
-          <td>React-Native</td>
-        </tr>
-        <tr>
-          <td>Vue.js</td>
-        </tr>
-      </table>
+        <table id="frameworks-table">
+          <tr>
+            <th>Frameworks / Libraries</th>
+          </tr>
+          <tr>
+            <td>
+              <span>.Net</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Flutter</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Next.js</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>React</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>React-Native</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Vue.js</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+        </table>
 
-      <table id="vcs-table" border="1">
-        <tr>
-          <th>Version Control Systems</th>
-        </tr>
-        <tr>
-          <td>Azure DevOps</td>
-        </tr>
-        <tr>
-          <td>GitHub</td>
-        </tr>
+        <table id="vcs-table">
+          <tr>
+            <th>Version Control Systems</th>
+          </tr>
+          <tr>
+            <td>
+              <span>Azure DevOps</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>GitHub</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
 
-        <tr>
-          <td>Cloud Services</td>
-        </tr>
-        <tr>
-          <td>Azure Cloud</td>
-        </tr>
-      </table>
+          <tr>
+            <td>
+              <span>Cloud Services</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Azure Cloud</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+        </table>
 
-      <table id="ide-table" border="1">
-        <tr>
-          <th>Integrated Development Environments</th>
-        </tr>
-        <tr>
-          <td>JetBrains</td>
-        </tr>
-        <tr>
-          <td>Neovim</td>
-        </tr>
-        <tr>
-          <td>Visual Studio Code</td>
-        </tr>
-        <tr>
-          <td>Visual Studio</td>
-        </tr>
-      </table>
+        <table id="ide-table">
+          <tr>
+            <th>Integrated Development Environments</th>
+          </tr>
+          <tr>
+            <td>
+              <span>JetBrains</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Neovim</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Visual Studio Code</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Visual Studio</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+        </table>
 
-      <table id="web-table" border="1">
-        <tr>
-          <th>Web Technologies</th>
-        </tr>
-        <tr>
-          <td>CSS</td>
-        </tr>
-        <tr>
-          <td>HTML</td>
-        </tr>
-      </table>
+        <table id="web-table">
+          <tr>
+            <th>
+              <span>Web Technologies</span>
+              <span class="metric"></span>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <span>CSS</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>HTML</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+        </table>
 
-      <table id="runtimes-table" border="1">
-        <tr>
-          <th>Runtime Environments</th>
-        </tr>
-        <tr>
-          <td>JDK</td>
-        </tr>
-        <tr>
-          <td>Node.js</td>
-        </tr>
-      </table>
+        <table id="runtimes-table">
+          <tr>
+            <th>Runtime Environments</th>
+          </tr>
+          <tr>
+            <td>
+              <span>JDK</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span>Node.js</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+        </table>
 
-      <table id="iac-table" border="1">
-        <tr>
-          <th>Infrastructure as Code (IaC)</th>
-        </tr>
-        <tr>
-          <td>Terraform</td>
-        </tr>
-      </table>
+        <table id="iac-table">
+          <tr>
+            <th>Infrastructure as Code (IaC)</th>
+          </tr>
+          <tr>
+            <td>
+              <span>Terraform</span>
+              <span class="metric"></span>
+            </td>
+          </tr>
+        </table>
+      </div>
     </section>
 
     <!-- Soft Skills Section -->
@@ -472,21 +543,19 @@
       <label>C:\HonsonCooky></label>
       <div id="links">
         <label>Contact Me:</label>
-        <a class="nf nf-fa-github" href="https://github.com/HonsonCooky" target="_blank">GitHub</a>
+        <a class="nf nf-fa-github" href="https://github.com/HonsonCooky" target="_blank"><span>GitHub</span></a>
         <a
           class="nf nf-fa-linkedin"
           href="https://www.linkedin.com/in/harrison-cook-software-engineer/"
           target="_blank"
         >
-          LinkedIn
+          <span>LinkedIn</span>
         </a>
-        <a class="nf nf-fa-reddit_alien" href="https://www.reddit.com/user/HonsonCooky/" target="_blank">Reddit</a>
-        <a
-          class="nf nf-fa-stack_overflow"
-          href="https://stackoverflow.com/users/19093612/harrison-cook"
-          target="_blank"
+        <a class="nf nf-fa-reddit_alien" href="https://www.reddit.com/user/HonsonCooky/" target="_blank"
+          ><span>Reddit</span></a
         >
-          Stack Overflow</a
+        <a class="nf nf-fa-stack_overflow" href="https://stackoverflow.com/users/19093612/harrison-cook" target="_blank"
+          ><span>Stack Overflow</span></a
         >
       </div>
       <label>

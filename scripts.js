@@ -21,6 +21,14 @@ themeBtn.checked = isDefaultDark;
 themeBtn.addEventListener("click", toggleTheme);
 
 /**---------------------------------------------------------------------------------------------------------------------
+  CSS VARIABLES
+----------------------------------------------------------------------------------------------------------------------*/
+const root = document.querySelector(":root");
+const footer = document.querySelector("footer");
+
+root.style.setProperty("--scroll-bottom", footer.offsetHeight + "px");
+
+/**---------------------------------------------------------------------------------------------------------------------
  HOME
 ----------------------------------------------------------------------------------------------------------------------*/
 const industryExperience = document.getElementById("industry-years");
