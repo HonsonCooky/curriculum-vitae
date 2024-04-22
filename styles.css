@@ -87,7 +87,8 @@ body {
   font-size: var(--fs-0);
 
   @media screen and (min-width: 1440px) {
-    border: var(--border) solid var(--text);
+    border-right: var(--border) solid var(--muted);
+    border-left: var(--border) solid var(--muted);
   }
 }
 
@@ -101,6 +102,12 @@ h1 {
   color: var(--iris);
   font-weight: 900;
   font-size: var(--fs-5);
+}
+
+ul {
+  padding: 0 var(--s-s);
+  list-style-type: square;
+  list-style-position: inside;
 }
 
 figure {
@@ -188,7 +195,6 @@ table {
     margin-bottom: var(--s-xl);
     padding: 0 var(--s-2xs);
     color: var(--subtle);
-    font-size: var(--fs--1);
 
     p {
       margin: 0;
@@ -247,6 +253,25 @@ table {
     table {
       td {
         position: relative;
+
+        .tooltip {
+          display: none;
+          position: absolute;
+          top: calc(100% + var(--border));
+          left: 0;
+          z-index: 100;
+          border: var(--border) solid var(--text);
+          background: var(--highlight-high);
+          width: 100%;
+          font-size: var(--fs--1);
+        }
+
+        &:hover,
+        &:active {
+          .tooltip {
+            display: block;
+          }
+        }
       }
     }
   }
