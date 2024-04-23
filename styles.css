@@ -110,6 +110,10 @@ h1 {
 
 strong {
   color: var(--rose);
+
+  &.sub {
+    color: var(--foam);
+  }
 }
 
 ul {
@@ -214,10 +218,6 @@ table {
     padding: var(--s-m) 0;
 
     .job {
-      border-radius: var(--border);
-      background: var(--surface);
-      padding: var(--s-s) var(--s-m);
-
       h3 {
         margin: 0;
         color: var(--gold);
@@ -230,7 +230,11 @@ table {
         color: var(--subtle);
 
         &:not(:nth-of-type(1)) {
-          margin-top: var(--s-3xs);
+          margin-top: var(--s-xs);
+
+          @media screen and (min-width: 769px) {
+            margin-top: var(--s-3xs);
+          }
         }
 
         &:last-of-type {
@@ -241,6 +245,30 @@ table {
         a {
           text-decoration-color: var(--base);
         }
+      }
+
+      .mobile {
+        display: inline;
+      }
+
+      .web {
+        display: none;
+      }
+
+      @media screen and (min-width: 769px) {
+        .mobile {
+          display: none;
+        }
+
+        .web {
+          display: inline;
+        }
+      }
+
+      @media screen and (min-width: 769px) {
+        border-radius: var(--border);
+        background: var(--surface);
+        padding: var(--s-s) var(--s-m);
       }
     }
   }
@@ -375,6 +403,8 @@ table {
 
 #soft-skills {
   ul {
+    padding: 0 var(--s-m);
+
     li {
       &:not(:last-of-type) {
         margin-bottom: var(--s-s);
