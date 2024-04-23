@@ -108,6 +108,10 @@ h1 {
   font-size: var(--fs-5);
 }
 
+strong {
+  color: var(--rose);
+}
+
 ul {
   list-style-type: square;
 }
@@ -258,10 +262,6 @@ table {
           color: var(--text);
           font-weight: 400;
           font-size: var(--fs-0);
-
-          strong {
-            color: var(--rose);
-          }
         }
 
         @media screen and (min-width: 769px) {
@@ -368,6 +368,16 @@ table {
             display: block;
           }
         }
+      }
+    }
+  }
+}
+
+#soft-skills {
+  ul {
+    li {
+      &:not(:last-of-type) {
+        margin-bottom: var(--s-s);
       }
     }
   }
