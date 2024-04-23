@@ -119,7 +119,6 @@ figure {
   align-items: center;
 
   figcaption {
-    font-size: var(--fs--1);
     text-align: center;
   }
 }
@@ -233,6 +232,10 @@ table {
         &:last-of-type {
           margin: var(--s-m) 0;
           color: var(--text);
+        }
+
+        a {
+          text-decoration-color: var(--base);
         }
       }
     }
