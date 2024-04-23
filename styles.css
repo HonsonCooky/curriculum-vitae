@@ -110,7 +110,6 @@ h1 {
 
 ul {
   list-style-type: square;
-  list-style-position: inside;
 }
 
 figure {
@@ -188,6 +187,15 @@ table {
   justify-content: center;
   align-items: center;
 
+  >table {
+    >caption {
+      >h3 {
+        font-weight: 900;
+        font-size: var(--fs-3);
+      }
+    }
+  }
+
   >div {
     display: flex;
     column-gap: var(--s-m);
@@ -218,6 +226,10 @@ table {
         margin: 0;
         color: var(--subtle);
 
+        &:not(:nth-of-type(1)) {
+          margin-top: var(--s-3xs);
+        }
+
         &:last-of-type {
           margin: var(--s-m) 0;
           color: var(--text);
@@ -229,17 +241,29 @@ table {
 
 #education {
   ul {
-    padding: 0;
-
-    ul {
-      padding: 0 var(--s-m);
-    }
+    padding: 0 var(--s-m);
 
     li {
-      h3 {
-        display: inline-block;
-        color: var(--gold);
-        font-size: var(--fs-2);
+      color: var(--gold);
+      font-weight: 900;
+      font-size: var(--fs-2);
+
+      ul {
+        padding: var(--s-s) 0;
+
+        li {
+          color: var(--text);
+          font-weight: 400;
+          font-size: var(--fs-0);
+
+          strong {
+            color: var(--rose);
+          }
+        }
+
+        @media screen and (min-width: 769px) {
+          padding: var(--s-m);
+        }
       }
     }
   }
@@ -302,13 +326,13 @@ table {
       grid-area: iac;
     }
 
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 600px) {
       grid-template-areas:
         "pl fl "
-        "pl web"
-        "ide vcs"
-        "ide cloud"
-        "iac run";
+        "pl ide"
+        "web vcs"
+        "iac cloud"
+        "run run";
     }
 
     @media screen and (min-width: 1200px) {
@@ -329,6 +353,7 @@ table {
 
           ul {
             padding: 0;
+            list-style-position: inside;
           }
         }
 
