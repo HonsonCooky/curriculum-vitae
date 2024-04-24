@@ -76,7 +76,8 @@
 
 html {
   margin: 0;
-  background: var(--surface);
+  background: var(--base);
+  scroll-behavior: smooth;
 
   @media screen and (min-width: 1440px) {
     padding: 0 calc((100dvw - 1440px) / 2);
@@ -89,11 +90,6 @@ body {
   padding: 0 var(--s-m);
   color: var(--text);
   font-size: var(--fs-0);
-
-  @media screen and (min-width: 1440px) {
-    border-right: var(--border) solid var(--muted);
-    border-left: var(--border) solid var(--muted);
-  }
 }
 
 section {
@@ -133,7 +129,6 @@ figure {
 
 img {
   max-width: 100%;
-  max-height: 40dvh;
 }
 
 button {
@@ -156,6 +151,7 @@ code.inline {
   background: var(--text);
   padding: 0 var(--s-2xs);
   color: var(--base);
+  white-space: nowrap;
 }
 
 table {
@@ -287,6 +283,7 @@ table {
         padding: var(--s-s) 0;
 
         li {
+          margin-bottom: var(--s-s);
           color: var(--text);
           font-weight: 400;
           font-size: var(--fs-0);
@@ -294,6 +291,10 @@ table {
 
         @media screen and (min-width: 769px) {
           padding: var(--s-m);
+
+          li {
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -306,17 +307,28 @@ table {
   }
 
   #help-info {
-    margin-top: 0;
-    margin-bottom: var(--s-xl);
-    padding: 0 var(--s-2xs);
-    color: var(--subtle);
-
-    #intro {
-      margin-bottom: var(--fs-0);
-    }
+    margin: var(--s-m) 0;
+    border: var(--border) solid var(--text);
+    background: var(--surface);
+    padding: 0 var(--s-m);
+    width: 100%;
+    font-size: var(--fs--1);
 
     p {
-      margin: var(--s-2xs) 0;
+      margin: var(--s-xs) 0;
+    }
+
+    ul {
+      padding: 0;
+      padding-left: var(--s-xs);
+
+      li {
+        margin: var(--s-2xs) 0;
+
+        @media screen and (min-width: 769px) {
+          margin: 0;
+        }
+      }
     }
   }
 
@@ -374,26 +386,25 @@ table {
         "pl cloud iac";
     }
 
-    table {
-      td {
-        position: relative;
+    td {
+      .tooltip {
+        display: none;
+      }
+
+      &:hover,
+      &:active {
+        span {
+          color: var(--foam);
+          font-weight: 900;
+        }
 
         .tooltip {
-          display: none;
+          display: block;
           font-size: var(--fs--1);
 
           ul {
             padding: 0;
-            list-style-position: inside;
-          }
-        }
-
-        &:hover,
-        &:active {
-          background: var(--highlight-high);
-
-          .tooltip {
-            display: block;
+            padding-left: var(--s-xs);
           }
         }
       }
@@ -417,26 +428,69 @@ footer {
   display: flex;
   position: sticky;
   bottom: 0dvh;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   background: var(--base);
   padding: var(--border) 0;
 
-  #links {
-    display: none;
+  #footer-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 
-    a {
-      text-decoration: none;
+    #theme {
+      display: flex;
+      column-gap: var(--s-2xs);
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      * {
+        cursor: pointer;
+      }
+
+      >input {
+        margin: 0;
+        background-color: var(--muted);
+        padding: 0;
+        accent-color: var(--iris);
+      }
     }
   }
-}
 
-.expand {
-  display: none;
-}
+  #footer-content {
+    display: none;
+    flex-direction: column;
+    margin: var(--s-m) 0;
 
-@media screen and (min-width: 769px) {
-  .expand {
-    display: inline-block;
+    #links {
+      display: flex;
+      row-gap: var(--s-s);
+      flex-direction: column;
+      margin-top: var(--s-xs);
+      margin-left: var(--s-m);
+
+      a {
+        display: flex;
+        column-gap: var(--s-2xs);
+        flex-direction: row;
+        text-decoration: none;
+
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &.expanded {
+    position: relative;
+    padding-top: var(--s-m);
+    height: max-content;
+
+    #footer-content {
+      display: flex;
+    }
   }
 }
