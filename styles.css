@@ -322,10 +322,6 @@ table {
 
       li {
         margin: var(--s-2xs) 0;
-
-        @media screen and (min-width: 769px) {
-          margin: 0;
-        }
       }
     }
   }
@@ -334,7 +330,7 @@ table {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-areas: "pl" "fl" "cloud" "web" "iac" "run" "vcs" "ide";
-    gap: var(--fs-0);
+    gap: var(--s-m);
 
     #languages-table {
       grid-area: pl;
@@ -368,45 +364,55 @@ table {
       grid-area: iac;
     }
 
-    @media screen and (min-width: 600px) {
+    @media screen and (min-width: 769px) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
-        "pl fl "
-        "pl ide"
+        "pl fl"
+        "pl web"
         "pl vcs"
-        "web vcs"
-        "iac cloud"
-        "run run";
+        "cloud vcs"
+        "run ide"
+        "iac ide";
     }
 
-    @media screen and (min-width: 1200px) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas:
-        "pl fl ide"
-        "pl fl web"
-        "pl fl vcs"
-        "pl run vcs"
-        "pl cloud iac";
-    }
-
-    td {
-      .tooltip {
-        display: none;
-
-        ul {
-          padding: 0;
-          padding-left: var(--s-xs);
-        }
-      }
-
-      &:hover,
-      &:active {
-        span {
-          color: var(--gold);
+    table {
+      td {
+        .technology {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
         }
 
         .tooltip {
-          display: block;
+          display: none;
+
+          @media screen and (min-width: 769px) {
+            font-size: var(--fs--1);
+          }
+
+          ul {
+            padding: 0;
+            padding-left: var(--s-xs);
+          }
+        }
+
+        &.expanded {
+          padding-top: var(--s-2xs);
+
+          .technology {
+            span {
+              color: var(--gold);
+            }
+
+            i {
+              rotate: 180deg;
+            }
+          }
+
+          .tooltip {
+            display: block;
+          }
         }
       }
     }
