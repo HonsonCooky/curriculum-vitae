@@ -305,27 +305,6 @@ table {
     margin-bottom: 0;
   }
 
-  #help-info {
-    margin: var(--s-m) 0;
-    border: var(--border) solid var(--text);
-    background: var(--surface);
-    padding: 0 var(--s-m);
-    width: 100%;
-
-    p {
-      margin: var(--s-xs) 0;
-    }
-
-    ul {
-      padding: 0;
-      padding-left: var(--s-xs);
-
-      li {
-        margin: var(--s-2xs) 0;
-      }
-    }
-  }
-
   #tables {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -373,48 +352,6 @@ table {
         "cloud vcs"
         "run ide"
         "iac ide";
-    }
-
-    table {
-      td {
-        .technology {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .tooltip {
-          display: none;
-
-          @media screen and (min-width: 769px) {
-            font-size: var(--fs--1);
-          }
-
-          ul {
-            padding: 0;
-            padding-left: var(--s-xs);
-          }
-        }
-
-        &.expanded {
-          padding-top: var(--s-2xs);
-
-          .technology {
-            span {
-              color: var(--gold);
-            }
-
-            i {
-              rotate: 180deg;
-            }
-          }
-
-          .tooltip {
-            display: block;
-          }
-        }
-      }
     }
   }
 }
