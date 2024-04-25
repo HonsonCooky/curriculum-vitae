@@ -87,14 +87,13 @@ html {
 body {
   margin: 0;
   background: var(--base);
-  padding: 0 var(--s-m);
   color: var(--text);
   font-size: var(--fs-0);
 }
 
 section {
   border-bottom: var(--border) solid var(--muted);
-  padding: var(--s-xl) 0;
+  padding: var(--s-xl) var(--s-l);
 }
 
 h1 {
@@ -168,7 +167,7 @@ table {
 
   th {
     color: var(--gold);
-    font-weight: 600;
+    font-weight: 900;
     text-align: start;
   }
 
@@ -217,7 +216,7 @@ table {
       h3 {
         margin: 0;
         color: var(--gold);
-        font-weight: 200;
+        font-weight: 900;
         font-size: var(--fs-3);
       }
 
@@ -312,7 +311,6 @@ table {
     background: var(--surface);
     padding: 0 var(--s-m);
     width: 100%;
-    font-size: var(--fs--1);
 
     p {
       margin: var(--s-xs) 0;
@@ -334,6 +332,7 @@ table {
 
   #tables {
     display: grid;
+    grid-template-columns: repeat(1, 1fr);
     grid-template-areas: "pl" "fl" "cloud" "web" "iac" "run" "vcs" "ide";
     gap: var(--fs-0);
 
@@ -370,42 +369,44 @@ table {
     }
 
     @media screen and (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
         "pl fl "
         "pl ide"
+        "pl vcs"
         "web vcs"
         "iac cloud"
         "run run";
     }
 
     @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
       grid-template-areas:
         "pl fl ide"
         "pl fl web"
-        "pl vcs run"
+        "pl fl vcs"
+        "pl run vcs"
         "pl cloud iac";
     }
 
     td {
       .tooltip {
         display: none;
+
+        ul {
+          padding: 0;
+          padding-left: var(--s-xs);
+        }
       }
 
       &:hover,
       &:active {
         span {
-          color: var(--foam);
-          font-weight: 900;
+          color: var(--gold);
         }
 
         .tooltip {
           display: block;
-          font-size: var(--fs--1);
-
-          ul {
-            padding: 0;
-            padding-left: var(--s-xs);
-          }
         }
       }
     }
@@ -430,7 +431,7 @@ footer {
   bottom: 0dvh;
   flex-direction: column;
   background: var(--base);
-  padding: var(--border) 0;
+  padding: var(--s-3xs) var(--s-m);
 
   #footer-header {
     display: flex;
