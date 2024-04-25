@@ -59,28 +59,6 @@ const workingYears = workingTime / (1000 * 60 * 60 * 24 * 365);
 industryExperience.innerHTML = workingYears.toFixed(1);
 
 /**---------------------------------------------------------------------------------------------------------------------
- TECH SKILLS
-----------------------------------------------------------------------------------------------------------------------*/
-
-function loadTableCellsActions() {
-  const tables = document.getElementById("tech-skills").querySelector("#tables").querySelectorAll("table");
-  for (const table of tables) {
-    const cells = table.querySelectorAll("td");
-    for (const cell of cells) {
-      cell.addEventListener("click", function() {
-        if (cell.classList.contains("expanded")) {
-          cell.classList.remove("expanded");
-        } else {
-          cell.classList.add("expanded");
-        }
-      });
-    }
-  }
-}
-
-setTimeout(loadTableCellsActions, 0);
-
-/**---------------------------------------------------------------------------------------------------------------------
   FOOTER
 ----------------------------------------------------------------------------------------------------------------------*/
 window.addEventListener("scroll", function() {

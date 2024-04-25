@@ -270,31 +270,22 @@ table {
 }
 
 #education {
+  h3 {
+    color: var(--gold);
+    font-size: var(--fs-2);
+    margin-bottom: 0;
+  }
+
   ul {
-    padding: 0 var(--s-m);
-
     li {
-      color: var(--gold);
-      font-weight: 900;
-      font-size: var(--fs-2);
+      color: var(--text);
+      font-weight: 400;
+      font-size: var(--fs-0);
+    }
 
-      ul {
-        padding: var(--s-s) 0;
-
-        li {
-          margin-bottom: var(--s-s);
-          color: var(--text);
-          font-weight: 400;
-          font-size: var(--fs-0);
-        }
-
-        @media screen and (min-width: 769px) {
-          padding: var(--s-m);
-
-          li {
-            margin-bottom: 0;
-          }
-        }
+    @media screen and (min-width: 769px) {
+      li {
+        margin-bottom: 0;
       }
     }
   }
@@ -303,56 +294,6 @@ table {
 #tech-skills {
   >h1 {
     margin-bottom: 0;
-  }
-
-  #tables {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-areas: "pl" "fl" "cloud" "web" "iac" "run" "vcs" "ide";
-    gap: var(--s-m);
-
-    #languages-table {
-      grid-area: pl;
-    }
-
-    #frameworks-table {
-      grid-area: fl;
-    }
-
-    #vcs-table {
-      grid-area: vcs;
-    }
-
-    #cloud-table {
-      grid-area: cloud;
-    }
-
-    #ide-table {
-      grid-area: ide;
-    }
-
-    #web-table {
-      grid-area: web;
-    }
-
-    #runtimes-table {
-      grid-area: run;
-    }
-
-    #iac-table {
-      grid-area: iac;
-    }
-
-    @media screen and (min-width: 769px) {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-areas:
-        "pl fl"
-        "pl web"
-        "pl vcs"
-        "cloud vcs"
-        "run ide"
-        "iac ide";
-    }
   }
 }
 
