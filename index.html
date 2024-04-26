@@ -1,377 +1,464 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harrison Cook - Software Engineer</title>
-    <link rel="icon" href="./assets/imgs/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
-    <script src="./scripts.js" defer></script>
-  </head>
 
-  <body>
-    <!-- Home Section -->
-    <section id="home">
-      <table>
-        <caption>
-          <h3>Basic Information</h3>
-        </caption>
-        <tbody>
-          <tr>
-            <th>FirstName</th>
-            <td>Harrison</td>
-          </tr>
-          <tr>
-            <th>LastName</th>
-            <td>Cook</td>
-          </tr>
-          <tr>
-            <th>Age</th>
-            <td id="age-value">XX</td>
-          </tr>
-          <tr>
-            <th>Occupation</th>
-            <td id="age-value">Software Engineer</td>
-          </tr>
-          <tr>
-            <th>Location</th>
-            <td id="age-value">New Zealand</td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <figure>
-                <img src="./assets/imgs/me.png" alt="me.png" loading="lazy" />
-                <figcaption>Fig. 1. Unconventional Engineer Profile</figcaption>
-              </figure>
-            </td>
-          </tr>
-        </tbody>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harrison Cook - Software Engineer</title>
+  <link rel="icon" href="./assets/imgs/favicon.png" />
+  <link rel="stylesheet" type="text/css" href="./styles.css" />
+  <script src="./scripts.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <button id="mobile-menu-btn" type="button" title="navigation menu"><i class="nf nf-md-menu"></i></button>
+    <div id="menu-links">
+      <label>&gt;_</label>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#education">Education</a>
+      <a href="#tech">Technical</a>
+      <a href="#soft">Personality</a>
+      <a href="#projects">Projects</a>
+      <a href="#blogs">Blogs</a>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <table>
+      <caption>
+        <h3>Basic Information</h3>
+      </caption>
+      <tbody>
+        <tr>
+          <th>FirstName</th>
+          <td>Harrison</td>
+        </tr>
+        <tr>
+          <th>LastName</th>
+          <td>Cook</td>
+        </tr>
+        <tr>
+          <th>Age</th>
+          <td id="age-value">XX</td>
+        </tr>
+        <tr>
+          <th>Occupation</th>
+          <td id="age-value">Software Engineer</td>
+        </tr>
+        <tr>
+          <th>Location</th>
+          <td id="age-value">New Zealand</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <figure>
+              <img src="./assets/imgs/me.png" alt="me.png" loading="lazy" />
+              <figcaption>Fig. 1. Unconventional Engineer Profile</figcaption>
+            </figure>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button id="contact-btn">
+        <i class="nf nf-fa-info"></i>
+        <span>Contact</span>
+      </button>
+      <button id="resume-btn">
+        <i class="nf nf-fa-file_pdf"></i>
+        <span>Resume</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <h1>About Me</h1>
+    <p>
+      Hailing from what my friends affectionately call a ‘singing cult,' my formative years were steeped in music and
+      the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital technologies.
+    </p>
+    <p>
+      Armed with a knack for calculus and a flair for photography, I discovered programming— an art form that blends
+      creativity with methodical precision. It's a canvas with rules, yet near infinite possibilities. Now, I've
+      traded sheet music for syntax; my compositions resonate through elegant algorithms, harmonizing data structures
+      and orchestrating efficient solutions. Whether it's a symphony of APIs or a concerto in cloud architecture, I
+      thrive on turning complexity into clarity.
+    </p>
+    <p>
+      With <span id="industry-years">X</span> years of industry experience as a Software Engineer, my technical
+      specializations are currently anchored in <code class="inline">TypeScript</code>,
+      <code class="inline">C#</code>, and <code class="inline">Rust</code>, complemented by a wide array of
+      technologies. My professional goals center around specializing in backend development, particularly in the realm
+      of network technologies.
+    </p>
+    <p>
+      Today, I stand as a bright, bubbly, resilient, and reliable individual. I'm prepared to bring my distinctive mix
+      of creativity and expertise to exciting projects. Are you ready for me? Welcome to my melodic journey through
+      bytes, nibbles and bits!
+    </p>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section id="work">
+    <h1>Work Experience</h1>
+    <div id="jobs">
+      <div class="job" id="z-energy">
+        <h3>Z Energy</h3>
+        <p>
+          <strong>Intermediate Developer</strong>
+          <span class="web"> | </span>
+          <span class="mobile"><br />&nbsp;</span>
+          May 2022 - Present
+        </p>
+        <p>
+          <strong>Graduate Developer</strong>
+          <span class="web"> | </span>
+          <span class="mobile"><br />&nbsp;</span>
+          Nov 2021 - May 2022
+        </p>
+        <p class="description">
+          I started my career at Z Energy fresh out of university as a graduate developer, and have since progressed
+          to an intermediate position. Working within New Zealand's largest fuel provider, I've been part of a dynamic
+          team driving digital innovation in the energy sector.<br /><br />
+          <strong class="sub">From Code To Cloud:</strong><br />
+          My experience as a developer spans a wide range of technologies. I've utilized
+          <code class="inline">TypeScript</code> and <code class="inline">C#</code> to build everything from small
+          Function Apps to extensive Web APIs and internal tools. In addition, I've developed infrastructure as code
+          using <code class="inline">Terraform</code> to manage and link these components to Service Buses, Databases,
+          Virtual Networks, and more. My experience also includes setting up CI/CD pipelines with
+          <code class="inline">GitHub Actions</code> and <code class="inline">Azure Pipelines</code>, ensuring
+          automated and synchronized build processes that seamlessly align our version control systems with the
+          corresponding cloud services. My role truly encapsulates the journey "from code to cloud," reflecting my
+          comprehensive involvement across the technological stack.<br /><br />
+          <strong class="sub">Software Development Life Cycle:</strong><br />
+          In an era where the digital landscape is ever-expanding, it’s imperative to align legacy systems with
+          current standards and guidelines; Safeguarding our infrastructure while preparing for future advancements.
+          My work has been consistently lined with the ongoing enhancement, modernization, and oversight of our
+          existing systems.<br /><br />
+          <strong class="sub">Incident Investigations:</strong><br />
+          My developer duties include both team-based and individual analysis into the
+          <code class="inline">Azure Portal</code>. These processes are aimed at identifying and resolving
+          discrepancies in my code as well as existing systems. By participating in these processes, I have honed my
+          ability to develop resilient and supportable systems.
+          <!-- COME BACK TO FINAL STATEMENT -->
+        </p>
+      </div>
+      <div class="job" id="raygun">
+        <h3>Raygun</h3>
+        <p>
+          <strong>Intern Developer</strong>
+          <span class="web"> | </span>
+          <span class="mobile"><br />&nbsp;</span>
+          Nov 2020 - Feb 2021
+        </p>
+        <p class="description">
+          As an intern at Raygun, I was part of a team that built the
+          <code class="inline">React Native</code> library from scratch. This library was designed to integrate with
+          Raygun's suite of crash reporting and monitoring software services. Working alongside another intern, we
+          took this project from an initial concept to a fully functional tool. This project marked my first
+          professional experience with the <code class="inline">Agile</code> methodology, which afforded me an easy
+          transition into my current position with a larger team. The result of our efforts is the
+          "raygun4reactnative" library, now available on
+          <a href="https://www.npmjs.com/package/raygun4reactnative" target="_blank"><code class="inline">NPM</code></a>
+          for developers to utilize in their mobile applications.
+        </p>
+      </div>
+      <div class="job" id="vic-tutor">
+        <h3>Victoria University</h3>
+        <p>
+          <strong>Tutor</strong>
+          <span class="web"> | </span>
+          <span class="mobile"><br />&nbsp;</span>
+          Mar 2019 - Nov 2021
+        </p>
+        <p class="description">
+          During my time as a Tutor at Victoria University, I provided support to students in Software Engineering,
+          Networking Engineering, and Computer Science disciplines. My responsibilities focused on conducting
+          after-class workshops and tutorials and included the precise marking of assignments based on established
+          guides. This role afforded me the unique opportunity to master the art of conveying complex technical
+          subjects (such as <code class="inline">C</code> pointers and <code class="inline">CPU</code> threads) to a
+          diverse student body with varying degrees of technical proficiency. The ability to simplify and communicate
+          intricate concepts effectively has been invaluable in my current career, where I engage effectively with
+          business analysts, scrum masters, and product owners, facilitating clear and productive discussions that
+          drive project success.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h1>Education</h1>
+    <h3>Bachelor of Engineering with First Class Honors</h3>
+    <ul>
+      <li><strong>Major:</strong> Software Engineering</li>
+      <li><strong>Specialization:</strong> Networked Applications</li>
+      <li><strong>Accreditation:</strong> Washington and Seoul Accords</li>
+      <li><strong>Institution:</strong> Victoria University of Wellington</li>
+      <li><strong>Years:</strong> 2018 - 2021</li>
+    </ul>
+  </section>
+
+  <!-- Tech Skills Section -->
+  <section id="tech">
+    <h1>Technical Toolbox</h1>
+    <p>
+      Below is a selection of technologies I have some level of experience with. Select technologies you're interested
+      in, and calculate how compatable I am with the tech-stack you're curious about.
+    </p>
+    <div id="tables">
+      <table id="programming-languages">
+        <tr>
+          <th colspan="100%">Programming Languages</th>
+        </tr>
+        <tr>
+          <td>
+            <input title="c-check" type="checkbox" />
+            <span>C</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="c#-check" type="checkbox" />
+            <span>C#</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="c++-check" type="checkbox" />
+            <span>C++</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="css-check" type="checkbox" />
+            <span>CSS</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="dart-check" type="checkbox" />
+            <span>Dart</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="f#-check" type="checkbox" />
+            <span>F#</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="html-check" type="checkbox" />
+            <span>HTML</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="java-check" type="checkbox" />
+            <span>Java</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="javascript-check" type="checkbox" />
+            <span>JavaScript</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="lua-check" type="checkbox" />
+            <span>Lua</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="ruby-check" type="checkbox" />
+            <span>Ruby</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="rust-check" type="checkbox" />
+            <span>Rust</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="tailwind css-check" type="checkbox" />
+            <span>Tailwind CSS</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="typescript-check" type="checkbox" />
+            <span>TypeScript</span>
+          </td>
+        </tr>
       </table>
-      <div>
-        <button id="contact-btn">
-          <i class="nf nf-fa-info"></i>
-          <span>Contact</span>
-        </button>
-        <button id="resume-btn">
-          <i class="nf nf-fa-file_pdf"></i>
-          <span>Resume</span>
-        </button>
+      <table id="software-infrastructure">
+        <tr>
+          <th colspan="100%">Software Infrastructure</th>
+        </tr>
+        <tr>
+          <td>
+            <input title=".net-check" type="checkbox" />
+            <span>.Net</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="flutter-check" type="checkbox" />
+            <span>Flutter</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="jdk-check" type="checkbox" />
+            <span>JDK</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="next.js-check" type="checkbox" />
+            <span>Next.js</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="react-check" type="checkbox" />
+            <span>React</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="react-native-check" type="checkbox" />
+            <span>React-Native</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="vue.js-check" type="checkbox" />
+            <span>Vue.js</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="webpack-check" type="checkbox" />
+            <span>Webpack</span>
+          </td>
+        </tr>
+      </table>
+      <table id="devops">
+        <tr>
+          <th colspan="100%">DevOps</th>
+        </tr>
+        <tr>
+          <td>
+            <input title="azure-cloud-check" type="checkbox" />
+            <span>Azure Cloud</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="azure-devops-check" type="checkbox" />
+            <span>Azure DevOps</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="devops-check" type="checkbox" />
+            <span>DevOps</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="github-check" type="checkbox" />
+            <span>GitHub</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="gitlab-check" type="checkbox" />
+            <span>GitLab</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="terraform-check" type="checkbox" />
+            <span>Terraform</span>
+          </td>
+        </tr>
+      </table>
+      <table id="development-environments">
+        <tr>
+          <th colspan="100%">Development Environments</th>
+        </tr>
+        <tr>
+          <td>
+            <input title="jetbrains-check" type="checkbox" />
+            <span>JetBrains</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="neovim-check" type="checkbox" />
+            <span>Neovim</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="visual-studio-code-check" type="checkbox" />
+            <span>Visual Studio Code</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="visual-studio-check" type="checkbox" />
+            <span>Visual Studio</span>
+          </td>
+        </tr>
+      </table>
+      <div id="calculations">
+        <div></div>
+        <button type="button">Calculate</button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- About Me Section -->
-    <section id="about">
-      <h1>About Me</h1>
-      <p>
-        Hailing from what my friends affectionately call a ‘singing cult,' my formative years were steeped in music and
-        the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital technologies.
-      </p>
-      <p>
-        Armed with a knack for calculus and a flair for photography, I discovered programming— an art form that blends
-        creativity with methodical precision. It's a canvas with rules, yet near infinite possibilities. Now, I've
-        traded sheet music for syntax; my compositions resonate through elegant algorithms, harmonizing data structures
-        and orchestrating efficient solutions. Whether it's a symphony of APIs or a concerto in cloud architecture, I
-        thrive on turning complexity into clarity.
-      </p>
-      <p>
-        With <span id="industry-years">X</span> years of industry experience as a Software Engineer, my technical
-        specializations are currently anchored in <code class="inline">TypeScript</code>,
-        <code class="inline">C#</code>, and <code class="inline">Rust</code>, complemented by a wide array of
-        technologies. My professional goals center around specializing in backend development, particularly in the realm
-        of network technologies.
-      </p>
-      <p>
-        Today, I stand as a bright, bubbly, resilient, and reliable individual. I'm prepared to bring my distinctive mix
-        of creativity and expertise to exciting projects. Are you ready for me? Welcome to my melodic journey through
-        bytes, nibbles and bits!
-      </p>
-    </section>
+  <!-- Soft Skills Section -->
+  <section id="soft">
+    <h1>Personality</h1>
+    <ul>
+      <li>
+        <strong>Teamwork:</strong> Throughout my life, I've actively engaged in various groups and teams;
+        Participating in sports, bands, university projects, and diverse work environments. Whether leading or
+        following, I've honed my ability to adapt swiftly to different team dynamics.
+      </li>
+      <li>
+        <strong>Communication:</strong> Drawing from my thespian background and 3 years of tutoring, I have developed
+        robust verbal communication skills. Whether interacting with clients or colleagues, I excel in conveying ideas
+        effectively and fostering meaningful connections.
+      </li>
+      <li>
+        <strong>Personality:</strong> My colleagues, mentors, and supervisors have praised my organizational skills,
+        enthusiasm, and reliability. I thrive in collaborative environments that value teamwork. I'm passionate about
+        creating and nurturing a workspace that inspires daily motivation and enthusiasm, making it worth the early
+        morning rise.
+      </li>
+    </ul>
+  </section>
 
-    <!-- Work Experience Section -->
-    <section id="work-experience">
-      <h1>Work Experience</h1>
-      <div id="jobs">
-        <div class="job" id="z-energy">
-          <h3>Z Energy</h3>
-          <p>
-            <strong>Intermediate Developer</strong>
-            <span class="web"> | </span>
-            <span class="mobile"><br />&nbsp;</span>
-            May 2022 - Present
-          </p>
-          <p>
-            <strong>Graduate Developer</strong>
-            <span class="web"> | </span>
-            <span class="mobile"><br />&nbsp;</span>
-            Nov 2021 - May 2022
-          </p>
-          <p class="description">
-            I started my career at Z Energy fresh out of university as a graduate developer, and have since progressed
-            to an intermediate position. Working within New Zealand's largest fuel provider, I've been part of a dynamic
-            team driving digital innovation in the energy sector.<br /><br />
-            <strong class="sub">From Code To Cloud:</strong><br />
-            My experience as a developer spans a wide range of technologies. I've utilized
-            <code class="inline">TypeScript</code> and <code class="inline">C#</code> to build everything from small
-            Function Apps to extensive Web APIs and internal tools. In addition, I've developed infrastructure as code
-            using <code class="inline">Terraform</code> to manage and link these components to Service Buses, Databases,
-            Virtual Networks, and more. My experience also includes setting up CI/CD pipelines with
-            <code class="inline">GitHub Actions</code> and <code class="inline">Azure Pipelines</code>, ensuring
-            automated and synchronized build processes that seamlessly align our version control systems with the
-            corresponding cloud services. My role truly encapsulates the journey "from code to cloud," reflecting my
-            comprehensive involvement across the technological stack.<br /><br />
-            <strong class="sub">Software Development Life Cycle:</strong><br />
-            In an era where the digital landscape is ever-expanding, it’s imperative to align legacy systems with
-            current standards and guidelines; Safeguarding our infrastructure while preparing for future advancements.
-            My work has been consistently lined with the ongoing enhancement, modernization, and oversight of our
-            existing systems.<br /><br />
-            <strong class="sub">Incident Investigations:</strong><br />
-            My developer duties include both team-based and individual analysis into the
-            <code class="inline">Azure Portal</code>. These processes are aimed at identifying and resolving
-            discrepancies in my code as well as existing systems. By participating in these processes, I have honed my
-            ability to develop resilient and supportable systems.
-            <!-- COME BACK TO FINAL STATEMENT -->
-          </p>
-        </div>
-        <div class="job" id="raygun">
-          <h3>Raygun</h3>
-          <p>
-            <strong>Intern Developer</strong>
-            <span class="web"> | </span>
-            <span class="mobile"><br />&nbsp;</span>
-            Nov 2020 - Feb 2021
-          </p>
-          <p class="description">
-            As an intern at Raygun, I was part of a team that built the
-            <code class="inline">React Native</code> library from scratch. This library was designed to integrate with
-            Raygun's suite of crash reporting and monitoring software services. Working alongside another intern, we
-            took this project from an initial concept to a fully functional tool. This project marked my first
-            professional experience with the <code class="inline">Agile</code> methodology, which afforded me an easy
-            transition into my current position with a larger team. The result of our efforts is the
-            "raygun4reactnative" library, now available on
-            <a href="https://www.npmjs.com/package/raygun4reactnative" target="_blank"
-              ><code class="inline">NPM</code></a
-            >
-            for developers to utilize in their mobile applications.
-          </p>
-        </div>
-        <div class="job" id="vic-tutor">
-          <h3>Victoria University</h3>
-          <p>
-            <strong>Tutor</strong>
-            <span class="web"> | </span>
-            <span class="mobile"><br />&nbsp;</span>
-            Mar 2019 - Nov 2021
-          </p>
-          <p class="description">
-            During my time as a Tutor at Victoria University, I provided support to students in Software Engineering,
-            Networking Engineering, and Computer Science disciplines. My responsibilities focused on conducting
-            after-class workshops and tutorials and included the precise marking of assignments based on established
-            guides. This role afforded me the unique opportunity to master the art of conveying complex technical
-            subjects (such as <code class="inline">C</code> pointers and <code class="inline">CPU</code> threads) to a
-            diverse student body with varying degrees of technical proficiency. The ability to simplify and communicate
-            intricate concepts effectively has been invaluable in my current career, where I engage effectively with
-            business analysts, scrum masters, and product owners, facilitating clear and productive discussions that
-            drive project success.
-          </p>
-        </div>
-      </div>
-    </section>
+  <!-- Personal Projects Section -->
+  <section id="projects">
+    <h1>Projects</h1>
 
-    <!-- Education Section -->
-    <section id="education">
-      <h1>Education</h1>
-      <h3>Bachelor of Engineering with First Class Honors</h3>
-      <ul>
-        <li><strong>Major:</strong> Software Engineering</li>
-        <li><strong>Specialization:</strong> Networked Applications</li>
-        <li><strong>Accreditation:</strong> Washington and Seoul Accords</li>
-        <li><strong>Institution:</strong> Victoria University of Wellington</li>
-        <li><strong>Years:</strong> 2018 - 2021</li>
-      </ul>
-    </section>
-
-    <!-- Tech Skills Section -->
-    <section id="tech-skills">
-      <h1>Technical Toolbox</h1>
-      <div id="tables">
-        <table id="programming-languages">
-          <tr>
-            <th colspan="100%">Programming Languages</th>
-          </tr>
-          <tr>
-            <td><input title="c-check" type="checkbox" /></td>
-            <td>C</td>
-          </tr>
-          <tr>
-            <td><input title="c#-check" type="checkbox" /></td>
-            <td>C#</td>
-          </tr>
-          <tr>
-            <td><input title="c++-check" type="checkbox" /></td>
-            <td>C++</td>
-          </tr>
-          <tr>
-            <td><input title="css-check" type="checkbox" /></td>
-            <td>CSS</td>
-          </tr>
-          <tr>
-            <td><input title="dart-check" type="checkbox" /></td>
-            <td>Dart</td>
-          </tr>
-          <tr>
-            <td><input title="f#-check" type="checkbox" /></td>
-            <td>F#</td>
-          </tr>
-          <tr>
-            <td><input title="html-check" type="checkbox" /></td>
-            <td>HTML</td>
-          </tr>
-          <tr>
-            <td><input title="java-check" type="checkbox" /></td>
-            <td>Java</td>
-          </tr>
-          <tr>
-            <td><input title="javascript-check" type="checkbox" /></td>
-            <td>JavaScript</td>
-          </tr>
-          <tr>
-            <td><input title="lua-check" type="checkbox" /></td>
-            <td>Lua</td>
-          </tr>
-          <tr>
-            <td><input title="ruby-check" type="checkbox" /></td>
-            <td>Ruby</td>
-          </tr>
-          <tr>
-            <td><input title="rust-check" type="checkbox" /></td>
-            <td>Rust</td>
-          </tr>
-          <tr>
-            <td><input title="tailwind css-check" type="checkbox" /></td>
-            <td>Tailwind CSS</td>
-          </tr>
-          <tr>
-            <td><input title="typescript-check" type="checkbox" /></td>
-            <td>TypeScript</td>
-          </tr>
-        </table>
-        <table id="software-infrastructure">
-          <tr>
-            <th colspan="100%">Software Infrastructure</th>
-          </tr>
-          <tr>
-            <td><input title=".net-check" type="checkbox" /></td>
-            <td>.Net</td>
-          </tr>
-          <tr>
-            <td><input title="flutter-check" type="checkbox" /></td>
-            <td>Flutter</td>
-          </tr>
-          <tr>
-            <td><input title="jdk-check" type="checkbox" /></td>
-            <td>JDK</td>
-          </tr>
-          <tr>
-            <td><input title="next.js-check" type="checkbox" /></td>
-            <td>Next.js</td>
-          </tr>
-          <tr>
-            <td><input title="react-check" type="checkbox" /></td>
-            <td>React</td>
-          </tr>
-          <tr>
-            <td><input title="react-native-check" type="checkbox" /></td>
-            <td>React-Native</td>
-          </tr>
-          <tr>
-            <td><input title="vue.js-check" type="checkbox" /></td>
-            <td>Vue.js</td>
-          </tr>
-          <tr>
-            <td><input title="webpack-check" type="checkbox" /></td>
-            <td>Webpack</td>
-          </tr>
-        </table>
-        <table id="devops">
-          <tr>
-            <th colspan="100%">DevOps</th>
-          </tr>
-          <tr>
-            <td><input title="azure-cloud-check" type="checkbox" /></td>
-            <td>Azure Cloud</td>
-          </tr>
-          <tr>
-            <td><input title="azure-devops-check" type="checkbox" /></td>
-            <td>Azure DevOps</td>
-          </tr>
-          <tr>
-            <td><input title="devops-check" type="checkbox" /></td>
-            <td>DevOps</td>
-          </tr>
-          <tr>
-            <td><input title="github-check" type="checkbox" /></td>
-            <td>GitHub</td>
-          </tr>
-          <tr>
-            <td><input title="gitlab-check" type="checkbox" /></td>
-            <td>GitLab</td>
-          </tr>
-          <tr>
-            <td><input title="terraform-check" type="checkbox" /></td>
-            <td>Terraform</td>
-          </tr>
-        </table>
-        <table id="development-environments">
-          <tr>
-            <th colspan="100%">Development Environments</th>
-          </tr>
-          <tr>
-            <td><input title="jetbrains-check" type="checkbox" /></td>
-            <td>JetBrains</td>
-          </tr>
-          <tr>
-            <td><input title="neovim-check" type="checkbox" /></td>
-            <td>Neovim</td>
-          </tr>
-          <tr>
-            <td><input title="visual-studio-code-check" type="checkbox" /></td>
-            <td>Visual Studio Code</td>
-          </tr>
-          <tr>
-            <td><input title="visual-studio-check" type="checkbox" /></td>
-            <td>Visual Studio</td>
-          </tr>
-        </table>
-      </div>
-    </section>
-
-    <!-- Soft Skills Section -->
-    <section id="soft-skills">
-      <h1>Soft Skills</h1>
-      <ul>
-        <li>
-          <strong>Teamwork:</strong> Throughout my life, I've actively engaged in various groups and teams;
-          Participating in sports, bands, university projects, and diverse work environments. Whether leading or
-          following, I've honed my ability to adapt swiftly to different team dynamics.
-        </li>
-        <li>
-          <strong>Communication:</strong> Drawing from my thespian background and 3 years of tutoring, I have developed
-          robust verbal communication skills. Whether interacting with clients or colleagues, I excel in conveying ideas
-          effectively and fostering meaningful connections.
-        </li>
-        <li>
-          <strong>Personality:</strong> My colleagues, mentors, and supervisors have praised my organizational skills,
-          enthusiasm, and reliability. I thrive in collaborative environments that value teamwork. I'm passionate about
-          creating and nurturing a workspace that inspires daily motivation and enthusiasm, making it worth the early
-          morning rise.
-        </li>
-      </ul>
-    </section>
-
-    <!-- Personal Projects Section -->
-    <section id="personal-projects">
-      <h1>Personal Projects</h1>
-
+    <div id="cards">
       <!-- Curriculum Vitae -->
       <div class="project-card" id="cv-project">
         <h3>curriculum-vitae</h3>
@@ -477,8 +564,9 @@
         <h3>planck-keyboard</h3>
         <div class="tags">
           <span>Hardware</span>
-          <span>40% Keyboard</span>
+          <span>40%</span>
           <span>Productivity</span>
+          <span>Keyboard</span>
           <span>RSI</span>
         </div>
         <p>
@@ -510,47 +598,37 @@
           refining my craft and keeping my technical skills sharp.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Blogs Section -->
-    <section id="blogs">
-      <h1>Blogs</h1>
-      <ul>
-        <li>You're early... nothing to see here yet</li>
-      </ul>
-    </section>
+  <!-- Blogs Section -->
+  <section id="blogs">
+    <h1>Blogs</h1>
+    <ul>
+      <li>You're early... nothing to see here yet</li>
+    </ul>
+  </section>
 
-    <footer>
-      <div id="footer-header">
-        <label>C:\HonsonCooky></label>
-        <label id="theme">
-          <input id="theme-btn" type="checkbox" />
-          <label for="theme-btn">Dark Theme</label>
-        </label>
-      </div>
-      <div id="footer-content">
-        <strong>Links:</strong>
-        <div id="links">
-          <a class="nf nf-md-email" href="mailto:contact@honsoncooky.dev"><span>contact@honsoncooky.dev</span></a>
-          <a class="nf nf-fa-github" href="https://github.com/HonsonCooky" target="_blank"><span>GitHub</span></a>
-          <a
-            class="nf nf-fa-linkedin"
-            href="https://www.linkedin.com/in/harrison-cook-software-engineer/"
-            target="_blank"
-          >
-            <span>LinkedIn</span>
-          </a>
-          <a class="nf nf-fa-reddit_alien" href="https://www.reddit.com/user/HonsonCooky/" target="_blank"
-            ><span>Reddit</span></a
-          >
-          <a
-            class="nf nf-fa-stack_overflow"
-            href="https://stackoverflow.com/users/19093612/harrison-cook"
-            target="_blank"
-            ><span>Stack Overflow</span></a
-          >
-        </div>
-      </div>
-    </footer>
-  </body>
+  <footer id="footer-header">
+    <label>C:\HonsonCooky></label>
+    <label id="theme">
+      <input id="theme-btn" type="checkbox" />
+      <label for="theme-btn">Dark Theme</label>
+    </label>
+  </footer>
+  <footer id="footer-content">
+    <strong>Links:</strong>
+    <div id="links">
+      <a class="nf nf-md-email" href="mailto:contact@honsoncooky.dev"><span>contact@honsoncooky.dev</span></a>
+      <a class="nf nf-fa-github" href="https://github.com/HonsonCooky" target="_blank"><span>GitHub</span></a>
+      <a class="nf nf-fa-linkedin" href="https://www.linkedin.com/in/harrison-cook-software-engineer/" target="_blank">
+        <span>LinkedIn</span>
+      </a>
+      <a class="nf nf-fa-reddit_alien" href="https://www.reddit.com/user/HonsonCooky/"
+        target="_blank"><span>Reddit</span></a>
+      <a class="nf nf-fa-stack_overflow" href="https://stackoverflow.com/users/19093612/harrison-cook"
+        target="_blank"><span>Stack Overflow</span></a>
+  </footer>
+</body>
+
 </html>

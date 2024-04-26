@@ -27,9 +27,35 @@ function isMobile() {
   CSS VARIABLES
 ----------------------------------------------------------------------------------------------------------------------*/
 const root = document.documentElement;
+const header = document.querySelector("header");
 const footer = document.querySelector("footer");
 
+root.style.setProperty("--scroll-top", header.offsetHeight + "px");
 root.style.setProperty("--scroll-bottom", footer.offsetHeight + "px");
+
+/**---------------------------------------------------------------------------------------------------------------------
+  HEADER
+----------------------------------------------------------------------------------------------------------------------*/
+const mobileBtn = document.getElementById("mobile-menu-btn");
+const headerLinks = document.getElementById("menu-links").querySelectorAll("a");
+
+mobileBtn.addEventListener("click", function() {
+  if (header.classList.contains("open")) {
+    header.classList.remove("open");
+  } else {
+    header.classList.add("open");
+  }
+});
+
+for (const navLink of headerLinks) {
+  navLink.addEventListener("click", function() {
+    header.classList.remove("open");
+  });
+}
+
+window.addEventListener("resize", function() {
+  header.classList.remove("open");
+});
 
 /**---------------------------------------------------------------------------------------------------------------------
  HOME
@@ -59,27 +85,19 @@ const workingYears = workingTime / (1000 * 60 * 60 * 24 * 365);
 industryExperience.innerHTML = workingYears.toFixed(1);
 
 /**---------------------------------------------------------------------------------------------------------------------
-  FOOTER
+ TECH
 ----------------------------------------------------------------------------------------------------------------------*/
-window.addEventListener("scroll", function() {
-  const isUp = (window.lastYPos ?? 0) > window.scrollY;
-  window.lastYPos = window.scrollY;
-
-  const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 10;
-  if (atBottom && !footer.classList.contains("expanded") && !isUp) {
-    footer.classList.add("expanded");
-    if (!isMobile()) {
-      window.scrollTo(0, document.body.scrollHeight);
+const tables = document.getElementById("tables").querySelectorAll("table");
+function setupTechTables() {
+  for (const table of tables) {
+    const tds = table.querySelectorAll("td");
+    for (const td of tds) {
+      td.addEventListener("click", function() {
+        const checkbox = td.querySelector("input");
+        checkbox.checked = !checkbox.checked;
+      });
     }
-    return;
   }
+}
 
-  if (!footer.classList.contains("expanded")) return;
-
-  const footerRect = footer.getBoundingClientRect();
-  const footerYPos = window.innerHeight - footerRect.y;
-  const threshold = Number.parseInt(getComputedStyle(root).getPropertyValue("--scroll-bottom"));
-  if (footerYPos < threshold) {
-    footer.classList.remove("expanded");
-  }
-});
+setTimeout(setupTechTables, 0);
