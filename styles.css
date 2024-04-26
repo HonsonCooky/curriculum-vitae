@@ -271,9 +271,9 @@ table {
 
 #education {
   h3 {
+    margin-bottom: 0;
     color: var(--gold);
     font-size: var(--fs-2);
-    margin-bottom: 0;
   }
 
   ul {
@@ -294,6 +294,52 @@ table {
 #tech-skills {
   >h1 {
     margin-bottom: 0;
+  }
+
+  #tables {
+    display: grid;
+    grid-template-areas: "pl" "si" "do" "de";
+    gap: var(--s-s);
+
+    table {
+      height: max-content;
+
+      tr {
+        td {
+          &:first-of-type {
+            max-width: min-content;
+          }
+
+          input {
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    #programming-languages {
+      grid-area: pl;
+    }
+
+    #software-infrastructure {
+      grid-area: si;
+    }
+
+    #devops {
+      grid-area: do;
+    }
+
+    #development-environments {
+      grid-area: de;
+    }
+
+    @media screen and (min-width: 769px) {
+      grid-template-areas:
+        "pl si"
+        "pl de"
+        "do do";
+    }
   }
 }
 
