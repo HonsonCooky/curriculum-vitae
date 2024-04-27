@@ -82,7 +82,8 @@ const industryExperience = document.getElementById("industry-years");
 const workStart = new Date("2021-08-01");
 const workingTime = today.getTime() - workStart.getTime();
 const workingYears = workingTime / (1000 * 60 * 60 * 24 * 365);
-industryExperience.innerHTML = workingYears.toFixed(1);
+const workingYearsRounded = Math.round(workingYears.toFixed(1) * 2) / 2;
+industryExperience.innerHTML = workingYearsRounded;
 
 /**---------------------------------------------------------------------------------------------------------------------
  TECH
