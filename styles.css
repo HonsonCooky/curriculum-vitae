@@ -412,7 +412,8 @@ header {
   #tables {
     display: grid;
     grid-template-areas: "pl" "si" "do" "de" "calc";
-    gap: var(--fs-0);
+    column-gap: var(--s-s);
+    row-gap: var(--s-m);
 
     table {
       tr {
@@ -434,11 +435,11 @@ header {
       }
     }
 
-    #programming-languages {
+    #languages {
       grid-area: pl;
     }
 
-    #software-infrastructure {
+    #environments {
       grid-area: si;
     }
 
@@ -446,7 +447,7 @@ header {
       grid-area: do;
     }
 
-    #development-environments {
+    #tools {
       grid-area: de;
     }
 
@@ -459,6 +460,12 @@ header {
       border: var(--border) solid var(--muted);
       padding: var(--border);
       height: 267.2px;
+
+      label {
+        padding-left: var(--s-3xs);
+        font-style: italic;
+        font-size: var(--fs--1);
+      }
 
       div {
         flex: 1;
@@ -473,6 +480,7 @@ header {
 
       button {
         justify-content: center;
+        font-size: var(--fs--1);
         text-align: center;
       }
     }
