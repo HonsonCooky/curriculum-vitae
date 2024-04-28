@@ -6,8 +6,7 @@
   justify-content: space-between;
   border-top: var(--border) solid var(--text);
   background-color: var(--base);
-  padding: 0 var(--s-m);
-  padding-bottom: var(--s-3xs);
+  padding: var(--s-3xs) var(--s-m);
 
   #theme {
     display: flex;
@@ -25,7 +24,7 @@
       user-select: none;
     }
 
-    > input {
+    >input {
       margin: 0;
       background-color: var(--muted);
       padding: 0;

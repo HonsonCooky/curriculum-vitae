@@ -8,8 +8,7 @@ header {
   margin: 0;
   border-bottom: var(--border) solid var(--text);
   background: var(--base);
-  padding: 0 var(--s-m);
-  padding-top: var(--s-3xs);
+  padding: var(--s-3xs) var(--s-m);
 
   #mobile-menu-btn {
     display: flex;

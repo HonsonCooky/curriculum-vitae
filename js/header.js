@@ -1,3 +1,5 @@
+// header variable declared in ./css.js
+
 const mobileBtn = document.getElementById("mobile-menu-btn");
 const headerLinks = document.getElementById("menu-links").querySelectorAll("a");
 

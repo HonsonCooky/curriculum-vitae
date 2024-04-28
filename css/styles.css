@@ -64,8 +64,6 @@
 * {
   box-sizing: border-box;
   border-radius: var(--border);
-  scroll-margin-bottom: var(--scroll-bottom);
-  scroll-margin-top: var(--scroll-top);
   color: inherit;
   font-size: inherit;
   font-size: inherit;
@@ -107,6 +105,8 @@ body {
 
 section {
   padding: var(--s-xl) var(--s-l);
+  scroll-margin-bottom: var(--scroll-bottom);
+  scroll-margin-top: var(--scroll-top);
 
   &:last-of-type {
     border-bottom: none;
