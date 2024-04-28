@@ -1,10 +1,12 @@
 #projects {
   #cards {
     display: flex;
-    row-gap: var(--s-m);
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--s-m);
 
     .project-card {
+      flex: 1 1 400px;
       background: var(--surface);
       padding: var(--s-xs) var(--s-m);
 
@@ -15,6 +17,12 @@
       }
 
       .tags {
+        display: flex;
+        column-gap: var(--s-2xs);
+        row-gap: var(--s-3xs);
+        flex-direction: row;
+        flex-wrap: wrap;
+
         span {
           border: var(--border) solid var(--iris);
           border-radius: var(--fs-0);

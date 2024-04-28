@@ -13,7 +13,7 @@ header {
   #mobile-menu-btn {
     display: flex;
     margin: var(--s-3xs);
-    padding: var(--s-3xs) var(--s-xs);
+    padding: var(--s-2xs);
     font-size: var(--fs-2);
   }
 
@@ -35,10 +35,6 @@ header {
     height: calc(100vh - var(--scroll-bottom) - var(--scroll-top));
     overflow: hidden;
 
-    label {
-      display: none;
-    }
-
     a {
       cursor: pointer;
       font-size: var(--fs-1);
@@ -54,7 +50,7 @@ header {
     }
   }
 
-  @media screen and (min-width: 1100px) {
+  @media screen and (min-width: 769px) {
     #mobile-menu-btn {
       display: none;
     }
@@ -63,21 +59,20 @@ header {
       all: unset;
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
-      gap: var(--s-s);
-
-      label {
-        all: unset;
-        font-weight: 900;
-        font-size: var(--fs-1);
-      }
 
       a {
         all: unset;
         cursor: pointer;
-        padding: var(--border) var(--s-s);
+        padding: var(--border) var(--s-2xs);
         user-select: none;
         text-decoration: none;
+
+        &:first-of-type {
+          padding-top: 0;
+          font-size: var(--fs-1);
+        }
 
         &:hover,
         &:active {

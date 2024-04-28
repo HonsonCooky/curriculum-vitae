@@ -152,7 +152,7 @@ button {
   flex-direction: row;
   align-items: center;
   cursor: pointer;
-  border: var(--border) solid var(--text);
+  border: var(--border) solid var(--muted);
   background-color: var(--surface);
   padding: var(--s-3xs) var(--s-m);
 
