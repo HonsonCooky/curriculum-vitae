@@ -1,0 +1,31 @@
+#projects {
+  #cards {
+    display: flex;
+    row-gap: var(--s-m);
+    flex-direction: column;
+
+    .project-card {
+      background: var(--surface);
+      padding: var(--s-xs) var(--s-m);
+
+      h3 {
+        margin-top: 0;
+        color: var(--gold);
+        font-size: var(--fs-2);
+      }
+
+      .tags {
+        span {
+          border: var(--border) solid var(--iris);
+          border-radius: var(--fs-0);
+          padding: 0 var(--s-m);
+        }
+      }
+
+      p {
+        background: var(--overlay);
+        padding: var(--s-3xs) var(--s-m);
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+#education {
+  h3 {
+    margin: 0;
+    color: var(--gold);
+    font-size: var(--fs-2);
+  }
+
+  ul {
+    padding: 0;
+
+    li {
+      margin-bottom: var(--s-s);
+      color: var(--text);
+      font-weight: 400;
+      font-size: var(--fs-0);
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    ul {
+      padding-left: var(--s-m);
+
+      li {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

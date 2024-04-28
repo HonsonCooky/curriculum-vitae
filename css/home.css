@@ -1,0 +1,22 @@
+#home {
+  display: flex;
+  row-gap: var(--s-l);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > table {
+    > caption {
+      > h3 {
+        font-weight: 900;
+        font-size: var(--fs-3);
+      }
+    }
+  }
+
+  > div {
+    display: flex;
+    column-gap: var(--s-m);
+    flex-direction: row;
+  }
+}

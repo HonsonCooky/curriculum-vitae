@@ -1,0 +1,11 @@
+#soft {
+  ul {
+    padding: 0 var(--s-m);
+
+    li {
+      &:not(:last-of-type) {
+        margin-bottom: var(--s-s);
+      }
+    }
+  }
+}
