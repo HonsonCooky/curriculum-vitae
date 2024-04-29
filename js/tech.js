@@ -3,7 +3,7 @@ function setupTechTables() {
   for (const table of tables) {
     const tds = table.querySelectorAll("td");
     for (const td of tds) {
-      td.addEventListener("click", function() {
+      td.addEventListener("click", function () {
         const checkbox = this.querySelector("input");
         checkbox.checked = !checkbox.checked;
       });
@@ -43,16 +43,13 @@ const btn = calcDiv.querySelector("button");
 
 const evaluationsTbl = {
   languages: {
-    description: `
-    Languages are the base for each technology. These are the biggest learning curves for most developers.
-    `,
+    description:
+      "Programming Languages are basis for all software development. Some languages are designed with very specific use-cases, others are more generic. However, each language has it's own flavor and idea",
+    notListedWarning: "Whilst programming languages are hard to learn, like other languages, learning",
   },
   environments: {
-    description: `
-    Programming Frameworks, Libraries and Environments are small extensions that build upon or extend programming 
-    languages. Often they add layers of abstraction that enable simplier development for complex use cases. Those listed
-    in this section are 
-    `,
+    description:
+      "Frameworks, Libraries, and Environments extend upon programming languages with abstractions or computations. These tools ",
   },
   tools: {
     description: "",
@@ -63,7 +60,7 @@ const evaluationsTbl = {
 };
 
 const evalDiv = calcDiv.querySelector("#evaluations-descriptions");
-btn.addEventListener("click", function() {
+btn.addEventListener("click", function () {
   const checked = getChecked();
 
   // Clear the evaluations
