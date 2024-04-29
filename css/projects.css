@@ -6,6 +6,8 @@
     gap: var(--s-m);
 
     .project-card {
+      display: flex;
+      flex-direction: column;
       flex: 1 1 400px;
       background: var(--surface);
       padding: var(--s-xs) var(--s-m);
@@ -18,21 +20,23 @@
 
       .tags {
         display: flex;
-        column-gap: var(--s-2xs);
-        row-gap: var(--s-3xs);
-        flex-direction: row;
         flex-wrap: wrap;
+        flex-direction: row;
 
         span {
           border: var(--border) solid var(--iris);
           border-radius: var(--fs-0);
           padding: 0 var(--s-m);
+          margin: var(--s-3xs);   
         }
       }
 
       p {
-        background: var(--overlay);
-        padding: var(--s-3xs) var(--s-m);
+        flex: 1;
+        border-bottom: var(--border) solid var(--muted);
+        border-top: var(--border) solid var(--muted);
+        padding-top: var(--s-m);
+        padding-bottom: var(--s-m);
       }
     }
   }
