@@ -44,12 +44,13 @@ const btn = calcDiv.querySelector("button");
 const evaluationsTbl = {
   languages: {
     description:
-      "Programming Languages are basis for all software development. Some languages are designed with very specific use-cases, others are more generic. However, each language has it's own flavor and idea",
-    notListedWarning: "Whilst programming languages are hard to learn, like other languages, learning",
+      "Programming Languages are basis for all software development. Some languages are designed with very specific use-cases, others are more generic. However, each language has it's own flavor and specialization spaces. Confidence meteres below take into account keywords, underlying architectures, and an understanding of where and when to use said language.",
+    notListedWarning:
+      "Whilst programming languages are hard to learn, my diverse experience with many flavors, makes understanding how to, and picking up new langauges a lot easier",
   },
   environments: {
     description:
-      "Frameworks, Libraries, and Environments extend upon programming languages with abstractions or computations. These tools ",
+      "Frameworks, Libraries, and Programming Environments are extensions (or execution environments) that enable make programming languages real weapons. They tend to be easier to learn and adapt to, but sophisticated extensions can certainly be more difficult to learn.",
   },
   tools: {
     description: "",
