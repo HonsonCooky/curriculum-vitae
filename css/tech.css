@@ -1,5 +1,5 @@
 #tech {
-  > p {
+  >p {
     margin-bottom: var(--s-xl);
   }
 
@@ -45,7 +45,7 @@
       grid-area: de;
     }
 
-    #calculations {
+    #evaluations {
       display: flex;
       row-gap: var(--border);
       grid-area: calc;
@@ -76,6 +76,10 @@
         justify-content: center;
         font-size: var(--fs--1);
         text-align: center;
+      }
+
+      .hidden {
+        display: none;
       }
     }
 

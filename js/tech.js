@@ -38,15 +38,21 @@ setTimeout(setupTechTables, 0);
 Calculations
 ----------------------------------------------------------------------------------------------------------------------*/
 
-const parent = document.getElementById("calculations");
-const btn = parent.querySelector("button");
+const calcDiv = document.getElementById("evaluations");
+const btn = calcDiv.querySelector("button");
 
-const evaluations = {
+const evaluationsTbl = {
   languages: {
-    description: "",
+    description: `
+    Languages are the base for each technology. These are the biggest learning curves for most developers.
+    `,
   },
   environments: {
-    description: "",
+    description: `
+    Programming Frameworks, Libraries and Environments are small extensions that build upon or extend programming 
+    languages. Often they add layers of abstraction that enable simplier development for complex use cases. Those listed
+    in this section are 
+    `,
   },
   tools: {
     description: "",
@@ -56,10 +62,28 @@ const evaluations = {
   },
 };
 
+const evalDiv = calcDiv.querySelector("#evaluations-descriptions");
 btn.addEventListener("click", function() {
   const checked = getChecked();
-  for (const key of Object.keys(checked)) {
-    const evals = evaluations[key];
-    console.log(key, checked[key]);
+
+  // Clear the evaluations
+  evalDiv.innerHTML = "";
+
+  // For each of the sections that have some selection
+  for (const k of Object.keys(checked)) {
+    const section = document.createElement("section");
+    const evalTbl = evaluationsTbl[k];
+
+    const sectionTitle = document.createElement("h3");
+    sectionTitle.innerHTML = k.charAt(0).toUpperCase() + k.slice(1);
+    section.appendChild(sectionTitle);
+
+    const sectionDesc = document.createElement("p");
+    sectionDesc.innerHTML = evalTbl.description;
+    section.appendChild(sectionDesc);
+
+    // For each of the selected technologies
+
+    evalDiv.appendChild(section);
   }
 });
