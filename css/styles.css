@@ -127,6 +127,11 @@ strong {
   }
 }
 
+p,
+li {
+  line-height: 1.5;
+}
+
 ul {
   list-style-type: square;
 }
@@ -163,6 +168,7 @@ button {
 }
 
 code.inline {
+  box-decoration-break: clone;
   border-radius: var(--border);
   background: var(--text);
   padding: 0 var(--s-2xs);
