@@ -44,9 +44,9 @@ const btn = calcDiv.querySelector("button");
 const evaluationsTbl = {
   languages: {
     description:
-      "Programming Languages are basis for all software development. Some languages are designed with very specific use-cases, others are more generic. However, each language has it's own flavor and specialization spaces. Confidence meters below take into account keywords, underlying architectures, and an understanding of where and when to use said language.",
-    notListedWarning:
-      "Whilst programming languages are hard to learn, my diverse experience across many languages has enabled me the ability to find similarities, and pick up on ",
+      "Programming Languages are basis for all software development. Confidence meters below take into account knowledge of keywords, fundamental data types, naming conventions, file structures, and general philosophies.",
+    warning:
+      "In my journey as a developer, I've found that while programming languages can be quite daunting to learn at first, my extensive experience has revealed a pattern of similarities among them. This insight has made it increasingly easier for me to adapt and quickly pick up new languages.",
   },
   environments: {
     description:

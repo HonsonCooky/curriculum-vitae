@@ -9,6 +9,7 @@
       display: flex;
       flex: 1 1 400px;
       flex-direction: column;
+      border: var(--border) solid var(--muted);
       background: var(--surface);
       padding: var(--s-xs) var(--s-m);
 
@@ -35,10 +36,25 @@
 
       p {
         flex: 1;
+        margin: var(--s-xs) 0;
         border-top: var(--border) solid var(--muted);
-        border-bottom: var(--border) solid var(--muted);
         padding-top: var(--s-m);
         padding-bottom: var(--s-m);
+      }
+
+      &:has(> .links) {
+        p {
+          border-bottom: var(--border) solid var(--muted);
+        }
+      }
+
+      .links {
+        min-height: var(--fs-2);
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        width: 100%;
+        column-gap: var(--s-s);
       }
     }
   }
