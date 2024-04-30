@@ -11,3 +11,6 @@ contactBtn.addEventListener("click", () => {
 });
 
 const resumeBtn = document.getElementById("resume-btn");
+resumeBtn.addEventListener("click", function () {
+  window.open("../assets/docs/HarrisonCooksCV.pdf");
+});

@@ -9,6 +9,7 @@ header {
   border-bottom: var(--border) solid var(--text);
   background: var(--base);
   padding: var(--s-3xs) var(--s-m);
+  font-family: monospace;
 
   #mobile-menu-btn {
     display: flex;

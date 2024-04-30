@@ -64,8 +64,12 @@
       div {
         flex: 1;
         border: var(--border) solid var(--muted);
-        padding: var(--s-m);
+        padding: 0 var(--s-m);
         overflow-y: auto;
+
+        section {
+          padding: 0;
+        }
 
         @media screen and (min-width: 769px) {
           min-height: 0;
