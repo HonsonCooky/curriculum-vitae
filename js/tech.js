@@ -79,6 +79,30 @@ btn.addEventListener("click", function () {
     sectionDesc.innerHTML = evalTbl.description;
     section.appendChild(sectionDesc);
 
+    const evals = evaluationsTbl[k].items;
+    const evalKeys = Object.keys(evals).filter((j) => checkedItems.includes(j));
+    const outerUl = document.createElement("ul");
+    for (const j of evalKeys) {
+      const metrics = Object.keys(evals[j]);
+      const outerLi = document.createElement("li");
+      outerLi.innerHTML = j;
+
+      const innerUl = document.createElement("ul");
+      for (const m of metrics) {
+        const innerLi = document.createElement("li");
+        const strong = document.createElement("strong");
+        strong.innerHTML = `${m}: `;
+        const text = document.createTextNode(evals[j][m]);
+        innerLi.appendChild(strong);
+        innerLi.appendChild(text);
+        innerUl.appendChild(innerLi);
+      }
+
+      outerLi.appendChild(innerUl);
+      outerUl.appendChild(outerLi);
+    }
+
+    section.appendChild(outerUl);
     evalDiv.appendChild(section);
   }
 });
