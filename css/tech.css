@@ -1,5 +1,5 @@
 #tech {
-  >p {
+  > p {
     margin-bottom: var(--s-xl);
   }
 
@@ -7,7 +7,7 @@
     display: grid;
     grid-template-areas: "pl" "si" "do" "de" "calc";
     column-gap: var(--s-s);
-    row-gap: var(--s-m);
+    row-gap: var(--s-s);
 
     table {
       tr {
@@ -53,7 +53,7 @@
       justify-content: end;
       border: var(--border) solid var(--muted);
       padding: var(--border);
-      height: 267.2px;
+      max-height: 40dvh;
 
       label {
         padding-left: var(--s-3xs);
@@ -69,6 +69,17 @@
 
         section {
           padding: 0;
+
+          h3 {
+            margin-bottom: 0;
+            color: var(--gold);
+          }
+
+          .items {
+            margin: 0;
+            color: var(--muted);
+            font-style: italic;
+          }
         }
 
         @media screen and (min-width: 769px) {
@@ -90,9 +101,9 @@
     @media screen and (min-width: 769px) {
       grid-template-columns: 1fr 2fr;
       grid-template-areas:
-        "pl si"
+        "pl do"
         "pl de"
-        "do calc";
+        "si calc";
     }
   }
 }

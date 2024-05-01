@@ -20,7 +20,7 @@ function getChecked() {
       const span = td.querySelector("span");
       const checkbox = td.querySelector("input");
       if (checkbox.checked) {
-        const itemId = span.innerText.toLowerCase().replace(".", " ").trim().replace(/[\s-]/g, "_");
+        const itemId = span.innerText;
         checkedCells.push(itemId);
       }
     }
@@ -63,24 +63,41 @@ const evaluationsTbl = {
 const evalDiv = calcDiv.querySelector("#evaluations-descriptions");
 btn.addEventListener("click", function () {
   const checked = getChecked();
+  const checkedKeys = Object.keys(checked);
 
   // Clear the evaluations
   evalDiv.innerHTML = "";
 
+  if (checkedKeys.length === 0) {
+    const errorMsg = document.createElement("span");
+    errorMsg.style.color = "var(--love)";
+    errorMsg.style.fontStyle = "italic";
+    errorMsg.innerHTML = "Nothing selected";
+    evalDiv.appendChild(errorMsg);
+    return;
+  }
+
   // For each of the sections that have some selection
-  for (const k of Object.keys(checked)) {
+  for (const k of checkedKeys) {
     const section = document.createElement("section");
+    const checkedItems = checked[k];
     const evalTbl = evaluationsTbl[k];
 
     const sectionTitle = document.createElement("h3");
     sectionTitle.innerHTML = k.charAt(0).toUpperCase() + k.slice(1);
     section.appendChild(sectionTitle);
 
+    const selectedItems = document.createElement("p");
+    selectedItems.className = "items";
+    selectedItems.innerHTML = checkedItems.filter((s) => s != "Not Listed").join(", ");
+    section.appendChild(selectedItems);
+
     const sectionDesc = document.createElement("p");
+    sectionDesc.className = "description";
     sectionDesc.innerHTML = evalTbl.description;
     section.appendChild(sectionDesc);
 
-    // For each of the selected technologies
+    const evals = evalTbl.filter();
 
     evalDiv.appendChild(section);
   }
