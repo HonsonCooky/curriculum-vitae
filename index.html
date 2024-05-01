@@ -15,12 +15,12 @@
     <link rel="stylesheet" type="text/css" href="./css/projects.css" />
     <link rel="stylesheet" type="text/css" href="./css/blogs.css" />
     <link rel="stylesheet" type="text/css" href="./css/footer.css" />
-    <script src="./js/theme.js" defer></script>
-    <script src="./js/css.js" defer></script>
-    <script src="./js/header.js" defer></script>
-    <script src="./js/home.js" defer></script>
-    <script src="./js/about.js" defer></script>
-    <script src="./js/tech.js" defer></script>
+    <script type="module" src="./js/theme.js" defer></script>
+    <script type="module" src="./js/css.js" defer></script>
+    <script type="module" src="./js/header.js" defer></script>
+    <script type="module" src="./js/home.js" defer></script>
+    <script type="module" src="./js/about.js" defer></script>
+    <script type="module" src="./js/tech.js" defer></script>
   </head>
 
   <body>
@@ -226,9 +226,11 @@
     <section id="tech">
       <h1>Technical Toolbox</h1>
       <p>
-        Below is a selection of technologies I have some level of experience with. Select technologies you're interested
-        in, and calculate how compatable I am with the tech-stack you're curious about. Each option also allows you to
-        take into account if the technology is not something I have experience with.
+        Below is a selection of technologies I have some level of experience with. You can select technologies you're
+        interested in, and calculate how compatible I am with the tech-stack you're curious about.
+        <code class="inline">confidence</code> metrics are explained per section, <code class="inline">desire</code> is
+        my ambition to work with said technology, and <code class="inline">experience</code> outlines my practical
+        application of the technology.
       </p>
       <div id="tables">
         <table id="languages">
@@ -243,14 +245,14 @@
           </tr>
           <tr>
             <td>
-              <input title="c#-check" type="checkbox" />
-              <span>C#</span>
+              <input title="c++-check" type="checkbox" />
+              <span>C++</span>
             </td>
           </tr>
           <tr>
             <td>
-              <input title="c++-check" type="checkbox" />
-              <span>C++</span>
+              <input title="c#-check" type="checkbox" />
+              <span>C#</span>
             </td>
           </tr>
           <tr>
@@ -313,12 +315,6 @@
               <span>TypeScript</span>
             </td>
           </tr>
-          <tr>
-            <td>
-              <input title="not-listed-check" type="checkbox" />
-              <span>Not Listed</span>
-            </td>
-          </tr>
         </table>
         <table id="environments">
           <tr>
@@ -372,12 +368,6 @@
               <span>Webpack</span>
             </td>
           </tr>
-          <tr>
-            <td>
-              <input title="not-listed-check" type="checkbox" />
-              <span>Not Listed</span>
-            </td>
-          </tr>
         </table>
         <table id="devops">
           <tr>
@@ -419,12 +409,6 @@
               <span>Terraform</span>
             </td>
           </tr>
-          <tr>
-            <td>
-              <input title="not-listed-check" type="checkbox" />
-              <span>Not Listed</span>
-            </td>
-          </tr>
         </table>
         <table id="tools">
           <tr>
@@ -452,12 +436,6 @@
             <td>
               <input title="visual-studio-code-check" type="checkbox" />
               <span>Visual Studio Code</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="not-listed-check" type="checkbox" />
-              <span>Not Listed</span>
             </td>
           </tr>
         </table>

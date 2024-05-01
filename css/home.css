@@ -6,16 +6,16 @@
   align-items: center;
   padding-top: 0;
 
-  >table {
-    >caption {
-      >h3 {
+  > table {
+    > caption {
+      > h3 {
         font-weight: 900;
         font-size: var(--fs-3);
       }
     }
   }
 
-  >div {
+  > div {
     display: flex;
     column-gap: var(--s-m);
     flex-direction: row;

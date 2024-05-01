@@ -138,6 +138,10 @@ strong {
   }
 }
 
+a {
+  font-family: monospace;
+}
+
 ul {
   list-style-type: square;
 }

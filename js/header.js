@@ -1,9 +1,9 @@
-// header variable declared in ./css.js
+const header = document.querySelector("header");
 
 const mobileBtn = document.getElementById("mobile-menu-btn");
 const headerLinks = document.getElementById("menu-links").querySelectorAll("a");
 
-mobileBtn.addEventListener("click", function() {
+mobileBtn.addEventListener("click", function () {
   if (header.classList.contains("open")) {
     header.classList.remove("open");
   } else {
@@ -12,11 +12,11 @@ mobileBtn.addEventListener("click", function() {
 });
 
 for (const navLink of headerLinks) {
-  navLink.addEventListener("click", function() {
+  navLink.addEventListener("click", function () {
     header.classList.remove("open");
   });
 }
 
-window.addEventListener("resize", function() {
+window.addEventListener("resize", function () {
   header.classList.remove("open");
 });

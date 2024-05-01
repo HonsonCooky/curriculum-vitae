@@ -40,25 +40,7 @@ Calculations
 
 const calcDiv = document.getElementById("evaluations");
 const btn = calcDiv.querySelector("button");
-
-const evaluationsTbl = {
-  languages: {
-    description:
-      "Programming Languages are basis for all software development. Confidence meters below take into account knowledge of keywords, fundamental data types, naming conventions, file structures, and general philosophies.",
-    warning:
-      "In my journey as a developer, I've found that while programming languages can be quite daunting to learn at first, my extensive experience has revealed a pattern of similarities among them. This insight has made it increasingly easier for me to adapt and quickly pick up new languages.",
-  },
-  environments: {
-    description:
-      "Frameworks, Libraries, and Programming Environments are extensions (or execution environments) that enable make programming languages real weapons. They tend to be easier to learn and adapt to, but sophisticated extensions can certainly be more difficult to learn.",
-  },
-  tools: {
-    description: "",
-  },
-  devops: {
-    description: "",
-  },
-};
+import { evaluationsTbl } from "./tech-evaluations.js";
 
 const evalDiv = calcDiv.querySelector("#evaluations-descriptions");
 btn.addEventListener("click", function () {
@@ -89,15 +71,13 @@ btn.addEventListener("click", function () {
 
     const selectedItems = document.createElement("p");
     selectedItems.className = "items";
-    selectedItems.innerHTML = checkedItems.filter((s) => s != "Not Listed").join(", ");
+    selectedItems.innerHTML = checkedItems.join(", ");
     section.appendChild(selectedItems);
 
     const sectionDesc = document.createElement("p");
     sectionDesc.className = "description";
     sectionDesc.innerHTML = evalTbl.description;
     section.appendChild(sectionDesc);
-
-    const evals = evalTbl.filter();
 
     evalDiv.appendChild(section);
   }

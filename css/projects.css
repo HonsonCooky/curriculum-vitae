@@ -49,12 +49,12 @@
       }
 
       .links {
-        min-height: var(--fs-2);
         display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        width: 100%;
         column-gap: var(--s-s);
+        flex-direction: row;
+        width: 100%;
+        min-height: var(--fs-2);
+        overflow-x: auto;
       }
     }
   }
