@@ -1,52 +1,52 @@
 export const evaluationsTbl = {
   languages: {
     description:
-      "Programming Languages are basis for all software development. Confidence metrics below reflect my familiarity with each language's keywords, data types, conventions, and overarching philosophies",
+      "Programming Languages are basis for all software development. Confidence metrics below reflect my familiarity with each language's keywords, data types, conventions, and overarching philosophies.",
     items: {
       C: {
-        confidence: 4,
-        desire: 8,
+        confidence: 3,
+        desire: 10,
         experience: ["Educational"],
       },
       "C++": {
-        confidence: 4,
-        desire: 8,
+        confidence: 3,
+        desire: 10,
         experience: ["Educational"],
       },
       "C#": {
-        confidence: 4,
+        confidence: 6,
         desire: 8,
         experience: ["Professional"],
       },
       CSS: {
-        confidence: 4,
-        desire: 8,
-        experience: ["Professional"],
+        confidence: 8,
+        desire: 6,
+        experience: ["Professional", "Educational", "Personal"],
       },
       Dart: {
-        confidence: 4,
-        desire: 8,
-        experience: ["Professional"],
+        confidence: 6,
+        desire: 4,
+        experience: ["Professional", "Personal"],
       },
       "F#": {
         confidence: 4,
-        desire: 8,
-        experience: ["Professional"],
+        desire: 7,
+        experience: ["Educational"],
       },
       HTML: {
         confidence: 4,
         desire: 8,
-        experience: ["Professional"],
+        experience: ["Professional", "Educational", "Personal"],
       },
       Java: {
         confidence: 4,
-        desire: 8,
-        experience: ["Professional"],
+        desire: 6,
+        experience: ["Educational"],
       },
       JavaScript: {
-        confidence: 4,
-        desire: 8,
-        experience: ["Professional"],
+        confidence: 10,
+        desire: 4,
+        experience: ["Professional", "Educational", "Personal"],
       },
       Lua: {
         confidence: 4,

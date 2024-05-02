@@ -1,5 +1,5 @@
 #tech {
-  > p {
+  >p {
     margin-bottom: var(--s-xl);
   }
 
@@ -53,7 +53,6 @@
       justify-content: end;
       border: var(--border) solid var(--muted);
       padding: var(--border);
-      max-height: 40dvh;
 
       label {
         padding-left: var(--s-3xs);
@@ -61,7 +60,7 @@
         font-size: var(--fs--1);
       }
 
-      div {
+      #evaluation-descriptions {
         flex: 1;
         border: var(--border) solid var(--muted);
         padding: 0 var(--s-m);
@@ -87,14 +86,19 @@
         }
       }
 
-      button {
-        justify-content: center;
-        font-size: var(--fs--1);
-        text-align: center;
-      }
+      #evaluation-actions {
+        display: flex;
+        flex-direction: row;
 
-      .hidden {
-        display: none;
+        button {
+          justify-content: center;
+          font-size: var(--fs--1);
+          text-align: center;
+
+          &:first-of-type {
+            flex: 1;
+          }
+        }
       }
     }
 

@@ -1,9 +1,11 @@
+import { evaluationsTbl } from "./tech-evaluations.js";
+
 const tables = document.getElementById("tables").querySelectorAll("table");
 function setupTechTables() {
   for (const table of tables) {
     const tds = table.querySelectorAll("td");
     for (const td of tds) {
-      td.addEventListener("click", function () {
+      td.addEventListener("click", function() {
         const checkbox = this.querySelector("input");
         checkbox.checked = !checkbox.checked;
       });
@@ -32,18 +34,40 @@ function getChecked() {
   return checked;
 }
 
+function resetChecked() {
+  for (const table of tables) {
+    const tds = table.querySelectorAll("td");
+    for (const td of tds) {
+      const checkbox = td.querySelector("input");
+      checkbox.checked = false;
+    }
+  }
+}
+
 setTimeout(setupTechTables, 0);
 
 /**---------------------------------------------------------------------------------------------------------------------
 Calculations
 ----------------------------------------------------------------------------------------------------------------------*/
 
-const calcDiv = document.getElementById("evaluations");
-const btn = calcDiv.querySelector("button");
-import { evaluationsTbl } from "./tech-evaluations.js";
+const evaluationsDiv = document.getElementById("evaluations");
+const actions = document.getElementById("evaluation-actions");
 
-const evalDiv = calcDiv.querySelector("#evaluations-descriptions");
-btn.addEventListener("click", function () {
+function setEvaluationHeight() {
+  if (window.matchMedia("(min-width: 769px)").matches) {
+    const envTbl = getComputedStyle(Array.from(tables).filter((t) => t.id === "environments")[0]);
+    if (evaluationsDiv.style.height != envTbl.height) evaluationsDiv.style.height = envTbl.height;
+  } else {
+    if (evaluationsDiv.style.height != "30dvh") evaluationsDiv.style.height = "30dvh";
+  }
+}
+
+const resetBtn = actions.querySelector("#reset");
+resetBtn.addEventListener("click", resetChecked);
+
+const evalDiv = evaluationsDiv.querySelector("#evaluation-descriptions");
+const evalBtn = actions.querySelector("#evaluate");
+evalBtn.addEventListener("click", function() {
   const checked = getChecked();
   const checkedKeys = Object.keys(checked);
 
@@ -59,8 +83,20 @@ btn.addEventListener("click", function () {
     return;
   }
 
+  // Create the overview section (filled in later);
+  const overview = document.createElement("section");
+  const overviewTitle = document.createElement("h3");
+  overviewTitle.innerHTML = "Overview";
+  const overviewDesc = document.createElement("p");
+  overviewDesc.innerHTML = `<code class="inline">confidence</code> metrics are explained per section, <code class="inline">desire</code> is my ambition to work with said technology, and <code class="inline">experience</code> outlines my practical application of the technology.`;
+  overview.appendChild(overviewTitle);
+  overview.appendChild(overviewDesc);
+  evalDiv.appendChild(overview);
+  const overviewData = {};
+
   // For each of the sections that have some selection
   for (const k of checkedKeys) {
+    // Table Section
     const section = document.createElement("section");
     const checkedItems = checked[k];
     const evalTbl = evaluationsTbl[k];
@@ -79,6 +115,7 @@ btn.addEventListener("click", function () {
     sectionDesc.innerHTML = evalTbl.description;
     section.appendChild(sectionDesc);
 
+    // Evaluations
     const evals = evaluationsTbl[k].items;
     const evalKeys = Object.keys(evals).filter((j) => checkedItems.includes(j));
     const outerUl = document.createElement("ul");
@@ -89,13 +126,18 @@ btn.addEventListener("click", function () {
 
       const innerUl = document.createElement("ul");
       for (const m of metrics) {
+        const value = evals[j][m];
         const innerLi = document.createElement("li");
         const strong = document.createElement("strong");
         strong.innerHTML = `${m}: `;
-        const text = document.createTextNode(evals[j][m]);
+        const text = document.createTextNode(value);
         innerLi.appendChild(strong);
         innerLi.appendChild(text);
         innerUl.appendChild(innerLi);
+
+        if (typeof value === "number") {
+          overviewData[m] = (overviewData[m] ?? 0) + value;
+        }
       }
 
       outerLi.appendChild(innerUl);
@@ -105,4 +147,9 @@ btn.addEventListener("click", function () {
     section.appendChild(outerUl);
     evalDiv.appendChild(section);
   }
+
+  console.log(overviewData);
 });
+
+window.addEventListener("resize", setEvaluationHeight);
+setEvaluationHeight();
