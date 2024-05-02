@@ -66,23 +66,83 @@
         padding: 0 var(--s-m);
         overflow-y: auto;
 
-        section {
-          padding: 0;
+        .eval-container {
+          padding: var(--s-l) var(--s-xs);
 
-          h3 {
-            margin-bottom: 0;
-            color: var(--gold);
+          &:first-of-type {
+            padding-top: var(--s-m);
           }
 
-          .items {
+          .eval-title {
+            position: sticky;
+            top: 0;
             margin: 0;
-            color: var(--muted);
-            font-style: italic;
+            background: var(--base);
+            color: var(--gold);
+            font-size: var(--fs-2);
           }
         }
 
-        @media screen and (min-width: 769px) {
-          min-height: 0;
+        .eval-subsection {
+          .eval-item-id {
+            margin-bottom: 0;
+            color: var(--iris);
+            font-size: var(--fs-1);
+          }
+
+          .eval-item-stats {
+            display: flex;
+            row-gap: var(--s-3xs);
+            flex-direction: column;
+            background: var(--surface);
+            padding: var(--s-2xs) 0;
+          }
+        }
+
+        .eval-items {
+          display: flex;
+          flex-direction: column;
+
+          .eval-stat-card {
+            display: flex;
+            column-gap: var(--s-xs);
+            flex-direction: row;
+            justify-content: space-between;
+            background: var(--surface);
+            padding: 0 var(--s-m);
+
+            .eval-stat-header {
+              width: calc(var(--fs-0) * 6);
+              font-weight: 300;
+            }
+
+            .eval-stat-graph {
+              display: none;
+              column-gap: var(--s-3xs);
+              flex: 1;
+              flex-direction: row;
+              padding: var(--s-3xs) var(--s-s);
+
+              @media screen and (min-width: 400px) {
+                display: flex;
+              }
+
+              .indicator {
+                flex: 1;
+                border: var(--border) solid var(--text);
+                background: var(--muted);
+
+                &.on {
+                  background: var(--text);
+                }
+              }
+            }
+
+            .eval-stat-value {
+              min-width: calc(var(--fs-0) * 2);
+              text-align: end;
+            }
+          }
         }
       }
 

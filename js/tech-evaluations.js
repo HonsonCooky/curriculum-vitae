@@ -116,7 +116,7 @@ export const evaluationsTbl = {
       },
     },
   },
-  tools: {
+  devops: {
     description:
       "Programming tools are utilized to deliver and develop programs. Confidence metrics provided are an indication of my familiarity and ability to navigate respective tools.",
     items: {
@@ -152,7 +152,7 @@ export const evaluationsTbl = {
       },
     },
   },
-  devops: {
+  tools: {
     description:
       "DevOps tools collectively empower developers with cloud computing resources, workflow automation, and infrastructure management through code. Confidence metrics below reflect my familiarity with each tool, which includes deployments, management and maintenance.",
     items: {

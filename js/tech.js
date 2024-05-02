@@ -1,4 +1,4 @@
-import { evaluationsTbl } from "./tech-evaluations.js";
+import { evaluationsTbl as evalTbls } from "./tech-evaluations.js";
 
 const tables = document.getElementById("tables").querySelectorAll("table");
 function setupTechTables() {
@@ -14,7 +14,7 @@ function setupTechTables() {
 }
 
 function getChecked() {
-  const checked = [];
+  const checked = {};
   for (const table of tables) {
     const checkedCells = [];
     const tds = table.querySelectorAll("td");
@@ -50,106 +50,137 @@ setTimeout(setupTechTables, 0);
 Calculations
 ----------------------------------------------------------------------------------------------------------------------*/
 
-const evaluationsDiv = document.getElementById("evaluations");
+const evalDiv = document.getElementById("evaluations");
+const evalDescDiv = evalDiv.querySelector("#evaluation-descriptions");
 const actions = document.getElementById("evaluation-actions");
+
+function clearDesc() {
+  evalDescDiv.innerHTML = "";
+}
+
+const resetBtn = actions.querySelector("#reset");
+resetBtn.addEventListener("click", function() {
+  clearDesc();
+  resetChecked();
+});
+
+const evalBtn = actions.querySelector("#evaluate");
+evalBtn.addEventListener("click", function() {
+  evalDescDiv.classList.add("loading");
+  const errorTemplate = document.getElementById("eval-error");
+  const sectionTemplate = document.getElementById("eval-section");
+  const subsectionTemplate = document.getElementById("eval-subsection");
+  const statCardTemplate = document.getElementById("eval-stat-card");
+
+  const overviewDataHold = {};
+
+  function renderErrorMsg() {
+    evalDescDiv.appendChild(errorTemplate.content.cloneNode(true));
+  }
+
+  let overviewElement;
+  function renderOverviewSection() {
+    const template = sectionTemplate.content.cloneNode(true);
+    template.querySelector(".eval-title").innerHTML = "Overview";
+    template.querySelector(".eval-desc").innerHTML = `<code class="inline">Confidence</code> metrics are explained per
+    section, <code class="inline">Desire</code> is my ambition to work with said technology, and <code
+    class="inline">Experience</code> outlines my practical application of the technology.`;
+
+    overviewElement = template.querySelector(".eval-items");
+    evalDescDiv.appendChild(template);
+  }
+
+  function loadOverviewData() {
+    if (!overviewElement) return;
+
+    for (const [k, v] of Object.entries(overviewDataHold)) {
+      const statCard = statCardTemplate.content.cloneNode(true);
+      statCard.querySelector(".eval-stat-header").innerHTML = k;
+
+      const avg = v.confidence / v.count;
+      statCard.querySelector(".eval-stat-value").innerHTML = avg;
+
+      const indicators = statCard.querySelector(".eval-stat-graph").children;
+      for (let i = 0; i < avg; i++) indicators[i].classList.add("on");
+
+      overviewElement.appendChild(statCard);
+    }
+  }
+
+  function renderEvaluations(sectionId, description, evaluations) {
+    const template = sectionTemplate.content.cloneNode(true);
+    template.querySelector(".eval-title").innerHTML = sectionId.charAt(0).toUpperCase() + sectionId.slice(1);
+    template.querySelector(".eval-desc").innerHTML = description;
+
+    overviewDataHold[sectionId] = {};
+    for (const evaluation of evaluations) {
+      renderEvaluation(evaluation, sectionId, template.querySelector(".eval-items"));
+    }
+
+    evalDescDiv.appendChild(template);
+  }
+
+  function renderEvaluation(evaluation, sectionId, parent) {
+    const subsection = subsectionTemplate.content.cloneNode(true);
+    subsection.querySelector(".eval-item-id").innerHTML = evaluation.name;
+
+    overviewDataHold[sectionId]["count"] = (overviewDataHold[sectionId]["count"] ?? 0) + 1;
+
+    const statsSection = subsection.querySelector(".eval-item-stats");
+    for (const [k, v] of Object.entries(evaluation.items)) {
+      const statCard = statCardTemplate.content.cloneNode(true);
+      statCard.querySelector(".eval-stat-header").innerHTML = k;
+      statCard.querySelector(".eval-stat-value").innerHTML = v;
+
+      if (typeof v === "number") {
+        const indicators = statCard.querySelector(".eval-stat-graph").children;
+        for (let i = 0; i < v; i++) indicators[i].classList.add("on");
+        overviewDataHold[sectionId][k] = (overviewDataHold[sectionId][k] ?? 0) + v;
+      } else {
+        statCard.querySelector("div").removeChild(statCard.querySelector(".eval-stat-graph"));
+      }
+
+      statsSection.appendChild(statCard);
+    }
+
+    parent.appendChild(subsection);
+  }
+
+  function loadEvaluations() {
+    const checkedTbls = getChecked();
+    const checkedKeys = Object.keys(checkedTbls);
+
+    clearDesc();
+
+    if (checkedKeys.length === 0) {
+      renderErrorMsg();
+      return;
+    }
+
+    renderOverviewSection();
+
+    for (const k of checkedKeys) {
+      const checkedItems = checkedTbls[k];
+      const content = evalTbls[k];
+      const evaluations = checkedItems.map((s) => Object({ items: content.items[s], name: s }));
+      renderEvaluations(k, content.description, evaluations);
+    }
+
+    loadOverviewData();
+    evalDescDiv.classList.remove("loading");
+  }
+
+  setTimeout(loadEvaluations, 0);
+});
 
 function setEvaluationHeight() {
   if (window.matchMedia("(min-width: 769px)").matches) {
     const envTbl = getComputedStyle(Array.from(tables).filter((t) => t.id === "environments")[0]);
-    if (evaluationsDiv.style.height != envTbl.height) evaluationsDiv.style.height = envTbl.height;
+    if (evalDiv.style.height != envTbl.height) evalDiv.style.height = envTbl.height;
   } else {
-    if (evaluationsDiv.style.height != "30dvh") evaluationsDiv.style.height = "30dvh";
+    if (evalDiv.style.height != "30dvh") evalDiv.style.height = "30dvh";
   }
 }
-
-const resetBtn = actions.querySelector("#reset");
-resetBtn.addEventListener("click", resetChecked);
-
-const evalDiv = evaluationsDiv.querySelector("#evaluation-descriptions");
-const evalBtn = actions.querySelector("#evaluate");
-evalBtn.addEventListener("click", function() {
-  const checked = getChecked();
-  const checkedKeys = Object.keys(checked);
-
-  // Clear the evaluations
-  evalDiv.innerHTML = "";
-
-  if (checkedKeys.length === 0) {
-    const errorMsg = document.createElement("span");
-    errorMsg.style.color = "var(--love)";
-    errorMsg.style.fontStyle = "italic";
-    errorMsg.innerHTML = "Nothing selected";
-    evalDiv.appendChild(errorMsg);
-    return;
-  }
-
-  // Create the overview section (filled in later);
-  const overview = document.createElement("section");
-  const overviewTitle = document.createElement("h3");
-  overviewTitle.innerHTML = "Overview";
-  const overviewDesc = document.createElement("p");
-  overviewDesc.innerHTML = `<code class="inline">confidence</code> metrics are explained per section, <code class="inline">desire</code> is my ambition to work with said technology, and <code class="inline">experience</code> outlines my practical application of the technology.`;
-  overview.appendChild(overviewTitle);
-  overview.appendChild(overviewDesc);
-  evalDiv.appendChild(overview);
-  const overviewData = {};
-
-  // For each of the sections that have some selection
-  for (const k of checkedKeys) {
-    // Table Section
-    const section = document.createElement("section");
-    const checkedItems = checked[k];
-    const evalTbl = evaluationsTbl[k];
-
-    const sectionTitle = document.createElement("h3");
-    sectionTitle.innerHTML = k.charAt(0).toUpperCase() + k.slice(1);
-    section.appendChild(sectionTitle);
-
-    const selectedItems = document.createElement("p");
-    selectedItems.className = "items";
-    selectedItems.innerHTML = checkedItems.join(", ");
-    section.appendChild(selectedItems);
-
-    const sectionDesc = document.createElement("p");
-    sectionDesc.className = "description";
-    sectionDesc.innerHTML = evalTbl.description;
-    section.appendChild(sectionDesc);
-
-    // Evaluations
-    const evals = evaluationsTbl[k].items;
-    const evalKeys = Object.keys(evals).filter((j) => checkedItems.includes(j));
-    const outerUl = document.createElement("ul");
-    for (const j of evalKeys) {
-      const metrics = Object.keys(evals[j]);
-      const outerLi = document.createElement("li");
-      outerLi.innerHTML = j;
-
-      const innerUl = document.createElement("ul");
-      for (const m of metrics) {
-        const value = evals[j][m];
-        const innerLi = document.createElement("li");
-        const strong = document.createElement("strong");
-        strong.innerHTML = `${m}: `;
-        const text = document.createTextNode(value);
-        innerLi.appendChild(strong);
-        innerLi.appendChild(text);
-        innerUl.appendChild(innerLi);
-
-        if (typeof value === "number") {
-          overviewData[m] = (overviewData[m] ?? 0) + value;
-        }
-      }
-
-      outerLi.appendChild(innerUl);
-      outerUl.appendChild(outerLi);
-    }
-
-    section.appendChild(outerUl);
-    evalDiv.appendChild(section);
-  }
-
-  console.log(overviewData);
-});
 
 window.addEventListener("resize", setEvaluationHeight);
 setEvaluationHeight();
