@@ -5,7 +5,7 @@ function setupTechTables() {
   for (const table of tables) {
     const tds = table.querySelectorAll("td");
     for (const td of tds) {
-      td.addEventListener("click", function() {
+      td.addEventListener("click", function () {
         const checkbox = this.querySelector("input");
         checkbox.checked = !checkbox.checked;
       });
@@ -59,13 +59,13 @@ function clearDesc() {
 }
 
 const resetBtn = actions.querySelector("#reset");
-resetBtn.addEventListener("click", function() {
+resetBtn.addEventListener("click", function () {
   clearDesc();
   resetChecked();
 });
 
 const evalBtn = actions.querySelector("#evaluate");
-evalBtn.addEventListener("click", function() {
+evalBtn.addEventListener("click", function () {
   evalDescDiv.classList.add("loading");
   const errorTemplate = document.getElementById("eval-error");
   const sectionTemplate = document.getElementById("eval-section");
@@ -98,7 +98,7 @@ evalBtn.addEventListener("click", function() {
       statCard.querySelector(".eval-stat-header").innerHTML = k.charAt(0).toUpperCase() + k.slice(1);
 
       const avg = (v.confidence / v.count).toFixed(2);
-      statCard.querySelector(".eval-stat-value").innerHTML = avg;
+      statCard.querySelector(".eval-stat-value").innerHTML = `${avg}/10`;
 
       const indicators = statCard.querySelector(".eval-stat-graph").children;
       for (let i = 0; i < avg; i++) indicators[i].classList.add("on");
