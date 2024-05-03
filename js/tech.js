@@ -95,9 +95,9 @@ evalBtn.addEventListener("click", function() {
 
     for (const [k, v] of Object.entries(overviewDataHold)) {
       const statCard = statCardTemplate.content.cloneNode(true);
-      statCard.querySelector(".eval-stat-header").innerHTML = k;
+      statCard.querySelector(".eval-stat-header").innerHTML = k.charAt(0).toUpperCase() + k.slice(1);
 
-      const avg = v.confidence / v.count;
+      const avg = (v.confidence / v.count).toFixed(2);
       statCard.querySelector(".eval-stat-value").innerHTML = avg;
 
       const indicators = statCard.querySelector(".eval-stat-graph").children;
@@ -129,7 +129,7 @@ evalBtn.addEventListener("click", function() {
     const statsSection = subsection.querySelector(".eval-item-stats");
     for (const [k, v] of Object.entries(evaluation.items)) {
       const statCard = statCardTemplate.content.cloneNode(true);
-      statCard.querySelector(".eval-stat-header").innerHTML = k;
+      statCard.querySelector(".eval-stat-header").innerHTML = k.charAt(0).toUpperCase() + k.slice(1);
       statCard.querySelector(".eval-stat-value").innerHTML = v;
 
       if (typeof v === "number") {
@@ -138,6 +138,7 @@ evalBtn.addEventListener("click", function() {
         overviewDataHold[sectionId][k] = (overviewDataHold[sectionId][k] ?? 0) + v;
       } else {
         statCard.querySelector("div").removeChild(statCard.querySelector(".eval-stat-graph"));
+        statCard.querySelector(".eval-stat-value").innerHTML = v.join(", ");
       }
 
       statsSection.appendChild(statCard);
