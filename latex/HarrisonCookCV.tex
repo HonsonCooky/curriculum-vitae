@@ -10,7 +10,7 @@
 \usepackage{tabularx}
 \usepackage{xcolor}
 \definecolor{link}{HTML}{56949f}
-\definecolor{code}{HTML}{575279}
+\definecolor{code}{HTML}{b4637a}
 \geometry{margin=10mm}
 \graphicspath{ {../assets/imgs/} }
 \pagenumbering{gobble}
@@ -18,39 +18,37 @@
 \setlength{\columnsep}{15mm}
 
 \newcommand{\link}[2]{\href{#1}{\texttt{#2}}}
-\newcommand{\code}[1]{\mbox{\textcolor{code}{\texttt{#1}}}}
+\newcommand{\code}[1]{\textcolor{code}{\textbf{\texttt{"#1"}}}}
 
-\title{\texttt{SOFTWARE ENGINEER}}
-\author{\textbf{Harrison Cook}}
-\date{}
 
 \begin{document}
 
 \begingroup
-\begin{minipage}{.5\linewidth}
-	\vspace*{-15pt}
-	\maketitle
-	\vspace*{-30pt}
+\begin{minipage}{.55\linewidth}
+	\textbf{\Huge{Harrison Cook}}
+
+	\large{\code{SOFTWARE ENGINEER}}
+
+	\vfill
+
 	\texttt{
-		\begin{itemize}
-			\item \textbf{Email:} \hfill \href{mailto:contact@honsoncooky.dev}{contact@honsoncooky.dev}
-			\item \textbf{Website:} \hfill \href{https://about.honsoncooky.dev}{about.honsoncooky.dev}
-			\item \textbf{GitHub:} \hfill \href{https://github.com/honsoncooky}{github.com/honsoncooky}
-			\item \textbf{LinkedIn:} \hfill \href{https://www.linkedin.com/in/honsoncooky}{linkedin.com/in/honsoncooky}
-			\item \textbf{Location:} \hfill Wellington, New Zealand
+		\begin{itemize}[noitemsep, leftmargin=0pt]
+			\item[] \textbf{Email:} \hfill \href{mailto:contact@honsoncooky.dev}{contact@honsoncooky.dev}
+			\item[] \textbf{Website:} \hfill \href{https://about.honsoncooky.dev}{about.honsoncooky.dev}
+			\item[] \textbf{GitHub:} \hfill \href{https://github.com/honsoncooky}{github.com/honsoncooky}
+			\item[] \textbf{LinkedIn:} \hfill \href{https://www.linkedin.com/in/honsoncooky}{linkedin.com/in/honsoncooky}
+			\item[] \textbf{Location:} \hfill Wellington, New Zealand
 		\end{itemize}
 	}
-	\vspace*{15pt}
 \end{minipage}
 \hfill
-\begin{minipage}{.4\linewidth}
-	\begin{center}
-		\fbox{\includegraphics[height=150pt]{me-cv}}\\
-		\vspace*{1pt}
-		Fig 1: Unconventional Engineer Profile
-	\end{center}
+\begin{minipage}{.3\linewidth}
+	\hfill\null
+	\fbox{\includegraphics[height=100pt]{me-cv}}
 \end{minipage}
 \endgroup
+
+\vspace*{20pt}
 
 \begin{multicols*}{2}
 	\section{About me}
@@ -66,11 +64,11 @@
 
 	\section{Work History}
 	\subsection{Z Energy - \texttt{Intermediate Developer}}
-	{\small(Nov 2021 - Present)}
 	\begin{itemize}[itemsep=0pt, leftmargin=0pt]
-		\item Developed using \code{TypeScript} and \code{C\#}, building Function Apps, Web APIs and internal tools.
-		\item Utilized Terraform for infrastructure as code, managing and connecting various Azure Cloud resources.
-		\item Set up CI/CD pipelines with GitHub Actions and Azure Pipelines for automated and synchronized build processes.
+		\item Nov 2021 - Present
+		\item \code{TypeScript} and \code{C\#} Function Apps, Web APIs and internal tools.
+		\item \code{Terraform} management of Azure Cloud resources.
+		\item \code{GitHub Actions} and \code{Azure Pipelines} automated build processes.
 		\item Realigned legacy systems with current standards, modernized existing systems as part of the software development life cycle, and utilized Azure Portal analysis to develop resilient and supportable systems.
 	\end{itemize}
 	\subsection{Raygun}
@@ -78,7 +76,7 @@
 	\begin{itemize}[itemsep=0pt, leftmargin=0pt]
 		\item Developed a \code{React Native} library from inception to completion; designed to integrate with Raygun's crash reporting and monitoring services
 		\item Gained first-hand experience with the Agile methodology in a professional setting.
-		\item The open source \href{https://www.npmjs.com/package/raygun4reactnative}{“raygun4reactnative”} library, a result of our collective efforts, is now available on NPM for developers worldwide.
+		\item The open source \href{https://www.npmjs.com/package/raygun4reactnative}{raygun4reactnative} library, a result of our collective efforts, is now available on NPM for developers worldwide.
 	\end{itemize}
 	\subsection{Victoria University}
 	\texttt{Tutor (Mar 2019 - Nov 2021)}
