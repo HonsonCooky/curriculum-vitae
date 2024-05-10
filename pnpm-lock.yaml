@@ -13,7 +13,7 @@ importers:
         version: 3.2.5
       prettier-plugin-css-order:
         specifier: ^2.1.1
-        version: 2.1.1(postcss@8.4.38)(prettier@3.2.5)
+        version: 2.1.2(postcss@8.4.38)(prettier@3.2.5)
       prettier-plugin-organize-attributes:
         specifier: ^1.0.0
         version: 1.0.0(prettier@3.2.5)
@@ -50,8 +50,8 @@ packages:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  prettier-plugin-css-order@2.1.1:
-    resolution: {integrity: sha512-oAnL8g4T31Y8mhdJOn2UtoljFrzl595iogu2mt6T2vcKlDpgid5yCA/y+T8thcu8HWTM+NBmCt3MOBy/5t8Inw==}
+  prettier-plugin-css-order@2.1.2:
+    resolution: {integrity: sha512-vomxPjHI6pOMYcBuouSJHxxQClJXaUpU9rsV9IAO2wrSTZILRRlrxAAR8t9UF6wtczLkLfNRFUwM+ZbGXOONUA==}
     engines: {node: '>=16'}
     peerDependencies:
       prettier: 3.x
@@ -95,7 +95,7 @@ snapshots:
       picocolors: 1.0.0
       source-map-js: 1.2.0
 
-  prettier-plugin-css-order@2.1.1(postcss@8.4.38)(prettier@3.2.5):
+  prettier-plugin-css-order@2.1.2(postcss@8.4.38)(prettier@3.2.5):
     dependencies:
       css-declaration-sorter: 7.2.0(postcss@8.4.38)
       postcss-less: 6.0.0(postcss@8.4.38)

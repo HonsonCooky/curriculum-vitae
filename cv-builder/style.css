@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://www.nerdfonts.com/assets/css/webfont.css");
+
+:root {
+  --periwinkle: #d4dcffff;
+  --turquoise: #2de1c2ff;
+  --azure: #007fffff;
+  --light-coral: #ee7674ff;
+  --chocolate-cosmos: #590925ff;
+}
+
+* {
+  box-sizing: border-box;
+  color: black;
+  font-size: 10pt;
+  font-family: "Source Code Pro";
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 10mm calc((100vw - 210mm) / 4);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  border: 1pt solid black;
+  padding: 5mm 0;
+  width: 210mm;
+  height: 297mm;
+}
+
+header {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    z-index: 100;
+    margin: 0;
+    border: 3pt solid var(--azure);
+    background: white;
+    padding: 2mm;
+
+    span {
+      font-weight: bold;
+      font-size: 40pt;
+
+      &:first-of-type {
+        font-weight: lighter;
+      }
+
+      &:last-of-type {
+        color: var(--azure);
+      }
+    }
+  }
+
+  h2 {
+    z-index: 100;
+    margin: 2mm;
+    font-weight: normal;
+    font-size: 24pt;
+  }
+
+  #box {
+    position: absolute;
+    bottom: 0;
+    background: var(--periwinkle);
+    width: 100%;
+    height: 70%;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  grid-template-areas: "sidebar content";
+  flex-grow: 1;
+  padding: 5mm;
+
+  #sidebar {
+    grid-area: sidebar;
+  }
+
+  #content {
+    grid-area: content;
+  }
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  border-right: 1pt solid black;
+  padding: 0 5mm;
+
+  h3 {
+    margin: 0 0 2mm 0;
+    font-weight: bold;
+    font-size: 20pt;
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    a {
+      display: flex;
+      column-gap: 5mm;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+  }
+}
+
+#content {}
+
+@media print {
+
+  html,
+  body {
+    margin: 0;
+  }
+}
