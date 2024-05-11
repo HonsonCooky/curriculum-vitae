@@ -1,22 +1,26 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=210mm, height=297mm, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harrison Cook - Resume</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script type="module" src="./scripts.js" defer></script>
   </head>
 
   <body>
     <header>
-      <h1><span>HARRISON </span><span>COOK</span></h1>
       <div id="box"></div>
-      <h2>Software Engineer</h2>
+      <div id="title">
+        <h1><span>HARRISON </span><span>COOK</span></h1>
+        <h2>Software Engineer</h2>
+      </div>
+      <img id="profile" src="./me-cv.png" alt="me.png" />
     </header>
     <main>
       <div id="sidebar">
-        <h3>Contact</h3>
         <div id="contact">
+          <h3>Contact</h3>
           <a href="mailto:contact@honsoncooky.dev">
             <span>contact@honsoncooky.dev</span>
             <i class="nf nf-md-email"></i>
@@ -29,6 +33,27 @@
             <span>LinkedIn/in/HonsonCooky</span>
             <i class="nf nf-fa-linkedin"></i>
           </a>
+        </div>
+        <div id="career">
+          <h3>Career Objective</h3>
+          <p>
+            As an emerging professional with <span id="industry-years">X</span> years of industry experience, I am eager
+            to contribute to a <b>product-focused</b> team. I thrive in collaborative settings that foster innovation
+            but I'm equally adept at managing solo projects.My goal is to continue growing and refining my skills within
+            a dynamic company that champions teamwork and individual accountability.
+          </p>
+        </div>
+        <div id="skills">
+          <h3>Skillset</h3>
+          <ul>
+            <li>TypeScript | NodeJS</li>
+            <li>
+              <pre>C# | .Net</pre>
+            </li>
+            <li>Cloud (Azure)</li>
+            <li>IaC (Terraform)</li>
+            <li>CI/CD (GitHub, Azure)</li>
+          </ul>
         </div>
       </div>
       <div id="content"></div>
