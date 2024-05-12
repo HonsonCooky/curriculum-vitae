@@ -37,8 +37,8 @@ h1 {
 
 h2 {
   margin: 0;
-  font-size: 24pt;
   font-weight: normal;
+  font-size: 24pt;
 }
 
 h3 {
@@ -47,8 +47,31 @@ h3 {
   font-size: 18pt;
 }
 
+h4 {
+  margin: 0 0 1mm 0;
+  font-size: 16pt;
+}
+
+h5 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0 2mm;
+  font-weight: normal;
+}
+
 p {
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 2mm;
 }
 
 header {
@@ -60,7 +83,7 @@ header {
   height: 100pt;
 
   h1 {
-    border: 3pt solid var(--oxford-blue);
+    border: 2pt solid var(--oxford-blue);
     background-color: var(--white);
 
     span {
@@ -83,16 +106,16 @@ header {
   }
 
   #title {
-    margin-top: 3mm;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2%;
   }
 
   #profile {
+    clip-path: polygon(-100%-100%, 200%-100%, 200%100%, -100%100%);
+    filter: drop-shadow(0.5mm 0.5mm 1mm rgba(0, 0, 0, 0.7));
     height: 100%;
-    filter: drop-shadow(1mm 1mm 2mm var(--oxford-blue));
-    clip-path: polygon(-100%-100%, 200%-100%, 200%100%, -100%100%)
   }
 }
 
@@ -104,12 +127,17 @@ main {
 }
 
 #sidebar {
-  padding-right: 5mm;
-  flex: 3;
-  border-right: 1pt solid var(--oxford-blue);
   display: flex;
+  row-gap: 5mm;
+  flex: 1;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: right;
+  border-right: 1pt solid var(--oxford-blue);
+  padding-right: 5mm;
+
+  * {
+    text-align: right;
+  }
 }
 
 #contact {
@@ -117,29 +145,36 @@ main {
   flex-direction: column;
 
   a {
-    text-decoration: none;
     display: flex;
-    flex-direction: row;
     column-gap: 2mm;
+    flex-direction: row;
+    justify-content: end;
   }
 }
 
 #skills {
   p {
     display: flex;
-    flex-direction: row;
     column-gap: 2mm;
+    flex-direction: row;
+    justify-content: end;
+    align-items: baseline;
     margin: 0;
-  }
-
-  .heading {
-    text-decoration: underline;
   }
 }
 
 #content {
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  justify-content: space-between;
   padding-left: 5mm;
-  flex: 7;
+}
+
+#work {
+  display: flex;
+  row-gap: 2mm;
+  flex-direction: column;
 }
 
 @media print {
