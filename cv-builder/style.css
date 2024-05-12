@@ -173,8 +173,11 @@ main {
 
 #work {
   display: flex;
-  row-gap: 2mm;
   flex-direction: column;
+
+  > div:not(:last-of-type) {
+    margin-bottom: 2mm;
+  }
 }
 
 @media print {
