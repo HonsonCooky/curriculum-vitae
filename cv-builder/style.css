@@ -12,6 +12,7 @@
 * {
   box-sizing: border-box;
   color: var(--oxford-blue);
+  font-weight: inherit;
   font-size: 10pt;
   font-family: "M PLUS 1 Code", monospace;
 }
@@ -32,6 +33,7 @@ body {
 
 h1 {
   margin: 0;
+  font-weight: bold;
   font-size: 32pt;
 }
 
@@ -44,11 +46,13 @@ h2 {
 h3 {
   margin: 0 0 2mm 0;
   color: var(--bittersweet);
+  font-weight: bold;
   font-size: 18pt;
 }
 
 h4 {
   margin: 0 0 1mm 0;
+  font-weight: bold;
   font-size: 16pt;
 }
 
@@ -63,15 +67,18 @@ h5 {
 
 p {
   margin: 0;
+  font-weight: normal;
 }
 
 a {
+  font-weight: normal;
   text-decoration: none;
 }
 
 ul {
   margin: 0;
   padding: 2mm;
+  font-weight: normal;
 }
 
 header {
