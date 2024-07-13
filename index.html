@@ -1,717 +1,712 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harrison Cook - Software Engineer</title>
-    <link rel="icon" href="./assets/imgs/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
-    <link rel="stylesheet" type="text/css" href="./css/header.css" />
-    <link rel="stylesheet" type="text/css" href="./css/home.css" />
-    <link rel="stylesheet" type="text/css" href="./css/work.css" />
-    <link rel="stylesheet" type="text/css" href="./css/education.css" />
-    <link rel="stylesheet" type="text/css" href="./css/tech.css" />
-    <link rel="stylesheet" type="text/css" href="./css/soft.css" />
-    <link rel="stylesheet" type="text/css" href="./css/projects.css" />
-    <link rel="stylesheet" type="text/css" href="./css/blogs.css" />
-    <link rel="stylesheet" type="text/css" href="./css/footer.css" />
-    <script type="module" src="./js/theme.js" defer></script>
-    <script type="module" src="./js/css.js" defer></script>
-    <script type="module" src="./js/header.js" defer></script>
-    <script type="module" src="./js/home.js" defer></script>
-    <script type="module" src="./js/about.js" defer></script>
-    <script type="module" src="./js/tech.js" defer></script>
-  </head>
 
-  <body>
-    <header>
-      <button id="mobile-menu-btn" type="button" title="navigation menu"><i class="nf nf-md-menu"></i></button>
-      <div id="menu-links">
-        <a href="#home">&gt;_</a>
-        <a href="#about">\About</a>
-        <a href="#work">\Work</a>
-        <a href="#education">\Education</a>
-        <a href="#tech">\Technical</a>
-        <a href="#soft">\Personality</a>
-        <a href="#projects">\Projects</a>
-        <a href="#blogs">\Blogs</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harrison Cook - Software Engineer</title>
+  <link rel="icon" href="./assets/imgs/favicon.png" />
+  <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="./css/header.css" />
+  <link rel="stylesheet" type="text/css" href="./css/home.css" />
+  <link rel="stylesheet" type="text/css" href="./css/work.css" />
+  <link rel="stylesheet" type="text/css" href="./css/education.css" />
+  <link rel="stylesheet" type="text/css" href="./css/tech.css" />
+  <link rel="stylesheet" type="text/css" href="./css/soft.css" />
+  <link rel="stylesheet" type="text/css" href="./css/projects.css" />
+  <link rel="stylesheet" type="text/css" href="./css/blogs.css" />
+  <link rel="stylesheet" type="text/css" href="./css/footer.css" />
+  <script type="module" src="./js/theme.js" defer></script>
+  <script type="module" src="./js/css.js" defer></script>
+  <script type="module" src="./js/header.js" defer></script>
+  <script type="module" src="./js/home.js" defer></script>
+  <script type="module" src="./js/about.js" defer></script>
+  <script type="module" src="./js/tech.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <button id="mobile-menu-btn" type="button" title="navigation menu"><i class="nf nf-md-menu"></i></button>
+    <div id="menu-links">
+      <a href="#home">&gt;_</a>
+      <a href="#about">\About</a>
+      <a href="#work">\Work</a>
+      <a href="#education">\Education</a>
+      <a href="#tech">\Technical</a>
+      <a href="#soft">\Personality</a>
+      <a href="#projects">\Projects</a>
+    </div>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <table>
+      <caption>
+        <h3>Basic Information</h3>
+      </caption>
+      <tbody>
+        <tr>
+          <th>FirstName</th>
+          <td>Harrison</td>
+        </tr>
+        <tr>
+          <th>LastName</th>
+          <td>Cook</td>
+        </tr>
+        <tr>
+          <th>Age</th>
+          <td id="age-value">XX</td>
+        </tr>
+        <tr>
+          <th>Occupation</th>
+          <td>Software Engineer</td>
+        </tr>
+        <tr>
+          <th>Location</th>
+          <td>New Zealand</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <figure>
+              <img src="./assets/imgs/me.png" alt="me.png" />
+              <figcaption>Fig. 1. Unconventional Engineer Profile</figcaption>
+            </figure>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button id="contact-btn">
+        <i class="nf nf-fa-info"></i>
+        <span>Info</span>
+      </button>
+      <button id="resume-btn">
+        <i class="nf nf-fa-file_pdf"></i>
+        <span>Resume</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <h1>About Me</h1>
+    <p>
+      Hailing from what my friends affectionately call a 'singing cult,' my formative years were steeped in music and
+      the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital technologies.
+    </p>
+    <p>
+      Armed with a knack for calculus and a flair for photography, I discovered programming- an art form that blends
+      creativity with methodical precision. It's a canvas with rules, yet near infinite possibilities. Now, I've
+      traded sheet music for syntax; my compositions resonate through elegant algorithms, harmonizing data structures
+      and orchestrating efficient solutions. Whether it's a symphony of APIs or a concerto in cloud architecture, I
+      thrive on turning complexity into clarity.
+    </p>
+    <p>
+      With <span id="industry-years">X</span> years of industry experience as a Software Engineer, my technical
+      specializations are currently anchored in <code class="inline">TypeScript</code> ,
+      <code class="inline">C#</code> , and <code class="inline">Rust</code> , complemented by a wide array of
+      technologies. My professional goals center around specializing in backend development, particularly in the realm
+      of network technologies.
+    </p>
+    <p>
+      Today, I stand as a bright, bubbly, resilient, and reliable individual. I'm prepared to bring my distinctive mix
+      of creativity and expertise to exciting projects. Are you ready for me? Welcome to my melodic journey through
+      bytes, nibbles and bits!
+    </p>
+  </section>
+
+  <!-- Work Experience Section -->
+  <section id="work">
+    <h1>Work Experience</h1>
+    <div id="jobs">
+      <div class="job" id="z-energy">
+        <h3>Z Energy</h3>
+        <p>
+          <strong>Intermediate Developer</strong>
+          <span class="web"> | </span>
+          <span class="mobile"><br />&nbsp;</span>
+          May 2022 - Present
+        </p>
+        <p>
+          <strong>Graduate Developer</strong>
+          <span class="web"> | </span>
+          <span class="mobile"><br />&nbsp;</span>
+          Nov 2021 - May 2022
+        </p>
+        <p class="description">
+          I started my career at Z Energy fresh out of university as a graduate developer, and have since progressed
+          to an intermediate position. Working within New Zealand's largest fuel provider, I've been part of a dynamic
+          team driving digital innovation in the energy sector.<br /><br />
+          <strong class="sub">From Code To Cloud:</strong><br />
+          My time as a developer at Z spans a wide range of technologies. I've utilized
+          <code class="inline">TypeScript</code> and <code class="inline">C#</code> to build everything from small
+          Function Apps to extensive Web APIs and internal tools. In addition, I've developed infrastructure as code
+          using <code class="inline">Terraform</code> to manage and link these functional components to Service Buses,
+          Databases, Virtual Networks, and other <code class="inline">Azure Cloud</code> resources. My experience also
+          includes setting up CI/CD pipelines with <code class="inline">GitHub Actions</code> and
+          <code class="inline">Azure Pipelines</code> , ensuring automated and synchronized build processes that
+          seamlessly align our version control systems with the corresponding cloud services. My role truly
+          encapsulates the journey "from code to cloud," reflecting my comprehensive involvement across the
+          technological stack.<br /><br />
+          <strong class="sub">Software Development Life Cycle:</strong><br />
+          In an era where the digital landscape is ever-expanding, it's imperative to align legacy systems with
+          current standards and guidelines; Safeguarding our infrastructure while preparing for future advancements.
+          My work has been consistently lined with the ongoing enhancement, modernization, and oversight of our
+          existing systems.<br /><br />
+          <strong class="sub">Incident Investigations:</strong><br />
+          My developer duties include both team-based and individual analysis into the
+          <code class="inline">Azure Portal</code>. These processes are aimed at identifying and resolving
+          discrepancies in my code as well as existing systems. By participating in these processes, I have honed my
+          ability to develop resilient and supportable systems.
+        </p>
       </div>
-    </header>
-
-    <!-- Home Section -->
-    <section id="home">
-      <table>
-        <caption>
-          <h3>Basic Information</h3>
-        </caption>
-        <tbody>
-          <tr>
-            <th>FirstName</th>
-            <td>Harrison</td>
-          </tr>
-          <tr>
-            <th>LastName</th>
-            <td>Cook</td>
-          </tr>
-          <tr>
-            <th>Age</th>
-            <td id="age-value">XX</td>
-          </tr>
-          <tr>
-            <th>Occupation</th>
-            <td>Software Engineer</td>
-          </tr>
-          <tr>
-            <th>Location</th>
-            <td>New Zealand</td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <figure>
-                <img src="./assets/imgs/me.png" alt="me.png" />
-                <figcaption>Fig. 1. Unconventional Engineer Profile</figcaption>
-              </figure>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div>
-        <button id="contact-btn">
-          <i class="nf nf-fa-info"></i>
-          <span>Contact</span>
-        </button>
-        <button id="resume-btn">
-          <i class="nf nf-fa-file_pdf"></i>
-          <span>Resume</span>
-        </button>
+      <div class="job" id="raygun">
+        <h3>Raygun</h3>
+        <p>
+          <strong>Intern Developer</strong>
+          <span class="web"> | </span>
+          <span class="mobile"><br />&nbsp;</span>
+          Nov 2020 - Feb 2021
+        </p>
+        <p class="description">
+          As an intern at Raygun, I was part of a team that built the
+          <code class="inline">React Native</code> library from scratch. This library was designed to integrate with
+          Raygun's suite of crash reporting and monitoring software services. Working alongside another intern, we
+          took this project from an initial concept to a fully functional tool. This project marked my first
+          professional experience with the <code class="inline">Agile</code> methodology, which afforded me an easy
+          transition into my current position with a larger team. The result of our efforts is the
+          "raygun4reactnative" library, now available on
+          <a href="https://www.npmjs.com/package/raygun4reactnative" target="_blank"><code class="inline">NPM</code></a>
+          for developers to utilize in their mobile applications.
+        </p>
       </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about">
-      <h1>About Me</h1>
-      <p>
-        Hailing from what my friends affectionately call a 'singing cult,' my formative years were steeped in music and
-        the performing arts. As I entered my late teens, curiosity beckoned me toward the world of digital technologies.
-      </p>
-      <p>
-        Armed with a knack for calculus and a flair for photography, I discovered programming- an art form that blends
-        creativity with methodical precision. It's a canvas with rules, yet near infinite possibilities. Now, I've
-        traded sheet music for syntax; my compositions resonate through elegant algorithms, harmonizing data structures
-        and orchestrating efficient solutions. Whether it's a symphony of APIs or a concerto in cloud architecture, I
-        thrive on turning complexity into clarity.
-      </p>
-      <p>
-        With <span id="industry-years">X</span> years of industry experience as a Software Engineer, my technical
-        specializations are currently anchored in <code class="inline">TypeScript</code> ,
-        <code class="inline">C#</code> , and <code class="inline">Rust</code> , complemented by a wide array of
-        technologies. My professional goals center around specializing in backend development, particularly in the realm
-        of network technologies.
-      </p>
-      <p>
-        Today, I stand as a bright, bubbly, resilient, and reliable individual. I'm prepared to bring my distinctive mix
-        of creativity and expertise to exciting projects. Are you ready for me? Welcome to my melodic journey through
-        bytes, nibbles and bits!
-      </p>
-    </section>
-
-    <!-- Work Experience Section -->
-    <section id="work">
-      <h1>Work Experience</h1>
-      <div id="jobs">
-        <div class="job" id="z-energy">
-          <h3>Z Energy</h3>
-          <p>
-            <strong>Intermediate Developer</strong>
-            <span class="web"> | </span>
-            <span class="mobile"><br />&nbsp;</span>
-            May 2022 - Present
-          </p>
-          <p>
-            <strong>Graduate Developer</strong>
-            <span class="web"> | </span>
-            <span class="mobile"><br />&nbsp;</span>
-            Nov 2021 - May 2022
-          </p>
-          <p class="description">
-            I started my career at Z Energy fresh out of university as a graduate developer, and have since progressed
-            to an intermediate position. Working within New Zealand's largest fuel provider, I've been part of a dynamic
-            team driving digital innovation in the energy sector.<br /><br />
-            <strong class="sub">From Code To Cloud:</strong><br />
-            My time as a developer at Z spans a wide range of technologies. I've utilized
-            <code class="inline">TypeScript</code> and <code class="inline">C#</code> to build everything from small
-            Function Apps to extensive Web APIs and internal tools. In addition, I've developed infrastructure as code
-            using <code class="inline">Terraform</code> to manage and link these functional components to Service Buses,
-            Databases, Virtual Networks, and other <code class="inline">Azure Cloud</code> resources. My experience also
-            includes setting up CI/CD pipelines with <code class="inline">GitHub Actions</code> and
-            <code class="inline">Azure Pipelines</code> , ensuring automated and synchronized build processes that
-            seamlessly align our version control systems with the corresponding cloud services. My role truly
-            encapsulates the journey "from code to cloud," reflecting my comprehensive involvement across the
-            technological stack.<br /><br />
-            <strong class="sub">Software Development Life Cycle:</strong><br />
-            In an era where the digital landscape is ever-expanding, it's imperative to align legacy systems with
-            current standards and guidelines; Safeguarding our infrastructure while preparing for future advancements.
-            My work has been consistently lined with the ongoing enhancement, modernization, and oversight of our
-            existing systems.<br /><br />
-            <strong class="sub">Incident Investigations:</strong><br />
-            My developer duties include both team-based and individual analysis into the
-            <code class="inline">Azure Portal</code>. These processes are aimed at identifying and resolving
-            discrepancies in my code as well as existing systems. By participating in these processes, I have honed my
-            ability to develop resilient and supportable systems.
-          </p>
-        </div>
-        <div class="job" id="raygun">
-          <h3>Raygun</h3>
-          <p>
-            <strong>Intern Developer</strong>
-            <span class="web"> | </span>
-            <span class="mobile"><br />&nbsp;</span>
-            Nov 2020 - Feb 2021
-          </p>
-          <p class="description">
-            As an intern at Raygun, I was part of a team that built the
-            <code class="inline">React Native</code> library from scratch. This library was designed to integrate with
-            Raygun's suite of crash reporting and monitoring software services. Working alongside another intern, we
-            took this project from an initial concept to a fully functional tool. This project marked my first
-            professional experience with the <code class="inline">Agile</code> methodology, which afforded me an easy
-            transition into my current position with a larger team. The result of our efforts is the
-            "raygun4reactnative" library, now available on
-            <a href="https://www.npmjs.com/package/raygun4reactnative" target="_blank"
-              ><code class="inline">NPM</code></a
-            >
-            for developers to utilize in their mobile applications.
-          </p>
-        </div>
-        <div class="job" id="vic-tutor">
-          <h3>Victoria University</h3>
-          <p>
-            <strong>Tutor</strong>
-            <span class="web"> | </span>
-            <span class="mobile"><br />&nbsp;</span>
-            Mar 2019 - Nov 2021
-          </p>
-          <p class="description">
-            During my time as a Tutor at Victoria University, I provided support to students in Software Engineering,
-            Networking Engineering, and Computer Science disciplines. My responsibilities focused on conducting
-            after-class workshops and tutorials and included the precise marking of assignments based on established
-            guides. This role afforded me the unique opportunity to master the art of conveying complex technical
-            subjects (such as <code class="inline">C</code> pointers and <code class="inline">CPU</code> threads) to a
-            diverse student body with varying degrees of technical proficiency. The ability to simplify and communicate
-            intricate concepts effectively has been invaluable in my current career, where I engage effectively with
-            business analysts, scrum masters, and product owners, facilitating clear and productive discussions that
-            drive project success.
-          </p>
-        </div>
+      <div class="job" id="vic-tutor">
+        <h3>Victoria University</h3>
+        <p>
+          <strong>Tutor</strong>
+          <span class="web"> | </span>
+          <span class="mobile"><br />&nbsp;</span>
+          Mar 2019 - Nov 2021
+        </p>
+        <p class="description">
+          During my time as a Tutor at Victoria University, I provided support to students in Software Engineering,
+          Networking Engineering, and Computer Science disciplines. My responsibilities focused on conducting
+          after-class workshops and tutorials and included the precise marking of assignments based on established
+          guides. This role afforded me the unique opportunity to master the art of conveying complex technical
+          subjects (such as <code class="inline">C</code> pointers and <code class="inline">CPU</code> threads) to a
+          diverse student body with varying degrees of technical proficiency. The ability to simplify and communicate
+          intricate concepts effectively has been invaluable in my current career, where I engage effectively with
+          business analysts, scrum masters, and product owners, facilitating clear and productive discussions that
+          drive project success.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Education Section -->
-    <section id="education">
-      <h1>Education</h1>
-      <h3>Bachelor of Engineering with First Class Honors</h3>
-      <ul>
-        <li><strong>Major:</strong> Software Engineering</li>
-        <li><strong>Specialization:</strong> Networked Applications</li>
-        <li><strong>Accreditation:</strong> Washington and Seoul Accords</li>
-        <li><strong>Institution:</strong> Victoria University of Wellington</li>
-        <li><strong>Years:</strong> 2018 - 2021</li>
-        <li>
-          <strong>Link:</strong>
-          <a href="./assets/docs/HarrisonCookTranscriptOfAcademicRecord.pdf" target="_blank">Transcript.pdf</a>
-        </li>
-      </ul>
-      <h3>National Certificate of Educational Achievement (NCEA)</h3>
-      <ul>
-        <li><strong>Level 3:</strong> Achieved with Excellence Endorsement (2017)</li>
-        <li><strong>Level 2:</strong> Achieved with Excellence Endorsement (2016)</li>
-        <li><strong>Level 1:</strong> Achieved with Excellence Endorsement (2015)</li>
-        <li>
-          <strong>Link:</strong>
-          <a href="./assets/docs/Harrison_Cook_academic_record.pdf" target="_blank">Transcript.pdf</a>
-        </li>
-      </ul>
-    </section>
+  <!-- Education Section -->
+  <section id="education">
+    <h1>Education</h1>
+    <h3>Bachelor of Engineering with First Class Honors</h3>
+    <ul>
+      <li><strong>Major:</strong> Software Engineering</li>
+      <li><strong>Specialization:</strong> Networked Applications</li>
+      <li><strong>Accreditation:</strong> Washington and Seoul Accords</li>
+      <li><strong>Institution:</strong> Victoria University of Wellington</li>
+      <li><strong>Years:</strong> 2018 - 2021</li>
+      <li>
+        <strong>Link:</strong>
+        <a href="./assets/docs/HarrisonCookTranscriptOfAcademicRecord.pdf" target="_blank">Transcript.pdf</a>
+      </li>
+    </ul>
+    <h3>National Certificate of Educational Achievement (NCEA)</h3>
+    <ul>
+      <li><strong>Level 3:</strong> Achieved with Excellence Endorsement (2017)</li>
+      <li><strong>Level 2:</strong> Achieved with Excellence Endorsement (2016)</li>
+      <li><strong>Level 1:</strong> Achieved with Excellence Endorsement (2015)</li>
+      <li>
+        <strong>Link:</strong>
+        <a href="./assets/docs/Harrison_Cook_academic_record.pdf" target="_blank">Transcript.pdf</a>
+      </li>
+    </ul>
+  </section>
 
-    <!-- Tech Skills Section -->
-    <section id="tech">
-      <h1>Technical Toolbox</h1>
-      <p>
-        Below is a selection of technologies I have some level of experience with. You can select technologies you're
-        interested in, and calculate how compatible I am with the tech-stack you're curious about.
-      </p>
-      <div id="tables">
-        <table id="languages">
-          <tr>
-            <th colspan="100%">Languages</th>
-          </tr>
-          <tr>
-            <td>
-              <input title="c-check" type="checkbox" />
-              <span>C</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="c++-check" type="checkbox" />
-              <span>C++</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="c#-check" type="checkbox" />
-              <span>C#</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="css-check" type="checkbox" />
-              <span>CSS</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="dart-check" type="checkbox" />
-              <span>Dart</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="f#-check" type="checkbox" />
-              <span>F#</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="html-check" type="checkbox" />
-              <span>HTML</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="java-check" type="checkbox" />
-              <span>Java</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="javascript-check" type="checkbox" />
-              <span>JavaScript</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="lua-check" type="checkbox" />
-              <span>Lua</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="ruby-check" type="checkbox" />
-              <span>Ruby</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="rust-check" type="checkbox" />
-              <span>Rust</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="typescript-check" type="checkbox" />
-              <span>TypeScript</span>
-            </td>
-          </tr>
-        </table>
-        <table id="environments">
-          <tr>
-            <th colspan="100%">Environments</th>
-          </tr>
-          <tr>
-            <td>
-              <input title=".net-check" type="checkbox" />
-              <span>.Net Core</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="flutter-check" type="checkbox" />
-              <span>Flutter</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="next.js-check" type="checkbox" />
-              <span>Next.js</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="react-check" type="checkbox" />
-              <span>React</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="react-native-check" type="checkbox" />
-              <span>React-Native</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="tailwind css-check" type="checkbox" />
-              <span>Tailwind CSS</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="vue.js-check" type="checkbox" />
-              <span>Vue.js</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="webpack-check" type="checkbox" />
-              <span>Webpack</span>
-            </td>
-          </tr>
-        </table>
-        <table id="devops">
-          <tr>
-            <th colspan="100%">DevOps</th>
-          </tr>
-          <tr>
-            <td>
-              <input title="azure-cloud-check" type="checkbox" />
-              <span>Azure Cloud</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="azure-devops-check" type="checkbox" />
-              <span>Azure Pipelines</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="github-check" type="checkbox" />
-              <span>GitHub</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="github-actions-check" type="checkbox" />
-              <span>GitHub Actions</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="gitlab-check" type="checkbox" />
-              <span>GitLab</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="terraform-check" type="checkbox" />
-              <span>Terraform</span>
-            </td>
-          </tr>
-        </table>
-        <table id="tools">
-          <tr>
-            <th colspan="100%">Tools</th>
-          </tr>
-          <tr>
-            <td>
-              <input title="jetbrains-check" type="checkbox" />
-              <span>JetBrains</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="neovim-check" type="checkbox" />
-              <span>Neovim</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="postman-check" type="checkbox" />
-              <span>Postman</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="visual-studio-check" type="checkbox" />
-              <span>Visual Studio</span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input title="visual-studio-code-check" type="checkbox" />
-              <span>Visual Studio Code</span>
-            </td>
-          </tr>
-        </table>
-        <div id="evaluations">
-          <label>Note: These are self evaluated conclusions</label>
-          <div id="evaluation-descriptions"></div>
-          <div id="evaluation-actions">
-            <button id="evaluate" type="button">Evaluate</button>
-            <button id="reset" type="button">Reset</button>
-          </div>
-          <template id="eval-error">
-            <span>Nothing Selected</span>
-          </template>
-          <template id="eval-section">
-            <section class="eval-container">
-              <h3 class="eval-title"></h3>
-              <p class="eval-desc"></p>
-              <div class="eval-items"></div>
-            </section>
-          </template>
-          <template id="eval-subsection">
-            <div class="eval-subsection">
-              <h4 class="eval-item-id"></h4>
-              <div class="eval-item-stats"></div>
-            </div>
-          </template>
-          <template id="eval-stat-card">
-            <div class="eval-stat-card">
-              <strong class="eval-stat-header"></strong>
-              <div class="eval-stat-graph">
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-                <div class="indicator"></div>
-              </div>
-              <span class="eval-stat-value"></span>
-            </div>
-          </template>
-        </div>
-      </div>
-    </section>
-
-    <!-- Soft Skills Section -->
-    <section id="soft">
-      <h1>Personality</h1>
-      <ul>
-        <li>
-          <strong>Teamwork:</strong> Throughout my life, I've actively engaged in various groups and teams;
-          Participating in sports, bands, university projects, and diverse work environments. Whether leading or
-          following, I've honed my ability to adapt swiftly to different team dynamics.
-        </li>
-        <li>
-          <strong>Communication:</strong> Drawing from my thespian background and 3 years of tutoring, I have developed
-          robust verbal communication skills. Whether interacting with clients or colleagues, I excel in conveying ideas
-          effectively and fostering meaningful connections.
-        </li>
-        <li>
-          <strong>Personality:</strong> My colleagues, mentors, and supervisors have praised my organizational skills,
-          enthusiasm, and reliability. I thrive in collaborative environments that value teamwork. I'm passionate about
-          creating and nurturing a workspace that inspires daily motivation and enthusiasm, making it worth the early
-          morning rise.
-        </li>
-      </ul>
-    </section>
-
-    <!-- Personal Projects Section -->
-    <section id="projects">
-      <h1>Projects</h1>
-
-      <div id="cards">
-        <!-- Curriculum Vitae -->
-        <div class="project-card" id="cv-project">
-          <h3>curriculum-vitae</h3>
-          <div class="tags">
-            <span>HTML</span>
-          </div>
-          <p>An extended resume website, showcasing the skills, achievements, and portfolio of Harrison Cook.</p>
-          <div class="links">
-            <a href="https://github.com/HonsonCooky/curriculum-vitae" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-        <!-- Tenants Testimony -->
-        <div class="project-card" id="tenants-project">
-          <h3>tenants-testimony</h3>
-          <div class="tags">
-            <span>Ongoing</span>
-            <span>C#</span>
-            <span>ASP.NET</span>
-          </div>
-          <p>A full-stack, mono-repo, web-app for tenants to review their landlords, property managers and flats.</p>
-          <div class="links">
-            <a href="https://github.com/HonsonCooky/tenants-testimony" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-        <!-- Cookie Nvim -->
-        <div class="project-card" id="nvim-project">
-          <h3>cookie-nvim</h3>
-          <div class="tags">
-            <span>Lua</span>
-          </div>
-          <p>
-            An opinionated Neovim configuration for Windows 10/11. It prioritizes usability, replicability, and
-            ease-of-use, making it suitable for personal and work computers without requiring admin privileges.
-          </p>
-          <div class="links">
-            <a href="https://github.com/HonsonCooky/cookie-nvim" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-        <!-- Browser Home -->
-        <div class="project-card" id="browser-project">
-          <h3>browser-home</h3>
-          <div class="tags">
-            <span>HTML</span>
-            <span>Webpack</span>
-          </div>
-          <p>
-            A custom-built home page with tools, shortcuts, and links designed specifically for my productivity as a
-            software engineer.
-          </p>
-          <div class="links">
-            <a href="https://github.com/HonsonCooky/advent-of-code" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-        <!-- Advent Of Code -->
-        <div class="project-card" id="advent-project">
-          <h3>advent-of-code</h3>
-          <div class="tags">
-            <span>Rust</span>
-          </div>
-          <p>
-            Advent of Code is an annual coding challenge event that takes place during December. Each day, participants
-            are presented with a new problem to solve using their programming skills. This repository contains my
-            attempts and solutions to these exciting challenges.
-          </p>
-          <div class="links">
-            <a href="https://github.com/HonsonCooky/advent-of-code" target="_blank">GitHub</a>
-            <a href="https://adventofcode.com/" target="_blank">Website</a>
-          </div>
-        </div>
-
-        <!-- Ira Street Chores -->
-        <div class="project-card" id="ira-project">
-          <h3>ira-street-chores</h3>
-          <div class="tags">
-            <span>Archived</span>
-            <span>React-Native</span>
-          </div>
-          <p>
-            A mobile app designed for families, roommates, and flatmates. It simplifies managing cleaning schedules,
-            shopping lists, and expenses.
-          </p>
-          <div class="links">
-            <a href="https://github.com/HonsonCooky/ira-street-chores" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-        <!-- M5Stack -->
-        <div class="project-card" id="m5stack-project">
-          <h3>m5stack-ble</h3>
-          <div class="tags">
-            <span>Archived</span>
+  <!-- Tech Skills Section -->
+  <section id="tech">
+    <h1>Technical Toolbox</h1>
+    <p>
+      Below is a selection of technologies I have some level of experience with. You can select technologies you're
+      interested in, and calculate how compatible I am with the tech-stack you're curious about.
+    </p>
+    <div id="tables">
+      <table id="languages">
+        <tr>
+          <th colspan="100%">Languages</th>
+        </tr>
+        <tr>
+          <td>
+            <input title="c-check" type="checkbox" />
+            <span>C</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="c++-check" type="checkbox" />
             <span>C++</span>
-          </div>
-          <p>
-            ESP32 BLE Network with M5Stack: A lightweight, power-efficient solution for short-range data transmission.
-            Utilizing M5Stack Arduino boards, this project demonstrates point-to-point communication, allowing devices
-            to exchange small amounts of data.
-          </p>
-          <div class="links">
-            <a href="https://github.com/HonsonCooky/m5stack-ble" target="_blank">GitHub</a>
-          </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="c#-check" type="checkbox" />
+            <span>C#</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="css-check" type="checkbox" />
+            <span>CSS</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="dart-check" type="checkbox" />
+            <span>Dart</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="f#-check" type="checkbox" />
+            <span>F#</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="html-check" type="checkbox" />
+            <span>HTML</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="java-check" type="checkbox" />
+            <span>Java</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="javascript-check" type="checkbox" />
+            <span>JavaScript</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="lua-check" type="checkbox" />
+            <span>Lua</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="ruby-check" type="checkbox" />
+            <span>Ruby</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="rust-check" type="checkbox" />
+            <span>Rust</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="typescript-check" type="checkbox" />
+            <span>TypeScript</span>
+          </td>
+        </tr>
+      </table>
+      <table id="environments">
+        <tr>
+          <th colspan="100%">Environments</th>
+        </tr>
+        <tr>
+          <td>
+            <input title=".net-check" type="checkbox" />
+            <span>.Net Core</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="flutter-check" type="checkbox" />
+            <span>Flutter</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="next.js-check" type="checkbox" />
+            <span>Next.js</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="react-check" type="checkbox" />
+            <span>React</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="react-native-check" type="checkbox" />
+            <span>React-Native</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="tailwind css-check" type="checkbox" />
+            <span>Tailwind CSS</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="vue.js-check" type="checkbox" />
+            <span>Vue.js</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="webpack-check" type="checkbox" />
+            <span>Webpack</span>
+          </td>
+        </tr>
+      </table>
+      <table id="devops">
+        <tr>
+          <th colspan="100%">DevOps</th>
+        </tr>
+        <tr>
+          <td>
+            <input title="azure-cloud-check" type="checkbox" />
+            <span>Azure Cloud</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="azure-devops-check" type="checkbox" />
+            <span>Azure Pipelines</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="github-check" type="checkbox" />
+            <span>GitHub</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="github-actions-check" type="checkbox" />
+            <span>GitHub Actions</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="gitlab-check" type="checkbox" />
+            <span>GitLab</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="terraform-check" type="checkbox" />
+            <span>Terraform</span>
+          </td>
+        </tr>
+      </table>
+      <table id="tools">
+        <tr>
+          <th colspan="100%">Tools</th>
+        </tr>
+        <tr>
+          <td>
+            <input title="jetbrains-check" type="checkbox" />
+            <span>JetBrains</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="neovim-check" type="checkbox" />
+            <span>Neovim</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="postman-check" type="checkbox" />
+            <span>Postman</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="visual-studio-check" type="checkbox" />
+            <span>Visual Studio</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input title="visual-studio-code-check" type="checkbox" />
+            <span>Visual Studio Code</span>
+          </td>
+        </tr>
+      </table>
+      <div id="evaluations">
+        <label>Note: These are self evaluated conclusions</label>
+        <div id="evaluation-descriptions"></div>
+        <div id="evaluation-actions">
+          <button id="evaluate" type="button">Evaluate</button>
+          <button id="reset" type="button">Reset</button>
         </div>
+        <template id="eval-error">
+          <span>Nothing Selected</span>
+        </template>
+        <template id="eval-section">
+          <section class="eval-container">
+            <h3 class="eval-title"></h3>
+            <p class="eval-desc"></p>
+            <div class="eval-items"></div>
+          </section>
+        </template>
+        <template id="eval-subsection">
+          <div class="eval-subsection">
+            <h4 class="eval-item-id"></h4>
+            <div class="eval-item-stats"></div>
+          </div>
+        </template>
+        <template id="eval-stat-card">
+          <div class="eval-stat-card">
+            <strong class="eval-stat-header"></strong>
+            <div class="eval-stat-graph">
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+              <div class="indicator"></div>
+            </div>
+            <span class="eval-stat-value"></span>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
 
-        <!-- ZSA Keyboard -->
-        <div class="project-card" id="keyboard-project">
-          <h3>planck-keyboard</h3>
-          <div class="tags">
-            <span>Hardware</span>
-            <span>Keyboard</span>
-          </div>
-          <p>
-            Adopting a 40% keyboard was a strategic move to safeguard my wrist health, influenced by an injury in my
-            youth. The reduced size demands minimal wrist movement, helping prevent RSI and easing discomfort. This
-            ergonomic choice has consequently boosted my productivity, as I can type for extended periods without
-            strain. The efficiency gained from this compact design has been remarkable, allowing me to concentrate on my
-            work with greater intensity and for longer durations. My enthusiasm for continuous learning and interest in
-            ergonomic advancements motivates me to seek even more effective solutions. I'm dedicated to discovering
-            cutting-edge strategies that will further protect my health and elevate my professional performance,
-            ensuring sustainable productivity.
-          </p>
-          <div class="links">
-            <a href="https://www.youtube.com/watch?v=NcnMR8D0G5o" target="_blank">YouTube</a>
-          </div>
+  <!-- Soft Skills Section -->
+  <section id="soft">
+    <h1>Personality</h1>
+    <ul>
+      <li>
+        <strong>Teamwork:</strong> Throughout my life, I've actively engaged in various groups and teams;
+        Participating in sports, bands, university projects, and diverse work environments. Whether leading or
+        following, I've honed my ability to adapt swiftly to different team dynamics.
+      </li>
+      <li>
+        <strong>Communication:</strong> Drawing from my thespian background and 3 years of tutoring, I have developed
+        robust verbal communication skills. Whether interacting with clients or colleagues, I excel in conveying ideas
+        effectively and fostering meaningful connections.
+      </li>
+      <li>
+        <strong>Personality:</strong> My colleagues, mentors, and supervisors have praised my organizational skills,
+        enthusiasm, and reliability. I thrive in collaborative environments that value teamwork. I'm passionate about
+        creating and nurturing a workspace that inspires daily motivation and enthusiasm, making it worth the early
+        morning rise.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Personal Projects Section -->
+  <section id="projects">
+    <h1>Projects</h1>
+
+    <div id="cards">
+      <!-- Curriculum Vitae -->
+      <div class="project-card" id="cv-project">
+        <h3>curriculum-vitae</h3>
+        <div class="tags">
+          <span>HTML</span>
         </div>
-
-        <!-- PC Building -->
-        <div class="project-card" id="pc-project">
-          <h3>pc-building</h3>
-          <div class="tags">
-            <span>Hardware</span>
-            <span>PC</span>
-          </div>
-          <p>
-            As a software engineer with a passion for technology, I find joy in the art of assembling and enhancing
-            personal computers. This hobby extends beyond mere functionality; it's a journey of continuous improvement.
-            From basic setups to intricate mini-ITX systems, each build represents a milestone in my technical growth.
-            By working hands-on with the hardware, I not only ensure that my home setup can handle more demanding tasks
-            but also maintain a deep understanding of the underlying components. This knowledge, in turn, helps to
-            sharpen my programming skills, allowing me to understand how the bare metal works.
-          </p>
+        <p>An extended resume website, showcasing the skills, achievements, and portfolio of Harrison Cook.</p>
+        <div class="links">
+          <a href="https://github.com/HonsonCooky/curriculum-vitae" target="_blank">GitHub</a>
         </div>
       </div>
-    </section>
 
-    <!-- Blogs Section -->
-    <section id="blogs">
-      <h1>Blogs</h1>
-      <ul>
-        <li>You're early... nothing to see here yet</li>
-      </ul>
-    </section>
-
-    <footer id="footer-header">
-      <label>C:\HonsonCooky></label>
-      <label id="theme">
-        <input id="theme-btn" type="checkbox" />
-        <label for="theme-btn">Dark Theme</label>
-      </label>
-    </footer>
-    <footer id="footer-content">
-      <strong>Links:</strong>
-      <div id="links">
-        <a href="mailto:contact@honsoncooky.dev">
-          <i class="nf nf-md-email"></i>
-          <span>contact@honsoncooky.dev</span>
-        </a>
-        <a href="https://github.com/HonsonCooky" target="_blank">
-          <i class="nf nf-fa-github"></i>
-          <span>GitHub</span>
-        </a>
-        <a href="https://www.linkedin.com/in/harrison-cook-software-engineer/" target="_blank">
-          <i class="nf nf-fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://www.reddit.com/user/HonsonCooky/" target="_blank">
-          <i class="nf nf-fa-reddit_alien"></i>
-          <span>Reddit</span>
-        </a>
-        <a href="https://stackoverflow.com/users/19093612/harrison-cook" target="_blank">
-          <i class="nf nf-fa-stack_overflow"></i>
-          <span>Stack Overflow</span>
-        </a>
+      <!-- Tenants Testimony -->
+      <div class="project-card" id="tenants-project">
+        <h3>tenants-testimony</h3>
+        <div class="tags">
+          <span>Ongoing</span>
+          <span>C#</span>
+          <span>ASP.NET</span>
+        </div>
+        <p>A full-stack, mono-repo, web-app for tenants to review their landlords, property managers and flats.</p>
+        <div class="links">
+          <a href="https://github.com/HonsonCooky/tenants-testimony" target="_blank">GitHub</a>
+        </div>
       </div>
-    </footer>
-  </body>
+
+      <!-- Cookie Nvim -->
+      <div class="project-card" id="nvim-project">
+        <h3>cookie-nvim</h3>
+        <div class="tags">
+          <span>Lua</span>
+        </div>
+        <p>
+          An opinionated Neovim configuration for Windows 10/11. It prioritizes usability, replicability, and
+          ease-of-use, making it suitable for personal and work computers without requiring admin privileges.
+        </p>
+        <div class="links">
+          <a href="https://github.com/HonsonCooky/cookie-nvim" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Browser Home -->
+      <div class="project-card" id="browser-project">
+        <h3>browser-home</h3>
+        <div class="tags">
+          <span>HTML</span>
+          <span>Webpack</span>
+        </div>
+        <p>
+          A custom-built home page with tools, shortcuts, and links designed specifically for my productivity as a
+          software engineer.
+        </p>
+        <div class="links">
+          <a href="https://github.com/HonsonCooky/advent-of-code" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- Advent Of Code -->
+      <div class="project-card" id="advent-project">
+        <h3>advent-of-code</h3>
+        <div class="tags">
+          <span>Rust</span>
+        </div>
+        <p>
+          Advent of Code is an annual coding challenge event that takes place during December. Each day, participants
+          are presented with a new problem to solve using their programming skills. This repository contains my
+          attempts and solutions to these exciting challenges.
+        </p>
+        <div class="links">
+          <a href="https://github.com/HonsonCooky/advent-of-code" target="_blank">GitHub</a>
+          <a href="https://adventofcode.com/" target="_blank">Website</a>
+        </div>
+      </div>
+
+      <!-- Ira Street Chores -->
+      <div class="project-card" id="ira-project">
+        <h3>ira-street-chores</h3>
+        <div class="tags">
+          <span>Archived</span>
+          <span>React-Native</span>
+        </div>
+        <p>
+          A mobile app designed for families, roommates, and flatmates. It simplifies managing cleaning schedules,
+          shopping lists, and expenses.
+        </p>
+        <div class="links">
+          <a href="https://github.com/HonsonCooky/ira-street-chores" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- M5Stack -->
+      <div class="project-card" id="m5stack-project">
+        <h3>m5stack-ble</h3>
+        <div class="tags">
+          <span>Archived</span>
+          <span>C++</span>
+        </div>
+        <p>
+          ESP32 BLE Network with M5Stack: A lightweight, power-efficient solution for short-range data transmission.
+          Utilizing M5Stack Arduino boards, this project demonstrates point-to-point communication, allowing devices
+          to exchange small amounts of data.
+        </p>
+        <div class="links">
+          <a href="https://github.com/HonsonCooky/m5stack-ble" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <!-- ZSA Keyboard -->
+      <div class="project-card" id="keyboard-project">
+        <h3>planck-keyboard</h3>
+        <div class="tags">
+          <span>Hardware</span>
+          <span>Keyboard</span>
+        </div>
+        <p>
+          Adopting a 40% keyboard was a strategic move to safeguard my wrist health, influenced by an injury in my
+          youth. The reduced size demands minimal wrist movement, helping prevent RSI and easing discomfort. This
+          ergonomic choice has consequently boosted my productivity, as I can type for extended periods without
+          strain. The efficiency gained from this compact design has been remarkable, allowing me to concentrate on my
+          work with greater intensity and for longer durations. My enthusiasm for continuous learning and interest in
+          ergonomic advancements motivates me to seek even more effective solutions. I'm dedicated to discovering
+          cutting-edge strategies that will further protect my health and elevate my professional performance,
+          ensuring sustainable productivity.
+        </p>
+        <div class="links">
+          <a href="https://www.youtube.com/watch?v=NcnMR8D0G5o" target="_blank">YouTube</a>
+        </div>
+      </div>
+
+      <!-- PC Building -->
+      <div class="project-card" id="pc-project">
+        <h3>pc-building</h3>
+        <div class="tags">
+          <span>Hardware</span>
+          <span>PC</span>
+        </div>
+        <p>
+          As a software engineer with a passion for technology, I find joy in the art of assembling and enhancing
+          personal computers. This hobby extends beyond mere functionality; it's a journey of continuous improvement.
+          From basic setups to intricate mini-ITX systems, each build represents a milestone in my technical growth.
+          By working hands-on with the hardware, I not only ensure that my home setup can handle more demanding tasks
+          but also maintain a deep understanding of the underlying components. This knowledge, in turn, helps to
+          sharpen my programming skills, allowing me to understand how the bare metal works.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer-header">
+    <label>C:\HonsonCooky></label>
+    <label id="theme">
+      <input id="theme-btn" type="checkbox" />
+      <label for="theme-btn">Dark Theme</label>
+    </label>
+  </footer>
+  <footer id="footer-content">
+    <strong>Links:</strong>
+    <div id="links">
+      <a href="mailto:contact@honsoncooky.dev">
+        <i class="nf nf-md-email"></i>
+        <span>contact@honsoncooky.dev</span>
+      </a>
+      <a>
+        <i class="nf nf-md-note"></i>
+        <span>Blogs</span>
+      </a>
+      <a href="https://github.com/HonsonCooky" target="_blank">
+        <i class="nf nf-fa-github"></i>
+        <span>GitHub</span>
+      </a>
+      <a href="https://www.linkedin.com/in/harrison-cook-software-engineer/" target="_blank">
+        <i class="nf nf-fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://www.reddit.com/user/HonsonCooky/" target="_blank">
+        <i class="nf nf-fa-reddit_alien"></i>
+        <span>Reddit</span>
+      </a>
+      <a href="https://stackoverflow.com/users/19093612/harrison-cook" target="_blank">
+        <i class="nf nf-fa-stack_overflow"></i>
+        <span>Stack Overflow</span>
+      </a>
+    </div>
+  </footer>
+</body>
+
 </html>
