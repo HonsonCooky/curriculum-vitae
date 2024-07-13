@@ -1,0 +1,66 @@
+@import "../../css/styles.css";
+@import "../../css/footer.css";
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--s-m);
+  padding: var(--s-m);
+
+  h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: var(--fs-5);
+    font-family: monospace;
+  }
+
+  h2 {
+    margin: 0;
+    font-style: italic;
+    font-weight: normal;
+    font-size: var(--fs-2);
+    font-family: monospace;
+  }
+
+  h5 {
+    margin: var(--s-m) 0;
+    font-weight: bold;
+    font-size: var(--fs-2);
+    font-family: monospace;
+  }
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--s-m);
+
+  h1 {
+    margin: 0;
+    color: var(--gold);
+    font-weight: bold;
+    font-size: var(--fs-3);
+    font-family: monospace;
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--love);
+    font-weight: bold;
+    font-size: var(--fs-2);
+    font-family: monospace;
+  }
+
+  p {
+    font-size: var(--fs-0);
+  }
+}

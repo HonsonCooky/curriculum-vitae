@@ -1,0 +1,43 @@
+@import "../css/styles.css";
+@import "../css/footer.css";
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--s-m);
+  min-height: 100dvh;
+}
+
+#blog-list {
+  display: flex;
+  row-gap: var(--s-m);
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    background: var(--overlay);
+    padding: var(--s-s);
+    text-decoration: none;
+
+    h3 {
+      margin: 0;
+      background: none;
+      font-weight: bold;
+      font-size: var(--fs-1);
+    }
+
+    h5 {
+      margin: 0;
+      background: none;
+      font-weight: bold;
+      font-size: var(--fs--1);
+    }
+
+    p {
+      background: none;
+      font-weight: normal;
+      font-size: var(--fs-0);
+    }
+  }
+}
