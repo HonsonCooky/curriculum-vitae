@@ -61,6 +61,8 @@ main {
   }
 
   p {
+    width: 100%;
     font-size: var(--fs-0);
+    text-align: start;
   }
 }
